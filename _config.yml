@@ -4,7 +4,7 @@ title: Start Jekyll
 email: tanguy.desplebain@serli.com
 description: >
   A guide to getting started with Jekyll.
-baseurl: "/formation"
+baseurl: "/formations"
 url: "http://Seikicegus.github.io"
 github_username:  Seikicegus
 # Build Settings
