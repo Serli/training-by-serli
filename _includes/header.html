@@ -2,6 +2,9 @@
 	<div class="container">
 		<nav>
 			<ul>
+				<p> {{site.url}} </p>
+				<p> {{site.baseurl}} </p>
+				<p> {{ site.url + site.baseurl }} </p>
 				<li><a href="{{ site.url + site.baseurl }}">Home</a></li>
 				{% for somaire in site.pages %} {% if somaire.layout == 'sommaire' %} {% if somaire.title %}
 					<li><a href="{{ somaire.url | prepend: site.baseurl }}">{{ somaire.title }}</a></li>
