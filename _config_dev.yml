@@ -1,15 +1,14 @@
 
 # Site Settings
-title: Start Jekyll
+title: Training by Serli
 email: tanguy.desplebain@serli.com
-description: >
-  A guide to getting started with Jekyll.
+description: Training by Serli . FORMATIONS & WORKSHOPS
 baseurl: ""
 url: "http://localhost:4000"
 github_username:  Seikicegus
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages']
+include: ['_pages', '_trainings']
 kramdown:
   input: GFM

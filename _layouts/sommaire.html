@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+    {{ content }}
+
+  {% for training in site.pages %} {% if training.categories == page.title %} {% if training.title %}
+    <h2><a href="{{ training.url | prepend: site.baseurl }}">{{ training.title }}</a></h2>
+  {% endif %} {% endif %} {% endfor %}
