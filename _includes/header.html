@@ -2,9 +2,13 @@
 	<div class="container">
 		<nav>
 			<ul>
-				<li><a href="{{ site.url site.baseurl }}">Home</a></li>
+				{% if site.baseurl == '' %}
+					<li><a href="{{ site.url }}">Home</a></li>
+				{% else %}
+					<li><a href="{{ site.baseurl }}">Home</a></li>
+				{% endif %}
 				{% for somaire in site.pages %} {% if somaire.layout == 'sommaire' %} {% if somaire.title %}
-				<li><a href="{{ somaire.url | prepend: site.baseurl }}">{{ somaire.title }}</a></li>
+					<li><a href="{{ somaire.url | prepend: site.baseurl }}">{{ somaire.title }}</a></li>
 				{% endif %} {% endif %} {% endfor %}
 			</ul>
 			</li>
@@ -15,5 +19,9 @@
 
 <header>
 	<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-	<a href="{{ site.url site.baseurl }}"><img src="{{ site.baseurl }}/assets/Training-by-serli-logo-white-01.png"></img></a>
+	{% if site.baseurl == '' %}
+		<a href="{{ site.url }}"><img src="{{ site.baseurl }}/assets/Training-by-serli-logo-white-01.png"></img></a>
+	{% else %}
+		<a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}/assets/Training-by-serli-logo-white-01.png"></img></a>
+	{% endif %}
 </header>
