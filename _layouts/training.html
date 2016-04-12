@@ -1,7 +1,64 @@
 ---
 layout: default
 ---
+<div id="training" >
 
-<h2>Training {{ page.title }}</h2>
+  <table id="detail">
+    <thead>
+      <tr>
+        <td><img src="/assets/detail/duration.png" />{{' '}}DURÉE</td>
+        <td><img src="/assets/detail/public.png" />{{' '}}PUBLIC</td>
+        <td><img src="/assets/detail/price.png" />{{' '}}TARIF</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> {{ page.duration }} </td>
+        <td rowspan=2 > {{ page.public }} </td>
+        <td> {{ page.costs }} </td>
+      </tr>
+      <tr>
+        <td> {{ page.duration-description }} </td>
+        <td> {{ page.costs-description }} </td>
+      </tr>
+    </tbody>
+  </table>
 
-    {{ content }}
+  <br/>
+
+  {% if page.ref %}
+    <p id="ref">Réf. {{ page.ref }}</p>
+  {% endif %}
+
+  {% if page.presentation %}
+    <h3>présentation</h3>
+    <p>{{ page.presentation }}</p>
+  {% else %}
+    {{content}}
+  {% endif %}
+
+  <br/>
+
+  <ul id="subject" >
+    {% for s in page.subject %}
+      <li> {{ s }} </li>
+    {% endfor %}
+  </ul>
+
+
+  {% if page.program %}
+    <h3>programme</h3>
+    <ul id="program" >
+      {% for p in page.program %}
+        <li> {{ p.title }}
+          <ul>
+            {% for a in p.activity %}
+              <li> {{ a }} </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>

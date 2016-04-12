@@ -5,109 +5,138 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body {
+* {
   margin: 0;
-  color: #262626;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.1em;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased; }
+  padding: 0;
+  font-family: sans-serif; }
 
-h1,
-h2,
-h3 {
-  font-weight: 600;
-  color: #425469;
-  font-family: "Muli", sans-serif;
-  line-height: 1.5; }
+img {
+  height: 20px;
+  width: auto; }
 
-h1 {
-  color: #FFFFFF;
-  font-size: 2.5em; }
-
-h2 {
-  font-size: 2em; }
-
-a,
-a:visited {
-  color: #425469;
-  text-decoration: underline;
-  font-weight: bold; }
-
-a:hover {
-  color: #FFFFFF;
-  text-decoration: underline; }
-
-header {
-  background: #3071a9;
-  padding: 0 40vh 0 10vh;
-  text-align: center;
-  margin: 50px 0 0 0;
-  height: 30vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center; }
-  header a img {
-    height: 25vh;
-    width: 30vh;
-    right: 0;
-    top: 50px;
-    margin: 2vh 5vh 0 0;
-    position: absolute; }
-
-main {
-  padding: 0 15px;
-  max-width: 800px;
-  margin: 0 auto; }
-
-time {
-  color: #898989; }
-
-.container {
-  max-width: 800px;
-  margin: 0 auto; }
-
-/* Aside */
-aside {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #fff;
-  width: 100%;
-  z-index: 2;
-  border-bottom: 1px solid white;
-  box-shadow: 0px 1px 1px RGBA(4, 25, 54, 0.1); }
-  aside nav {
-    float: left;
-    max-width: 800px;
-    margin: 0 auto; }
-    aside nav ul {
-      margin: 0;
-      padding: 0;
-      list-style: none; }
-      aside nav ul li {
-        float: left;
-        position: relative; }
-        aside nav ul li a {
-          text-decoration: none;
-          display: block;
-          padding: 15px;
-          font-family: 'Muli', sans-serif;
-          line-height: 20px;
-          margin-bottom: -1px;
-          box-shadow: 0; }
-          aside nav ul li a:hover, aside nav ul li a:active {
-            background: #3071a9;
+html, body {
+  height: 100%; }
+  html #container, body #container {
+    position: relative;
+    min-height: 100%; }
+    html #container main, body #container main {
+      background-color: #ffffff;
+      padding-bottom: 120px; }
+      html #container main aside, body #container main aside {
+        background-color: #3db8d8;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        width: 100%;
+        z-index: 2; }
+        html #container main aside nav, body #container main aside nav {
+          min-width: 650px;
+          margin: 0 auto; }
+          html #container main aside nav ul, body #container main aside nav ul {
+            list-style: none; }
+            html #container main aside nav ul li, body #container main aside nav ul li {
+              float: left; }
+              html #container main aside nav ul li a, body #container main aside nav ul li a {
+                height: 50px;
+                text-decoration: none;
+                display: block;
+                padding: 0 15px 0 15px;
+                color: #ffffff; }
+                html #container main aside nav ul li a:hover, html #container main aside nav ul li a:active, body #container main aside nav ul li a:hover, body #container main aside nav ul li a:active {
+                  background: #1068b0; }
+                html #container main aside nav ul li a img, body #container main aside nav ul li a img {
+                  height: 45px;
+                  width: auto; }
+      html #container main header, body #container main header {
+        height: 30vh;
+        background-color: #1068b0;
+        margin-top: 50px;
+        padding: 0 50vh 0 10vh;
+        display: flex;
+        align-items: center; }
+        html #container main header h1, body #container main header h1 {
+          font-size: 10vh;
+          color: #ffffff; }
+        html #container main header a img, body #container main header a img {
+          height: 30vh;
+          width: auto;
+          right: 10px;
+          top: 0;
+          position: absolute; }
+      html #container main article, body #container main article {
+        padding: 10px; }
+        html #container main article #summary ul li, body #container main article #summary ul li {
+          list-style: none;
+          background-color: #3db8d8;
+          margin: 2vh;
+          padding: 2vh;
+          font-size: 6vh; }
+          html #container main article #summary ul li a, body #container main article #summary ul li a {
             text-decoration: none;
-            color: #FFFFFF; }
-    aside nav:after {
-      content: '';
-      display: table;
-      clear: both; }
-
-footer {
-  text-align: center;
-  padding: 40px; }
+            display: block;
+            color: #ffffff; }
+        html #container main article #training td, body #container main article #training td {
+          text-align: center; }
+        html #container main article #training table, body #container main article #training table {
+          table-layout: fixed;
+          border-collapse: separate;
+          border-spacing: 10px 0; }
+        html #container main article #training h3, body #container main article #training h3 {
+          font-weight: normal;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          text-transform: uppercase;
+          clear: both; }
+        html #container main article #training #detail, body #container main article #training #detail {
+          width: 100%; }
+          html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
+            height: 30px; }
+            html #container main article #training #detail thead tr td img, body #container main article #training #detail thead tr td img {
+              height: 30px;
+              width: auto; }
+          html #container main article #training #detail tbody tr, body #container main article #training #detail tbody tr {
+            background-color: rgba(0, 0, 0, 0.3);
+            font-style: italic; }
+          html #container main article #training #detail tbody tr:first-child, body #container main article #training #detail tbody tr:first-child {
+            font-style: normal; }
+        html #container main article #training ul, body #container main article #training ul {
+          padding-left: 50px;
+          list-style: disc;
+          font-weight: bold; }
+          html #container main article #training ul li ul, body #container main article #training ul li ul {
+            padding-left: 50px;
+            list-style: none;
+            font-weight: normal; }
+        html #container main article #training #subject, body #container main article #training #subject {
+          padding-left: 0; }
+          html #container main article #training #subject li, body #container main article #training #subject li {
+            float: left;
+            display: block;
+            background-color: #3db8d8;
+            margin: 5px;
+            padding: 5px;
+            color: #ffffff;
+            font-weight: normal; }
+    html #container footer, body #container footer {
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      background-color: #1068b0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 0 0 120px;
+      min-width: 650px; }
+      html #container footer nav img, body #container footer nav img {
+        height: 30px;
+        width: 90px;
+        left: 10px;
+        position: absolute; }
+      html #container footer nav ul, body #container footer nav ul {
+        list-style: none; }
+        html #container footer nav ul li, body #container footer nav ul li {
+          float: left;
+          padding: 0 15px 0 15px; }
 
 /**
  * Syntax highlighting styles

@@ -3,10 +3,10 @@
   <channel>
     <title>Training by Serli</title>
     <description>Training by Serli . FORMATIONS &amp; WORKSHOPS</description>
-    <link>http://localhost:4000/toto/</link>
-    <atom:link href="http://localhost:4000/toto/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Apr 2016 11:06:10 +0200</pubDate>
-    <lastBuildDate>Mon, 11 Apr 2016 11:06:10 +0200</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 12 Apr 2016 17:07:56 +0200</pubDate>
+    <lastBuildDate>Tue, 12 Apr 2016 17:07:56 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
   </channel>
