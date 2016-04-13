@@ -43,6 +43,30 @@ html, body {
 								&:active {
 									background: $bleu-fonce;
 								}
+								&:hover.colorJava,
+								&:active.colorJava{
+									background-color: $rouge-fonce;
+								}
+								&:hover.colorData,
+								&:active.colorData{
+									background-color: $orange-fonce;
+								}
+								&:hover.colorMobilite,
+								&:active.colorMobilite{
+									background-color: $jaune-fonce;
+								}
+								&:hover.colorWorkshops,
+								&:active.colorWorkshops{
+									background-color: $vert-fonce;
+								}
+								&:hover.colorLanguagesAlternatifs,
+								&:active.colorLanguagesAlternatifs{
+									background-color: $violet-fonce;
+								}
+								&:hover.colorWeb,
+								&:active.colorWeb{
+									background-color: $beige-fonce;
+								}
 								img {
 									height: 45px;
 									width: auto;

@@ -4,7 +4,7 @@
 
 <body>
 	<div id="container">
-		<main class="{% if page.layout %}main{{page.layout}}{% else %}maindefault{% endif %}">
+		<main class="{% if page.index %}maindefault{% else %}mainother{% endif %}">
 			{% include header.html %}
 			<article>
 				{{ content }}

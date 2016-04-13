@@ -46,6 +46,18 @@ html, body {
                 color: #ffffff; }
                 html #container main aside nav ul li a:hover, html #container main aside nav ul li a:active, body #container main aside nav ul li a:hover, body #container main aside nav ul li a:active {
                   background: #1068b0; }
+                html #container main aside nav ul li a:hover.colorJava, html #container main aside nav ul li a:active.colorJava, body #container main aside nav ul li a:hover.colorJava, body #container main aside nav ul li a:active.colorJava {
+                  background-color: #cc3c56; }
+                html #container main aside nav ul li a:hover.colorData, html #container main aside nav ul li a:active.colorData, body #container main aside nav ul li a:hover.colorData, body #container main aside nav ul li a:active.colorData {
+                  background-color: #ec854f; }
+                html #container main aside nav ul li a:hover.colorMobilite, html #container main aside nav ul li a:active.colorMobilite, body #container main aside nav ul li a:hover.colorMobilite, body #container main aside nav ul li a:active.colorMobilite {
+                  background-color: #ccb400; }
+                html #container main aside nav ul li a:hover.colorWorkshops, html #container main aside nav ul li a:active.colorWorkshops, body #container main aside nav ul li a:hover.colorWorkshops, body #container main aside nav ul li a:active.colorWorkshops {
+                  background-color: #458968; }
+                html #container main aside nav ul li a:hover.colorLanguagesAlternatifs, html #container main aside nav ul li a:active.colorLanguagesAlternatifs, body #container main aside nav ul li a:hover.colorLanguagesAlternatifs, body #container main aside nav ul li a:active.colorLanguagesAlternatifs {
+                  background-color: #9a009a; }
+                html #container main aside nav ul li a:hover.colorWeb, html #container main aside nav ul li a:active.colorWeb, body #container main aside nav ul li a:hover.colorWeb, body #container main aside nav ul li a:active.colorWeb {
+                  background-color: #895045; }
                 html #container main aside nav ul li a img, body #container main aside nav ul li a img {
                   height: 45px;
                   width: auto; }
