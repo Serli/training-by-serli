@@ -1,28 +1,31 @@
-$content-width: 800px;
-$main: #FFFFFF;
-$font-style: 'Open Sans', sans-serif;
-$font-color: #262626;
-$link-color: #425469;
-$link-hover-color: $main;
-$heading-font: 'Muli', sans-serif;
-$heading-font-color: #425469;
-$light: #E7EDF4;
-$header:  #3071a9;
-
-// Originaux
 $blanc: #ffffff;
-$blanc-transparent: rgba(255, 255, 255, 0.2);
-$bleu: #1068b0;
-$bleu-clair: #3db8d8;
-$bleu-fonce: #062a46;
-$rouge: #cc3c56;
-$orange: #DF5A49;
-$jaune: #ec854f;
+$noir: #000000;
+
+$gris: #808080;
+$gris-clair: #b0b0b0;
+$gris-fonce: #404040;
+
+$bleu: #3db8d8;
+$bleu-clair: #439be3;
+$bleu-fonce: #1068b0;
+
+$rouge: #ff6f89;
+$rouge-fonce: #cc3c56;
+
+$orange: #ffa87f;
+$orange-fonce: #ec854f;
+
+$jaune: #FFD700;
+$jaune-fonce: #ccb400;
+
 $vert: #78BC9B;
-$gris: #404040;
+$vert-fonce: #458968;
+
+$violet: #CD00CD;
+$violet-fonce: #9a009a;
+
 $beige: #BC8078;
-$bleu-gris: #145156;
-$gris-transparent: rgba(0,0,0, 0.3);
+$beige-fonce: #895045;
 
 *,
 *::before,

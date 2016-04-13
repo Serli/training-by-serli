@@ -18,7 +18,9 @@ html, body {
 			background-color: $blanc;
 			padding-bottom: 120px;
 			aside {
-				background-color: $bleu-clair;
+				background-color: $bleu;
+				background-image: url(/assets/background-image/article.png);
+				background-repeat: repeat-x;
 				position: absolute;
 				top: -50px;
 				left: 0;
@@ -39,7 +41,7 @@ html, body {
 								color: $blanc;
 								&:hover,
 								&:active {
-									background: $bleu;
+									background: $bleu-fonce;
 								}
 								img {
 									height: 45px;
@@ -50,9 +52,29 @@ html, body {
 					}
 				}
 			}
+			aside.colorJava{
+				background-color: $rouge;
+			}
+			aside.colorData{
+				background-color: $orange;
+			}
+			aside.colorMobilite{
+				background-color: $jaune;
+			}
+			aside.colorWorkshops{
+				background-color: $vert;
+			}
+			aside.colorLanguagesAlternatifs{
+				background-color: $violet;
+			}
+			aside.colorWeb{
+				background-color: $beige;
+			}
 			header {
 				height: 30vh;
-				background-color: $bleu;
+				background-color: $bleu-fonce;
+				background-image: url(/assets/background-image/header.png);
+				background-repeat: repeat-x;
 				margin-top: 50px;
 				padding: 0 50vh 0 10vh;
 				display: flex;
@@ -71,13 +93,33 @@ html, body {
 					}
 				}
 			}
+			header.colorJava{
+				background-color: $rouge-fonce;
+			}
+			header.colorData{
+				background-color: $orange-fonce;
+			}
+			header.colorMobilite{
+				background-color: $jaune-fonce;
+			}
+			header.colorWorkshops{
+				background-color: $vert-fonce;
+			}
+			header.colorLanguagesAlternatifs{
+				background-color: $violet-fonce;
+			}
+			header.colorWeb{
+				background-color: $beige-fonce;
+			}
 			article {
 				padding: 10px;
 				#summary {
 					ul {
 						li {
 							list-style: none;
-							background-color: $bleu-clair;
+							background-color: $bleu;
+							background-image: url(/assets/background-image/article.png);
+							background-repeat: repeat-x;
 							margin: 2vh;
 							padding: 2vh;
 							font-size: 6vh;
@@ -86,6 +128,24 @@ html, body {
 								display: block;
 								color: $blanc;
 							}
+						}
+						li.colorJava{
+							background-color: $rouge;
+						}
+						li.colorData{
+							background-color: $orange;
+						}
+						li.colorMobilite{
+							background-color: $jaune;
+						}
+						li.colorWorkshops{
+							background-color: $vert;
+						}
+						li.colorLanguagesAlternatifs{
+							background-color: $violet;
+						}
+						li.colorWeb{
+							background-color: $beige;
 						}
 					}
 				}
@@ -120,7 +180,7 @@ html, body {
 						}
 						tbody {
 							tr {
-								background-color: $gris-transparent;
+								background-color: $gris-clair;
 								font-style: italic;
 							}
 							tr:first-child {
@@ -145,31 +205,79 @@ html, body {
 						li {
 							float: left;
 							display: block;
-							background-color: $bleu-clair;
+							background-color: $bleu;
 							margin: 5px;
 							padding: 5px;
 							color: $blanc;
 							font-weight: normal;
 						}
+						li.colorJava{
+							background-color: $rouge;
+						}
+						li.colorData{
+							background-color: $orange;
+						}
+						li.colorMobilite{
+							background-color: $jaune;
+						}
+						li.colorWorkshops{
+							background-color: $vert;
+						}
+						li.colorLanguagesAlternatifs{
+							background-color: $violet;
+						}
+						li.colorWeb{
+							background-color: $beige;
+						}
+					}
+				}
+				#index {
+					div {
+						width: 45%;
+						min-width: 400px;
+						display: inline-block;
+						vertical-align: top;
+						margin: 10px;
+						background-color: $bleu-clair;
+						color: $blanc;
+						h3 {
+							font-weight: normal;
+							background-color: $bleu-fonce;
+							padding: 10px;
+						}
+						p {
+							padding: 10px;
+						}
+						ul {
+							padding: 10px;
+							padding-left: 30px;
+						}
 					}
 				}
 			}
+		}
+		.maindefault{
+			background-color: $bleu;
 		}
 		footer {
 			height: 50px;
 			position: absolute;
 			bottom: 0;
-			background-color: $bleu;
+			background-color: $bleu-fonce;
+			background-image: url(/assets/background-image/header.png);
+			background-repeat: repeat-x;
 			width: 100%;
 			display: flex;
 			align-items: center;
 			padding: 0 0 0 120px;
 			min-width: 650px;
+			color: $blanc;
 			nav {
 				img {
 					height: 30px;
 					width: 90px;
 					left: 10px;
+					bottom: 10px;
 					position: absolute;
 				}
 				ul {
@@ -177,9 +285,37 @@ html, body {
 					li {
 						float: left;
 						padding: 0 15px 0 15px;
+						img {
+							height: 20px;
+							width: 20px;
+							left: 0px;
+							bottom: 0px;
+							position: relative;;
+						}
+						a {
+							color: $blanc;
+						}
 					}
 				}
 			}
+		}
+		footer.colorJava{
+			background-color: $rouge-fonce;
+		}
+		footer.colorData{
+			background-color: $orange-fonce;
+		}
+		footer.colorMobilite{
+			background-color: $jaune-fonce;
+		}
+		footer.colorWorkshops{
+			background-color: $vert-fonce;
+		}
+		footer.colorLanguagesAlternatifs{
+			background-color: $violet-fonce;
+		}
+		footer.colorWeb{
+			background-color: $beige-fonce;
 		}
 	}
 }

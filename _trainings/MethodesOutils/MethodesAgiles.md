@@ -2,7 +2,7 @@
 layout: training
 title: Methodes Agiles
 permalink: /MethodesOutils/TR-AGILES
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Tous types de profils
 costs: 1340 € HT
 costs-description: par participant

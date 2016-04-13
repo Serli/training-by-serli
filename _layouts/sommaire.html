@@ -3,8 +3,10 @@ layout: default
 ---
 <div id="summary" >
   <ul>
-    {% for training in site.pages %} {% if training.categories == page.title %} {% if training.title %}
-      <li><a href="{{ training.url | prepend: site.baseurl }}">{{ training.title }}</a></li>
+    {% for training in site.pages %} {% if training.categories == page.node %} {% if training.title %}
+      <li class="{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}" >
+        <a href="{{ training.url | prepend: site.baseurl }}">{{ training.title }}</a>
+      </li>
     {% endif %} {% endif %} {% endfor %}
   </ul>
 </div>

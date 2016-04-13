@@ -2,7 +2,7 @@
 layout: training
 title: Scala
 permalink: /LanguagesAlternatifs/Scala
-categories: Languages Alternatifs
+categories: LanguagesAlternatifs
 public: Développeurs expérimentés
 costs: 1990 € HT
 costs-description: par participant

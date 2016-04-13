@@ -2,7 +2,7 @@
 layout: training
 title: Développement iOS
 permalink: /Mobilite/TR-IOS
-categories: Mobilité
+categories: Mobilite
 public: Développeur ayant de l’expérience dans un langage Orienté Objets
 costs: 1990 € HT
 costs-description: par participant

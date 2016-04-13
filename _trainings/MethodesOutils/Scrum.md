@@ -2,7 +2,7 @@
 layout: training
 title: Scrum
 permalink: /MethodesOutils/TR-SCRUM
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Tout public
 costs: 590 € HT
 costs-description: par participant

@@ -2,7 +2,7 @@
 layout: training
 title: Maven
 permalink: /MethodesOutils/TR-MAVEN
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Développeurs Java
 costs: 490 € HT
 costs-description: par participant

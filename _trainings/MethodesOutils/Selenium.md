@@ -2,7 +2,7 @@
 layout: training
 title: Selenium
 permalink: /MethodesOutils/TR-SELENIUM
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Testeurs, Développeurs, Chefs de projets
 costs: 1140 € HT
 costs-description: par participant

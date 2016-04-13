@@ -2,7 +2,7 @@
 layout: training
 title: Industrialisation Logicielle
 permalink: /MethodesOutils/TR-INDUS
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Développeurs, Opérationnels, Chefs de projet
 costs: 590 € HT
 costs-description: par participant

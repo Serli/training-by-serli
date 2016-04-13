@@ -2,7 +2,7 @@
 layout: training
 title: Développement Android
 permalink: /Mobilite/TR-ANDROID
-categories: Mobilité
+categories: Mobilite
 public: Développeur ayant déjà une connaissance de Java.
 costs: 1690 € HT
 costs-description: par participant

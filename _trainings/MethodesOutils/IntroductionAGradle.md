@@ -2,7 +2,7 @@
 layout: training
 title: Introduction a Gradle
 permalink: /MethodesOutils/TR-GRADLE
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Développeurs Java
 costs: 490 € HT
 costs-description: par participant

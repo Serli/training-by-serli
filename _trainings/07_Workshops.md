@@ -2,7 +2,8 @@
 layout: sommaire
 title: Workshops
 permalink: /Workshops/
-image: /assets/coffee-cup-logo-Java-black-01.png
+node: Workshops
+image: /assets/TrainingsCategories/WhiteIcon/workshop.png
 ---
 
 Info sur les cours de Web

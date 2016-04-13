@@ -2,7 +2,7 @@
 layout: training
 title: Développement Hybride
 permalink: /Mobilite/TR-HYBRIDE
-categories: Mobilité
+categories: Mobilite
 public: Développeur ayant déjà une connaissance HTML/CSS et javascript
 costs: 1690 € HT
 costs-description: par participant

@@ -41,7 +41,9 @@ layout: default
 
   <ul id="subject" >
     {% for s in page.subject %}
-      <li> {{ s }} </li>
+      <li class="{% if page.categories %}color{{page.categories}}{% else %}{% if page.title %}color{{page.title}}{% else %}colordefault{% endif %}{% endif %}">
+        {{ s }}
+      </li>
     {% endfor %}
   </ul>
 

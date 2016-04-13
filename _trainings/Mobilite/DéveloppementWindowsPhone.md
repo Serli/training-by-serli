@@ -2,7 +2,7 @@
 layout: training
 title: Développement WindowsPhone
 permalink: /Mobilite/TR-WINDPHONE
-categories: Mobilité
+categories: Mobilite
 public: Développeurs C# et Chefs de projets techniques
 costs: 2790 € HT
 costs-description: par participant

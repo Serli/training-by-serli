@@ -2,7 +2,7 @@
 layout: training
 title: Débuter avec Git
 permalink: /MethodesOutils/TR-GIT
-categories: Méthodes & Outils
+categories: MethodesOutils
 public: Développeurs, Opérationnels, Chefs de projet
 costs: 490 € HT
 costs-description: par participant
