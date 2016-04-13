@@ -9,14 +9,20 @@ img {
 	width: auto;
 }
 
+@font-face {
+	font-family: "gloriahallelujah";
+	src: url('../assets/gloriahallelujah.ttf');
+}
+
 html, body {
+	min-width: 350px;
 	height: 100%;
 	#container {
 		position: relative;
 		min-height: 100%;
 		main {
 			background-color: $blanc;
-			padding-bottom: 120px;
+			padding-bottom: 50px;
 			aside {
 				background-color: $bleu;
 				background-image: url(../assets/background-image/article.png);
@@ -27,12 +33,11 @@ html, body {
 				width: 100%;
 				z-index: 2;
 				nav {
-					min-width: 650px;
 					margin: 0 auto;
 					ul {
 						list-style: none;
 						li {
-							float: left;
+							display: inline-block;
 							a {
 								height: 50px;
 								text-decoration: none;
@@ -95,7 +100,7 @@ html, body {
 				background-color: $beige;
 			}
 			header {
-				height: 30vh;
+				height: 35vh;
 				background-color: $bleu-fonce;
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
@@ -104,11 +109,17 @@ html, body {
 				display: flex;
 				align-items: center;
 				h1 {
+					max-height: 30vh;
+					overflow: hidden;
+					text-overflow: ellipsis;
 					font-size: 10vh;
 					color: $blanc;
+					line-height : 15vh;
+					font-family: "gloriahallelujah", sans-serif;
 				}
 				a {
 					img {
+   					display: inline;
 						height: 30vh;
 						width: auto;
 						right: 10px;
@@ -134,6 +145,24 @@ html, body {
 			}
 			header.colorWeb{
 				background-color: $beige-fonce;
+			}
+			@media all and (max-width: 574px) {
+				aside {
+					top: -100px;
+				}
+				header {
+					margin-top: 100px;
+				}
+			}
+			@media all and (max-width: 700px) {
+				header {
+					padding: 0 10vh 0 10vh;
+					a {
+						img {
+							display: none;
+						}
+					}
+				}
 			}
 			article {
 				padding: 10px;
@@ -227,8 +256,7 @@ html, body {
 					#subject {
 						padding-left: 0;
 						li {
-							float: left;
-							display: block;
+							display: inline-block;
 							background-color: $bleu;
 							margin: 5px;
 							padding: 5px;
@@ -300,7 +328,6 @@ html, body {
 			display: flex;
 			align-items: center;
 			padding: 0 0 0 120px;
-			min-width: 650px;
 			color: $blanc;
 			nav {
 				img {
@@ -313,14 +340,14 @@ html, body {
 				ul {
 					list-style: none;
 					li {
-						float: left;
+						display: inline-block;
 						padding: 0 15px 0 15px;
 						img {
 							height: 20px;
 							width: 20px;
 							left: 0px;
 							bottom: 0px;
-							position: relative;;
+							position: relative;
 						}
 						a {
 							color: $blanc;
@@ -346,6 +373,21 @@ html, body {
 		}
 		footer.colorWeb{
 			background-color: $beige-fonce;
+		}
+		@media all and (max-width: 700px) {
+			main {
+				padding-bottom: 120px;
+			}
+			footer {
+					height: 120px;
+					nav {
+						ul {
+							li {
+								display: inherit;
+							}
+						}
+					}
+			}
 		}
 	}
 }
