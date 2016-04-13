@@ -24,7 +24,7 @@ html, body {
       padding-bottom: 120px; }
       html #container main aside, body #container main aside {
         background-color: #3db8d8;
-        background-image: url(/assets/background-image/article.png);
+        background-image: url(../assets/background-image/article.png);
         background-repeat: repeat-x;
         position: absolute;
         top: -50px;
@@ -64,7 +64,7 @@ html, body {
       html #container main header, body #container main header {
         height: 30vh;
         background-color: #1068b0;
-        background-image: url(/assets/background-image/header.png);
+        background-image: url(../assets/background-image/header.png);
         background-repeat: repeat-x;
         margin-top: 50px;
         padding: 0 50vh 0 10vh;
@@ -96,7 +96,7 @@ html, body {
         html #container main article #summary ul li, body #container main article #summary ul li {
           list-style: none;
           background-color: #3db8d8;
-          background-image: url(/assets/background-image/article.png);
+          background-image: url(../assets/background-image/article.png);
           background-repeat: repeat-x;
           margin: 2vh;
           padding: 2vh;
@@ -195,7 +195,7 @@ html, body {
       position: absolute;
       bottom: 0;
       background-color: #1068b0;
-      background-image: url(/assets/background-image/header.png);
+      background-image: url(../assets/background-image/header.png);
       background-repeat: repeat-x;
       width: 100%;
       display: flex;
