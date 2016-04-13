@@ -25,3 +25,19 @@ presentation:
   Vous découvrirez les principaux outils de développement, de test et de debug.
   Enfin, vous appréhenderez les principes de build d’applications multi-plateformes basées sur Apache Cordova.'
 ---
+
+### Présentation
+
+Lors de ce workshop, apprenez à développer une application mobile hybride de zéro. Vous découvrirez les principaux concepts du développement hybride et les fondements d’Apache Cordova.
+
+<br/>
+
+Vous développerez votre application à l’aide de JavaScript et de la bibliothèque de composants graphiques IOnic. Vous utiliserez les APIs Cordova qui permettent d’interagir avec les appareils. Vous apprendrez à appréhender les différences entre chaque OS.
+
+<br/>
+
+Vous découvrirez les principaux outils de développement, de test et de debug.
+
+<br/>
+
+Enfin, vous appréhenderez les principes de build d’applications multi-plateformes basées sur Apache Cordova.

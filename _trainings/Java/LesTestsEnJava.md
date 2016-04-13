@@ -48,7 +48,9 @@ program: [
       activity: []
   }
 ]
-presentation:
-  'Cette formation a pour objectif de vous faire appréhender les tests automatisés dans vos applications Java. Vous découvrirez les concepts fondamentaux de tests (unitaires, d’intégration) ainsi que les outils pour les mettre en oeuvre dans votre code Java.
-  Vous apprendrez les pratiques et patterns les plus répandus sur les tests automatisés.'
 ---
+
+### Présentation
+
+Cette formation a pour objectif de vous faire appréhender les tests automatisés dans vos applications Java. Vous découvrirez les concepts fondamentaux de tests (unitaires, d’intégration) ainsi que les outils pour les mettre en oeuvre dans votre code Java.
+Vous apprendrez les pratiques et patterns les plus répandus sur les tests automatisés.

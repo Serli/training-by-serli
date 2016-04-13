@@ -46,8 +46,10 @@ program: [
     ]
   }
 ]
-presentation:
-  'Depuis quelques années Spark est devenu le successeur désigné d’Hadoop dans le secteur des traitements Big Data. L’approche In-Memory permet d’obtenir des performances exceptionnelles.
-  Au cours de cette formation vous apprendrez les principes fondamentaux de Spark, vous découvrirez le chargement et la sauvegarde des données dans Spark ainsi que les Resilient Distributed Dataset (RDDs).
-  Vous appréhenderez les différents modules de Spark (Streaming, ML, SQL, Graphx) et apprendrez à tirer le meilleur parti de chacun d’eux.'
 ---
+
+### Présentation
+
+Depuis quelques années Spark est devenu le successeur désigné d’Hadoop dans le secteur des traitements Big Data. L’approche In-Memory permet d’obtenir des performances exceptionnelles.
+Au cours de cette formation vous apprendrez les principes fondamentaux de Spark, vous découvrirez le chargement et la sauvegarde des données dans Spark ainsi que les Resilient Distributed Dataset (RDDs).
+Vous appréhenderez les différents modules de Spark (Streaming, ML, SQL, Graphx) et apprendrez à tirer le meilleur parti de chacun d’eux.

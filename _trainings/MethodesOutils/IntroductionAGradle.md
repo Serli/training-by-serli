@@ -50,8 +50,10 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation a pour objectif de vous faire découvrir Gradle. Positionné à mi-chemin entre Maven et Ant, cet outil de build Java/Groovy allie le meilleur des deux mondes.
-  Cet outil permet à la fois d’adopter une approche de configuration basée sur l’exception (Maven) et de mettre en place des scripts de build d’une manière très souple (Ant).
-  Cette formation vous permettra d’appréhender les principaux aspects de cet outil de build à la fois moderne et novateur.'
 ---
+
+### Présentation
+
+Cette formation a pour objectif de vous faire découvrir Gradle. Positionné à mi-chemin entre Maven et Ant, cet outil de build Java/Groovy allie le meilleur des deux mondes.
+Cet outil permet à la fois d’adopter une approche de configuration basée sur l’exception (Maven) et de mettre en place des scripts de build d’une manière très souple (Ant).
+Cette formation vous permettra d’appréhender les principaux aspects de cet outil de build à la fois moderne et novateur.

@@ -41,8 +41,9 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vise à vous faire découvrir les nouveautés de Java 8.
-  Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
-  Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.'
 ---
+
+### présentation
+Cette formation vise à vous faire découvrir les nouveautés de Java 8.
+Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
+Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.

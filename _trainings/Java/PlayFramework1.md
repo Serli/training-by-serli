@@ -58,9 +58,10 @@ program: [
     activity: []
   }
 ]
-
-presentation:
-  'Cette formation vous fera découvrir le framework Play 1, le framework web productif.
-  Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 1.
-  Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur aux tests fonctionnels automatisés en passant par la consommation de WebServices et l’écriture de plugins.'
 ---
+
+### Présentation
+
+Cette formation vous fera découvrir le framework Play 1, le framework web productif.
+Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 1.
+Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur aux tests fonctionnels automatisés en passant par la consommation de WebServices et l’écriture de plugins.

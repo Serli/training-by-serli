@@ -76,8 +76,10 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vous permettra de découvrir MongoDB, la base de données NoSQL orientée documents la plus populaire !
-  Au cours de cette formation, vous apprendrez les concepts de fondamentaux de MongoDB ainsi que des fonctionnalités avancées telles que l’Aggregation Framework et la recherche géographique.
-  Vous découvrirez également les principes du modèle distribué de MongoDB (réplication et sharding) au travers de patterns d’architecture permettant le passage en production.'
 ---
+
+### Présentation
+
+Cette formation vous permettra de découvrir MongoDB, la base de données NoSQL orientée documents la plus populaire !
+Au cours de cette formation, vous apprendrez les concepts de fondamentaux de MongoDB ainsi que des fonctionnalités avancées telles que l’Aggregation Framework et la recherche géographique.
+Vous découvrirez également les principes du modèle distribué de MongoDB (réplication et sharding) au travers de patterns d’architecture permettant le passage en production.

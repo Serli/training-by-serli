@@ -58,8 +58,10 @@ program: [
     activity: []
   }
 ]
-presentation:
-  'Cette formation a pour objectif de vous initier au développement pour Android.
-  Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.
-  A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.'
 ---
+
+### Présentation
+
+Cette formation a pour objectif de vous initier au développement pour Android.
+Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.
+A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.

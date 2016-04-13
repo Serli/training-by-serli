@@ -58,7 +58,9 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vous fera découvrir Java EE, la spécification de Java destinée aux applications d’entreprise. Vous découvrirez les concepts fondamentaux des applications d’entreprise en Java.
-  Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi que les bonnes pratiques associées. Vous apprendrez à architecturer des applications d’entreprise basées sur la plateforme Java EE.'
 ---
+
+### Présentation
+
+Cette formation vous fera découvrir Java EE, la spécification de Java destinée aux applications d’entreprise. Vous découvrirez les concepts fondamentaux des applications d’entreprise en Java.
+Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi que les bonnes pratiques associées. Vous apprendrez à architecturer des applications d’entreprise basées sur la plateforme Java EE.

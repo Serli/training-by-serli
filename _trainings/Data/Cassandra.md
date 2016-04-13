@@ -52,7 +52,9 @@ program: [
     ]
   }
 ]
-presentation:
-  'Apache Cassandra est devenue un incontournable dans le paysage NoSQL. Cette base permet de gérer une volumétrie très importante tout en offrant une résistance à la panne exceptionnelle.
-  Au cours de cette formation vous découvrirez cette base de données aussi bien du point de vue développement (insertion, requêtes, conception...) que du point de vue opérationnel (installation, opérations de maintenance...).'
 ---
+
+### Présentation
+
+Apache Cassandra est devenue un incontournable dans le paysage NoSQL. Cette base permet de gérer une volumétrie très importante tout en offrant une résistance à la panne exceptionnelle.
+Au cours de cette formation vous découvrirez cette base de données aussi bien du point de vue développement (insertion, requêtes, conception...) que du point de vue opérationnel (installation, opérations de maintenance...).

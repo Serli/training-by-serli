@@ -53,8 +53,10 @@ program: [
     activity: []
   }
 ]
-presentation:
-  'Cette formation a pour objectif de vous faire découvrir le framework de tests fonctionnels automatisés Selenium. L’objectif de cette formation est d’apprendre à automatiser vos tests d’applications Web avec Selenium.
-  Vous apprendrez en outre à interpréter les résultats de vos tests fonctionnels automatisés.
-  Enfin, vous appréhenderez la conception et la maintenance des tests automatisés basés sur Selenium.'
 ---
+
+### Présentation
+
+Cette formation a pour objectif de vous faire découvrir le framework de tests fonctionnels automatisés Selenium. L’objectif de cette formation est d’apprendre à automatiser vos tests d’applications Web avec Selenium.
+Vous apprendrez en outre à interpréter les résultats de vos tests fonctionnels automatisés.
+Enfin, vous appréhenderez la conception et la maintenance des tests automatisés basés sur Selenium.

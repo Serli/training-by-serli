@@ -51,7 +51,9 @@ program: [
     ]
   }
 ]
-presentation:
-  'Hadoop est un des outils incontournables du Big Data.
-  Au cours de cette formation vous découvrirez l’écosystème Hadoop. Vous comprendrez les problématiques liées au traitement de gros volumes de données. Vous étudierez des cas concrets de calculs à l’aide de MapReduce. Entrecoupée de travaux pratiques, cette formation sera l’occasion de découvrir ou de redécouvrir un des outils fondamentaux du Big Data.'
 ---
+
+### Présentation
+
+Hadoop est un des outils incontournables du Big Data.
+Au cours de cette formation vous découvrirez l’écosystème Hadoop. Vous comprendrez les problématiques liées au traitement de gros volumes de données. Vous étudierez des cas concrets de calculs à l’aide de MapReduce. Entrecoupée de travaux pratiques, cette formation sera l’occasion de découvrir ou de redécouvrir un des outils fondamentaux du Big Data.

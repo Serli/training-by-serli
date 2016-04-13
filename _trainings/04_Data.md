@@ -1,9 +1,7 @@
 ---
 layout: sommaire
 title: Data
-permalink: /Data/
+permalink: /Data.html
 node: Data
 image: /assets/TrainingsCategories/WhiteIcon/data.png
 ---
-
-Info sur les cours de Web

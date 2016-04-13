@@ -51,8 +51,10 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL.
-  Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic.
-  Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production.'
 ---
+
+### Présentation
+
+Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL.
+Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic.
+Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production.

@@ -50,10 +50,12 @@ program: [
     ]
   }
 ]
-presentation:
-  'Git est devenu l’outil de gestion de versions incontournable.
-  Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.
-  Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.
-  Vous apprendrez les workflows du développement basé sur Git.
-  En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.'
 ---
+
+### Présentation
+
+Git est devenu l’outil de gestion de versions incontournable.
+Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.
+Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.
+Vous apprendrez les workflows du développement basé sur Git.
+En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.

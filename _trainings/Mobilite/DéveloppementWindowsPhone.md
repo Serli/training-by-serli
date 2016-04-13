@@ -60,8 +60,13 @@ program: [
     ]
   }
 ]
-presentation:
-  'Avec Windows Phone 8 Microsoft propose une plate-forme qui prend en compte l’ensemble des problématiques importantes du développement mobile telles que les règles d’ergonomie, les contraintes matérielles, l’environnement de développement, la solution de déploiement ou l’accès aux fournisseurs de contenus.
-  Cette formation vous permettra de connaître et comprendre des concepts clefs comme la navigation et la liaison de données. Elle vous confrontera à l’ergonomie particulière de ce système et des écrans tactiles en vous donnant des solutions de mise en oeuvre telles que “Expression Blend”.
-  Vous apprendrez comment stocker les données localement, gérer les préférences aussi bien que l’interaction avec les autres applications du mobile.'
 ---
+
+### Présentation
+
+Avec Windows Phone 8 Microsoft propose une plate-forme qui prend en compte l’ensemble des problématiques importantes du développement mobile telles que les règles d’ergonomie, les contraintes matérielles, l’environnement de développement, la solution de déploiement ou l’accès aux fournisseurs de contenus.
+
+<br/>
+
+Cette formation vous permettra de connaître et comprendre des concepts clefs comme la navigation et la liaison de données. Elle vous confrontera à l’ergonomie particulière de ce système et des écrans tactiles en vous donnant des solutions de mise en oeuvre telles que “Expression Blend”.
+Vous apprendrez comment stocker les données localement, gérer les préférences aussi bien que l’interaction avec les autres applications du mobile.

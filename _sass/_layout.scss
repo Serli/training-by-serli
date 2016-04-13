@@ -269,6 +269,12 @@ html, body {
 							background-color: $bleu-fonce;
 							padding: 10px;
 						}
+						img {
+							position: relative;
+							height: 70px;
+							float: right;
+							bottom: 70px;
+						}
 						p {
 							padding: 10px;
 						}

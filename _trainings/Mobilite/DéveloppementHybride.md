@@ -55,8 +55,13 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation a pour objectif de vous initier au développement hybride.
-  Grâce à cette formation et à vos connaissances html et Javascript, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels du développement hybride.
-  A travers divers exercices, vous découvrirez les principes de fonctionnement d’une application hybride avant de mettre en oeuvre le développement d’un projet complet et de le déployer sur différentes cibles.'
 ---
+
+### Présentation
+
+Cette formation a pour objectif de vous initier au développement hybride.
+
+<br/>
+
+Grâce à cette formation et à vos connaissances html et Javascript, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels du développement hybride.
+A travers divers exercices, vous découvrirez les principes de fonctionnement d’une application hybride avant de mettre en oeuvre le développement d’un projet complet et de le déployer sur différentes cibles.

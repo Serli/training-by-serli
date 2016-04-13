@@ -50,8 +50,10 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vous propose de découvrir les principaux patrons de conception.
-  Les design patterns permettent d’appréhender le développement sous un nouvel angle. Apprenez à réutiliser plus que les composants, apprenez à réutiliser les concepts. Renforcez la cohésion d’équipe en vous appuyant sur un langage commun. Apprenez à utiliser les patterns à bon escient.
-  Durant cette formation vous verrez ou reverrez différents types de patterns à plusieurs niveaux, de la classe à l’architecture d’entreprise, en passant par l’application et le composant logiciel.'
 ---
+
+### Présentation
+
+Cette formation vous propose de découvrir les principaux patrons de conception.
+Les design patterns permettent d’appréhender le développement sous un nouvel angle. Apprenez à réutiliser plus que les composants, apprenez à réutiliser les concepts. Renforcez la cohésion d’équipe en vous appuyant sur un langage commun. Apprenez à utiliser les patterns à bon escient.
+Durant cette formation vous verrez ou reverrez différents types de patterns à plusieurs niveaux, de la classe à l’architecture d’entreprise, en passant par l’application et le composant logiciel.

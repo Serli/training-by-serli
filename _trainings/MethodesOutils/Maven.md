@@ -56,8 +56,10 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vous permettra de découvrir Maven. Maven est l’outil incontournable d’industrialisation des build en Java.
-  A l’occasion de cette formation, vous apprendrez les conventions Maven (Convetion over Configuration) ainsi que l’ensemble des éléments qui vous permettrons de mettre en oeuvre un build personnalisé et standardisé qui correspond à vos besoins.
-  Enfin, vous découvrirez les subtilités de l’utilisation de Maven en entreprise.'
 ---
+
+### Présentation
+
+Cette formation vous permettra de découvrir Maven. Maven est l’outil incontournable d’industrialisation des build en Java.
+A l’occasion de cette formation, vous apprendrez les conventions Maven (Convetion over Configuration) ainsi que l’ensemble des éléments qui vous permettrons de mettre en oeuvre un build personnalisé et standardisé qui correspond à vos besoins.
+Enfin, vous découvrirez les subtilités de l’utilisation de Maven en entreprise.

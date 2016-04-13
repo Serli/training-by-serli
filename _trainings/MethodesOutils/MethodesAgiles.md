@@ -55,7 +55,9 @@ program: [
     activity: []
   }
 ]
-presentation:
-  'Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle.
-  Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets.'
 ---
+
+### Présentation
+
+Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle.
+Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets.

@@ -1,9 +1,7 @@
 ---
 layout: sommaire
 title: Web
-permalink: /Web/
+permalink: /Web.html
 node: Web
 image: /assets/TrainingsCategories/WhiteIcon/web.png
 ---
-
-Info sur les cours de Web

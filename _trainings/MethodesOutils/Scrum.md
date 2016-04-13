@@ -49,7 +49,9 @@ program: [
     ]
   }
 ]
-presentation:
-  'Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles.
-  Cette formation vous permettra d’acquérir les clés de la réussite d’un projet Scrum. Vous apprendrez les différents rôles définis par Scrum. Vous comprendrez les principaux événements d’un projet Scrum et leur mise en oeuvre.'
 ---
+
+### Présentation
+
+Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles.
+Cette formation vous permettra d’acquérir les clés de la réussite d’un projet Scrum. Vous apprendrez les différents rôles définis par Scrum. Vous comprendrez les principaux événements d’un projet Scrum et leur mise en oeuvre.

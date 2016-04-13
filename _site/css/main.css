@@ -195,6 +195,11 @@ html, body {
             font-weight: normal;
             background-color: #1068b0;
             padding: 10px; }
+          html #container main article #index div img, body #container main article #index div img {
+            position: relative;
+            height: 70px;
+            float: right;
+            bottom: 70px; }
           html #container main article #index div p, body #container main article #index div p {
             padding: 10px; }
           html #container main article #index div ul, body #container main article #index div ul {

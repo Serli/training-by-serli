@@ -68,8 +68,10 @@ program: [
     activity: []
   }
 ]
-presentation:
-  'Cette formation a pour objectif de vous initier au développement iOS.
-  Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.
-  Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.'
 ---
+
+### Présentation
+
+Cette formation a pour objectif de vous initier au développement iOS.
+Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.
+Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.

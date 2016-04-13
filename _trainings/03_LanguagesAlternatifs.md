@@ -1,9 +1,7 @@
 ---
 layout: sommaire
 title: Languages Alternatifs
-permalink: /LanguagesAlternatifs/
+permalink: /LanguagesAlternatifs.html
 node: LanguagesAlternatifs
 image: /assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png
 ---
-
-Info sur les cours de Web

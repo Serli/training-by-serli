@@ -46,10 +46,6 @@ program: [
     ]
   }
 ]
-presentation:
-  'Cette formation vise à vous faire découvrir l’univers de Java.
-  Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités.
-  Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté.'
 ---
 
 <!--
@@ -57,3 +53,9 @@ permalink: /Java/LanguageJava
 parceque si on utilise /Java/Java certains champs ne marche plus
 sûrment à cause du fichier 01_Java.md
 -->
+
+### Présentation
+
+Cette formation vise à vous faire découvrir l’univers de Java.
+Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités.
+Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté.
