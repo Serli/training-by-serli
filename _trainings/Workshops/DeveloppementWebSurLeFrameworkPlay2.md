@@ -1,7 +1,7 @@
 ---
 layout: training
 title: Developpement Web sur le Framework Play 2
-permalink: /Workshops/DeveloppementWebSurLeFrameworkPlay2
+permalink: /Workshops/WK-PLAY2
 categories: Workshops
 public: Développeur Java ou Scala.
 costs: 1990 € HT

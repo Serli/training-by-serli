@@ -1,14 +1,14 @@
 ---
 layout: training
 title: Developpement mobile hybride
-permalink: /Workshops/DeveloppementMobileHybride
+permalink: /Workshops/WK-HYBRIDE
 categories: Workshops
-public:
-costs:
-costs-description:
-duration:
-duration-description:
-ref:
+public: Développeurs débutants ou expérimentés, Architectes
+costs: 1990 € HT
+costs-description: par participant
+duration: 3 jours
+duration-description: 100% pratique
+ref: WK-HYBRIDE
 subject: [
   'Apache Cordova',
   'PhoneGap',

@@ -76,28 +76,28 @@ html, body {
       html #container main aside.colorWeb, body #container main aside.colorWeb {
         background-color: #BC8078; }
       html #container main header, body #container main header {
-        height: 35vh;
+        height: 300px;
         background-color: #1068b0;
         background-image: url(../assets/background-image/header.png);
         background-repeat: repeat-x;
         margin-top: 50px;
-        padding: 0 50vh 0 10vh;
+        padding: 0 350px 0 70px;
         display: flex;
         align-items: center; }
         html #container main header h1, body #container main header h1 {
-          max-height: 30vh;
+          max-height: 300px;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 10vh;
+          font-size: 100px;
           color: #ffffff;
-          line-height: 15vh;
+          line-height: 150px;
           font-family: "gloriahallelujah", sans-serif; }
         html #container main header a img, body #container main header a img {
           display: inline;
-          height: 30vh;
+          height: 220px;
           width: auto;
           right: 10px;
-          top: 0;
+          top: 40px;
           position: absolute; }
       html #container main header.colorJava, body #container main header.colorJava {
         background-color: #cc3c56; }
@@ -111,16 +111,6 @@ html, body {
         background-color: #9a009a; }
       html #container main header.colorWeb, body #container main header.colorWeb {
         background-color: #895045; }
-      @media all and (max-width: 574px) {
-        html #container main aside, body #container main aside {
-          top: -100px; }
-        html #container main header, body #container main header {
-          margin-top: 100px; } }
-      @media all and (max-width: 700px) {
-        html #container main header, body #container main header {
-          padding: 0 10vh 0 10vh; }
-          html #container main header a img, body #container main header a img {
-            display: none; } }
       html #container main article, body #container main article {
         padding: 10px; }
         html #container main article #summary ul li, body #container main article #summary ul li {
@@ -128,9 +118,9 @@ html, body {
           background-color: #3db8d8;
           background-image: url(../assets/background-image/article.png);
           background-repeat: repeat-x;
-          margin: 2vh;
-          padding: 2vh;
-          font-size: 6vh; }
+          margin: 18px;
+          padding: 18px;
+          font-size: 50px; }
           html #container main article #summary ul li a, body #container main article #summary ul li a {
             text-decoration: none;
             display: block;
@@ -255,6 +245,12 @@ html, body {
             position: relative; }
           html #container footer nav ul li a, body #container footer nav ul li a {
             color: #ffffff; }
+        html #container footer nav ul #rss, body #container footer nav ul #rss {
+          float: left; }
+          html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+            position: relative;
+            height: 40px;
+            width: auto; }
     html #container footer.colorJava, body #container footer.colorJava {
       background-color: #cc3c56; }
     html #container footer.colorData, body #container footer.colorData {
@@ -267,14 +263,58 @@ html, body {
       background-color: #9a009a; }
     html #container footer.colorWeb, body #container footer.colorWeb {
       background-color: #895045; }
-    @media all and (max-width: 700px) {
-      html #container main, body #container main {
-        padding-bottom: 120px; }
-      html #container footer, body #container footer {
-        height: 120px; }
-        html #container footer nav ul li, body #container footer nav ul li {
-          display: inherit; } }
 
+@media all and (max-width: 574px) {
+  html #container main aside, body #container main aside {
+    top: -100px; }
+  html #container main header, body #container main header {
+    margin-top: 100px; } }
+@media all and (max-width: 800px) {
+  html #container main header, body #container main header {
+    padding: 0 70px 0 70px; }
+    html #container main header a img, body #container main header a img {
+      display: none; }
+  html #container main article #summary ul li, body #container main article #summary ul li {
+    margin: 9px;
+    padding: 9px;
+    font-size: 45px; } }
+@media all and (max-width: 770px) {
+  html #container main, body #container main {
+    padding-bottom: 120px; }
+  html #container footer, body #container footer {
+    height: 120px; }
+    html #container footer nav ul li, body #container footer nav ul li {
+      display: inherit; }
+    html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+      height: 60px; } }
+
+/* ----------- Phone ----------- */
+/* Portrait */
+@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  html #container main, body #container main {
+    padding-bottom: 150px; }
+    html #container main header, body #container main header {
+      height: 15vh; }
+      html #container main header h1, body #container main header h1 {
+        max-height: 100px;
+        font-size: 20px;
+        line-height: 45px; }
+    html #container main article #summary ul li, body #container main article #summary ul li {
+      margin: 9px;
+      padding: 9px;
+      font-size: 25px; }
+    html #container main article #index div, body #container main article #index div {
+      min-width: 200px;
+      width: 90%; }
+  html #container footer, body #container footer {
+    height: 150px; }
+    html #container footer nav ul li, body #container footer nav ul li {
+      display: inherit; }
+    html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+      position: absolute;
+      left: 10px;
+      bottom: 50px;
+      height: 90px; } }
 /**
  * Syntax highlighting styles
  */

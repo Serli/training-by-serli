@@ -107,30 +107,30 @@ html, body {
 
 /// TITLE //////////////////////////////////////////////////////////////////////
 			header {
-				height: 35vh;
+				height: 300px;
 				background-color: $bleu-fonce; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
 				margin-top: 50px; // size of footer
-				padding: 0 50vh 0 10vh;
+				padding: 0 350px 0 70px;
 				display: flex;
 				align-items: center;
 				h1 {
-					max-height: 30vh;
+					max-height: 300px;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					font-size: 10vh;
+					font-size: 100px;
 					color: $blanc;
-					line-height : 15vh;
+					line-height : 150px;
 					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
 				}
 				a {
 					img {
    					display: inline;
-						height: 30vh;
+						height: 220px;
 						width: auto;
 						right: 10px;
-						top: 0;
+						top: 40px;
 						position: absolute;
 					}
 				}
@@ -155,24 +155,6 @@ html, body {
 					background-color: $beige-fonce;
 				}
 			//////////////////////////////////////////////////////////////////////////
-			@media all and (max-width: 574px) { // below 574px, the menu is displayed on line two
-				aside {
-					top: -100px;
-				}
-				header {
-					margin-top: 100px;
-				}
-			}
-			@media all and (max-width: 700px) { // below 700px is not displayed image
-				header {
-					padding: 0 10vh 0 10vh;
-					a {
-						img {
-							display: none;
-						}
-					}
-				}
-			}
 			article {
 				padding: 10px;
 
@@ -184,9 +166,9 @@ html, body {
 							background-color: $bleu; // default color
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
-							margin: 2vh;
-							padding: 2vh;
-							font-size: 6vh;
+							margin: 18px;
+							padding: 18px;
+							font-size: 50px;
 							a {
 								text-decoration: none;
 								display: block;
@@ -372,6 +354,14 @@ html, body {
 							color: $blanc;
 						}
 					}
+					#rss  {
+						float: left;
+						img {
+							position: relative;
+							height: 40px;
+							width: auto;
+						}
+					}
 				}
 			}
 		}
@@ -395,19 +385,118 @@ html, body {
 				background-color: $beige-fonce;
 			}
 		////////////////////////////////////////////////////////////////////////////
-		@media all and (max-width: 700px) { // below 574px, the list is greater
+	}
+}
+
+html, body {
+	#container {
+		main {
+			@media all and (max-width: 574px) { // below 574px, the menu is displayed on line two
+				aside {
+					top: -100px;
+				}
+				header {
+					margin-top: 100px;
+				}
+			}
+			@media all and (max-width: 800px) { // below 700px is not displayed image
+				header {
+					padding: 0 70px 0 70px;
+					a {
+						img {
+							display: none;
+						}
+					}
+				}
+				article {
+					#summary {
+						ul {
+							li {
+								margin: 9px;
+								padding: 9px;
+								font-size: 45px;
+							}
+						}
+					}
+				}
+			}
+		}
+		@media all and (max-width: 770px) { // below 700px, the list is greater
 			main {
 				padding-bottom: 120px;
 			}
 			footer {
-					height: 120px;
-					nav {
-						ul {
-							li {
-								display: inherit;
+				height: 120px;
+				nav {
+					ul {
+						li {
+							display: inherit;
+						}
+						#rss {
+							img {
+								height: 60px;
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+/* ----------- Phone ----------- */
+/* Portrait */
+@media only screen
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+	html, body {
+		#container {
+			main {
+				padding-bottom: 150px;
+				header {
+					height: 15vh;
+					h1 {
+						max-height: 100px;
+						font-size: 20px;
+						line-height : 45px;
+					}
+				}
+				article {
+					#summary {
+						ul {
+							li {
+								margin: 9px;
+								padding: 9px;
+								font-size: 25px;
+							}
+						}
+					}
+					#index {
+						div {
+							min-width: 200px;
+							width: 90%;
+						}
+					}
+				}
+			}
+			footer {
+				height: 150px;
+				nav {
+					ul {
+						li {
+							display: inherit;
+						}
+						#rss {
+							img {
+								position: absolute;
+								left: 10px;
+								bottom: 50px;
+								height: 90px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

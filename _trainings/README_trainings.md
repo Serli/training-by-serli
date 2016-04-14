@@ -56,7 +56,6 @@ pas de corps de page.
   * détails supplémentaire sur la durée
     * exemple : 50% théorie, 50% pratique
 * ref :
-  * facultatif
   * la référence de la formation
     * exemple : TR-ANGULARJS
 * subject :
@@ -64,6 +63,7 @@ pas de corps de page.
   * un tableau de string
   * peut-être un tableau vide
 * program :
+  * facultatif
   * le programme de la formation
   * tableau d'objets
     * title :
@@ -72,7 +72,6 @@ pas de corps de page.
       * liste des activités de cette partie
       * tableau de string
       * peut-être un tableau vide
-  * peut-être un tableau vide
 
 ### Corps de fichier
 
