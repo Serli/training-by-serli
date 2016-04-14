@@ -1,44 +1,57 @@
 ---
 layout: default
 ---
+<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" >
-
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
       <tr>
-        <td><img src="{{ site.baseurl }}/assets/detail/duration.png" />{{' '}}DURÉE</td>
-        <td><img src="{{ site.baseurl }}/assets/detail/public.png" />{{' '}}PUBLIC</td>
-        <td><img src="{{ site.baseurl }}/assets/detail/price.png" />{{' '}}TARIF</td>
+        <td>
+          <img src="{{ site.baseurl }}/assets/detail/duration.png" />
+          {{' '}}DURÉE
+        </td>
+        <td>
+          <img src="{{ site.baseurl }}/assets/detail/public.png" />
+          {{' '}}PUBLIC
+        </td>
+        <td>
+          <img src="{{ site.baseurl }}/assets/detail/price.png" />
+          {{' '}}TARIF
+        </td>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td> {{ page.duration }} </td>
+        <td rowspan=
+          {% if page.duration-description %}1{%else%}2{%endif%}
+        > {{ page.duration }} </td>
         <td rowspan=2 > {{ page.public }} </td>
-        <td> {{ page.costs }} </td>
+        <td rowspan=
+          {% if page.costs-description %}1{%else%}2{%endif%}
+        > {{ page.costs }} </td>
       </tr>
       <tr>
-        <td> {{ page.duration-description }} </td>
-        <td> {{ page.costs-description }} </td>
+        {% if page.duration-description %}
+          <td> {{ page.duration-description }} </td>
+        {%endif%}
+        {% if page.costs-description %}
+          <td> {{ page.costs-description }} </td>
+        {%endif%}
       </tr>
     </tbody>
   </table>
-
+  <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
-
+  <!-- /// reference /////////////////////////////////////////////////////// -->
   {% if page.ref %}
     <p id="ref">Réf. {{ page.ref }}</p>
   {% endif %}
-
-  {% if page.presentation %}
-    <h3>présentation</h3>
-    <p>{{ page.presentation }}</p>
-  {% else %}
-    {{content}}
-  {% endif %}
-
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  {{content}}
+  <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
-
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
   <ul id="subject" >
     {% for s in page.subject %}
       <li class="{% if page.categories %}color{{page.categories}}{% else %}{% if page.title %}color{{page.title}}{% else %}colordefault{% endif %}{% endif %}">
@@ -46,8 +59,7 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-
-
+  <!-- /// program ///////////////////////////////////////////////////////// -->
   {% if page.program %}
     <h3>programme</h3>
     <ul id="program" >
@@ -62,5 +74,6 @@ layout: default
       {% endfor %}
     </ul>
   {% endif %}
-
+  <!-- ///////////////////////////////////////////////////////////////////// -->
 </div>
+<!-- /////////////////////////////////////////////////////////////////////// -->

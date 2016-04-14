@@ -1,34 +1,35 @@
-*{
+*{ // default initialization
 	margin: 0;
 	padding: 0;
   font-family: sans-serif;
 }
 
-img {
+img { // default initialization of the image size
 	height: 20px;
 	width: auto;
 }
 
-@font-face {
+@font-face { // loading fonts
 	font-family: "gloriahallelujah";
 	src: url('../assets/gloriahallelujah.ttf');
 }
 
 html, body {
-	min-width: 350px;
 	height: 100%;
 	#container {
 		position: relative;
-		min-height: 100%;
+		min-height: 100%; // for the footer is at the bottom of the page, even if it is empty
 		main {
 			background-color: $blanc;
-			padding-bottom: 50px;
+			padding-bottom: 50px; // size footer
+
+/// MENU ///////////////////////////////////////////////////////////////////////
 			aside {
-				background-color: $bleu;
+				background-color: $bleu; // default color
 				background-image: url(../assets/background-image/article.png);
 				background-repeat: repeat-x;
 				position: absolute;
-				top: -50px;
+				top: -50px; // size menu and margin header
 				left: 0;
 				width: 100%;
 				z-index: 2;
@@ -44,34 +45,36 @@ html, body {
 								display: block;
 								padding: 0 15px 0 15px;
 								color: $blanc;
-								&:hover,
-								&:active {
-									background: $bleu-fonce;
-								}
-								&:hover.colorJava,
-								&:active.colorJava{
-									background-color: $rouge-fonce;
-								}
-								&:hover.colorData,
-								&:active.colorData{
-									background-color: $orange-fonce;
-								}
-								&:hover.colorMobilite,
-								&:active.colorMobilite{
-									background-color: $jaune-fonce;
-								}
-								&:hover.colorWorkshops,
-								&:active.colorWorkshops{
-									background-color: $vert-fonce;
-								}
-								&:hover.colorLanguagesAlternatifs,
-								&:active.colorLanguagesAlternatifs{
-									background-color: $violet-fonce;
-								}
-								&:hover.colorWeb,
-								&:active.colorWeb{
-									background-color: $beige-fonce;
-								}
+								// depending on the class a different color ////////////////////
+									&:hover,
+									&:active {
+										background: $bleu-fonce;
+									}
+									&:hover.colorJava,
+									&:active.colorJava{
+										background-color: $rouge-fonce;
+									}
+									&:hover.colorData,
+									&:active.colorData{
+										background-color: $orange-fonce;
+									}
+									&:hover.colorMobilite,
+									&:active.colorMobilite{
+										background-color: $jaune-fonce;
+									}
+									&:hover.colorWorkshops,
+									&:active.colorWorkshops{
+										background-color: $vert-fonce;
+									}
+									&:hover.colorLanguagesAlternatifs,
+									&:active.colorLanguagesAlternatifs{
+										background-color: $violet-fonce;
+									}
+									&:hover.colorWeb,
+									&:active.colorWeb{
+										background-color: $beige-fonce;
+									}
+								////////////////////////////////////////////////////////////////
 								img {
 									height: 45px;
 									width: auto;
@@ -81,30 +84,34 @@ html, body {
 					}
 				}
 			}
-			aside.colorJava{
-				background-color: $rouge;
-			}
-			aside.colorData{
-				background-color: $orange;
-			}
-			aside.colorMobilite{
-				background-color: $jaune;
-			}
-			aside.colorWorkshops{
-				background-color: $vert;
-			}
-			aside.colorLanguagesAlternatifs{
-				background-color: $violet;
-			}
-			aside.colorWeb{
-				background-color: $beige;
-			}
+			// depending on the class a different color //////////////////////////////
+				aside.colorJava{
+					background-color: $rouge;
+				}
+				aside.colorData{
+					background-color: $orange;
+				}
+				aside.colorMobilite{
+					background-color: $jaune;
+				}
+				aside.colorWorkshops{
+					background-color: $vert;
+				}
+				aside.colorLanguagesAlternatifs{
+					background-color: $violet;
+				}
+				aside.colorWeb{
+					background-color: $beige;
+				}
+			//////////////////////////////////////////////////////////////////////////
+
+/// TITLE //////////////////////////////////////////////////////////////////////
 			header {
 				height: 35vh;
-				background-color: $bleu-fonce;
+				background-color: $bleu-fonce; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
-				margin-top: 50px;
+				margin-top: 50px; // size of footer
 				padding: 0 50vh 0 10vh;
 				display: flex;
 				align-items: center;
@@ -115,7 +122,7 @@ html, body {
 					font-size: 10vh;
 					color: $blanc;
 					line-height : 15vh;
-					font-family: "gloriahallelujah", sans-serif;
+					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
 				}
 				a {
 					img {
@@ -128,25 +135,27 @@ html, body {
 					}
 				}
 			}
-			header.colorJava{
-				background-color: $rouge-fonce;
-			}
-			header.colorData{
-				background-color: $orange-fonce;
-			}
-			header.colorMobilite{
-				background-color: $jaune-fonce;
-			}
-			header.colorWorkshops{
-				background-color: $vert-fonce;
-			}
-			header.colorLanguagesAlternatifs{
-				background-color: $violet-fonce;
-			}
-			header.colorWeb{
-				background-color: $beige-fonce;
-			}
-			@media all and (max-width: 574px) {
+			// depending on the class a different color //////////////////////////////
+				header.colorJava{
+					background-color: $rouge-fonce;
+				}
+				header.colorData{
+					background-color: $orange-fonce;
+				}
+				header.colorMobilite{
+					background-color: $jaune-fonce;
+				}
+				header.colorWorkshops{
+					background-color: $vert-fonce;
+				}
+				header.colorLanguagesAlternatifs{
+					background-color: $violet-fonce;
+				}
+				header.colorWeb{
+					background-color: $beige-fonce;
+				}
+			//////////////////////////////////////////////////////////////////////////
+			@media all and (max-width: 574px) { // below 574px, the menu is displayed on line two
 				aside {
 					top: -100px;
 				}
@@ -154,7 +163,7 @@ html, body {
 					margin-top: 100px;
 				}
 			}
-			@media all and (max-width: 700px) {
+			@media all and (max-width: 700px) { // below 700px is not displayed image
 				header {
 					padding: 0 10vh 0 10vh;
 					a {
@@ -166,11 +175,13 @@ html, body {
 			}
 			article {
 				padding: 10px;
+
+// CATEGORY ////////////////////////////////////////////////////////////////////
 				#summary {
 					ul {
 						li {
 							list-style: none;
-							background-color: $bleu;
+							background-color: $bleu; // default color
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
 							margin: 2vh;
@@ -182,26 +193,30 @@ html, body {
 								color: $blanc;
 							}
 						}
-						li.colorJava{
-							background-color: $rouge;
-						}
-						li.colorData{
-							background-color: $orange;
-						}
-						li.colorMobilite{
-							background-color: $jaune;
-						}
-						li.colorWorkshops{
-							background-color: $vert;
-						}
-						li.colorLanguagesAlternatifs{
-							background-color: $violet;
-						}
-						li.colorWeb{
-							background-color: $beige;
-						}
+						// depending on the class a different color ////////////////////////
+							li.colorJava{
+								background-color: $rouge;
+							}
+							li.colorData{
+								background-color: $orange;
+							}
+							li.colorMobilite{
+								background-color: $jaune;
+							}
+							li.colorWorkshops{
+								background-color: $vert;
+							}
+							li.colorLanguagesAlternatifs{
+								background-color: $violet;
+							}
+							li.colorWeb{
+								background-color: $beige;
+							}
+						////////////////////////////////////////////////////////////////////
 					}
 				}
+
+/// TRAINING ///////////////////////////////////////////////////////////////////
 				#training {
 					td {
 						text-align: center;
@@ -257,30 +272,32 @@ html, body {
 						padding-left: 0;
 						li {
 							display: inline-block;
-							background-color: $bleu;
+							background-color: $bleu; // default color
 							margin: 5px;
 							padding: 5px;
 							color: $blanc;
 							font-weight: normal;
 						}
-						li.colorJava{
-							background-color: $rouge;
-						}
-						li.colorData{
-							background-color: $orange;
-						}
-						li.colorMobilite{
-							background-color: $jaune;
-						}
-						li.colorWorkshops{
-							background-color: $vert;
-						}
-						li.colorLanguagesAlternatifs{
-							background-color: $violet;
-						}
-						li.colorWeb{
-							background-color: $beige;
-						}
+						// depending on the class a different color ////////////////////////
+							li.colorJava{
+								background-color: $rouge;
+							}
+							li.colorData{
+								background-color: $orange;
+							}
+							li.colorMobilite{
+								background-color: $jaune;
+							}
+							li.colorWorkshops{
+								background-color: $vert;
+							}
+							li.colorLanguagesAlternatifs{
+								background-color: $violet;
+							}
+							li.colorWeb{
+								background-color: $beige;
+							}
+						////////////////////////////////////////////////////////////////////
 					}
 				}
 				#index {
@@ -317,11 +334,13 @@ html, body {
 		.maindefault{
 			background-color: $bleu;
 		}
+
+/// FOOTER /////////////////////////////////////////////////////////////////////
 		footer {
 			height: 50px;
 			position: absolute;
 			bottom: 0;
-			background-color: $bleu-fonce;
+			background-color: $bleu-fonce; // default color
 			background-image: url(../assets/background-image/header.png);
 			background-repeat: repeat-x;
 			width: 100%;
@@ -356,25 +375,27 @@ html, body {
 				}
 			}
 		}
-		footer.colorJava{
-			background-color: $rouge-fonce;
-		}
-		footer.colorData{
-			background-color: $orange-fonce;
-		}
-		footer.colorMobilite{
-			background-color: $jaune-fonce;
-		}
-		footer.colorWorkshops{
-			background-color: $vert-fonce;
-		}
-		footer.colorLanguagesAlternatifs{
-			background-color: $violet-fonce;
-		}
-		footer.colorWeb{
-			background-color: $beige-fonce;
-		}
-		@media all and (max-width: 700px) {
+		// depending on the class a different color ////////////////////////////////
+			footer.colorJava{
+				background-color: $rouge-fonce;
+			}
+			footer.colorData{
+				background-color: $orange-fonce;
+			}
+			footer.colorMobilite{
+				background-color: $jaune-fonce;
+			}
+			footer.colorWorkshops{
+				background-color: $vert-fonce;
+			}
+			footer.colorLanguagesAlternatifs{
+				background-color: $violet-fonce;
+			}
+			footer.colorWeb{
+				background-color: $beige-fonce;
+			}
+		////////////////////////////////////////////////////////////////////////////
+		@media all and (max-width: 700px) { // below 574px, the list is greater
 			main {
 				padding-bottom: 120px;
 			}
