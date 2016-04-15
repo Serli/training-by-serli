@@ -60,6 +60,8 @@ html, body {
                   background-color: #9a009a; }
                 html #container main aside nav ul li a:hover.colorWeb, html #container main aside nav ul li a:active.colorWeb, body #container main aside nav ul li a:hover.colorWeb, body #container main aside nav ul li a:active.colorWeb {
                   background-color: #895045; }
+                html #container main aside nav ul li a:hover.colorMethodesOutils, html #container main aside nav ul li a:active.colorMethodesOutils, body #container main aside nav ul li a:hover.colorMethodesOutils, body #container main aside nav ul li a:active.colorMethodesOutils {
+                  background-color: #009999; }
                 html #container main aside nav ul li a img, body #container main aside nav ul li a img {
                   height: 45px;
                   width: auto; }
@@ -75,6 +77,8 @@ html, body {
         background-color: #CD00CD; }
       html #container main aside.colorWeb, body #container main aside.colorWeb {
         background-color: #BC8078; }
+      html #container main aside.colorMethodesOutils, body #container main aside.colorMethodesOutils {
+        background-color: #00cccc; }
       html #container main header, body #container main header {
         height: 30vw;
         background-color: #1068b0;
@@ -94,10 +98,10 @@ html, body {
           font-family: "gloriahallelujah", sans-serif; }
         html #container main header a img, body #container main header a img {
           display: inline;
-          height: 20vw;
+          height: 22vw;
           width: auto;
           right: 10px;
-          top: 5vw;
+          top: 4vw;
           position: absolute; }
       html #container main header.colorJava, body #container main header.colorJava {
         background-color: #cc3c56; }
@@ -111,6 +115,8 @@ html, body {
         background-color: #9a009a; }
       html #container main header.colorWeb, body #container main header.colorWeb {
         background-color: #895045; }
+      html #container main header.colorMethodesOutils, body #container main header.colorMethodesOutils {
+        background-color: #009999; }
       html #container main article, body #container main article {
         padding: 10px; }
         html #container main article #summary ul li, body #container main article #summary ul li {
@@ -137,6 +143,8 @@ html, body {
           background-color: #CD00CD; }
         html #container main article #summary ul li.colorWeb, body #container main article #summary ul li.colorWeb {
           background-color: #BC8078; }
+        html #container main article #summary ul li.colorMethodesOutils, body #container main article #summary ul li.colorMethodesOutils {
+          background-color: #00cccc; }
         html #container main article #training td, body #container main article #training td {
           text-align: center; }
         html #container main article #training table, body #container main article #training table {
@@ -190,12 +198,13 @@ html, body {
             background-color: #CD00CD; }
           html #container main article #training #subject li.colorWeb, body #container main article #training #subject li.colorWeb {
             background-color: #BC8078; }
+          html #container main article #training #subject li.colorMethodesOutils, body #container main article #training #subject li.colorMethodesOutils {
+            background-color: #00cccc; }
         html #container main article #index div, body #container main article #index div {
-          width: 45%;
-          min-width: 400px;
+          width: 47%;
           display: inline-block;
           vertical-align: top;
-          margin: 10px;
+          margin: 1%;
           background-color: #439be3;
           color: #ffffff; }
           html #container main article #index div h3, body #container main article #index div h3 {
@@ -249,6 +258,7 @@ html, body {
         html #container footer nav ul #rss, body #container footer nav ul #rss {
           float: left; }
           html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+            top: 4px;
             position: relative;
             height: 40px;
             width: auto; }
@@ -264,6 +274,8 @@ html, body {
       background-color: #9a009a; }
     html #container footer.colorWeb, body #container footer.colorWeb {
       background-color: #895045; }
+    html #container footer.colorMethodesOutils, body #container footer.colorMethodesOutils {
+      background-color: #009999; }
 
 @media all and (max-width: 574px) {
   html #container main aside, body #container main aside {
@@ -276,8 +288,10 @@ html, body {
     html #container main header a img, body #container main header a img {
       display: none; }
   html #container main article #index div, body #container main article #index div {
-    min-width: 200px;
-    width: 90%; } }
+    width: 95%; } }
+@media all and (min-width: 1300px) {
+  html #container main article #index div, body #container main article #index div {
+    width: 31%; } }
 @media all and (max-width: 770px) {
   html #container main, body #container main {
     padding-bottom: 120px; }
@@ -286,21 +300,17 @@ html, body {
     html #container footer nav ul li, body #container footer nav ul li {
       display: inherit; }
     html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+      top: auto;
       height: 60px; } }
 @media all and (max-width: 480px) {
   html #container main, body #container main {
     padding-bottom: 150px; }
-    html #container main header, body #container main header {
-      height: 15vh; }
-      html #container main header h1, body #container main header h1 {
-        max-height: 100px;
-        font-size: 20px;
-        line-height: 45px; }
   html #container footer, body #container footer {
     height: 150px; }
     html #container footer nav ul li, body #container footer nav ul li {
       display: inherit; }
     html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+      top: auto;
       position: absolute;
       left: 10px;
       bottom: 50px;

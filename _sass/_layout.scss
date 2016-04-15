@@ -20,12 +20,12 @@ html, body {
 		position: relative;
 		min-height: 100%; // for the footer is at the bottom of the page, even if it is empty
 		main {
-			background-color: $blanc;
+			background-color: $white;
 			padding-bottom: 50px; // size footer
 
 /// MENU ///////////////////////////////////////////////////////////////////////
 			aside {
-				background-color: $bleu; // default color
+				background-color: $blue; // default color
 				background-image: url(../assets/background-image/article.png);
 				background-repeat: repeat-x;
 				position: absolute;
@@ -44,35 +44,39 @@ html, body {
 								text-decoration: none;
 								display: block;
 								padding: 0 15px 0 15px;
-								color: $blanc;
+								color: $white;
 								// depending on the class a different color ////////////////////
 									&:hover,
 									&:active {
-										background: $bleu-fonce;
+										background: $darkblue;
 									}
 									&:hover.colorJava,
 									&:active.colorJava{
-										background-color: $rouge-fonce;
+										background-color: $darkred;
 									}
 									&:hover.colorData,
 									&:active.colorData{
-										background-color: $orange-fonce;
+										background-color: $darkorange;
 									}
 									&:hover.colorMobilite,
 									&:active.colorMobilite{
-										background-color: $jaune-fonce;
+										background-color: $darkyellow;
 									}
 									&:hover.colorWorkshops,
 									&:active.colorWorkshops{
-										background-color: $vert-fonce;
+										background-color: $darkgreen;
 									}
 									&:hover.colorLanguagesAlternatifs,
 									&:active.colorLanguagesAlternatifs{
-										background-color: $violet-fonce;
+										background-color: $darkpurple;
 									}
 									&:hover.colorWeb,
 									&:active.colorWeb{
-										background-color: $beige-fonce;
+										background-color: $darkmaroon;
+									}
+									&:hover.colorMethodesOutils,
+									&:active.colorMethodesOutils{
+										background-color: $darkaqua;
 									}
 								////////////////////////////////////////////////////////////////
 								img {
@@ -86,29 +90,32 @@ html, body {
 			}
 			// depending on the class a different color //////////////////////////////
 				aside.colorJava{
-					background-color: $rouge;
+					background-color: $red;
 				}
 				aside.colorData{
 					background-color: $orange;
 				}
 				aside.colorMobilite{
-					background-color: $jaune;
+					background-color: $yellow;
 				}
 				aside.colorWorkshops{
-					background-color: $vert;
+					background-color: $green;
 				}
 				aside.colorLanguagesAlternatifs{
-					background-color: $violet;
+					background-color: $purple;
 				}
 				aside.colorWeb{
-					background-color: $beige;
+					background-color: $maroon;
+				}
+				aside.colorMethodesOutils{
+					background-color: $aqua;
 				}
 			//////////////////////////////////////////////////////////////////////////
 
 /// TITLE //////////////////////////////////////////////////////////////////////
 			header {
 				height: 30vw;
-				background-color: $bleu-fonce; // default color
+				background-color: $darkblue; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
 				margin-top: 50px; // size of footer
@@ -120,39 +127,42 @@ html, body {
 					overflow: hidden;
 					text-overflow: ellipsis;
 					font-size: 10vw;
-					color: $blanc;
+					color: $white;
 					line-height : 15vw;
 					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
 				}
 				a {
 					img {
    					display: inline;
-						height: 20vw;
+						height: 22vw;
 						width: auto;
 						right: 10px;
-						top: 5vw;
+						top: 4vw;
 						position: absolute;
 					}
 				}
 			}
 			// depending on the class a different color //////////////////////////////
 				header.colorJava{
-					background-color: $rouge-fonce;
+					background-color: $darkred;
 				}
 				header.colorData{
-					background-color: $orange-fonce;
+					background-color: $darkorange;
 				}
 				header.colorMobilite{
-					background-color: $jaune-fonce;
+					background-color: $darkyellow;
 				}
 				header.colorWorkshops{
-					background-color: $vert-fonce;
+					background-color: $darkgreen;
 				}
 				header.colorLanguagesAlternatifs{
-					background-color: $violet-fonce;
+					background-color: $darkpurple;
 				}
 				header.colorWeb{
-					background-color: $beige-fonce;
+					background-color: $darkmaroon;
+				}
+				header.colorMethodesOutils{
+					background-color: $darkaqua;
 				}
 			//////////////////////////////////////////////////////////////////////////
 			article {
@@ -163,7 +173,7 @@ html, body {
 					ul {
 						li {
 							list-style: none;
-							background-color: $bleu; // default color
+							background-color: $blue; // default color
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
 							margin: 1vw;
@@ -172,27 +182,30 @@ html, body {
 							a {
 								text-decoration: none;
 								display: block;
-								color: $blanc;
+								color: $white;
 							}
 						}
 						// depending on the class a different color ////////////////////////
 							li.colorJava{
-								background-color: $rouge;
+								background-color: $red;
 							}
 							li.colorData{
 								background-color: $orange;
 							}
 							li.colorMobilite{
-								background-color: $jaune;
+								background-color: $yellow;
 							}
 							li.colorWorkshops{
-								background-color: $vert;
+								background-color: $green;
 							}
 							li.colorLanguagesAlternatifs{
-								background-color: $violet;
+								background-color: $purple;
 							}
 							li.colorWeb{
-								background-color: $beige;
+								background-color: $maroon;
+							}
+							li.colorMethodesOutils{
+								background-color: $aqua;
 							}
 						////////////////////////////////////////////////////////////////////
 					}
@@ -230,7 +243,7 @@ html, body {
 						}
 						tbody {
 							tr {
-								background-color: $gris-clair;
+								background-color: $lightgray;
 								font-style: italic;
 							}
 							tr:first-child {
@@ -254,46 +267,48 @@ html, body {
 						padding-left: 0;
 						li {
 							display: inline-block;
-							background-color: $bleu; // default color
+							background-color: $blue; // default color
 							margin: 5px;
 							padding: 5px;
-							color: $blanc;
+							color: $white;
 							font-weight: normal;
 						}
 						// depending on the class a different color ////////////////////////
 							li.colorJava{
-								background-color: $rouge;
+								background-color: $red;
 							}
 							li.colorData{
 								background-color: $orange;
 							}
 							li.colorMobilite{
-								background-color: $jaune;
+								background-color: $yellow;
 							}
 							li.colorWorkshops{
-								background-color: $vert;
+								background-color: $green;
 							}
 							li.colorLanguagesAlternatifs{
-								background-color: $violet;
+								background-color: $purple;
 							}
 							li.colorWeb{
-								background-color: $beige;
+								background-color: $maroon;
+							}
+							li.colorMethodesOutils{
+								background-color: $aqua;
 							}
 						////////////////////////////////////////////////////////////////////
 					}
 				}
 				#index {
 					div {
-						width: 45%;
-						min-width: 400px;
+						width: 47%;
 						display: inline-block;
 						vertical-align: top;
-						margin: 10px;
-						background-color: $bleu-clair;
-						color: $blanc;
+						margin: 1%;
+						background-color: $lightblue;
+						color: $white;
 						h3 {
 							font-weight: normal;
-							background-color: $bleu-fonce;
+							background-color: $darkblue;
 							padding: 10px;
 						}
 						img {
@@ -314,7 +329,7 @@ html, body {
 			}
 		}
 		.maindefault{
-			background-color: $bleu;
+			background-color: $blue;
 		}
 
 /// FOOTER /////////////////////////////////////////////////////////////////////
@@ -322,14 +337,14 @@ html, body {
 			height: 50px;
 			position: absolute;
 			bottom: 0;
-			background-color: $bleu-fonce; // default color
+			background-color: $darkblue; // default color
 			background-image: url(../assets/background-image/header.png);
 			background-repeat: repeat-x;
 			width: 100%;
 			display: flex;
 			align-items: center;
 			padding: 0 0 0 120px;
-			color: $blanc;
+			color: $white;
 			nav {
 				img {
 					height: 30px;
@@ -352,12 +367,13 @@ html, body {
 							position: relative;
 						}
 						a {
-							color: $blanc;
+							color: $white;
 						}
 					}
 					#rss  {
 						float: left;
 						img {
+							top: 4px;
 							position: relative;
 							height: 40px;
 							width: auto;
@@ -368,22 +384,25 @@ html, body {
 		}
 		// depending on the class a different color ////////////////////////////////
 			footer.colorJava{
-				background-color: $rouge-fonce;
+				background-color: $darkred;
 			}
 			footer.colorData{
-				background-color: $orange-fonce;
+				background-color: $darkorange;
 			}
 			footer.colorMobilite{
-				background-color: $jaune-fonce;
+				background-color: $darkyellow;
 			}
 			footer.colorWorkshops{
-				background-color: $vert-fonce;
+				background-color: $darkgreen;
 			}
 			footer.colorLanguagesAlternatifs{
-				background-color: $violet-fonce;
+				background-color: $darkpurple;
 			}
 			footer.colorWeb{
-				background-color: $beige-fonce;
+				background-color: $darkmaroon;
+			}
+			footer.colorMethodesOutils{
+				background-color: $darkaqua;
 			}
 		////////////////////////////////////////////////////////////////////////////
 	}
@@ -412,8 +431,16 @@ html, body {
 				article {
 					#index {
 						div {
-							min-width: 200px;
-							width: 90%;
+							width: 95%;
+						}
+					}
+				}
+			}
+			@media all and (min-width: 1300px) { // below 700px is not displayed image
+				article {
+					#index {
+						div {
+							width: 31%;
 						}
 					}
 				}
@@ -432,6 +459,7 @@ html, body {
 						}
 						#rss {
 							img {
+								top: auto;
 								height: 60px;
 							}
 						}
@@ -442,14 +470,6 @@ html, body {
 		@media all and (max-width: 480px) {
 			main {
 				padding-bottom: 150px;
-				header {
-					height: 15vh;
-					h1 {
-						max-height: 100px;
-						font-size: 20px;
-						line-height : 45px;
-					}
-				}
 			}
 			footer {
 				height: 150px;
@@ -460,6 +480,7 @@ html, body {
 						}
 						#rss {
 							img {
+								top: auto;
 								position: absolute;
 								left: 10px;
 								bottom: 50px;

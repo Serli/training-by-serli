@@ -9,6 +9,7 @@
   * indique qu'il s'agit d'un fichier catégorie qui doit être affiché dans le menu
 * title :
   * le nom à afficher
+  * Attention : s'il est trop grand, il peut ne pas s'afficher correctement
 * permalink :
   * l'adresse de la page listant les formations de cette catégories
   * généralement nom.html
@@ -32,6 +33,7 @@ pas de corps de page.
   * indique qu'il s'agit d'un fichiers de formation
 * title :
   * le nom de la formation
+  * Attention : s'il est trop grand, il peut ne pas s'afficher correctement
 * permalink :
   * l'adresse de la page de formation
   * généralement NomCatégorie/reférence.html
@@ -80,3 +82,7 @@ généralement de la forme :
 
   h3 : Présentation
   paragraphe : blabla sur la formation
+
+## Vérification automatique du format
+
+/test/errorFormat.html

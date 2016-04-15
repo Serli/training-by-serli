@@ -1,32 +1,39 @@
 
-$blanc: #ffffff;
-$noir: #000000;
+$white: #ffffff;
+$black: #000000;
 
-$gris: #808080;
-$gris-clair: #b0b0b0;
-$gris-fonce: #404040;
+$gray: #808080;
+$lightgray: #b0b0b0;
+$darkgray: #404040;
 
-$bleu: #3db8d8;
-$bleu-clair: #439be3;
-$bleu-fonce: #1068b0;
+/// DEFAULT ///
+	$blue: #3db8d8;
+	$lightblue: #439be3;
+	$darkblue: #1068b0;
+/// ///
 
-$rouge: #ff6f89;
-$rouge-fonce: #cc3c56;
+/// CLASS ///
+	$red: #ff6f89;
+	$darkred: #cc3c56;
 
-$orange: #ffa87f;
-$orange-fonce: #ec854f;
+	$orange: #ffa87f;
+	$darkorange: #ec854f;
 
-$jaune: #FFD700;
-$jaune-fonce: #ccb400;
+	$yellow: #FFD700;
+	$darkyellow: #ccb400;
 
-$vert: #78BC9B;
-$vert-fonce: #458968;
+	$green: #78BC9B;
+	$darkgreen: #458968;
 
-$violet: #CD00CD;
-$violet-fonce: #9a009a;
+	$purple: #CD00CD;
+	$darkpurple: #9a009a;
 
-$beige: #BC8078;
-$beige-fonce: #895045;
+	$maroon: #BC8078;
+	$darkmaroon: #895045;
+
+	$aqua: #00cccc;
+	$darkaqua: #009999;
+/// ///
 
 *,
 *::before,

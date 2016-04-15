@@ -13,3 +13,7 @@ en ligne : si certaine modification ne s'affiche pas :
 
 ajouter des fichiers .md dans le dossier : *_trainings*  
 voir le README_training.md pour plus d'informations
+
+## Vérification automatique du format des nouveaux fichiers
+
+/test/errorFormat.html

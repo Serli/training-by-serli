@@ -5,6 +5,10 @@ permalink: /test/errorFormat.html
 
 # Test Format des fichiers Markdown (.md)
 
+Un champ obligatoire est t’il manquant ?  
+La référence est t’elle unique ?  
+La catégorie existe-t-elle ?  
+
 ## ERROR CATEGORIES :
 
 {% for somaire in site.pages %}
