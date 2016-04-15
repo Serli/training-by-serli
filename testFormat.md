@@ -11,6 +11,11 @@ permalink: /test/errorFormat.html
   {% if somaire.layout == 'sommaire' %}
 
     {% if somaire.title %}
+      {% assign my_lenght = somaire.title|size %}
+      {% if 30 <= my_lenght %}
+### {{somaire.title}}
+*WARNING : Le titre est trés grand ({{my_lenght}} lettres) : il peut y avoir des problèmes d’affichage*
+      {% endif %}
     {% else %}
 ### *ERROR : Pas de champ title*
     {% endif %}
@@ -19,7 +24,7 @@ permalink: /test/errorFormat.html
     {% else %}
 - - -
       {% if somaire.title %}
-### {{training.title}}
+### {{somaire.title}}
       {% endif %}
 *ERROR : Pas de champ permalink*
     {% endif %}
@@ -28,7 +33,7 @@ permalink: /test/errorFormat.html
     {% else %}
 - - -
       {% if somaire.title %}
-### {{training.title}}
+### {{somaire.title}}
       {% endif %}
 *ERROR : Pas de champ node*
     {% endif %}
@@ -37,7 +42,7 @@ permalink: /test/errorFormat.html
     {% else %}
 - - -
       {% if somaire.title %}
-### {{training.title}}
+### {{somaire.title}}
       {% endif %}
 *ERROR : Pas de champ image*
     {% endif %}
@@ -54,6 +59,11 @@ permalink: /test/errorFormat.html
   {% if training.layout == 'training' %}
 
     {% if training.title %}
+      {% assign my_lenght = training.title|size %}
+      {% if 30 <= my_lenght %}
+### {{training.title}}
+*WARNING : Le titre est trés grand ({{my_lenght}} lettres) : il peut y avoir des problèmes d’affichage*
+      {% endif %}
     {% else %}
 - - -
 ### *ERROR : Pas de champ title*

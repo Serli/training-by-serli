@@ -107,30 +107,30 @@ html, body {
 
 /// TITLE //////////////////////////////////////////////////////////////////////
 			header {
-				height: 300px;
+				height: 30vw;
 				background-color: $bleu-fonce; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
 				margin-top: 50px; // size of footer
-				padding: 0 350px 0 70px;
+				padding: 0 35vw 0 70px;
 				display: flex;
 				align-items: center;
 				h1 {
-					max-height: 300px;
+					max-height: 30vw;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					font-size: 100px;
+					font-size: 10vw;
 					color: $blanc;
-					line-height : 150px;
+					line-height : 15vw;
 					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
 				}
 				a {
 					img {
    					display: inline;
-						height: 220px;
+						height: 20vw;
 						width: auto;
 						right: 10px;
-						top: 40px;
+						top: 5vw;
 						position: absolute;
 					}
 				}
@@ -166,9 +166,9 @@ html, body {
 							background-color: $bleu; // default color
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
-							margin: 18px;
-							padding: 18px;
-							font-size: 50px;
+							margin: 1vw;
+							padding: 1vw;
+							font-size: 5vw;
 							a {
 								text-decoration: none;
 								display: block;
@@ -339,6 +339,7 @@ html, body {
 					position: absolute;
 				}
 				ul {
+					max-width: 1000px;
 					list-style: none;
 					li {
 						display: inline-block;
@@ -409,13 +410,10 @@ html, body {
 					}
 				}
 				article {
-					#summary {
-						ul {
-							li {
-								margin: 9px;
-								padding: 9px;
-								font-size: 45px;
-							}
+					#index {
+						div {
+							min-width: 200px;
+							width: 90%;
 						}
 					}
 				}
@@ -441,17 +439,7 @@ html, body {
 				}
 			}
 		}
-	}
-}
-
-/* ----------- Phone ----------- */
-/* Portrait */
-@media only screen
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-	html, body {
-		#container {
+		@media all and (max-width: 480px) {
 			main {
 				padding-bottom: 150px;
 				header {
@@ -460,23 +448,6 @@ html, body {
 						max-height: 100px;
 						font-size: 20px;
 						line-height : 45px;
-					}
-				}
-				article {
-					#summary {
-						ul {
-							li {
-								margin: 9px;
-								padding: 9px;
-								font-size: 25px;
-							}
-						}
-					}
-					#index {
-						div {
-							min-width: 200px;
-							width: 90%;
-						}
 					}
 				}
 			}

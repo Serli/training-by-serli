@@ -76,28 +76,28 @@ html, body {
       html #container main aside.colorWeb, body #container main aside.colorWeb {
         background-color: #BC8078; }
       html #container main header, body #container main header {
-        height: 300px;
+        height: 30vw;
         background-color: #1068b0;
         background-image: url(../assets/background-image/header.png);
         background-repeat: repeat-x;
         margin-top: 50px;
-        padding: 0 350px 0 70px;
+        padding: 0 35vw 0 70px;
         display: flex;
         align-items: center; }
         html #container main header h1, body #container main header h1 {
-          max-height: 300px;
+          max-height: 30vw;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 100px;
+          font-size: 10vw;
           color: #ffffff;
-          line-height: 150px;
+          line-height: 15vw;
           font-family: "gloriahallelujah", sans-serif; }
         html #container main header a img, body #container main header a img {
           display: inline;
-          height: 220px;
+          height: 20vw;
           width: auto;
           right: 10px;
-          top: 40px;
+          top: 5vw;
           position: absolute; }
       html #container main header.colorJava, body #container main header.colorJava {
         background-color: #cc3c56; }
@@ -118,9 +118,9 @@ html, body {
           background-color: #3db8d8;
           background-image: url(../assets/background-image/article.png);
           background-repeat: repeat-x;
-          margin: 18px;
-          padding: 18px;
-          font-size: 50px; }
+          margin: 1vw;
+          padding: 1vw;
+          font-size: 5vw; }
           html #container main article #summary ul li a, body #container main article #summary ul li a {
             text-decoration: none;
             display: block;
@@ -233,6 +233,7 @@ html, body {
         bottom: 10px;
         position: absolute; }
       html #container footer nav ul, body #container footer nav ul {
+        max-width: 1000px;
         list-style: none; }
         html #container footer nav ul li, body #container footer nav ul li {
           display: inline-block;
@@ -274,10 +275,9 @@ html, body {
     padding: 0 70px 0 70px; }
     html #container main header a img, body #container main header a img {
       display: none; }
-  html #container main article #summary ul li, body #container main article #summary ul li {
-    margin: 9px;
-    padding: 9px;
-    font-size: 45px; } }
+  html #container main article #index div, body #container main article #index div {
+    min-width: 200px;
+    width: 90%; } }
 @media all and (max-width: 770px) {
   html #container main, body #container main {
     padding-bottom: 120px; }
@@ -287,10 +287,7 @@ html, body {
       display: inherit; }
     html #container footer nav ul #rss img, body #container footer nav ul #rss img {
       height: 60px; } }
-
-/* ----------- Phone ----------- */
-/* Portrait */
-@media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+@media all and (max-width: 480px) {
   html #container main, body #container main {
     padding-bottom: 150px; }
     html #container main header, body #container main header {
@@ -299,13 +296,6 @@ html, body {
         max-height: 100px;
         font-size: 20px;
         line-height: 45px; }
-    html #container main article #summary ul li, body #container main article #summary ul li {
-      margin: 9px;
-      padding: 9px;
-      font-size: 25px; }
-    html #container main article #index div, body #container main article #index div {
-      min-width: 200px;
-      width: 90%; }
   html #container footer, body #container footer {
     height: 150px; }
     html #container footer nav ul li, body #container footer nav ul li {
@@ -315,6 +305,7 @@ html, body {
       left: 10px;
       bottom: 50px;
       height: 90px; } }
+
 /**
  * Syntax highlighting styles
  */
