@@ -3,25 +3,30 @@ layout: verification
 permalink: /test/errorFormat.html
 ---
 
-# Test Format des fichiers Markdown (.md)
+# Test le format des fichiers Markdown (.md)
 
 Un champ obligatoire est t’il manquant ?  
 La référence est t’elle unique ?  
 La catégorie existe-t-elle ?  
 
-## ERROR CATEGORIES :
+- - -
+
+## ERREURS FICHIERS CATÉGORIES :
 
 {% for somaire in site.pages %}
   {% if somaire.layout == 'sommaire' %}
 
     {% if somaire.title %}
       {% assign my_lenght = somaire.title|size %}
-      {% if 30 <= my_lenght %}
-### {{somaire.title}}
-*WARNING : Le titre est trés grand ({{my_lenght}} lettres) : il peut y avoir des problèmes d’affichage*
+      {% if 40 <= my_lenght %}
+- - -
+
+{{somaire.title}}  
+*ATTENTION : Le titre est trés grand ({{my_lenght}} lettres) : il peut y avoir des problèmes d’affichage*
       {% endif %}
     {% else %}
-### *ERROR : Pas de champ title*
+- - -
+### *ERREUR : Pas de champ title*
     {% endif %}
 
     {% if somaire.permalink %}
@@ -30,7 +35,7 @@ La catégorie existe-t-elle ?
       {% if somaire.title %}
 ### {{somaire.title}}
       {% endif %}
-*ERROR : Pas de champ permalink*
+*ERREUR : Pas de champ permalink*
     {% endif %}
 
     {% if somaire.node %}
@@ -39,7 +44,7 @@ La catégorie existe-t-elle ?
       {% if somaire.title %}
 ### {{somaire.title}}
       {% endif %}
-*ERROR : Pas de champ node*
+*ERREUR : Pas de champ node*
     {% endif %}
 
     {% if somaire.image %}
@@ -48,7 +53,7 @@ La catégorie existe-t-elle ?
       {% if somaire.title %}
 ### {{somaire.title}}
       {% endif %}
-*ERROR : Pas de champ image*
+*ERREUR : Pas de champ image*
     {% endif %}
 
   {% endif %}
@@ -57,20 +62,22 @@ La catégorie existe-t-elle ?
 - - -
 - - -
 
-## ERROR TRAININGS :
+## ERREURS FICHIERS FORMATIONS :
 
 {% for training in site.pages %}
   {% if training.layout == 'training' %}
 
     {% if training.title %}
       {% assign my_lenght = training.title|size %}
-      {% if 30 <= my_lenght %}
-### {{training.title}}
-*WARNING : Le titre est trés grand ({{my_lenght}} lettres) : il peut y avoir des problèmes d’affichage*
+      {% if 40 <= my_lenght %}
+- - -
+
+{{training.title}}  
+*ATTENTION : Le titre est trés grand ({{my_lenght}} lettres) : il peut y avoir des problèmes d’affichage*
       {% endif %}
     {% else %}
 - - -
-### *ERROR : Pas de champ title*
+### *ERREUR : Pas de champ title*
     {% endif %}
 
     {% if training.permalink %}
@@ -79,9 +86,9 @@ La catégorie existe-t-elle ?
         {% else %}
 - - -
           {% if training.title %}
-### {{training.title}}
+{{training.title}}  
           {% endif %}
-*WARNING : l'adresse de la page ne contient pas la référence*
+*ATTENTION : l'adresse de la page ne contient pas la référence*
         {% endif %}
       {% endif %}
     {% else %}
@@ -89,7 +96,7 @@ La catégorie existe-t-elle ?
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de champ permalink*
+*ERREUR : Pas de champ permalink*
     {% endif %}
 
     {% if training.categories %}
@@ -108,14 +115,14 @@ La catégorie existe-t-elle ?
         {% if training.title %}
 ### {{training.title}}
         {% endif %}
-*ERROR : {{training.categories}} n'est pas une categorie valide*
+*ERREUR : {{training.categories}} n'est pas une categorie valide*
       {% endif %}
     {% else %}
 - - -
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de champ categories*
+*ERREUR : Pas de champ categories*
     {% endif %}
 
     {% if training.public %}
@@ -124,7 +131,7 @@ La catégorie existe-t-elle ?
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de champ public*
+*ERREUR : Pas de champ public*
     {% endif %}
 
     {% if training.costs %}
@@ -133,7 +140,7 @@ La catégorie existe-t-elle ?
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de champ costs*
+*ERREUR : Pas de champ costs*
     {% endif %}
 
     {% if training.duration %}
@@ -142,7 +149,7 @@ La catégorie existe-t-elle ?
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de champ duration*
+*ERREUR : Pas de champ duration*
     {% endif %}
 
     {% if training.ref %}
@@ -156,7 +163,7 @@ La catégorie existe-t-elle ?
                 {% if training.title %}
 ### {{training.title}}
                 {% endif %}
-*ERROR : {{training.ref}} n'est pas unique*
+*ERREUR : {{training.ref}} n'est pas unique*
               {% else %}
                 {% assign my_ref_exist = true %}
               {% endif %}
@@ -169,7 +176,7 @@ La catégorie existe-t-elle ?
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de reférence*
+*ERREUR : Pas de reférence*
     {% endif %}
 
     {% if training.subject %}
@@ -178,16 +185,7 @@ La catégorie existe-t-elle ?
       {% if training.title %}
 ### {{training.title}}
       {% endif %}
-*ERROR : Pas de champ subject - vous pouvez mettre un tableau vide*
-    {% endif %}
-
-    {% if training.content %}
-    {% else %}
-- - -
-      {% if training.title %}
-### {{training.title}}
-      {% endif %}
-*WARNING : Pas de corps de page*
+*ERREUR : Pas de champ subject - vous pouvez mettre un tableau vide*
     {% endif %}
 
   {% endif %}

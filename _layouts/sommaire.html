@@ -2,17 +2,17 @@
 layout: default
 ---
 <!-- /// SUMMARY /////////////////////////////////////////////////////////// -->
-<div id="summary" >
-  <ul>
-    <!-- /// training ////////////////////////////////////////////////////// -->
-    {% for training in site.pages %} {% if training.categories == page.node %} {% if training.title %}
-      <li class=
-        "{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
-      >
-        <a href="{{ training.url | prepend: site.baseurl }}">{{ training.title }}</a>
-      </li>
-    {% endif %} {% endif %} {% endfor %}
-    <!-- /////////////////////////////////////////////////////////////////// -->
-  </ul>
+<div ng-app="formation" ng-controller="Summary">
+  <input class="{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}"
+    type="text" ng-model="research.title" placeholder="Search...">
+  <div id="summary">
+    <ul ng-repeat="n in (trainings|filter:research)">
+      <!-- /// training ////////////////////////////////////////////////////// -->
+        <li class="[[n.class]]">
+          <a href="[[n.href]]">[[n.title]]</a>
+        </li>
+      <!-- /////////////////////////////////////////////////////////////////// -->
+    </ul>
+  </div>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->

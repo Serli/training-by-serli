@@ -24,13 +24,14 @@ html, body {
     min-height: 100%; }
     html #container main, body #container main {
       background-color: #ffffff;
-      padding-bottom: 50px; }
+      padding-bottom: 50px;
+      padding-top: 50px; }
       html #container main aside, body #container main aside {
         background-color: #3db8d8;
         background-image: url(../assets/background-image/article.png);
         background-repeat: repeat-x;
         position: absolute;
-        top: -50px;
+        top: 0px;
         left: 0;
         width: 100%;
         z-index: 2; }
@@ -84,7 +85,6 @@ html, body {
         background-color: #1068b0;
         background-image: url(../assets/background-image/header.png);
         background-repeat: repeat-x;
-        margin-top: 50px;
         padding: 0 35vw 0 70px;
         display: flex;
         align-items: center; }
@@ -96,6 +96,9 @@ html, body {
           color: #ffffff;
           line-height: 15vw;
           font-family: "gloriahallelujah", sans-serif; }
+        html #container main header .bigTitle, body #container main header .bigTitle {
+          font-size: 6vw;
+          line-height: 10vw; }
         html #container main header a img, body #container main header a img {
           display: inline;
           height: 22vw;
@@ -118,88 +121,146 @@ html, body {
       html #container main header.colorMethodesOutils, body #container main header.colorMethodesOutils {
         background-color: #009999; }
       html #container main article, body #container main article {
-        padding: 10px; }
-        html #container main article #summary ul li, body #container main article #summary ul li {
-          list-style: none;
-          background-color: #3db8d8;
-          background-image: url(../assets/background-image/article.png);
-          background-repeat: repeat-x;
-          margin: 1vw;
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        html #container main article input, body #container main article input {
+          font-size: 3vw;
+          display: block;
+          margin: auto;
+          width: 50vw;
+          color: #ffffff;
           padding: 1vw;
-          font-size: 5vw; }
-          html #container main article #summary ul li a, body #container main article #summary ul li a {
-            text-decoration: none;
-            display: block;
-            color: #ffffff; }
-        html #container main article #summary ul li.colorJava, body #container main article #summary ul li.colorJava {
-          background-color: #ff6f89; }
-        html #container main article #summary ul li.colorData, body #container main article #summary ul li.colorData {
-          background-color: #ffa87f; }
-        html #container main article #summary ul li.colorMobilite, body #container main article #summary ul li.colorMobilite {
-          background-color: #FFD700; }
-        html #container main article #summary ul li.colorWorkshops, body #container main article #summary ul li.colorWorkshops {
-          background-color: #78BC9B; }
-        html #container main article #summary ul li.colorLanguagesAlternatifs, body #container main article #summary ul li.colorLanguagesAlternatifs {
-          background-color: #CD00CD; }
-        html #container main article #summary ul li.colorWeb, body #container main article #summary ul li.colorWeb {
-          background-color: #BC8078; }
-        html #container main article #summary ul li.colorMethodesOutils, body #container main article #summary ul li.colorMethodesOutils {
-          background-color: #00cccc; }
-        html #container main article #training td, body #container main article #training td {
-          text-align: center; }
-        html #container main article #training table, body #container main article #training table {
-          table-layout: fixed;
-          border-collapse: separate;
-          border-spacing: 10px 0; }
-        html #container main article #training h3, body #container main article #training h3 {
-          font-weight: normal;
-          padding-top: 20px;
-          padding-bottom: 10px;
-          text-transform: uppercase;
-          clear: both; }
-        html #container main article #training #detail, body #container main article #training #detail {
-          width: 100%; }
-          html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
-            height: 30px; }
-            html #container main article #training #detail thead tr td img, body #container main article #training #detail thead tr td img {
-              height: 30px;
-              width: auto; }
-          html #container main article #training #detail tbody tr, body #container main article #training #detail tbody tr {
-            background-color: #b0b0b0;
-            font-style: italic; }
-          html #container main article #training #detail tbody tr:first-child, body #container main article #training #detail tbody tr:first-child {
-            font-style: normal; }
-        html #container main article #training ul, body #container main article #training ul {
-          padding-left: 50px;
-          list-style: disc;
-          font-weight: bold; }
-          html #container main article #training ul li ul, body #container main article #training ul li ul {
-            padding-left: 50px;
-            list-style: none;
-            font-weight: normal; }
-        html #container main article #training #subject, body #container main article #training #subject {
-          padding-left: 0; }
-          html #container main article #training #subject li, body #container main article #training #subject li {
-            display: inline-block;
-            background-color: #3db8d8;
-            margin: 5px;
-            padding: 5px;
-            color: #ffffff;
-            font-weight: normal; }
-          html #container main article #training #subject li.colorJava, body #container main article #training #subject li.colorJava {
+          border: none;
+          background-color: #1068b0;
+          background-image: url(../assets/background-image/article.png);
+          background-repeat: repeat-x; }
+          html #container main article input:focus, body #container main article input:focus {
+            background-image: none;
+            outline: none; }
+        html #container main article input.colorJava, body #container main article input.colorJava {
+          background-color: #cc3c56; }
+          html #container main article input.colorJava:focus, body #container main article input.colorJava:focus {
             background-color: #ff6f89; }
-          html #container main article #training #subject li.colorData, body #container main article #training #subject li.colorData {
+        html #container main article input.colorData, body #container main article input.colorData {
+          background-color: #ec854f; }
+          html #container main article input.colorData:focus, body #container main article input.colorData:focus {
             background-color: #ffa87f; }
-          html #container main article #training #subject li.colorMobilite, body #container main article #training #subject li.colorMobilite {
+        html #container main article input.colorMobilite, body #container main article input.colorMobilite {
+          background-color: #ccb400; }
+          html #container main article input.colorMobilite:focus, body #container main article input.colorMobilite:focus {
             background-color: #FFD700; }
-          html #container main article #training #subject li.colorWorkshops, body #container main article #training #subject li.colorWorkshops {
+        html #container main article input.colorWorkshops, body #container main article input.colorWorkshops {
+          background-color: #458968; }
+          html #container main article input.colorWorkshops:focus, body #container main article input.colorWorkshops:focus {
             background-color: #78BC9B; }
-          html #container main article #training #subject li.colorLanguagesAlternatifs, body #container main article #training #subject li.colorLanguagesAlternatifs {
+        html #container main article input.colorLanguagesAlternatifs, body #container main article input.colorLanguagesAlternatifs {
+          background-color: #9a009a; }
+          html #container main article input.colorLanguagesAlternatifs:focus, body #container main article input.colorLanguagesAlternatifs:focus {
             background-color: #CD00CD; }
-          html #container main article #training #subject li.colorWeb, body #container main article #training #subject li.colorWeb {
+        html #container main article input.colorWeb, body #container main article input.colorWeb {
+          background-color: #895045; }
+          html #container main article input.colorWeb:focus, body #container main article input.colorWeb:focus {
             background-color: #BC8078; }
-          html #container main article #training #subject li.colorMethodesOutils, body #container main article #training #subject li.colorMethodesOutils {
+        html #container main article input.colorMethodesOutils, body #container main article input.colorMethodesOutils {
+          background-color: #009999; }
+          html #container main article input.colorMethodesOutils:focus, body #container main article input.colorMethodesOutils:focus {
             background-color: #00cccc; }
+        html #container main article ::-webkit-input-placeholder, body #container main article ::-webkit-input-placeholder {
+          color: #ffffff; }
+        html #container main article ::-moz-placeholder, body #container main article ::-moz-placeholder {
+          /* firefox 19+ */
+          color: #ffffff; }
+        html #container main article :-ms-input-placeholder, body #container main article :-ms-input-placeholder {
+          /* ie */
+          color: #ffffff; }
+        html #container main article input:-moz-placeholder, body #container main article input:-moz-placeholder {
+          color: #ffffff; }
+        html #container main article #summary, body #container main article #summary {
+          padding: 0 15vw 0 15vw; }
+          html #container main article #summary ul li, body #container main article #summary ul li {
+            list-style: none;
+            background-color: #3db8d8;
+            background-image: url(../assets/background-image/article.png);
+            background-repeat: repeat-x;
+            margin: 0;
+            margin-top: 1vh;
+            padding: 1vw;
+            font-size: 3vw; }
+            html #container main article #summary ul li a, body #container main article #summary ul li a {
+              text-decoration: none;
+              display: block;
+              color: #ffffff; }
+          html #container main article #summary ul li.colorJava, body #container main article #summary ul li.colorJava {
+            background-color: #ff6f89; }
+          html #container main article #summary ul li.colorData, body #container main article #summary ul li.colorData {
+            background-color: #ffa87f; }
+          html #container main article #summary ul li.colorMobilite, body #container main article #summary ul li.colorMobilite {
+            background-color: #FFD700; }
+          html #container main article #summary ul li.colorWorkshops, body #container main article #summary ul li.colorWorkshops {
+            background-color: #78BC9B; }
+          html #container main article #summary ul li.colorLanguagesAlternatifs, body #container main article #summary ul li.colorLanguagesAlternatifs {
+            background-color: #CD00CD; }
+          html #container main article #summary ul li.colorWeb, body #container main article #summary ul li.colorWeb {
+            background-color: #BC8078; }
+          html #container main article #summary ul li.colorMethodesOutils, body #container main article #summary ul li.colorMethodesOutils {
+            background-color: #00cccc; }
+        html #container main article #training, body #container main article #training {
+          padding: 10px; }
+          html #container main article #training td, body #container main article #training td {
+            text-align: center; }
+          html #container main article #training table, body #container main article #training table {
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 10px 0; }
+          html #container main article #training h3, body #container main article #training h3 {
+            font-weight: normal;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            clear: both; }
+          html #container main article #training #detail, body #container main article #training #detail {
+            width: 100%; }
+            html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
+              height: 30px; }
+              html #container main article #training #detail thead tr td img, body #container main article #training #detail thead tr td img {
+                height: 30px;
+                width: auto; }
+            html #container main article #training #detail tbody tr, body #container main article #training #detail tbody tr {
+              background-color: #b0b0b0;
+              font-style: italic; }
+            html #container main article #training #detail tbody tr:first-child, body #container main article #training #detail tbody tr:first-child {
+              font-style: normal; }
+          html #container main article #training ul, body #container main article #training ul {
+            padding-left: 50px;
+            list-style: disc;
+            font-weight: bold; }
+            html #container main article #training ul li ul, body #container main article #training ul li ul {
+              padding-left: 50px;
+              list-style: none;
+              font-weight: normal; }
+          html #container main article #training #subject, body #container main article #training #subject {
+            padding-left: 0; }
+            html #container main article #training #subject li, body #container main article #training #subject li {
+              display: inline-block;
+              background-color: #3db8d8;
+              margin: 5px;
+              padding: 5px;
+              color: #ffffff;
+              font-weight: normal; }
+            html #container main article #training #subject li.colorJava, body #container main article #training #subject li.colorJava {
+              background-color: #ff6f89; }
+            html #container main article #training #subject li.colorData, body #container main article #training #subject li.colorData {
+              background-color: #ffa87f; }
+            html #container main article #training #subject li.colorMobilite, body #container main article #training #subject li.colorMobilite {
+              background-color: #FFD700; }
+            html #container main article #training #subject li.colorWorkshops, body #container main article #training #subject li.colorWorkshops {
+              background-color: #78BC9B; }
+            html #container main article #training #subject li.colorLanguagesAlternatifs, body #container main article #training #subject li.colorLanguagesAlternatifs {
+              background-color: #CD00CD; }
+            html #container main article #training #subject li.colorWeb, body #container main article #training #subject li.colorWeb {
+              background-color: #BC8078; }
+            html #container main article #training #subject li.colorMethodesOutils, body #container main article #training #subject li.colorMethodesOutils {
+              background-color: #00cccc; }
         html #container main article #index div, body #container main article #index div {
           width: 47%;
           display: inline-block;
@@ -211,6 +272,8 @@ html, body {
             font-weight: normal;
             background-color: #1068b0;
             padding: 10px; }
+          html #container main article #index div .followedImg, body #container main article #index div .followedImg {
+            padding-right: 70px; }
           html #container main article #index div img, body #container main article #index div img {
             position: relative;
             height: 70px;
@@ -223,6 +286,8 @@ html, body {
             padding-left: 30px; }
     html #container .maindefault, body #container .maindefault {
       background-color: #3db8d8; }
+      html #container .maindefault #summary ul li, body #container .maindefault #summary ul li {
+        background-color: #1068b0; }
     html #container footer, body #container footer {
       height: 50px;
       position: absolute;
@@ -277,11 +342,24 @@ html, body {
     html #container footer.colorMethodesOutils, body #container footer.colorMethodesOutils {
       background-color: #009999; }
 
-@media all and (max-width: 574px) {
-  html #container main aside, body #container main aside {
-    top: -100px; }
-  html #container main header, body #container main header {
-    margin-top: 100px; } }
+@media all and (max-width: 620px) {
+  html #container main, body #container main {
+    padding-top: 30px; }
+    html #container main aside nav ul li a, body #container main aside nav ul li a {
+      height: 30px;
+      padding: 0 5px 0 5px; }
+      html #container main aside nav ul li a img, body #container main aside nav ul li a img {
+        height: 30px;
+        width: auto; }
+    html #container main article input, body #container main article input {
+      font-size: 18px;
+      padding: 6px; }
+    html #container main article #summary, body #container main article #summary {
+      padding: 0; }
+      html #container main article #summary ul li, body #container main article #summary ul li {
+        margin: 6px;
+        padding: 6px;
+        font-size: 18px; } }
 @media all and (max-width: 800px) {
   html #container main header, body #container main header {
     padding: 0 70px 0 70px; }

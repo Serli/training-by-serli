@@ -3,22 +3,56 @@
 
 {% include head.html %}
 
-<body>
-	<div id="container">
-		<main class="{% if page.index %}maindefault{% else %}mainother{% endif %}">
+	<body>
+		<div id="container">
+			<main class="{% if page.index %} maindefault {% else %} mainother {% endif %}">
 
-			{% include header.html %}
+				{% include header.html %}
 
-			<article>
+				<article>
 
-				{{ content }}
+					{{ content }}
 
-			</article>
-		</main>
+				</article>
+			</main>
 
-		{% include footer.html %}
+			{% include footer.html %}
 
-	</div>
-</body>
+		</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+      var app = angular.module('formation', [])
+      app .config(['$interpolateProvider', function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+      }]);
+      app.controller('Summary', function($scope) {
+        $scope.trainings = [
+          {% for training in site.pages %} {% if training.categories == page.node %} {% if training.title %}
+            {
+              class: "{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}",
+              href: "{{ training.url | prepend: site.baseurl }}",
+              title: "{{ training.title }}"
+            },
+          {% endif %} {% endif %} {% endfor %}
+        ];
+      });
+      app.controller('IndexSummary', function($scope) {
+				$scope.research = {
+					title: ""
+				};
+        $scope.trainings = [
+          {% for training in site.pages %} {% if training.layout == 'training' %} {% if training.title %}
+            {
+              class: "{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}",
+              href: "{{ training.url | prepend: site.baseurl }}",
+              title: "{{ training.title }}"
+            },
+          {% endif %} {% endif %} {% endfor %}
+        ];
+      });
+    </script>
+	</body>
 
 </html>

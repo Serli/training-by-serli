@@ -13,11 +13,11 @@
 </head>
 
 
-<body>
-	<div id="container">
-		<main class="mainother">
+	<body>
+		<div id="container">
+			<main class=" mainother ">
 
-			
+				
 <!-- /// MENU ////////////////////////////////////////////////////////////// -->
 <aside class=
 	"colorWorkshops"
@@ -78,8 +78,6 @@
 				                                                                                            
 				<!-- /////////////////////////////////////////////////////////////// -->
 			</ul>
-			</li>
-			</ul>
 		</nav>
 	</div>
 </aside>
@@ -87,7 +85,9 @@
 <header class=
 	"colorWorkshops"
 >
-	<h1>Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)</h1>
+	
+	
+	<h1 class="bigTitle">Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)</h1>
 	<a href="http://localhost:4000/">
 		<img src="/assets/Training-by-serli-logo-white-01.png"/>
 	</a>
@@ -95,9 +95,9 @@
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
 
-			<article>
+				<article>
 
-				<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" >
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
@@ -189,10 +189,10 @@
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
 
-			</article>
-		</main>
+				</article>
+			</main>
 
-		<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
 <footer class=
   "colorWorkshops"
 >
@@ -204,7 +204,7 @@
 	    <ul>
         <!-- /// rss /////////////////////////////////////////////////////// -->
         <li id="rss">
-          <a href="http://localhost:4000//feed.xml">
+          <a href="http://localhost:4000/feed.xml">
             <img src="/assets/rss.png" />
           </a>
         </li>
@@ -236,7 +236,317 @@
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
 
-	</div>
-</body>
+		</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+      var app = angular.module('formation', [])
+      app .config(['$interpolateProvider', function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+      }]);
+      app.controller('Summary', function($scope) {
+        $scope.trainings = [
+            
+            {
+              class: "colorWorkshops",
+              href: "/Java.html",
+              title: "Java"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Web.html",
+              title: "Web"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/LanguagesAlternatifs.html",
+              title: "Languages Alternatifs"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Data.html",
+              title: "Data"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Mobilite.html",
+              title: "Mobilité"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils.html",
+              title: "Méthodes & Outils"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops.html",
+              title: "Workshops"
+            },
+                                                                                                              
+        ];
+      });
+      app.controller('IndexSummary', function($scope) {
+				$scope.research = {
+					title: ""
+				};
+        $scope.trainings = [
+                          
+            {
+              class: "colorWorkshops",
+              href: "/LanguagesAlternatifs/TR-AKKA",
+              title: "Akka"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Web/TR-ANGULARJS",
+              title: "AngularJS"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Data/TR-CASSANDRA",
+              title: "Cassandra"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-SCRUM",
+              title: "Decouvrez Scrum avec des Legos"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-PATTERNS",
+              title: "Design Patterns"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-ANDROID",
+              title: "Developpement Android"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-DOCKER1",
+              title: "Developpement et integration continue avec Docker"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-IOS",
+              title: "Développement iOS"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-HYBRIDE",
+              title: "Developpement mobile hybride"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-PLAY2",
+              title: "Developpement Web sur le Framework Play 2"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-GIT",
+              title: "Débuter avec Git"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Mobilite/TR-ANDROID",
+              title: "Développement Android"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Mobilite/TR-HYBRIDE",
+              title: "Développement Hybride"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Mobilite/TR-IOS",
+              title: "Développement iOS"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Mobilite/TR-WINDPHONE",
+              title: "Développement WindowsPhone"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-DOCKER2",
+              title: "Docker &#58; Du développement a la production"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Data/TR-ELASTIC",
+              title: "Elastic"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-INDUS",
+              title: "Industrialisation Logicielle"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-GRADLE",
+              title: "Introduction a Gradle"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Data/TR-HADOOP",
+              title: "Introduction a Hadoop"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/LanguagesAlternatifs/TR-NODEJS",
+              title: "Introduction à Node.Js"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Web/TR-WEB",
+              title: "Introduction au développement Web"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-JAVAEE",
+              title: "Java EE"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Web/TR-JAVASCRIPT",
+              title: "Javascript Avancé"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-JAVA",
+              title: "Java"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-JAVA8",
+              title: "Les Nouveautés De Java 8"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-TESTSJAVA",
+              title: "Les Tests en Java"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-MAVEN",
+              title: "Maven"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-AGILES",
+              title: "Methodes Agiles"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Data/TR-MONGODB",
+              title: "Mongo DB"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-MONGODB",
+              title: "Mongo DB"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-SQL",
+              title: "NoSQL"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-PLAY1",
+              title: "PlayFramework 1"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-PLAY2",
+              title: "PlayFramework 2"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/LanguagesAlternatifs/TR-SCALA",
+              title: "Scala"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-SCRUM",
+              title: "Scrum"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/MethodesOutils/TR-SELENIUM",
+              title: "Selenium"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Data/TR-SPARK",
+              title: "Spark"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Java/TR-SPRING4",
+              title: "Spring 4"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-ELK",
+              title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)"
+            },
+              
+            {
+              class: "colorWorkshops",
+              href: "/Workshops/WK-WINDPHONE",
+              title: "Windows Mobile"
+            },
+                    
+        ];
+      });
+    </script>
+	</body>
 
 </html>

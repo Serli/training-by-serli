@@ -9,6 +9,6 @@ github_username:  Seikicegus
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages', '_trainings']
+include: ['js', '_trainings']
 kramdown:
   input: GFM

@@ -13,11 +13,11 @@
 </head>
 
 
-<body>
-	<div id="container">
-		<main class="mainother">
+	<body>
+		<div id="container">
+			<main class=" mainother ">
 
-			
+				
 <!-- /// MENU ////////////////////////////////////////////////////////////// -->
 <aside class=
 	"colorLanguagesAlternatifs"
@@ -78,8 +78,6 @@
 				                                                                                            
 				<!-- /////////////////////////////////////////////////////////////// -->
 			</ul>
-			</li>
-			</ul>
 		</nav>
 	</div>
 </aside>
@@ -87,7 +85,9 @@
 <header class=
 	"colorLanguagesAlternatifs"
 >
-	<h1>Akka</h1>
+	
+	
+	<h1 class="smalTitle">Akka</h1>
 	<a href="http://localhost:4000/">
 		<img src="/assets/Training-by-serli-logo-white-01.png"/>
 	</a>
@@ -95,9 +95,9 @@
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
 
-			<article>
+				<article>
 
-				<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" >
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
@@ -242,10 +242,10 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
 
-			</article>
-		</main>
+				</article>
+			</main>
 
-		<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
 <footer class=
   "colorLanguagesAlternatifs"
 >
@@ -257,7 +257,7 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
 	    <ul>
         <!-- /// rss /////////////////////////////////////////////////////// -->
         <li id="rss">
-          <a href="http://localhost:4000//feed.xml">
+          <a href="http://localhost:4000/feed.xml">
             <img src="/assets/rss.png" />
           </a>
         </li>
@@ -289,7 +289,317 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
 
-	</div>
-</body>
+		</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+      var app = angular.module('formation', [])
+      app .config(['$interpolateProvider', function ($interpolateProvider) {
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+      }]);
+      app.controller('Summary', function($scope) {
+        $scope.trainings = [
+            
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java.html",
+              title: "Java"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Web.html",
+              title: "Web"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/LanguagesAlternatifs.html",
+              title: "Languages Alternatifs"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Data.html",
+              title: "Data"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Mobilite.html",
+              title: "Mobilité"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils.html",
+              title: "Méthodes & Outils"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops.html",
+              title: "Workshops"
+            },
+                                                                                                              
+        ];
+      });
+      app.controller('IndexSummary', function($scope) {
+				$scope.research = {
+					title: ""
+				};
+        $scope.trainings = [
+                          
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/LanguagesAlternatifs/TR-AKKA",
+              title: "Akka"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Web/TR-ANGULARJS",
+              title: "AngularJS"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Data/TR-CASSANDRA",
+              title: "Cassandra"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-SCRUM",
+              title: "Decouvrez Scrum avec des Legos"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-PATTERNS",
+              title: "Design Patterns"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-ANDROID",
+              title: "Developpement Android"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-DOCKER1",
+              title: "Developpement et integration continue avec Docker"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-IOS",
+              title: "Développement iOS"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-HYBRIDE",
+              title: "Developpement mobile hybride"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-PLAY2",
+              title: "Developpement Web sur le Framework Play 2"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-GIT",
+              title: "Débuter avec Git"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Mobilite/TR-ANDROID",
+              title: "Développement Android"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Mobilite/TR-HYBRIDE",
+              title: "Développement Hybride"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Mobilite/TR-IOS",
+              title: "Développement iOS"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Mobilite/TR-WINDPHONE",
+              title: "Développement WindowsPhone"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-DOCKER2",
+              title: "Docker &#58; Du développement a la production"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Data/TR-ELASTIC",
+              title: "Elastic"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-INDUS",
+              title: "Industrialisation Logicielle"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-GRADLE",
+              title: "Introduction a Gradle"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Data/TR-HADOOP",
+              title: "Introduction a Hadoop"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/LanguagesAlternatifs/TR-NODEJS",
+              title: "Introduction à Node.Js"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Web/TR-WEB",
+              title: "Introduction au développement Web"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-JAVAEE",
+              title: "Java EE"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Web/TR-JAVASCRIPT",
+              title: "Javascript Avancé"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-JAVA",
+              title: "Java"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-JAVA8",
+              title: "Les Nouveautés De Java 8"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-TESTSJAVA",
+              title: "Les Tests en Java"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-MAVEN",
+              title: "Maven"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-AGILES",
+              title: "Methodes Agiles"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Data/TR-MONGODB",
+              title: "Mongo DB"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-MONGODB",
+              title: "Mongo DB"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-SQL",
+              title: "NoSQL"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-PLAY1",
+              title: "PlayFramework 1"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-PLAY2",
+              title: "PlayFramework 2"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/LanguagesAlternatifs/TR-SCALA",
+              title: "Scala"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-SCRUM",
+              title: "Scrum"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/MethodesOutils/TR-SELENIUM",
+              title: "Selenium"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Data/TR-SPARK",
+              title: "Spark"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Java/TR-SPRING4",
+              title: "Spring 4"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-ELK",
+              title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)"
+            },
+              
+            {
+              class: "colorLanguagesAlternatifs",
+              href: "/Workshops/WK-WINDPHONE",
+              title: "Windows Mobile"
+            },
+                    
+        ];
+      });
+    </script>
+	</body>
 
 </html>

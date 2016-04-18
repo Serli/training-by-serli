@@ -23,8 +23,6 @@
 				{% endif %} {% endif %} {% endfor %}
 				<!-- /////////////////////////////////////////////////////////////// -->
 			</ul>
-			</li>
-			</ul>
 		</nav>
 	</div>
 </aside>
@@ -32,7 +30,9 @@
 <header class=
 	"{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
 >
-	<h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+	{% if page.title %}{% assign title = page.title %}{% else %}{% assign title = site.title %}{% endif %}
+	{% assign my_lenght = title|size %}
+	<h1 class="{% if 25 <= my_lenght %}bigTitle{% else %}smalTitle{% endif %}">{{ title }}</h1>
 	<a href="{{ site.url }}/{{ site.baseurl }}">
 		<img src="{{ site.baseurl }}/assets/Training-by-serli-logo-white-01.png"/>
 	</a>

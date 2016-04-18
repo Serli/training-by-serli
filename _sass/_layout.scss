@@ -22,6 +22,7 @@ html, body {
 		main {
 			background-color: $white;
 			padding-bottom: 50px; // size footer
+			padding-top: 50px; // size of aside
 
 /// MENU ///////////////////////////////////////////////////////////////////////
 			aside {
@@ -29,7 +30,7 @@ html, body {
 				background-image: url(../assets/background-image/article.png);
 				background-repeat: repeat-x;
 				position: absolute;
-				top: -50px; // size menu and margin header
+				top: 0px;
 				left: 0;
 				width: 100%;
 				z-index: 2;
@@ -118,7 +119,7 @@ html, body {
 				background-color: $darkblue; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
-				margin-top: 50px; // size of footer
+				//margin-top: 50px; // size of aside
 				padding: 0 35vw 0 70px;
 				display: flex;
 				align-items: center;
@@ -130,6 +131,10 @@ html, body {
 					color: $white;
 					line-height : 15vw;
 					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
+				}
+				.bigTitle {
+					font-size: 6vw;
+					line-height : 10vw;
 				}
 				a {
 					img {
@@ -166,19 +171,93 @@ html, body {
 				}
 			//////////////////////////////////////////////////////////////////////////
 			article {
-				padding: 10px;
-
+				margin-top: 10px;
+				margin-bottom: 10px;
+				input {
+					font-size: 3vw;
+					display:block;
+					margin:auto;
+					width: 50vw;
+					color: $white;
+					padding: 1vw;
+					border: none;
+					background-color: $darkblue;
+					background-image: url(../assets/background-image/article.png);
+					background-repeat: repeat-x;
+					&:focus {
+						background-image: none;
+					  outline: none;
+					}
+				}
+				// depending on the class a different color ////////////////////////////
+					input.colorJava{
+						background-color: $darkred;
+						&:focus {
+							background-color: $red;
+						}
+					}
+					input.colorData{
+						background-color: $darkorange;
+						&:focus {
+							background-color: $orange;
+						}
+					}
+					input.colorMobilite{
+						background-color: $darkyellow;
+						&:focus {
+							background-color: $yellow;
+						}
+					}
+					input.colorWorkshops{
+						background-color: $darkgreen;
+						&:focus {
+							background-color: $green;
+						}
+					}
+					input.colorLanguagesAlternatifs{
+						background-color: $darkpurple;
+						&:focus {
+							background-color: $purple;
+						}
+					}
+					input.colorWeb{
+						background-color: $darkmaroon;
+						&:focus {
+							background-color: $maroon;
+						}
+					}
+					input.colorMethodesOutils{
+						background-color: $darkaqua;
+						&:focus {
+							background-color: $aqua;
+						}
+					}
+				////////////////////////////////////////////////////////////////////////
+				::-webkit-input-placeholder {
+					color:$white;
+				}
+				::-moz-placeholder { /* firefox 19+ */
+					color:$white;
+				}
+				:-ms-input-placeholder { /* ie */
+					color:$white;
+				}
+				input:-moz-placeholder {
+					color:$white;
+				}
 // CATEGORY ////////////////////////////////////////////////////////////////////
 				#summary {
+					padding: 0 15vw 0 15vw;
 					ul {
 						li {
 							list-style: none;
 							background-color: $blue; // default color
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
-							margin: 1vw;
+							margin: 0;
+							margin-top: 1vh;
 							padding: 1vw;
-							font-size: 5vw;
+							font-size: 3vw;
 							a {
 								text-decoration: none;
 								display: block;
@@ -213,6 +292,7 @@ html, body {
 
 /// TRAINING ///////////////////////////////////////////////////////////////////
 				#training {
+					padding: 10px;
 					td {
 						text-align: center;
 					}
@@ -311,6 +391,9 @@ html, body {
 							background-color: $darkblue;
 							padding: 10px;
 						}
+						.followedImg {
+							padding-right: 70px;
+						}
 						img {
 							position: relative;
 							height: 70px;
@@ -330,6 +413,13 @@ html, body {
 		}
 		.maindefault{
 			background-color: $blue;
+			#summary {
+				ul {
+					li {
+						background-color: $darkblue;
+					}
+				}
+			}
 		}
 
 /// FOOTER /////////////////////////////////////////////////////////////////////
@@ -411,12 +501,39 @@ html, body {
 html, body {
 	#container {
 		main {
-			@media all and (max-width: 574px) { // below 574px, the menu is displayed on line two
+			@media all and (max-width: 620px) { // below 574px, the menu is displayed on line two
+				padding-top: 30px; // size of aside
 				aside {
-					top: -100px;
+					nav {
+						ul {
+							li {
+								a {
+									height:30px;
+									padding: 0 5px 0 5px;
+									img {
+										height: 30px;
+										width: auto;
+									}
+								}
+							}
+						}
+					}
 				}
-				header {
-					margin-top: 100px;
+				article {////////////////////////////////////////
+					input {
+						font-size: 18px;
+						padding: 6px;
+					}
+					#summary {
+						padding: 0;
+						ul {
+							li {
+								margin: 6px;
+								padding: 6px;
+								font-size: 18px;;
+							}
+						}
+					}
 				}
 			}
 			@media all and (max-width: 800px) { // below 700px is not displayed image
