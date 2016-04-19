@@ -5,8 +5,8 @@
     <description>Training by Serli . FORMATIONS &amp; WORKSHOPS</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Apr 2016 15:52:38 +0200</pubDate>
-    <lastBuildDate>Mon, 18 Apr 2016 15:52:38 +0200</lastBuildDate>
+    <pubDate>Tue, 19 Apr 2016 16:47:36 +0200</pubDate>
+    <lastBuildDate>Tue, 19 Apr 2016 16:47:36 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
      
       <item>
@@ -31,7 +31,7 @@
           <category>PlayFramework 2</category>
                     
           <category>Spring 4</category>
-                      
+                          
       </item>
       
       <item>
@@ -46,7 +46,7 @@
           <category>Introduction au développement Web</category>
               
           <category>Javascript Avancé</category>
-                                                    
+                                                        
       </item>
       
       <item>
@@ -61,7 +61,7 @@
           <category>Introduction à Node.Js</category>
                                       
           <category>Scala</category>
-                              
+                                  
       </item>
       
       <item>
@@ -80,7 +80,7 @@
           <category>Mongo DB</category>
                           
           <category>Spark</category>
-                        
+                            
       </item>
       
       <item>
@@ -97,7 +97,7 @@
           <category>Développement iOS</category>
             
           <category>Développement WindowsPhone</category>
-                                                                      
+                                                                          
       </item>
       
       <item>
@@ -120,7 +120,7 @@
           <category>Scrum</category>
             
           <category>Selenium</category>
-                          
+                              
       </item>
       
       <item>
@@ -142,7 +142,7 @@
             
           <category>Developpement Web sur le Framework Play 2</category>
                       
-          <category>Docker &amp;#58; Du développement a la production</category>
+          <category>Docker : Du développement a la production</category>
                                         
           <category>Mongo DB</category>
             
@@ -151,7 +151,7 @@
           <category>Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)</category>
             
           <category>Windows Mobile</category>
-                  
+                      
       </item>
            
   </channel>

@@ -1,6 +1,6 @@
 ---
 layout: training
-title: Docker &#58; Du développement a la production
+title: 'Docker : Du développement a la production'
 permalink: /Workshops/WK-DOCKER2
 categories: Workshops
 public: Techniciens (du développeur à l’exploitant) débutants ou expérimentés

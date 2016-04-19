@@ -1,7 +1,9 @@
 ---
-layout: verification
-permalink: /test/errorFormat.html
+layout: administration
+permalink: /administration/errorFormat.html
 ---
+
+<a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Générateur de fichier</a>
 
 # Test le format des fichiers Markdown (.md)
 
