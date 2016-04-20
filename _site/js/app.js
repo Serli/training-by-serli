@@ -65,9 +65,9 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
   $scope.myContenu = "";
   $scope.addSubject = function () {
     $scope.mySubject = $scope.mySubject.concat([{subject:''}]);
+    //document.getElementById('divSujets').lastElementChild.firstElementChild.focus();
   };
   $scope.removeSubject = function (n) {
-    console.log(n);
     $scope.mySubject.splice(n,1);
   };
   $scope.addProgram = function () {
@@ -175,3 +175,11 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
     return result;
   };
 }]);
+
+app.directive('focus', function() {
+  return {
+    link: function(scope, element, attrs) {
+      element[0].focus();
+    }
+  };
+});

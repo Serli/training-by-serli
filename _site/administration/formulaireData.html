@@ -24,8 +24,8 @@
       <div class="input-file-container">
         <label for="my-file">Icone Categorie</label>
     		<input class="input-file" id="my-file" type="file" onchange="angular.element(this).scope().setFile(this)" />
-    		<label ng-if="myImage.name===undefined" for="my-file" class="input-file-trigger error" tabindex="0">Select a file...</label>
-    		<label ng-if="myImage.name!==undefined" for="my-file" class="input-file-trigger completed" tabindex="0">[[myImage.name]]</label>
+    		<label ng-if="myImage.name===undefined" for="my-file" class="input-file-trigger error">Select a file...</label>
+    		<label ng-if="myImage.name!==undefined" for="my-file" class="input-file-trigger completed">[[myImage.name]]</label>
     	</div>
       <p><em>Dans le dossier : /assets/TrainingsCategories/WhiteIcon</em></p>
     </fieldset>
@@ -217,28 +217,33 @@
     </fieldset>
     <fieldset>
       <legend>Facultatif</legend>
+
+      <label for="contentfile">Contenu</label>
+      <textarea id="contentfile" rows="4" cols="50" ng-model="myContenu" placeholder="ex : Cette formation vise à vous faire découvrir les nouveautés de Java 8."></textarea>
+
       <label>Sujets</label><br />
-      <div ng-repeat="s in mySubject">
-        <input type="text" ng-model="s.subject" placeholder="ex : Expressions Lambda" ng-class="s.subject==='' ? 'error' : ''" />
-        <input class="littlebutton" type="button" value="x" ng-click="removeSubject($index)" />
+      <div id="divSujets">
+        <div ng-repeat="s in mySubject">
+          <input type="text" ng-model="s.subject" placeholder="ex : Expressions Lambda" ng-class="s.subject==='' ? 'error' : ''" focus="" />
+          <input class="littlebutton" type="button" value="x" ng-click="removeSubject($index)" />
+        </div>
       </div>
       <input class="littlebutton" type="button" value="+" ng-click="addSubject()" />
 
       <br />
-
       <label>Programme</label><br />
       <div ng-repeat="p in myProgram">
-        <input type="text" ng-model="p.title" placeholder="ex : Les Streams" ng-class="p.title==='' ? 'error' : ''" />
+        <input type="text" ng-model="p.title" placeholder="ex : Les Streams" ng-class="p.title==='' ? 'error' : ''" focus="" />
         <input class="littlebutton" type="button" value="x" ng-click="removeProgram($index)" />
         <div ng-repeat="a in p.activity" style="margin-left:50px;">
-          <input type="text" ng-model="a.name" placeholder="ex : Pipeline" ng-class="a.name==='' ? 'error' : ''" />
+          <input type="text" ng-model="a.name" placeholder="ex : Pipeline" ng-class="a.name==='' ? 'error' : ''" focus="" />
           <input class="littlebutton" type="button" value="x" ng-click="removeActivity($parent.$index, $index)" />
         </div>
         <input class="littlebutton" type="button" value="+" ng-click="addActivity($index)" style="margin-left:50px;" />
       </div>
-      <input class="littlebutton" type="button" value="+" ng-click="addProgram()" /><br />
-      <label for="contentfile">Contenu</label>
-      <textarea id="contentfile" rows="4" cols="50" ng-model="myContenu" placeholder="ex : Cette formation vise à vous faire découvrir les nouveautés de Java 8."></textarea><br />
+      <input class="littlebutton" type="button" value="+" ng-click="addProgram()" />
+
+
     </fieldset>
 
     <input class="button" type="submit" value="Download" ng-class="!isValide() ? 'errorDownload' : ''" />
@@ -246,11 +251,12 @@
 
   <br /><hr />
 
-  <br />
-  <a href="/administration/errorFormat.html">Test le format des fichiers Markdown (.md)</a>
-  <br />
-  <br />
-  <a href="http://localhost:4000/">Page d'accueil</a>
+  <p>
+    <a href="/administration/errorFormat.html">Test le format des fichiers Markdown (.md)</a>
+    <br />
+    <br />
+    <a href="http://localhost:4000/">Page d'accueil</a>
+  </p>
 
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>

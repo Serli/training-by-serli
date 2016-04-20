@@ -30,13 +30,8 @@ body {
 		color: $white;
 		text-align: center;
 	}
-	h2 {
+	h3 {
 		font-size: 4vw;
-		font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
-		background-image: url(../assets/background-image/header.png);
-		background-repeat: repeat-x;
-		background-color: $aqua;
-		text-align: center;
 	}
   em {
     font-weight: bold;
@@ -46,7 +41,7 @@ body {
 	p {
 		font-size: 3vw;
 	}
-  .formulaireData {
+  //.formulaireData {
 		p {
 		  margin-top: 0px;
 			max-width: 800px;
@@ -54,7 +49,6 @@ body {
 		  display: inline-block;
 		  vertical-align: top;
 		  margin: 6px;
-			font-size: 3vw;
 		}
 		fieldset {
 		  margin-bottom: 15px;
@@ -76,14 +70,18 @@ body {
 		  margin: 6px;
 			font-size: 3vw;
 		}
-		input, textarea {
+		input {
 			border: 1px solid $lightgray;
 			max-width: 400px;
 		  width: 50vw;
 			font-size: 3vw;
 		}
 		textarea {
+      width: 90vw;
 		  height: 30vh;
+			border: 1px solid $lightgray;
+			font-size: 3vw;
+      display: block;
 		}
 		select {
 			max-width: 500px;
@@ -148,5 +146,5 @@ body {
 		.error {
 			border: 1px solid $red;
 		}
-  }
+  //}
 }

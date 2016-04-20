@@ -30,99 +30,97 @@ body h1 {
   background-repeat: repeat-x;
   color: #ffffff;
   text-align: center; }
-body h2 {
-  font-size: 4vw;
-  font-family: "gloriahallelujah", sans-serif;
-  background-image: url(../assets/background-image/header.png);
-  background-repeat: repeat-x;
-  background-color: #00cccc;
-  text-align: center; }
+body h3 {
+  font-size: 4vw; }
 body em {
   font-weight: bold;
   font-style: normal;
   color: #b0b0b0; }
 body p {
   font-size: 3vw; }
-body .formulaireData p {
+body p {
   margin-top: 0px;
   max-width: 800px;
   width: 80vw;
   display: inline-block;
   vertical-align: top;
-  margin: 6px;
-  font-size: 3vw; }
-body .formulaireData fieldset {
+  margin: 6px; }
+body fieldset {
   margin-bottom: 15px;
   padding: 10px;
   border: 2px solid #1068b0; }
-body .formulaireData legend {
+body legend {
   padding: 0px 3px;
   font-weight: bold;
   font-variant: small-caps;
   font-size: 3vw;
   color: #1068b0; }
-body .formulaireData label {
+body label {
   max-width: 300px;
   width: 30vw;
   display: inline-block;
   vertical-align: top;
   margin: 6px;
   font-size: 3vw; }
-body .formulaireData input, body .formulaireData textarea {
+body input {
   border: 1px solid #b0b0b0;
   max-width: 400px;
   width: 50vw;
   font-size: 3vw; }
-body .formulaireData textarea {
-  height: 30vh; }
-body .formulaireData select {
+body textarea {
+  width: 90vw;
+  height: 30vh;
+  border: 1px solid #b0b0b0;
+  font-size: 3vw;
+  display: block; }
+body select {
   max-width: 500px;
   width: 50vw;
   font-size: 3vw; }
-body .formulaireData .input-file-trigger {
+body .input-file-trigger {
   max-width: 400px;
   width: 50vw;
   color: #b0b0b0;
   border: 1px solid #b0b0b0;
   margin: 0; }
-body .formulaireData .completed {
+body .completed {
   color: #000000; }
-body .formulaireData input[type=file] {
+body input[type=file] {
   display: none; }
-body .formulaireData input[type=submit] {
+body input[type=submit] {
   background-color: #ffffff;
   color: #00cccc;
   border: 2px solid #00cccc;
   width: 30vw;
   font-size: 4vw; }
-  body .formulaireData input[type=submit]:hover, body .formulaireData input[type=submit]:active {
+  body input[type=submit]:hover, body input[type=submit]:active {
     background-color: #00cccc;
     color: #ffffff; }
-body .formulaireData input[type=submit].errorDownload {
+body input[type=submit].errorDownload {
   background-color: #cc3c56;
   color: #ffffff;
   border: 2px solid #cc3c56; }
-  body .formulaireData input[type=submit].errorDownload:hover, body .formulaireData input[type=submit].errorDownload:active {
+  body input[type=submit].errorDownload:hover, body input[type=submit].errorDownload:active {
     background-color: #cc3c56;
     color: #ffffff; }
-body .formulaireData input[type=button] {
+body input[type=button] {
   width: 5vw; }
-body .formulaireData input[value='+'] {
+body input[value='+'] {
   background-color: #ffffff;
   border: 2px solid #78BC9B;
   color: #78BC9B;
   display: block; }
-  body .formulaireData input[value='+']:hover, body .formulaireData input[value='+']:active {
+  body input[value='+']:hover, body input[value='+']:active {
     background-color: #78BC9B;
     color: #ffffff; }
-body .formulaireData input[value='x'] {
+body input[value='x'] {
   background: none;
   color: #cc3c56;
   border: 1px solid #cc3c56; }
-  body .formulaireData input[value='x']:hover, body .formulaireData input[value='x']:active {
+  body input[value='x']:hover, body input[value='x']:active {
     background-color: #cc3c56;
     color: #ffffff; }
-body .formulaireData .error {
+body .error {
   border: 1px solid #ff6f89; }
 
 /**
