@@ -9,8 +9,6 @@ Un champ obligatoire est t’il manquant ?
 La référence est t’elle unique ?  
 La catégorie existe-t-elle ?  
 
-- - -
-
 ## ERREURS FICHIERS CATÉGORIES :
 
 {% for somaire in site.pages %}
@@ -59,7 +57,6 @@ La catégorie existe-t-elle ?
   {% endif %}
 {% endfor %}
 
-- - -
 - - -
 
 ## ERREURS FICHIERS FORMATIONS :

@@ -83,6 +83,10 @@ généralement de la forme :
   h3 : Présentation
   paragraphe : blabla sur la formation
 
+## Génération automatique de fichier
+
+  /administration/formulaireData.html
+
 ## Vérification automatique du format
 
-/test/errorFormat.html
+/administration/errorFormat.html

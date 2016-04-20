@@ -18,13 +18,15 @@ permalink: /administration/formulaireData.html
     		<label ng-if="myImage.name!==undefined" for="my-file"
           class="input-file-trigger completed" tabindex="0">[[myImage.name]]</label>
     	</div>
+      <p><em>Dans le dossier : /assets/TrainingsCategories/WhiteIcon</em></p>
     </fieldset>
 
     <input type="submit" value="Download"
       ng-class="!isValide() ? 'errorDownload' : ''">
   </form>
 
-  <br/>
+  <br/><hr/>
+
   <h1>Nouvelle Formation</h1>
   <form ng-submit="downloadTraining()" ng-controller="formulaireTraining">
     <fieldset>
@@ -102,7 +104,8 @@ permalink: /administration/formulaireData.html
       ng-class="!isValide() ? 'errorDownload' : ''">
   </form>
 
-  <br/>
+  <br/><hr/>
+
   <br/>
   <a href="{{ '/administration/errorFormat.html' | prepend: site.baseurl }}">Test le format des fichiers Markdown (.md)</a>
   <br/>

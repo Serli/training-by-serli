@@ -24,15 +24,37 @@ body {
 	h1 {
 		font-size: 5vw;
 		font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
-		background-color: $darkblue; // default color
+		background-color: $darkblue;
 		background-image: url(../assets/background-image/header.png);
 		background-repeat: repeat-x;
 		color: $white;
 		text-align: center;
 	}
+	h2 {
+		font-size: 4vw;
+		font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
+		background-image: url(../assets/background-image/header.png);
+		background-repeat: repeat-x;
+		background-color: $aqua;
+		text-align: center;
+	}
+  em {
+    font-weight: bold;
+    font-style: normal;
+    color: $lightgray;
+  }
+	p {
+		font-size: 3vw;
+	}
   .formulaireData {
 		p {
 		  margin-top: 0px;
+			max-width: 800px;
+		  width: 80vw;
+		  display: inline-block;
+		  vertical-align: top;
+		  margin: 6px;
+			font-size: 3vw;
 		}
 		fieldset {
 		  margin-bottom: 15px;
@@ -53,11 +75,6 @@ body {
 		  vertical-align: top;
 		  margin: 6px;
 			font-size: 3vw;
-		}
-		em {
-		  font-weight: bold;
-		  font-style: normal;
-		  color: #f00;
 		}
 		input, textarea {
 			border: 1px solid $lightgray;
@@ -90,7 +107,8 @@ body {
 			background-color: $white;
 			color: $aqua;
 			border: 2px solid $aqua;
-		  width: 25vw;
+		  width: 30vw;
+			font-size: 4vw;
 			&:hover, &:active {
 					background-color: $aqua;
 					color: $white;

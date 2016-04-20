@@ -1,4 +1,9 @@
 
+# Installer Jekyll
+
+(Nécessite Ruby)  
+  *gem install jekyll*
+
 # Lancer le serveur
 
 pour lancer le serveur en local sur le port 4000 :  
@@ -14,6 +19,10 @@ en ligne : si certaine modification ne s'affiche pas :
 ajouter des fichiers .md dans le dossier : *_trainings*  
 voir le README_training.md pour plus d'informations
 
+## Génération automatique de nouveau fichier
+
+/administration/formulaireData.html
+
 ## Vérification automatique du format des nouveaux fichiers
 
-/test/errorFormat.html
+/administration/errorFormat.html

@@ -30,8 +30,27 @@ body h1 {
   background-repeat: repeat-x;
   color: #ffffff;
   text-align: center; }
+body h2 {
+  font-size: 4vw;
+  font-family: "gloriahallelujah", sans-serif;
+  background-image: url(../assets/background-image/header.png);
+  background-repeat: repeat-x;
+  background-color: #00cccc;
+  text-align: center; }
+body em {
+  font-weight: bold;
+  font-style: normal;
+  color: #b0b0b0; }
+body p {
+  font-size: 3vw; }
 body .formulaireData p {
-  margin-top: 0px; }
+  margin-top: 0px;
+  max-width: 800px;
+  width: 80vw;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+  font-size: 3vw; }
 body .formulaireData fieldset {
   margin-bottom: 15px;
   padding: 10px;
@@ -49,10 +68,6 @@ body .formulaireData label {
   vertical-align: top;
   margin: 6px;
   font-size: 3vw; }
-body .formulaireData em {
-  font-weight: bold;
-  font-style: normal;
-  color: #f00; }
 body .formulaireData input, body .formulaireData textarea {
   border: 1px solid #b0b0b0;
   max-width: 400px;
@@ -78,7 +93,8 @@ body .formulaireData input[type=submit] {
   background-color: #ffffff;
   color: #00cccc;
   border: 2px solid #00cccc;
-  width: 25vw; }
+  width: 30vw;
+  font-size: 4vw; }
   body .formulaireData input[type=submit]:hover, body .formulaireData input[type=submit]:active {
     background-color: #00cccc;
     color: #ffffff; }
