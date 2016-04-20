@@ -3,65 +3,112 @@ layout: administration
 permalink: /administration/formulaireData.html
 ---
 
-<a href="{{ '/administration/errorFormat.html' | prepend: site.baseurl }}">Test le format des fichiers Markdown (.md)</a>
-
-<div ng-app="administration">
+<div class="formulaireData" ng-app="administration">
   <h1>Nouvelle Catégorie</h1>
   <form ng-submit="downloadCategory()" ng-controller="formulaireCategory">
-    Nom Categorie : <input type="text" ng-model="myTitle" /><br/>
-    Nom image Categorie : <input type="file" onchange="angular.element(this).scope().setFile(this)" /><br/>
-    <input type="submit" value="Download">
+    <fieldset>
+      <label for="name" >Nom Categorie</label>
+      <input id="name" type="text" ng-model="myTitle"
+        placeholder="ex : Java" ng-class="myTitle==='' ? 'error' : ''"/><br/>
+      <div class="input-file-container">
+        <label for="my-file">Icone Categorie</label>
+    		<input class="input-file" id="my-file" type="file" onchange="angular.element(this).scope().setFile(this)" />
+    		<label ng-if="myImage.name===undefined" for="my-file"
+          class="input-file-trigger error" tabindex="0">Select a file...</label>
+    		<label ng-if="myImage.name!==undefined" for="my-file"
+          class="input-file-trigger completed" tabindex="0">[[myImage.name]]</label>
+    	</div>
+    </fieldset>
+
+    <input type="submit" value="Download"
+      ng-class="!isValide() ? 'errorDownload' : ''">
   </form>
 
   <br/>
   <h1>Nouvelle Formation</h1>
   <form ng-submit="downloadTraining()" ng-controller="formulaireTraining">
-    Titre : <input type="text" ng-model="myTitle" /><br/>
-    Référence : <input type="text" ng-model="myRef" /><br/>
-    <!-- Catégorie : <input type="text" ng-model="myCategorie" /><br/> -->
-    Catégorie : <select ng-model="myCategorie">
-    {% for somaire in site.pages %}
-      {% if somaire.layout == 'sommaire' %}
-        {% if somaire.title %}
-          {% if somaire.node %}
-            <option value="{{somaire.node}}">{{somaire.title}}</option>
+    <fieldset>
+      <legend>Générale</legend>
+      <label for="title">Titre</label>
+      <input id="title" type="text" ng-model="myTitle"
+        placeholder="ex : Les nouveautés de Java 8" ng-class="myTitle==='' ? 'error' : ''"/><br/>
+      <label for="ref">Référence</label>
+      <input id="ref" type="text" ng-model="myRef" placeholder="ex : TR-JAVA8"
+         ng-class="myRef==='' ? 'error' : ''"/><br/>
+      <label for="category">Catégorie</label>
+      <select id="category" ng-model="myCategorie" ng-class="myCategorie==='' ? 'error' : ''">
+      {% for somaire in site.pages %}
+        {% if somaire.layout == 'sommaire' %}
+          {% if somaire.title %}
+            {% if somaire.node %}
+              <option value="{{somaire.node}}">{{somaire.title}}</option>
+            {% endif %}
           {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-    </select><br/>
-    Public cible : <input type="text" ng-model="myPublic" /><br/>
-    Coût : <input type="text" ng-model="myCost" /><br/>
-    Détails Coût : <input type="text" ng-model="myCostDescription" /><br/>
-    Durée : <input type="text" ng-model="myDuration" /><br/>
-    Détails Durée : <input type="text" ng-model="myDurationDescription" /><br/>
-    Nom du fichier : <input type="text" ng-model="myName" /><br/>
-
-    Sujets :
-    <div ng-repeat="s in mySubject">
-      <input type="text" ng-model="s.subject" />
-      <input type="button" value="x" ng-click="removeSubject($index)"/>
-    </div>
-    <input type="button" value="+" ng-click="addSubject()"/>
-
-    <br/>
-
-    Programme :
-    <div ng-repeat="p in myProgram">
-      <input type="text" ng-model="p.title" />
-      <input type="button" value="x" ng-click="removeProgram($index)"/>
-      <div ng-repeat="a in p.activity" style="margin-left:50px;">
-        <input type="text" ng-model="a.name" />
-        <input type="button" value="x" ng-click="removeActivity($parent.$index, $index)"/>
+      {% endfor %}
+      </select><br/>
+    </fieldset>
+    <fieldset>
+      <legend>En tête</legend>
+      <label for="public">Public cible</label>
+      <input id="public" type="text" ng-model="myPublic"
+        placeholder="ex : Développeurs Java" ng-class="myPublic==='' ? 'error' : ''"/><br/>
+      <label for="cost">Coût</label>
+      <input id="cost" type="text" ng-model="myCost"
+        placeholder="ex : 590 € HT" ng-class="myCost==='' ? 'error' : ''"/><br/>
+      <label for="detailcost">Détails Coût</label>
+      <input id="detailcost" type="text" ng-model="myCostDescription" placeholder="ex : par participant"/><br/>
+      <label for="duration">Durée</label>
+      <input id="duration" type="text" ng-model="myDuration"
+        placeholder="ex : 1 jours" ng-class="myDuration==='' ? 'error' : ''"/><br/>
+      <label for="durationdetail">Détails Durée</label>
+      <input id="durationdetail" type="text" ng-model="myDurationDescription" placeholder="ex : 40% théorie, 60% pratique"/><br/>
+    </fieldset>
+    <fieldset>
+      <label for="namefile">Nom du fichier</label>
+      <input id="namefile" type="text" ng-model="myName" placeholder="ex : LesNouveautesDeJava8"/><br/>
+    </fieldset>
+    <fieldset>
+      <legend>Facultatif</legend>
+      <label>Sujets</label><br/>
+      <div ng-repeat="s in mySubject">
+        <input type="text" ng-model="s.subject"
+          placeholder="ex : Expressions Lambda" ng-class="s.subject==='' ? 'error' : ''"/>
+        <input class="littlebutton" type="button" value="x" ng-click="removeSubject($index)"/>
       </div>
-      <input type="button" value="+" ng-click="addActivity($index)" style="margin-left:50px;"/>
-    </div>
-    <input type="button" value="+" ng-click="addProgram()"/><br/>
-    Contenu : <textarea rows="4" cols="50" ng-model="myContenu"></textarea><br/>
+      <input class="littlebutton" type="button" value="+" ng-click="addSubject()"/>
 
-    <br/>
-    <input type="submit" value="Download">
+      <br/>
+
+      <label>Programme</label><br/>
+      <div ng-repeat="p in myProgram">
+        <input type="text" ng-model="p.title" placeholder="ex : Les Streams"
+           ng-class="p.title==='' ? 'error' : ''"/>
+        <input class="littlebutton" type="button" value="x" ng-click="removeProgram($index)"/>
+        <div ng-repeat="a in p.activity" style="margin-left:50px;">
+          <input type="text" ng-model="a.name" placeholder="ex : Pipeline"
+            ng-class="a.name==='' ? 'error' : ''"/>
+          <input class="littlebutton" type="button" value="x" ng-click="removeActivity($parent.$index, $index)"/>
+        </div>
+        <input class="littlebutton" type="button" value="+" ng-click="addActivity($index)" style="margin-left:50px;"/>
+      </div>
+      <input class="littlebutton" type="button" value="+" ng-click="addProgram()"/><br/>
+      <label for="contentfile">Contenu</label>
+      <textarea id="contentfile" rows="4" cols="50" ng-model="myContenu"
+        placeholder="ex : Cette formation vise à vous faire découvrir les nouveautés de Java 8."></textarea><br/>
+    </fieldset>
+
+    <input class="button" type="submit" value="Download"
+      ng-class="!isValide() ? 'errorDownload' : ''">
   </form>
+
+  <br/>
+  <br/>
+  <a href="{{ '/administration/errorFormat.html' | prepend: site.baseurl }}">Test le format des fichiers Markdown (.md)</a>
+  <br/>
+  <br/>
+  <a href="{{ site.url }}/{{ site.baseurl }}">Page d'accueil</a>
+
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="../js/app.js"></script>

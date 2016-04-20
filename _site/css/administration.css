@@ -6,9 +6,108 @@
   box-sizing: border-box; }
 
 * {
-  margin: 0;
-  padding: 0;
   font-family: sans-serif; }
+
+@font-face {
+  font-family: "gloriahallelujah";
+  src: url("../assets/gloriahallelujah.ttf"); }
+body a:link, body a:visited {
+  background-color: #ffffff;
+  color: #ec854f;
+  border: 2px solid #ec854f;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; }
+  body a:link:hover, body a:link:active, body a:visited:hover, body a:visited:active {
+    background-color: #ec854f;
+    color: #ffffff; }
+body h1 {
+  font-size: 5vw;
+  font-family: "gloriahallelujah", sans-serif;
+  background-color: #1068b0;
+  background-image: url(../assets/background-image/header.png);
+  background-repeat: repeat-x;
+  color: #ffffff;
+  text-align: center; }
+body .formulaireData p {
+  margin-top: 0px; }
+body .formulaireData fieldset {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 2px solid #1068b0; }
+body .formulaireData legend {
+  padding: 0px 3px;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 3vw;
+  color: #1068b0; }
+body .formulaireData label {
+  max-width: 300px;
+  width: 30vw;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+  font-size: 3vw; }
+body .formulaireData em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00; }
+body .formulaireData input, body .formulaireData textarea {
+  border: 1px solid #b0b0b0;
+  max-width: 400px;
+  width: 50vw;
+  font-size: 3vw; }
+body .formulaireData textarea {
+  height: 30vh; }
+body .formulaireData select {
+  max-width: 500px;
+  width: 50vw;
+  font-size: 3vw; }
+body .formulaireData .input-file-trigger {
+  max-width: 400px;
+  width: 50vw;
+  color: #b0b0b0;
+  border: 1px solid #b0b0b0;
+  margin: 0; }
+body .formulaireData .completed {
+  color: #000000; }
+body .formulaireData input[type=file] {
+  display: none; }
+body .formulaireData input[type=submit] {
+  background-color: #ffffff;
+  color: #00cccc;
+  border: 2px solid #00cccc;
+  width: 25vw; }
+  body .formulaireData input[type=submit]:hover, body .formulaireData input[type=submit]:active {
+    background-color: #00cccc;
+    color: #ffffff; }
+body .formulaireData input[type=submit].errorDownload {
+  background-color: #cc3c56;
+  color: #ffffff;
+  border: 2px solid #cc3c56; }
+  body .formulaireData input[type=submit].errorDownload:hover, body .formulaireData input[type=submit].errorDownload:active {
+    background-color: #cc3c56;
+    color: #ffffff; }
+body .formulaireData input[type=button] {
+  width: 5vw; }
+body .formulaireData input[value='+'] {
+  background-color: #ffffff;
+  border: 2px solid #78BC9B;
+  color: #78BC9B;
+  display: block; }
+  body .formulaireData input[value='+']:hover, body .formulaireData input[value='+']:active {
+    background-color: #78BC9B;
+    color: #ffffff; }
+body .formulaireData input[value='x'] {
+  background: none;
+  color: #cc3c56;
+  border: 1px solid #cc3c56; }
+  body .formulaireData input[value='x']:hover, body .formulaireData input[value='x']:active {
+    background-color: #cc3c56;
+    color: #ffffff; }
+body .formulaireData .error {
+  border: 1px solid #ff6f89; }
 
 /**
  * Syntax highlighting styles

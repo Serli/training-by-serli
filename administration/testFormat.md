@@ -3,8 +3,6 @@ layout: administration
 permalink: /administration/errorFormat.html
 ---
 
-<a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Générateur de fichier</a>
-
 # Test le format des fichiers Markdown (.md)
 
 Un champ obligatoire est t’il manquant ?  
@@ -195,3 +193,8 @@ La catégorie existe-t-elle ?
 
 - - -
 - - -
+
+<a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Générateur de fichier Markdown (.md)</a>
+<br/>
+<br/>
+<a href="{{ site.url }}/{{ site.baseurl }}">Page d'accueil</a>

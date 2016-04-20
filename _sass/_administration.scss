@@ -1,5 +1,134 @@
 *{ // default initialization
-	margin: 0;
-	padding: 0;
   font-family: sans-serif;
+}
+
+@font-face { // loading fonts
+	font-family: "gloriahallelujah";
+	src: url('../assets/gloriahallelujah.ttf');
+}
+
+body {
+	a:link, a:visited {
+			background-color: $white;
+			color: $darkorange;
+			border: 2px solid $darkorange;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			&:hover, &:active {
+					background-color: $darkorange;
+					color: $white;
+			}
+	}
+	h1 {
+		font-size: 5vw;
+		font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
+		background-color: $darkblue; // default color
+		background-image: url(../assets/background-image/header.png);
+		background-repeat: repeat-x;
+		color: $white;
+		text-align: center;
+	}
+  .formulaireData {
+		p {
+		  margin-top: 0px;
+		}
+		fieldset {
+		  margin-bottom: 15px;
+		  padding: 10px;
+			border: 2px solid $darkblue;
+		}
+		legend {
+		  padding: 0px 3px;
+		  font-weight: bold;
+		  font-variant: small-caps;
+			font-size: 3vw;
+			color: $darkblue;
+		}
+		label {
+			max-width: 300px;
+		  width: 30vw;
+		  display: inline-block;
+		  vertical-align: top;
+		  margin: 6px;
+			font-size: 3vw;
+		}
+		em {
+		  font-weight: bold;
+		  font-style: normal;
+		  color: #f00;
+		}
+		input, textarea {
+			border: 1px solid $lightgray;
+			max-width: 400px;
+		  width: 50vw;
+			font-size: 3vw;
+		}
+		textarea {
+		  height: 30vh;
+		}
+		select {
+			max-width: 500px;
+		  width: 50vw;
+			font-size: 3vw;
+		}
+		.input-file-trigger {
+			max-width: 400px;
+		  width: 50vw;
+			color: $lightgray;
+			border: 1px solid $lightgray;
+		  margin: 0;
+		}
+		.completed {
+			color: $black;
+		}
+		input[type=file] {
+		  display: none;
+		}
+		input[type=submit] {
+			background-color: $white;
+			color: $aqua;
+			border: 2px solid $aqua;
+		  width: 25vw;
+			&:hover, &:active {
+					background-color: $aqua;
+					color: $white;
+			}
+		}
+		input[type=submit].errorDownload {
+			background-color: $darkred;
+			color: $white;
+			border: 2px solid $darkred;
+			&:hover, &:active {
+					background-color: $darkred;
+					color: $white;
+			}
+		}
+		input[type=button] {
+		  width: 5vw;
+		}
+		input[value='+'] {
+			background-color: $white;
+			border: 2px solid $green;
+			color: $green;
+			display: block;
+			&:hover, &:active {
+					background-color: $green;
+					color: $white;
+			}
+		}
+		input[value='x'] {
+			background: none;
+			color: $darkred;
+			border: 1px solid $darkred;
+			&:hover, &:active {
+					background-color: $darkred;
+					color: $white;
+			}
+		}
+		.error {
+			border: 1px solid $red;
+		}
+  }
 }

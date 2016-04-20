@@ -26,22 +26,27 @@ app.controller('formulaireCategory', function($scope) {
         });
     };
   $scope.downloadCategory = function () {
-    var layoutCategory = "sommaire";
-    var titleCategory = $scope.myTitle;
-    var nodeCategory = titleCategory.replace(/[^a-zA-Z0-9]/g, '');
-    var permalinkCategory = "/" + nodeCategory + ".html";
-    var imageCategory = $scope.myImage.name;
+    if ($scope.isValide()) {
+      var layoutCategory = "sommaire";
+      var titleCategory = $scope.myTitle;
+      var nodeCategory = titleCategory.replace(/[^a-zA-Z0-9]/g, '');
+      var permalinkCategory = "/" + nodeCategory + ".html";
+      var imageCategory = $scope.myImage.name;
 
-    var textCategory =
-    "---" + "\n" +
-    "layout: " + layoutCategory + "\n" +
-    "title: " + titleCategory + "\n" +
-    "permalink: " + permalinkCategory + "\n" +
-    "node: " + nodeCategory + "\n" +
-    "image: /assets/TrainingsCategories/WhiteIcon/" + imageCategory + "\n" +
-    "---";
-    var nameFileCategory = nodeCategory + ".md";
-    download(nameFileCategory, textCategory);
+      var textCategory =
+      "---" + "\n" +
+      "layout: " + layoutCategory + "\n" +
+      "title: " + titleCategory + "\n" +
+      "permalink: " + permalinkCategory + "\n" +
+      "node: " + nodeCategory + "\n" +
+      "image: /assets/TrainingsCategories/WhiteIcon/" + imageCategory + "\n" +
+      "---";
+      var nameFileCategory = nodeCategory + ".md";
+      download(nameFileCategory, textCategory);
+    }
+  };
+  $scope.isValide = function () {
+    return ($scope.myTitle!=='' && $scope.myImage!==undefined);
   };
 });
 
@@ -78,69 +83,95 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
     $scope.myProgram[nProgram].activity.splice(nActivity,1);
   };
   $scope.downloadTraining = function () {
-    var layoutTraining = "training";
-    var titleTraining = $scope.myTitle;
-    var refTraining = $scope.myRef;
-    var categorieTraining = $scope.myCategorie;
-    var permalinkTraining = "/" + categorieTraining + "/" + refTraining;
-    var publicTraining = $scope.myPublic;
-    var costsTraining = $scope.myCost;
-    var costsDescriptionTraining = $scope.myCostDescription;
-    var durationTraining = $scope.myDuration;
-    var durationDescriptionTraining = $scope.myDurationDescription;
-    var nameTraining = $scope.myName;
-    var subjectTraining = $scope.mySubject;
-    var programTraining = $scope.myProgram;
-    var contenuTraining = $scope.myContenu;
+    if ($scope.isValide()) {
+      var layoutTraining = "training";
+      var titleTraining = $scope.myTitle;
+      var refTraining = $scope.myRef;
+      var categorieTraining = $scope.myCategorie;
+      var permalinkTraining = "/" + categorieTraining + "/" + refTraining;
+      var publicTraining = $scope.myPublic;
+      var costsTraining = $scope.myCost;
+      var costsDescriptionTraining = $scope.myCostDescription;
+      var durationTraining = $scope.myDuration;
+      var durationDescriptionTraining = $scope.myDurationDescription;
+      var nameTraining = $scope.myName;
+      var subjectTraining = $scope.mySubject;
+      var programTraining = $scope.myProgram;
+      var contenuTraining = $scope.myContenu;
 
-    var textTraining =
-    "---" + "\n" +
-    "layout: " + layoutTraining + "\n" +
-    "title: " + titleTraining + "\n" +
-    "permalink: " + permalinkTraining + "\n" +
-    "categories: " + categorieTraining + "\n" +
-    "public: " + publicTraining + "\n" +
-    "costs: " + costsTraining + "\n" +
-    "costs-description: " + costsDescriptionTraining + "\n" +
-    "duration: " + durationTraining + "\n" +
-    "duration-description: " + durationDescriptionTraining + "\n" +
-    "ref: " + refTraining + "\n" +
-    "subject: [\n";
-    subjectTraining.forEach(
-      function (element, index, array) {
-        if(index!=0) {
-          textTraining = textTraining + ",\n";
-        }
-        textTraining = textTraining + "\'" + element.subject + "\'";
-      }
-    );
-    textTraining = textTraining + "\n]\n";
-    if (programTraining.length>0) {
-      textTraining = textTraining + "program: [\n";
-      programTraining.forEach(
+      var textTraining =
+      "---" + "\n" +
+      "layout: " + layoutTraining + "\n" +
+      "title: " + titleTraining + "\n" +
+      "permalink: " + permalinkTraining + "\n" +
+      "categories: " + categorieTraining + "\n" +
+      "public: " + publicTraining + "\n" +
+      "costs: " + costsTraining + "\n" +
+      "costs-description: " + costsDescriptionTraining + "\n" +
+      "duration: " + durationTraining + "\n" +
+      "duration-description: " + durationDescriptionTraining + "\n" +
+      "ref: " + refTraining + "\n" +
+      "subject: [\n";
+      subjectTraining.forEach(
         function (element, index, array) {
           if(index!=0) {
             textTraining = textTraining + ",\n";
           }
-          textTraining = textTraining + " {\n  title: \'" + element.title + "\',\n  activity: [\n";
-          element.activity.forEach(
-            function (activityelement, activityindex, activityarray) {
-              if(activityindex!=0) {
-                textTraining = textTraining + ",\n";
-              }
-              textTraining = textTraining + "   \'" + activityelement.name + "\'";
-            }
-          );
-          textTraining = textTraining + "\n  ]\n }\n";
+          textTraining = textTraining + "\'" + element.subject + "\'";
         }
       );
-      textTraining = textTraining + "]\n";
+      textTraining = textTraining + "\n]\n";
+      if (programTraining.length>0) {
+        textTraining = textTraining + "program: [\n";
+        programTraining.forEach(
+          function (element, index, array) {
+            if(index!=0) {
+              textTraining = textTraining + ",\n";
+            }
+            textTraining = textTraining + " {\n  title: \'" + element.title + "\',\n  activity: [\n";
+            element.activity.forEach(
+              function (activityelement, activityindex, activityarray) {
+                if(activityindex!=0) {
+                  textTraining = textTraining + ",\n";
+                }
+                textTraining = textTraining + "   \'" + activityelement.name + "\'";
+              }
+            );
+            textTraining = textTraining + "\n  ]\n }\n";
+          }
+        );
+        textTraining = textTraining + "]\n";
+      }
+      textTraining = textTraining + "---\n\n";
+      if (contenuTraining != "") {
+        textTraining = textTraining + "### Présentation\n\n" + contenuTraining.replace('\n','  \n');
+      }
+      var nameFileTraining = nameTraining!=='' ? nameTraining + ".md" : "undefine.md";
+      download(nameFileTraining, textTraining);
     }
-    textTraining = textTraining + "---\n\n";
-    if (contenuTraining != "") {
-      textTraining = textTraining + "### Présentation\n\n" + contenuTraining.replace('\n','  \n');
-    }
-    var nameFileTraining = nameTraining + ".md";
-    download(nameFileTraining, textTraining);
+  };
+  $scope.isValide = function () {
+    var result = $scope.myTitle!=='';
+    result = result && $scope.myRef!=='';
+    result = result && $scope.myCategorie!=='';
+    result = result && $scope.myPublic!=='';
+    result = result && $scope.myCost!=='';
+    result = result && $scope.myDuration!=='';
+    $scope.mySubject.forEach(
+      function (element, index, array) {
+        result = result && element.subject!=='';
+      }
+    );
+    $scope.myProgram.forEach(
+      function (element, index, array) {
+        result = result && element.title!=='';
+        element.activity.forEach(
+          function (activityelement, activityindex, activityarray) {
+            result = result && activityelement.name!=='';
+          }
+        );
+      }
+    );
+    return result;
   };
 }]);
