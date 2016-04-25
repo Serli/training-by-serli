@@ -23,7 +23,7 @@ html, body {
 			background-color: $white;
 			padding-bottom: 50px; // size footer
 			padding-top: 50px; // size of aside
-			
+
 /// MENU ///////////////////////////////////////////////////////////////////////
 			aside {
 				background-color: $blue; // default color
@@ -115,7 +115,7 @@ html, body {
 
 /// TITLE //////////////////////////////////////////////////////////////////////
 			header {
-				height: 30vw;
+				height: 18vw;
 				background-color: $darkblue; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
@@ -124,25 +124,25 @@ html, body {
 				display: flex;
 				align-items: center;
 				h1 {
-					max-height: 30vw;
+					max-height: 18vw;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					font-size: 10vw;
+					font-size: 6vw;
 					color: $white;
-					line-height : 15vw;
+					line-height : 9vw;
 					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
 				}
 				.bigTitle {
-					font-size: 6vw;
-					line-height : 10vw;
+					font-size: 5vw;
+					line-height : 6vw;
 				}
 				a {
 					img {
    					display: inline;
-						height: 22vw;
+						height: 15vw;
 						width: auto;
 						right: 10px;
-						top: 4vw;
+						top: 40px;
 						position: absolute;
 					}
 				}
@@ -296,6 +296,32 @@ html, body {
 					td {
 						text-align: center;
 					}
+					input {
+						background-color: $darkblue;
+					}
+					// depending on the class a different color ////////////////////////
+						input.colorJava{
+							background-color: $darkred;
+						}
+						input.colorData{
+							background-color: $darkorange;
+						}
+						input.colorMobilite{
+							background-color: $darkyellow;
+						}
+						input.colorWorkshops{
+							background-color: $darkgreen;
+						}
+						input.colorLanguagesAlternatifs{
+							background-color: $darkpurple;
+						}
+						input.colorWeb{
+							background-color: $darkmaroon;
+						}
+						input.colorMethodesOutils{
+							background-color: $darkaqua;
+						}
+					////////////////////////////////////////////////////////////////////
 					table {
 						table-layout:fixed;
 						border-collapse: separate;
@@ -539,6 +565,12 @@ html, body {
 			@media all and (max-width: 800px) { // below 700px is not displayed image
 				header {
 					padding: 0 70px 0 70px;
+					height: 30vw;
+					h1 {
+						max-height: 30vw;
+						font-size: 10vw;
+						line-height : 15vw;
+					}
 					a {
 						img {
 							display: none;

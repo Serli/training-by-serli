@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-IOS">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,7 +131,7 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs débutants ou expérimentés, Architectes </td>
+        <td rowspan=2 > Développeurs débutants ou expérimentés, Architectes </td>
         <td rowspan=
           1
         > 1990 € HT </td>
@@ -145,25 +153,12 @@
     <p id="ref">Réf. WK-IOS</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Durant ce workshop, apprenez à développer une application iOS dans son ensemble. Apprenez les concepts de base de l’Objective-C et commencez à développer votre nouvelle application.</p>
-
-<p><br /></p>
-
-<p>Après avoir posé les bases du design d’applications iOS, vous apprendrez à prendre en main Interface Builder afin de dessiner votre application et de concevoir la cinématique entre les écrans.</p>
-
-<p><br /></p>
-
-<p>Vous développerez ensuite les fonctionnalités de votre application à l’aide d’Objective-C, ainsi que l’interaction avec les différentes fonctionnalités de l’appareil ainsi que les APIs essentielles. Vous découvrirez les principaux patterns structurants du framework. Vous appréhenderez le cycle de développement dans son ensemble (simulateur, tests/debug sur device)</p>
-
-<p><br /></p>
-
-<p>Vous comprendrez comment appréhender les spécificités des différents appareils cibles (plusieurs versions d’iPhones + iPads).</p>
-
-<p><br /></p>
-
-<p>Vous apprendrez enfin à construire votre application et à la déployer sur l’Apple Store.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Durant ce workshop, apprenez à développer une application iOS dans son ensemble. Apprenez les concepts de base de l’Objective-C et commencez à développer votre nouvelle application.<br />
+Après avoir posé les bases du design d’applications iOS, vous apprendrez à prendre en main Interface Builder afin de dessiner votre application et de concevoir la cinématique entre les écrans.<br />
+Vous développerez ensuite les fonctionnalités de votre application à l’aide d’Objective-C, ainsi que l’interaction avec les différentes fonctionnalités de l’appareil ainsi que les APIs essentielles. Vous découvrirez les principaux patterns structurants du framework. Vous appréhenderez le cycle de développement dans son ensemble (simulateur, tests/debug sur device)
+Vous comprendrez comment appréhender les spécificités des différents appareils cibles (plusieurs versions d’iPhones + iPads).<br />
+Vous apprendrez enfin à construire votre application et à la déployer sur l’Apple Store.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -195,13 +190,71 @@
       </li>
     
       <li class="colorWorkshops">
-        Déploiement sur l’Apple Store
+        Déploiement sur l’Apple Store
       </li>
     
   </ul>
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Développement iOS";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés, Architectes";
+        var pdfRef = "WK-IOS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Objective-C");
+        
+          pdfSubject.push("Framework Foundation et Cocoa");
+        
+          pdfSubject.push("Design Patterns iOS");
+        
+          pdfSubject.push("Concepts Haut-Niveau");
+        
+          pdfSubject.push("Xcode");
+        
+          pdfSubject.push("Interface Builder");
+        
+          pdfSubject.push("Déploiement sur l’Apple Store");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Durant ce workshop, apprenez à développer une application iOS dans son ensemble. Apprenez les concepts de base de l’Objective-C et commencez à développer votre nouvelle application. Après avoir posé les bases du design d’applications iOS, vous apprendrez à prendre en main Interface Builder afin de dessiner votre application et de concevoir la cinématique entre les écrans. Vous développerez ensuite les fonctionnalités de votre application à l’aide d’Objective-C, ainsi que l’interaction avec les différentes fonctionnalités de l’appareil ainsi que les APIs essentielles. Vous découvrirez les principaux patterns structurants du framework. Vous appréhenderez le cycle de développement dans son ensemble (simulateur, tests/debug sur device) Vous comprendrez comment appréhender les spécificités des différents appareils cibles (plusieurs versions d’iPhones + iPads). Vous apprendrez enfin à construire votre application et à la déployer sur l’Apple Store.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -255,13 +308,7 @@
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -378,31 +425,31 @@
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

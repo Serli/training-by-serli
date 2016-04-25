@@ -64,8 +64,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
   $scope.myProgram = [];
   $scope.myContenu = "";
   $scope.addSubject = function () {
-    $scope.mySubject = $scope.mySubject.concat([{subject:''}]);
-    //document.getElementById('divSujets').lastElementChild.firstElementChild.focus();
+    $scope.mySubject = $scope.mySubject.concat([{name:''}]);
   };
   $scope.removeSubject = function (n) {
     $scope.mySubject.splice(n,1);
@@ -117,7 +116,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
           if(index!=0) {
             textTraining = textTraining + ",\n";
           }
-          textTraining = textTraining + "\'" + element.subject + "\'";
+          textTraining = textTraining + "\'" + element.name + "\'";
         }
       );
       textTraining = textTraining + "\n]\n";
@@ -142,9 +141,12 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
         );
         textTraining = textTraining + "]\n";
       }
-      textTraining = textTraining + "---\n\n";
       if (contenuTraining != "") {
-        textTraining = textTraining + "### Présentation\n\n" + contenuTraining.replace('\n','  \n');
+        textTraining = textTraining + "presentation: '" + contenuTraining + "'\n";
+      }
+      textTraining = textTraining + "---";
+      if (contenuTraining != "") {
+        textTraining = textTraining + contenuTraining;
       }
       var nameFileTraining = nameTraining!=='' ? nameTraining + ".md" : "undefine.md";
       download(nameFileTraining, textTraining);
@@ -173,6 +175,154 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       }
     );
     return result;
+  };
+  $scope.setFile = function(element) {
+    $scope.$apply(
+      function($scope) {
+        $scope.myFile = element.files[0];
+        var fr = new FileReader();
+        fr.onerror = function() {
+            console.log('Oups, une erreur s\'est produite...');
+        };
+        fr.onload = function() {
+          $scope.$apply(
+            function() {
+              var fileBody = fr.result;
+
+              function valueSingleLineFields (fields, text) {
+                if (fields.length<1) {
+                  console.log("fields vide");
+                  return "";
+                }
+                var searchString = '\n';
+                var preIndex = text.indexOf(fields);
+                if (preIndex === -1) {
+                  console.log("fields inconnu : "+fields);
+                  return "";
+                }
+                preIndex = preIndex + fields.length;
+                var postIndex = text.substring(preIndex).indexOf(searchString);
+                if (postIndex === -1) {
+                  console.log("aucun retour à la ligne");
+                  return "";
+                }
+                postIndex = preIndex + postIndex;
+                return text.substring(preIndex, postIndex).replace(/[\n\r]/g, '').trim();
+              }
+
+              function valueArrayFields (fields, text) {
+                var preIndex = text.indexOf(fields);
+                if (preIndex === -1) {
+                  return [];
+                }
+                preIndex = preIndex + fields.length;
+
+                var postIndex = text.substring(preIndex).indexOf("]");
+                if (postIndex === -1) {
+                  console.log("aucune fin de tableau");
+                  return [];
+                }
+                postIndex = preIndex + postIndex;
+
+
+                var newPreIndex = text.substring(preIndex, postIndex).indexOf("[");
+                if (newPreIndex === -1) {
+                  console.log("aucun début de tableau");
+                  return [];
+                }
+                preIndex = preIndex + newPreIndex + "[".length;
+
+                var listSubject = text.substring(preIndex, postIndex).replace(/[\n\r]/g, ' ').trim();
+                var result = [];
+                listSubject.split("'").forEach(function (element, index, array) {
+                  if (element.replace(/[\n\r'" ,]/g, '') !== '') {
+                    result.push({name: element.replace(/[\n\r'"]/g, '').trim()});
+                  }
+                });
+                return result;
+              }
+
+              function valueProgramFields (text) {
+                var preIndex = text.indexOf("program: ");
+                if (preIndex === -1) {
+                  return [];
+                }
+                preIndex = preIndex + "program: ".length;
+
+                var postIndex = text.substring(preIndex).indexOf("---");
+                if (postIndex === -1) {
+                  return [];
+                }
+                postIndex = preIndex + postIndex;
+
+
+                var newPreIndex = text.substring(preIndex, postIndex).indexOf("[");
+                if (newPreIndex === -1) {
+                  return [];
+                }
+                preIndex = preIndex + newPreIndex + "[".length;
+
+                var newPostIndex = text.substring(preIndex, postIndex).lastIndexOf("]");
+                if (newPostIndex === -1) {
+                  return [];
+                }
+                postIndex = preIndex + newPostIndex;
+
+                var listProgram = text.substring(preIndex, postIndex).trim();
+                var result = [];
+
+                var newListProgram = [];
+                listProgram.split("{").forEach(function (element, index, array) {
+                  element.split("}").forEach(function (elementelement, elementindex, elementarray) {
+                    if (elementelement.replace(/[\n\r,]/g, '').trim().length>0) {
+                      newListProgram.push(elementelement.trim());
+                    }
+                  });
+                });
+                listProgram = newListProgram;
+
+                listProgram.forEach(function (element, index, array) {
+                  var titleProgram = valueSingleLineFields("title: ", element).replace(/[\n\r,']/g, '');
+                  var activityProgram = valueArrayFields("activity: ", element);
+                  result.push({title: titleProgram, activity: activityProgram});
+                });
+                return result;
+              }
+
+              $scope.myTitle = valueSingleLineFields("title: ", fileBody);
+              $scope.myRef =  valueSingleLineFields("ref: ", fileBody);
+              $scope.myCategorie =  valueSingleLineFields("categories: ", fileBody);
+              $scope.myPublic =  valueSingleLineFields("public: ", fileBody);
+              $scope.myCost =  valueSingleLineFields("costs: ", fileBody);
+              $scope.myCostDescription =  valueSingleLineFields("costs-description: ", fileBody);
+              $scope.myDuration =  valueSingleLineFields("duration: ", fileBody);
+              $scope.myDurationDescription =  valueSingleLineFields("duration-description: ", fileBody);
+              $scope.myName = $scope.myFile.name.substring(0, $scope.myFile.name.indexOf('.md')).trim();
+
+              if (fileBody.indexOf("### Présentation\n\n") !== -1) {
+                $scope.myContenu = fileBody.substring(
+                  fileBody.indexOf("### Présentation\n\n")+"### Présentation\n\n".length,
+                  fileBody.length-1).trim();
+              } else {
+                $scope.myContenu = "";
+              }
+
+              if (fileBody.indexOf("presentation: '") !== -1) {
+                $scope.myContenu = fileBody.substring(
+                  fileBody.indexOf("presentation: '")+"presentation: '".length,
+                  fileBody.indexOf("'\n---")).trim();
+              } else {
+                $scope.myContenu = "";
+              }
+
+              $scope.mySubject = valueArrayFields("subject: ", fileBody);
+              $scope.myProgram = valueProgramFields(fileBody);
+            }
+          );
+        }
+        fr.readAsText($scope.myFile);
+      }
+    );
   };
 }]);
 

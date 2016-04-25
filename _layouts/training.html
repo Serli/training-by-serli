@@ -2,7 +2,7 @@
 layout: default
 ---
 <!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -48,6 +48,7 @@ layout: default
     <p id="ref">Réf. {{ page.ref }}</p>
   {% endif %}
   <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
   {{content}}
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -75,5 +76,58 @@ layout: default
     </ul>
   {% endif %}
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="{% if page.categories %}color{{page.categories}}{% else %}{% if page.title %}color{{page.title}}{% else %}colordefault{% endif %}{% endif %}"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}";
+        var pdfDuration = "{{page.duration}}";
+        var pdfCosts = "{{page.costs}}";
+        var pdfDurationDescription = "{{page.duration-description}}";
+        var pdfCostsDescription = "{{page.costs-description}}";
+        var pdfPublic = "{{page.public}}";
+        var pdfRef = "{{page.ref}}";
+        var pdfSubject = [];
+        {% for s in page.subject %}
+          pdfSubject.push("{{s}}");
+        {% endfor %}
+        var pdfProgram  = [];
+        {% for p in page.program %}
+          var nameProgram = "{{p.title}}";
+          var activityProgram = [];
+          {% for a in p.activity %}
+            activityProgram.push("{{a}}");
+          {% endfor %}
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        {% endfor %}
+        var pdfContent = '';
+        {% if page.presentation %}
+            var pdfContent = "{{page.presentation}}";
+        {% endif %}
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->

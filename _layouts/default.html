@@ -20,13 +20,7 @@
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
           {% for training in site.pages %} {% if training.categories == page.node %} {% if training.title %}

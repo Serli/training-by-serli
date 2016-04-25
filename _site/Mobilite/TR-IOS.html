@@ -6,11 +6,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Développement iOS</title>
+	<title>Développement iOS</title>
 
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Mobilite/TR-IOS">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -88,7 +96,7 @@
 >
 	
 	
-	<h1 class="smalTitle">Développement iOS</h1>
+	<h1 class="smalTitle">Développement iOS</h1>
 	<a href="http://localhost:4000/">
 		<img src="/assets/Training-by-serli-logo-white-01.png"/>
 	</a>
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeur ayant de l’expérience dans un langage Orienté Objets </td>
+        <td rowspan=2 > Développeur ayant de l’expérience dans un langage Orienté Objets </td>
         <td rowspan=
           1
         > 1990 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-IOS</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation a pour objectif de vous initier au développement iOS.
-Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.
-Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation a pour objectif de vous initier au développement iOS.<br />
+Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.<br />
+Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -161,7 +168,7 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
       </li>
     
       <li class="colorMobilite">
-        Le développement iOS et ses spécificités
+        Le développement iOS et ses spécificités
       </li>
     
       <li class="colorMobilite">
@@ -182,15 +189,15 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Présentation de l’Objective-C
+        <li> Présentation de l’Objective-C
           <ul>
             
-              <li> Syntaxe, concepts, propriétés </li>
+              <li> Syntaxe, concepts, propriétés </li>
             
           </ul>
         </li>
       
-        <li> Présentation de l’environnement de développement
+        <li> Présentation de l’environnement de développement
           <ul>
             
               <li> XCode 5, Standard, Assistant et Version </li>
@@ -202,19 +209,19 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
           </ul>
         </li>
       
-        <li> Présentation d’une application iOS
+        <li> Présentation d’une application iOS
           <ul>
             
           </ul>
         </li>
       
-        <li> Spécificité du déploiement iOS
+        <li> Spécificité du déploiement iOS
           <ul>
             
           </ul>
         </li>
       
-        <li> Présentation du framework Foundation
+        <li> Présentation du framework Foundation
           <ul>
             
               <li> Classes de bases, Collections... </li>
@@ -222,31 +229,31 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
           </ul>
         </li>
       
-        <li> Présentation des principaux Design Patterns d’iOS
+        <li> Présentation des principaux Design Patterns d’iOS
           <ul>
             
-              <li> MVC, Délégation, KVC, KVO, Class Cluster </li>
+              <li> MVC, Délégation, KVC, KVO, Class Cluster </li>
             
           </ul>
         </li>
       
-        <li> Présentation des concepts de haut niveau
+        <li> Présentation des concepts de haut niveau
           <ul>
             
-              <li> Storyboards, Contrôleurs principaux, Segues, IBOutlet et IBAction </li>
+              <li> Storyboards, Contrôleurs principaux, Segues, IBOutlet et IBAction </li>
             
           </ul>
         </li>
       
-        <li> Création d’interface utilisateur
+        <li> Création d’interface utilisateur
           <ul>
             
-              <li> Vues, Contrôleurs, Alertes... </li>
+              <li> Vues, Contrôleurs, Alertes... </li>
             
           </ul>
         </li>
       
-        <li> Connectivité
+        <li> Connectivité
           <ul>
             
               <li> Consommation de Web Services REST, JSON </li>
@@ -254,13 +261,13 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
           </ul>
         </li>
       
-        <li> Persistance des données
+        <li> Persistance des données
           <ul>
             
           </ul>
         </li>
       
-        <li> Projet Tutoré
+        <li> Projet Tutoré
           <ul>
             
           </ul>
@@ -269,6 +276,133 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorMobilite"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Développement iOS";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeur ayant de l’expérience dans un langage Orienté Objets";
+        var pdfRef = "TR-IOS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Objective-C");
+        
+          pdfSubject.push("Le développement iOS et ses spécificités");
+        
+          pdfSubject.push("Framework Foundation");
+        
+          pdfSubject.push("Design Patterns iOS");
+        
+          pdfSubject.push("Concepts Haut-Niveau");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation de l’Objective-C";
+          var activityProgram = [];
+          
+            activityProgram.push("Syntaxe, concepts, propriétés");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation de l’environnement de développement";
+          var activityProgram = [];
+          
+            activityProgram.push("XCode 5, Standard, Assistant et Version");
+          
+            activityProgram.push("Interface Builder");
+          
+            activityProgram.push("Auto Layout");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation d’une application iOS";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spécificité du déploiement iOS";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation du framework Foundation";
+          var activityProgram = [];
+          
+            activityProgram.push("Classes de bases, Collections...");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation des principaux Design Patterns d’iOS";
+          var activityProgram = [];
+          
+            activityProgram.push("MVC, Délégation, KVC, KVO, Class Cluster");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation des concepts de haut niveau";
+          var activityProgram = [];
+          
+            activityProgram.push("Storyboards, Contrôleurs principaux, Segues, IBOutlet et IBAction");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Création d’interface utilisateur";
+          var activityProgram = [];
+          
+            activityProgram.push("Vues, Contrôleurs, Alertes...");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Connectivité";
+          var activityProgram = [];
+          
+            activityProgram.push("Consommation de Web Services REST, JSON");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Persistance des données";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Projet Tutoré";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation a pour objectif de vous initier au développement iOS. Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS. Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -322,13 +456,7 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -445,31 +573,31 @@ Vous apprendrez les règles de développement vers plusieurs types d’apparei
             {
               class: "colorMobilite",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

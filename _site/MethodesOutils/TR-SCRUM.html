@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/MethodesOutils/TR-SCRUM">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -130,7 +138,7 @@
       </tr>
       <tr>
         
-          <td> 100% théorique </td>
+          <td> 100% théorique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,9 @@
     <p id="ref">Réf. TR-SCRUM</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles.
-Cette formation vous permettra d’acquérir les clés de la réussite d’un projet Scrum. Vous apprendrez les différents rôles définis par Scrum. Vous comprendrez les principaux événements d’un projet Scrum et leur mise en oeuvre.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles.
+Cette formation vous permettra d’acquérir les clés de la réussite d’un projet Scrum. Vous apprendrez les différents rôles définis par Scrum. Vous comprendrez les principaux événements d’un projet Scrum et leur mise en oeuvre.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -160,15 +167,15 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
       </li>
     
       <li class="colorMethodesOutils">
-        Les artéfacts
+        Les artéfacts
       </li>
     
       <li class="colorMethodesOutils">
-        Les rôles
+        Les rôles
       </li>
     
       <li class="colorMethodesOutils">
-        Les évènements
+        Les évènements
       </li>
     
   </ul>
@@ -177,10 +184,10 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Présentation
+        <li> Présentation
           <ul>
             
-              <li> Scrum parmi les méthodes Agiles </li>
+              <li> Scrum parmi les méthodes Agiles </li>
             
               <li> Les grands principes de Scrum </li>
             
@@ -189,33 +196,33 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
           </ul>
         </li>
       
-        <li> Les artéfacts
+        <li> Les artéfacts
           <ul>
             
-              <li> L’incrément </li>
+              <li> L’incrément </li>
             
               <li> Product Backlog </li>
             
               <li> Spring Backlog </li>
             
-              <li> Définition de fini </li>
+              <li> Définition de fini </li>
             
           </ul>
         </li>
       
-        <li> Les rôles
+        <li> Les rôles
           <ul>
             
               <li> Product Owner &#58; le responsable du produit </li>
             
               <li> Scrum Master &#58; le facilitateur </li>
             
-              <li> L’équipe de développement </li>
+              <li> L’équipe de développement </li>
             
           </ul>
         </li>
       
-        <li> Les évènements
+        <li> Les évènements
           <ul>
             
               <li> Le Sprint </li>
@@ -226,7 +233,7 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
             
               <li> Sprint Review </li>
             
-              <li> Sprint Retrospective &#58; amélioration du processus en continu </li>
+              <li> Sprint Retrospective &#58; amélioration du processus en continu </li>
             
           </ul>
         </li>
@@ -234,6 +241,108 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorMethodesOutils"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Scrum";
+        var pdfDuration = "1 jour";
+        var pdfCosts = "590 € HT";
+        var pdfDurationDescription = "100% théorique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Tout public";
+        var pdfRef = "TR-SCRUM";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Scrum");
+        
+          pdfSubject.push("Les artéfacts");
+        
+          pdfSubject.push("Les rôles");
+        
+          pdfSubject.push("Les évènements");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation";
+          var activityProgram = [];
+          
+            activityProgram.push("Scrum parmi les méthodes Agiles");
+          
+            activityProgram.push("Les grands principes de Scrum");
+          
+            activityProgram.push("Principe d’engagement collectif");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les artéfacts";
+          var activityProgram = [];
+          
+            activityProgram.push("L’incrément");
+          
+            activityProgram.push("Product Backlog");
+          
+            activityProgram.push("Spring Backlog");
+          
+            activityProgram.push("Définition de fini");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les rôles";
+          var activityProgram = [];
+          
+            activityProgram.push("Product Owner &#58; le responsable du produit");
+          
+            activityProgram.push("Scrum Master &#58; le facilitateur");
+          
+            activityProgram.push("L’équipe de développement");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les évènements";
+          var activityProgram = [];
+          
+            activityProgram.push("Le Sprint");
+          
+            activityProgram.push("Daily Scrum");
+          
+            activityProgram.push("Sprint Planning");
+          
+            activityProgram.push("Sprint Review");
+          
+            activityProgram.push("Sprint Retrospective &#58; amélioration du processus en continu");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles. Cette formation vous permettra d’acquérir les clés de la réussite d’un projet Scrum. Vous apprendrez les différents rôles définis par Scrum. Vous comprendrez les principaux événements d’un projet Scrum et leur mise en oeuvre.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -287,13 +396,7 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -410,31 +513,31 @@ Cette formation vous permettra d’acquérir les clés de la réussite d’un
             {
               class: "colorMethodesOutils",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

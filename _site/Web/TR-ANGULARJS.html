@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Web/TR-ANGULARJS">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs débutants ou expérimentés </td>
+        <td rowspan=2 > Développeurs débutants ou expérimentés </td>
         <td rowspan=
           1
         > 1690 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-ANGULARJS</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années.
-Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end !
-Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder AngularJS !</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années.<br />
+Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end !<br />
+Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder AngularJS !</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -157,11 +164,11 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
   <ul id="subject" >
     
       <li class="colorWeb">
-        Découverte d’AngularJS
+        Découverte d’AngularJS
       </li>
     
       <li class="colorWeb">
-        Injection de dépendances
+        Injection de dépendances
       </li>
     
       <li class="colorWeb">
@@ -173,7 +180,7 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
       </li>
     
       <li class="colorWeb">
-        Ecosystème et outillage
+        Ecosystème et outillage
       </li>
     
   </ul>
@@ -188,22 +195,22 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
           </ul>
         </li>
       
-        <li> Découverte d’AngularJS
+        <li> Découverte d’AngularJS
           <ul>
             
               <li> Binding et templating, filtres </li>
             
-              <li> Contrôleurs et scope </li>
+              <li> Contrôleurs et scope </li>
             
               <li> Routage </li>
             
           </ul>
         </li>
       
-        <li> Injection de dépendances
+        <li> Injection de dépendances
           <ul>
             
-              <li> L’injection de dépendances dans AngularJS </li>
+              <li> L’injection de dépendances dans AngularJS </li>
             
               <li> Modules et services </li>
             
@@ -212,7 +219,7 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
           </ul>
         </li>
       
-        <li> Composants réutilisables avec les directives
+        <li> Composants réutilisables avec les directives
           <ul>
             
           </ul>
@@ -228,7 +235,7 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
           </ul>
         </li>
       
-        <li> Ecosystème et outillage
+        <li> Ecosystème et outillage
           <ul>
             
               <li> Build avec Grunt </li>
@@ -243,6 +250,112 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWeb"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "AngularJS";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1690 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés";
+        var pdfRef = "TR-ANGULARJS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Découverte d’AngularJS");
+        
+          pdfSubject.push("Injection de dépendances");
+        
+          pdfSubject.push("Directives");
+        
+          pdfSubject.push("Tests unitaires et tests end-to-end");
+        
+          pdfSubject.push("Ecosystème et outillage");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Rappels des principes de base du web";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Découverte d’AngularJS";
+          var activityProgram = [];
+          
+            activityProgram.push("Binding et templating, filtres");
+          
+            activityProgram.push("Contrôleurs et scope");
+          
+            activityProgram.push("Routage");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Injection de dépendances";
+          var activityProgram = [];
+          
+            activityProgram.push("L’injection de dépendances dans AngularJS");
+          
+            activityProgram.push("Modules et services");
+          
+            activityProgram.push("Bonnes pratiques d’organisation du code");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Composants réutilisables avec les directives";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Tests unitaires et tests end-to-end";
+          var activityProgram = [];
+          
+            activityProgram.push("Les outils de tests unitaires Karma, Jasmine, les Mocks");
+          
+            activityProgram.push("Tests end-to-end avec Protractor");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Ecosystème et outillage";
+          var activityProgram = [];
+          
+            activityProgram.push("Build avec Grunt");
+          
+            activityProgram.push("Outils de debug");
+          
+            activityProgram.push("Librairies tierces");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années. Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end ! Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder AngularJS !";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -296,13 +409,7 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -419,31 +526,31 @@ Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder An
             {
               class: "colorWeb",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

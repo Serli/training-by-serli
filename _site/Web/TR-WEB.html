@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Web/TR-WEB">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -122,7 +130,7 @@
       <tr>
         <td rowspan=
           1
-        > 1 journée </td>
+        > 1 journée </td>
         <td rowspan=2 > Tout public </td>
         <td rowspan=
           1
@@ -130,7 +138,7 @@
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,9 @@
     <p id="ref">Réf. TR-WEB</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation vous fera découvrir les principes de base du développement web. Vous découvrirez HTTP, l’architecture REST et le pattern MVC.
-Vous apprendrez les bases du langage HTML et créerez vos premières feuilles de style CSS3. Vous découvrirez le langage JavaScript. Enfin, vous réaliserez votre premier projet web.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vous fera découvrir les principes de base du développement web. Vous découvrirez HTTP, l’architecture REST et le pattern MVC.<br />
+Vous apprendrez les bases du langage HTML et créerez vos premières feuilles de style CSS3. Vous découvrirez le langage JavaScript. Enfin, vous réaliserez votre premier projet web.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -194,7 +201,7 @@ Vous apprendrez les bases du langage HTML et créerez vos premières feuilles 
             
               <li> REST </li>
             
-              <li> Anatomie d’une requête HTTP </li>
+              <li> Anatomie d’une requête HTTP </li>
             
               <li> MVC </li>
             
@@ -232,6 +239,103 @@ Vous apprendrez les bases du langage HTML et créerez vos premières feuilles 
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWeb"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Introduction au développement Web";
+        var pdfDuration = "1 journée";
+        var pdfCosts = "490 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Tout public";
+        var pdfRef = "TR-WEB";
+        var pdfSubject = [];
+        
+          pdfSubject.push("HTTP");
+        
+          pdfSubject.push("REST");
+        
+          pdfSubject.push("MVC");
+        
+          pdfSubject.push("HTML5");
+        
+          pdfSubject.push("CSS3");
+        
+          pdfSubject.push("JavaScript");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "HTTP";
+          var activityProgram = [];
+          
+            activityProgram.push("Un peu d’histoire");
+          
+            activityProgram.push("Le navigateur");
+          
+            activityProgram.push("REST");
+          
+            activityProgram.push("Anatomie d’une requête HTTP");
+          
+            activityProgram.push("MVC");
+          
+            activityProgram.push("Le push");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "HTML & CSS";
+          var activityProgram = [];
+          
+            activityProgram.push("Principes de base");
+          
+            activityProgram.push("Composants HTML");
+          
+            activityProgram.push("Introduction au CSS");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "JavaScript";
+          var activityProgram = [];
+          
+            activityProgram.push("Prise en main");
+          
+            activityProgram.push("Manipulation du DOM");
+          
+            activityProgram.push("Tour d’horizon des frameworks");
+          
+            activityProgram.push("L’avenir");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vous fera découvrir les principes de base du développement web. Vous découvrirez HTTP, l’architecture REST et le pattern MVC. Vous apprendrez les bases du langage HTML et créerez vos premières feuilles de style CSS3. Vous découvrirez le langage JavaScript. Enfin, vous réaliserez votre premier projet web.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -285,13 +389,7 @@ Vous apprendrez les bases du langage HTML et créerez vos premières feuilles 
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -408,31 +506,31 @@ Vous apprendrez les bases du langage HTML et créerez vos premières feuilles 
             {
               class: "colorWeb",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWeb",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-PLAY2">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,7 +131,7 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeur Java ou Scala. </td>
+        <td rowspan=2 > Développeur Java ou Scala. </td>
         <td rowspan=
           1
         > 1990 € HT </td>
@@ -145,18 +153,11 @@
     <p id="ref">Réf. WK-PLAY2</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Au cours de ce workshop de trois jours, apprenez à développer rapidement des applications web basées sur le framework Play.</p>
-
-<p><br /></p>
-
-<p>Destiné à une équipe de 1 à 4 développeurs, cet atelier vous permettra de mettre en oeuvre une application tirant au mieux partie du framework Play en 3 jours.</p>
-
-<p><br /></p>
-
-<p>Découvrez la simplicité proposée par le Play et la rapidité de mise en oeuvre associée.
-Apprenez à tirer le meilleur parti du développement asynchrone et du système d’acteurs proposé par Akka. Créez de nouveaux usages en tirant parti des nouveautés temps réel offertes par HTML5.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Au cours de ce workshop de trois jours, apprenez à développer rapidement des applications web basées sur le framework Play.<br />
+Destiné à une équipe de 1 à 4 développeurs, cet atelier vous permettra de mettre en oeuvre une application tirant au mieux partie du framework Play en 3 jours.<br />
+Découvrez la simplicité proposée par le Play et la rapidité de mise en oeuvre associée.<br />
+Apprenez à tirer le meilleur parti du développement asynchrone et du système d’acteurs proposé par Akka. Créez de nouveaux usages en tirant parti des nouveautés temps réel offertes par HTML5.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -176,7 +177,7 @@ Apprenez à tirer le meilleur parti du développement asynchrone et du systè
       </li>
     
       <li class="colorWorkshops">
-        ￼Akka
+        Akka
       </li>
     
       <li class="colorWorkshops">
@@ -191,6 +192,62 @@ Apprenez à tirer le meilleur parti du développement asynchrone et du systè
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Developpement Web sur le Framework Play 2";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeur Java ou Scala.";
+        var pdfRef = "WK-PLAY2";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Play 2");
+        
+          pdfSubject.push("Java ou Scala");
+        
+          pdfSubject.push("Javascript");
+        
+          pdfSubject.push("Akka");
+        
+          pdfSubject.push("HTML5");
+        
+          pdfSubject.push("CSS3");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Au cours de ce workshop de trois jours, apprenez à développer rapidement des applications web basées sur le framework Play. Destiné à une équipe de 1 à 4 développeurs, cet atelier vous permettra de mettre en oeuvre une application tirant au mieux partie du framework Play en 3 jours. Découvrez la simplicité proposée par le Play et la rapidité de mise en oeuvre associée. Apprenez à tirer le meilleur parti du développement asynchrone et du système d’acteurs proposé par Akka. Créez de nouveaux usages en tirant parti des nouveautés temps réel offertes par HTML5.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -244,13 +301,7 @@ Apprenez à tirer le meilleur parti du développement asynchrone et du systè
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -367,31 +418,31 @@ Apprenez à tirer le meilleur parti du développement asynchrone et du systè
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Data/TR-CASSANDRA">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 2 jours </td>
-        <td rowspan=2 > Développeurs </td>
+        <td rowspan=2 > Développeurs </td>
         <td rowspan=
           1
         > 1340 € HT </td>
       </tr>
       <tr>
         
-          <td> 40% théorie, 60% pratique </td>
+          <td> 40% théorie, 60% pratique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,9 @@
     <p id="ref">Réf. TR-CASSANDRA</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Apache Cassandra est devenue un incontournable dans le paysage NoSQL. Cette base permet de gérer une volumétrie très importante tout en offrant une résistance à la panne exceptionnelle.
-Au cours de cette formation vous découvrirez cette base de données aussi bien du point de vue développement (insertion, requêtes, conception…) que du point de vue opérationnel (installation, opérations de maintenance…).</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Apache Cassandra est devenue un incontournable dans le paysage NoSQL. Cette base permet de gérer une volumétrie très importante tout en offrant une résistance à la panne exceptionnelle.<br />
+Au cours de cette formation vous découvrirez cette base de données aussi bien du point de vue développement (insertion, requêtes, conception…) que du point de vue opérationnel (installation, opérations de maintenance…).</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -156,7 +163,7 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
   <ul id="subject" >
     
       <li class="colorData">
-        Modèle de données
+        Modèle de données
       </li>
     
       <li class="colorData">
@@ -168,7 +175,7 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
       </li>
     
       <li class="colorData">
-        Modélisation
+        Modélisation
       </li>
     
       <li class="colorData">
@@ -200,29 +207,29 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
         <li> Utilisation
           <ul>
             
-              <li> Stockage de données </li>
+              <li> Stockage de données </li>
             
-              <li> Les requêtes (CQL3, Thrift) </li>
+              <li> Les requêtes (CQL3, Thrift) </li>
             
-              <li> Gestion de la cohérence </li>
-            
-          </ul>
-        </li>
-      
-        <li> Modélisation des données
-          <ul>
-            
-              <li> Principes de modélisation </li>
+              <li> Gestion de la cohérence </li>
             
           </ul>
         </li>
       
-        <li> Modèle distribué
+        <li> Modélisation des données
           <ul>
             
-              <li> Zoom sur l’exécution d’une requête </li>
+              <li> Principes de modélisation </li>
             
-              <li> Réplication des données </li>
+          </ul>
+        </li>
+      
+        <li> Modèle distribué
+          <ul>
+            
+              <li> Zoom sur l’exécution d’une requête </li>
+            
+              <li> Réplication des données </li>
             
           </ul>
         </li>
@@ -234,7 +241,7 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
             
               <li> Supervision </li>
             
-              <li> Opérations de maintenance du cluster </li>
+              <li> Opérations de maintenance du cluster </li>
             
           </ul>
         </li>
@@ -242,6 +249,111 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorData"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Cassandra";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1340 € HT";
+        var pdfDurationDescription = "40% théorie, 60% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs";
+        var pdfRef = "TR-CASSANDRA";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Modèle de données");
+        
+          pdfSubject.push("CQL3");
+        
+          pdfSubject.push("Thrift");
+        
+          pdfSubject.push("Modélisation");
+        
+          pdfSubject.push("NodeTool");
+        
+          pdfSubject.push("Supervision");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Prise en main";
+          var activityProgram = [];
+          
+            activityProgram.push("Cassandra dans le paysage NoSQL");
+          
+            activityProgram.push("Principaux concepts");
+          
+            activityProgram.push("Installation");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Utilisation";
+          var activityProgram = [];
+          
+            activityProgram.push("Stockage de données");
+          
+            activityProgram.push("Les requêtes (CQL3, Thrift)");
+          
+            activityProgram.push("Gestion de la cohérence");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Modélisation des données";
+          var activityProgram = [];
+          
+            activityProgram.push("Principes de modélisation");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Modèle distribué";
+          var activityProgram = [];
+          
+            activityProgram.push("Zoom sur l’exécution d’une requête");
+          
+            activityProgram.push("Réplication des données");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Administration";
+          var activityProgram = [];
+          
+            activityProgram.push("NodeTool");
+          
+            activityProgram.push("Supervision");
+          
+            activityProgram.push("Opérations de maintenance du cluster");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Apache Cassandra est devenue un incontournable dans le paysage NoSQL. Cette base permet de gérer une volumétrie très importante tout en offrant une résistance à la panne exceptionnelle. Au cours de cette formation vous découvrirez cette base de données aussi bien du point de vue développement (insertion, requêtes, conception...) que du point de vue opérationnel (installation, opérations de maintenance...).";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -295,13 +407,7 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -418,31 +524,31 @@ Au cours de cette formation vous découvrirez cette base de données aussi bie
             {
               class: "colorData",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

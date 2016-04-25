@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-ELK">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -145,21 +153,11 @@
     <p id="ref">Réf. WK-ELK</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>La stack ElasticSearch (Elastic), Kibana, Logstash ouvre de nouvelles perspectives en terme de valorisation de données.</p>
-
-<p><br /></p>
-
-<p>Elasticsearch est un des moteurs de recherches les plus puissants du marché, il vous permettra de stocker des volumétries importantes de données, tout en vous assurant des performances exceptionnelles.</p>
-
-<p><br /></p>
-
-<p>Logstash est un outil de gestion et de management des logs qui vous permettra de structurer et d’apporter de la valeur ajoutée à vos logs.</p>
-
-<p><br /></p>
-
-<p>Kibana est un outil de visualisation qui vous permettra de visualiser les données qui sont stockées dans ElasticSearch dans une interface totalement paramétrable et conforme à l’état de l’art.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>La stack ElasticSearch (Elastic), Kibana, Logstash ouvre de nouvelles perspectives en terme de valorisation de données.<br />
+Elasticsearch est un des moteurs de recherches les plus puissants du marché, il vous permettra de stocker des volumétries importantes de données, tout en vous assurant des performances exceptionnelles.<br />
+Logstash est un outil de gestion et de management des logs qui vous permettra de structurer et d’apporter de la valeur ajoutée à vos logs.<br />
+Kibana est un outil de visualisation qui vous permettra de visualiser les données qui sont stockées dans ElasticSearch dans une interface totalement paramétrable et conforme à l’état de l’art.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -179,13 +177,65 @@
       </li>
     
       <li class="colorWorkshops">
-        Création de tableaux de bord métier
+        Création de tableaux de bord métier
       </li>
     
   </ul>
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1340 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Tous types de profils.";
+        var pdfRef = "WK-ELK";
+        var pdfSubject = [];
+        
+          pdfSubject.push("ElasticSearch");
+        
+          pdfSubject.push("Logstash");
+        
+          pdfSubject.push("Kibana");
+        
+          pdfSubject.push("Création de tableaux de bord métier");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "La stack ElasticSearch (Elastic), Kibana, Logstash ouvre de nouvelles perspectives en terme de valorisation de données. Elasticsearch est un des moteurs de recherches les plus puissants du marché, il vous permettra de stocker des volumétries importantes de données, tout en vous assurant des performances exceptionnelles. Logstash est un outil de gestion et de management des logs qui vous permettra de structurer et d’apporter de la valeur ajoutée à vos logs. Kibana est un outil de visualisation qui vous permettra de visualiser les données qui sont stockées dans ElasticSearch dans une interface totalement paramétrable et conforme à l’état de l’art.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -239,13 +289,7 @@
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -362,31 +406,31 @@
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

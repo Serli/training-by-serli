@@ -3,11 +3,11 @@ layout: training
 title: Java EE
 permalink: /Java/TR-JAVAEE
 categories: Java
-public: Développeurs Java
+public: Développeurs Java
 costs: 1390 € HT
 costs-description: par participant
 duration: 3 jours
-duration-description: 50% théorie, 50% pratique
+duration-description: 50% théorie, 50% pratique
 ref: TR-JAVAEE
 subject: [
   'Java EE',
@@ -25,8 +25,8 @@ program: [
   },{
     title: 'EJB',
     activity: [
-      'Présentation',
-      'Session Beans (Sécurité, Transactions)',
+      'Présentation',
+      'Session Beans (Sécurité, Transactions)',
       'Message Driven Beans'
     ]
   },{
@@ -47,7 +47,7 @@ program: [
     title: 'CDI',
     activity: [
       'Mise en place',
-      'Décorateurs, Intercepteurs et Observeurs'
+      'Décorateurs, Intercepteurs et Observeurs'
     ]
   },{
     title: 'Web Services',
@@ -58,9 +58,9 @@ program: [
     ]
   }
 ]
+presentation: 'Cette formation vous fera découvrir Java EE, la spécification de Java destinée aux applications d’entreprise. Vous découvrirez les concepts fondamentaux des applications d’entreprise en Java.
+Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi que les bonnes pratiques associées. Vous apprendrez à architecturer des applications d’entreprise basées sur la plateforme Java EE.'
 ---
 
-### Présentation
-
-Cette formation vous fera découvrir Java EE, la spécification de Java destinée aux applications d’entreprise. Vous découvrirez les concepts fondamentaux des applications d’entreprise en Java.
-Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi que les bonnes pratiques associées. Vous apprendrez à architecturer des applications d’entreprise basées sur la plateforme Java EE.
+Cette formation vous fera découvrir Java EE, la spécification de Java destinée aux applications d’entreprise. Vous découvrirez les concepts fondamentaux des applications d’entreprise en Java.
+Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi que les bonnes pratiques associées. Vous apprendrez à architecturer des applications d’entreprise basées sur la plateforme Java EE.  

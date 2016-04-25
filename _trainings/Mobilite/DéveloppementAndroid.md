@@ -1,51 +1,51 @@
 ---
 layout: training
-title: Développement Android
+title: Développement Android
 permalink: /Mobilite/TR-ANDROID
 categories: Mobilite
-public: Développeur ayant déjà une connaissance de Java.
+public: Développeur ayant déjà une connaissance de Java.
 costs: 1690 € HT
 costs-description: par participant
 duration: 3 jours
-duration-description: 50% théorie, 50% pratique
+duration-description: 50% théorie, 50% pratique
 ref: TR-ANDROID
 subject: [
   'Framework et Outils Android',
-  'Services et Activités Android',
-  'Persistance des données',
-  'Géolocalisation'
+  'Services et Activités Android',
+  'Persistance des données',
+  'Géolocalisation'
 ]
 program: [
   {
-    title: 'Présentation de l’environnement de développement sous Eclipse',
+    title: 'Présentation de l’environnement de développement sous Eclipse',
     activity: [
       'Mise en place',
-      'Outils proposés (débugueur, émulateur...)'
+      'Outils proposés (débugueur, émulateur...)'
     ]
   },{
-    title: 'Présentation et réalisation d’un premier “Hello World”',
+    title: 'Présentation et réalisation d’un premier “Hello World”',
     activity: [
-      'Présentation du découpage d’une application Android'
+      'Présentation du découpage d’une application Android'
     ]
   },{
-    title: 'Réalisation d’une interface basique',
+    title: 'Réalisation d’une interface basique',
     activity: [
       'Ajout de composants',
       'Interaction de composants',
-      'Gestion des menus et des boîtes de dialogues'
+      'Gestion des menus et des boîtes de dialogues'
     ]
   },{
-    title: 'Réalisation de la paramétrisation d’une application',
+    title: 'Réalisation de la paramétrisation d’une application',
     activity: [
       'Internationalisation',
-      'Adaptation à différents périphériques'
+      'Adaptation à différents périphériques'
     ]
   },{
-    title: 'Présentation et réalisation des possibilités de persistance de données',
+    title: 'Présentation et réalisation des possibilités de persistance de données',
     activity: [
-      'Préférences d’une application',
-      'Accès au système de fichier',
-      'Base de donnée SQLite'
+      'Préférences d’une application',
+      'Accès au système de fichier',
+      'Base de donnée SQLite'
     ]
   },{
     title: 'Utilisation des outils de localisation',
@@ -54,14 +54,15 @@ program: [
       'API Google Maps v2'
     ]
   },{
-    title: 'Projet Turoré',
+    title: 'Projet Turoré',
     activity: []
   }
 ]
+presentation: 'Cette formation a pour objectif de vous initier au développement pour Android.
+Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.
+A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.'
 ---
 
-### Présentation
-
-Cette formation a pour objectif de vous initier au développement pour Android.
-Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.
-A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.
+Cette formation a pour objectif de vous initier au développement pour Android.
+Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.  
+A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.  

@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Java/TR-TESTSJAVA">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 1 jours </td>
-        <td rowspan=2 > Développeurs Java, débutants ou expérimentés </td>
+        <td rowspan=2 > Développeurs Java, débutants ou expérimentés </td>
         <td rowspan=
           1
         > 490 € HT </td>
       </tr>
       <tr>
         
-          <td> 40% théorie, 60% pratique </td>
+          <td> 40% théorie, 60% pratique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,9 @@
     <p id="ref">Réf. TR-TESTSJAVA</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation a pour objectif de vous faire appréhender les tests automatisés dans vos applications Java. Vous découvrirez les concepts fondamentaux de tests (unitaires, d’intégration) ainsi que les outils pour les mettre en oeuvre dans votre code Java.
-Vous apprendrez les pratiques et patterns les plus répandus sur les tests automatisés.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation a pour objectif de vous faire appréhender les tests automatisés dans vos applications Java. Vous découvrirez les concepts fondamentaux de tests (unitaires, d’intégration) ainsi que les outils pour les mettre en oeuvre dans votre code Java.
+Vous apprendrez les pratiques et patterns les plus répandus sur les tests automatisés.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -168,7 +175,7 @@ Vous apprendrez les pratiques et patterns les plus répandus sur les tests auto
       </li>
     
       <li class="colorJava">
-        Tests d’intégration
+        Tests d’intégration
       </li>
     
       <li class="colorJava">
@@ -181,12 +188,12 @@ Vous apprendrez les pratiques et patterns les plus répandus sur les tests auto
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Présentation :
+        <li> Présentation :
           <ul>
             
-              <li> Problématiques </li>
+              <li> Problématiques </li>
             
-              <li> État de l’art </li>
+              <li> état de l’art </li>
             
               <li> Industrialisation logicielle </li>
             
@@ -217,7 +224,7 @@ Vous apprendrez les pratiques et patterns les plus répandus sur les tests auto
           </ul>
         </li>
       
-        <li> Outils de tests d’intégrations
+        <li> Outils de tests d’intégrations
           <ul>
             
               <li> DBUnit, Arquillian, Citrus, ... </li>
@@ -234,6 +241,105 @@ Vous apprendrez les pratiques et patterns les plus répandus sur les tests auto
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Les Tests en Java";
+        var pdfDuration = "1 jours";
+        var pdfCosts = "490 € HT";
+        var pdfDurationDescription = "40% théorie, 60% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs Java, débutants ou expérimentés";
+        var pdfRef = "TR-TESTSJAVA";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Principes fondamentaux");
+        
+          pdfSubject.push("Junit (Conventions)");
+        
+          pdfSubject.push("Mocks");
+        
+          pdfSubject.push("Tests d’intégration");
+        
+          pdfSubject.push("Test-Driven Development (TDD)");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation :";
+          var activityProgram = [];
+          
+            activityProgram.push("Problématiques");
+          
+            activityProgram.push("état de l’art");
+          
+            activityProgram.push("Industrialisation logicielle");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Junit";
+          var activityProgram = [];
+          
+            activityProgram.push("Anatomie d’un test");
+          
+            activityProgram.push("Assertions");
+          
+            activityProgram.push("Conventions");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Mocks";
+          var activityProgram = [];
+          
+            activityProgram.push("Principe de fonctionnement");
+          
+            activityProgram.push("EasyMock");
+          
+            activityProgram.push("JUnit");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Outils de tests d’intégrations";
+          var activityProgram = [];
+          
+            activityProgram.push("DBUnit, Arquillian, Citrus, ...");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Kata de TDD";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation a pour objectif de vous faire appréhender les tests automatisés dans vos applications Java. Vous découvrirez les concepts fondamentaux de tests (unitaires, d’intégration) ainsi que les outils pour les mettre en oeuvre dans votre code Java. Vous apprendrez les pratiques et patterns les plus répandus sur les tests automatisés.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -287,13 +393,7 @@ Vous apprendrez les pratiques et patterns les plus répandus sur les tests auto
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -410,31 +510,31 @@ Vous apprendrez les pratiques et patterns les plus répandus sur les tests auto
             {
               class: "colorJava",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

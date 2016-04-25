@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-SQL">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,7 +131,7 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs débutants ou expérimentés </td>
+        <td rowspan=2 > Développeurs débutants ou expérimentés </td>
         <td rowspan=
           1
         > 1990 € HT </td>
@@ -145,24 +153,14 @@
     <p id="ref">Réf. WK-SQL</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Au cours de ce workshop, apprenez à intégrer MongoDB et ElasticSearch dans votre application.</p>
-
-<p><br /></p>
-
-<p>Ce workshop est centré sur les fonctionnalités des deux bases NoSQL.<br />
-Comment intégrer MongoDB dans une application Java ?<br />
-Comment intégrer ElasticSearch à votre application existante ?<br />
-Vous saurez répondre à ces questions à la suite de ce workshop.</p>
-
-<p><br /></p>
-
-<p>Ce workshop présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre.</p>
-
-<p><br /></p>
-
-<p>Enfin, ce workshop vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Au cours de ce workshop, apprenez à intégrer MongoDB et ElasticSearch dans votre application.
+Ce workshop est centré sur les fonctionnalités des deux bases NoSQL.<br />
+Comment intégrer MongoDB dans une application Java ?<br />
+Comment intégrer ElasticSearch à votre application existante ?<br />
+Vous saurez répondre à ces questions à la suite de ce workshop.<br />
+Ce workshop présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre.<br />
+Enfin, ce workshop vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -182,7 +180,7 @@ Vous saurez répondre à ces questions à la suite de ce workshop.</p>
       </li>
     
       <li class="colorWorkshops">
-        Intégration
+        Intégration
       </li>
     
       <li class="colorWorkshops">
@@ -193,6 +191,60 @@ Vous saurez répondre à ces questions à la suite de ce workshop.</p>
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "NoSQL";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés";
+        var pdfRef = "WK-SQL";
+        var pdfSubject = [];
+        
+          pdfSubject.push("MongoDB");
+        
+          pdfSubject.push("ElasticSearch");
+        
+          pdfSubject.push("Le meilleur des deux mondes");
+        
+          pdfSubject.push("Intégration");
+        
+          pdfSubject.push("Java");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Au cours de ce workshop, apprenez à intégrer MongoDB et ElasticSearch dans votre application. Ce workshop est centré sur les fonctionnalités des deux bases NoSQL. Comment intégrer MongoDB dans une application Java ? Comment intégrer ElasticSearch à votre application existante ? Vous saurez répondre à ces questions à la suite de ce workshop. Ce workshop présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre. Enfin, ce workshop vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -246,13 +298,7 @@ Vous saurez répondre à ces questions à la suite de ce workshop.</p>
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -369,31 +415,31 @@ Vous saurez répondre à ces questions à la suite de ce workshop.</p>
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Java/TR-JAVA8">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 1 jours </td>
-        <td rowspan=2 > Développeurs Java </td>
+        <td rowspan=2 > Développeurs Java </td>
         <td rowspan=
           1
         > 590 € HT </td>
       </tr>
       <tr>
         
-          <td> 40% théorie, 60% pratique </td>
+          <td> 40% théorie, 60% pratique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,10 @@
     <p id="ref">Réf. TR-JAVA8</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="prsentation">présentation</h3>
-<p>Cette formation vise à vous faire découvrir les nouveautés de Java 8.
-Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
-Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vise à vous faire découvrir les nouveautés de Java 8.
+Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
+Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -188,7 +196,7 @@ Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de 
             
               <li> Programmation Fonctionnelle </li>
             
-              <li> Functional Interfaces & références de méthodes </li>
+              <li> Functional Interfaces & références de méthodes </li>
             
           </ul>
         </li>
@@ -198,7 +206,7 @@ Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de 
             
               <li> Pipeline </li>
             
-              <li> Parallélisation </li>
+              <li> Parallélisation </li>
             
           </ul>
         </li>
@@ -220,6 +228,93 @@ Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de 
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Les Nouveautés De Java 8";
+        var pdfDuration = "1 jours";
+        var pdfCosts = "590 € HT";
+        var pdfDurationDescription = "40% théorie, 60% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs Java";
+        var pdfRef = "TR-JAVA8";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Expressions Lambda");
+        
+          pdfSubject.push("Streams");
+        
+          pdfSubject.push("Date&Time API");
+        
+          pdfSubject.push("Programmation Reactive");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Tour d’horizon de Java 8";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les expressions Lambda";
+          var activityProgram = [];
+          
+            activityProgram.push("Programmation Fonctionnelle");
+          
+            activityProgram.push("Functional Interfaces & références de méthodes");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les Streams";
+          var activityProgram = [];
+          
+            activityProgram.push("Pipeline");
+          
+            activityProgram.push("Parallélisation");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "L’API Date&Time";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Programmation Reactive";
+          var activityProgram = [];
+          
+            activityProgram.push("CompletableFuture");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vise à vous faire découvrir les nouveautés de Java 8. Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java. Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -273,13 +368,7 @@ Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de 
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -396,31 +485,31 @@ Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de 
             {
               class: "colorJava",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

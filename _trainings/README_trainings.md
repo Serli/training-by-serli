@@ -56,7 +56,7 @@ pas de corps de page.
 * duration-description :
   * facultatif
   * détails supplémentaire sur la durée
-    * exemple : 50% théorie, 50% pratique
+    * exemple : 50% théorie, 50% pratique
 * ref :
   * la référence de la formation
     * exemple : TR-ANGULARJS
@@ -80,7 +80,7 @@ pas de corps de page.
 présentation de la formation
 généralement de la forme :
 
-  h3 : Présentation
+  h3 : Présentation
   paragraphe : blabla sur la formation
 
 ## Génération automatique de fichier

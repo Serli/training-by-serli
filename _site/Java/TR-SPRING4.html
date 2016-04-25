@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Java/TR-SPRING4">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 2 jours </td>
-        <td rowspan=2 > Développeurs Java </td>
+        <td rowspan=2 > Développeurs Java </td>
         <td rowspan=
           1
         > 940 € HT </td>
       </tr>
       <tr>
         
-          <td> 40% théorie, 60% pratique </td>
+          <td> 40% théorie, 60% pratique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,9 @@
     <p id="ref">Réf. TR-SPRING4</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation a pour objectif de vous faire découvrir Spring.
-Spring est une référence en terme de développement d’application Java basées sur des conteneurs légers. Spring 4 ne se contente pas d’être une amélioration du framework Spring. Il apporte son lot de nouveautés, avec notamment Spring Boot, l’outil de développement productif idéal pour créer vos micro-services.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation a pour objectif de vous faire découvrir Spring.<br />
+Spring est une référence en terme de développement d’application Java basées sur des conteneurs légers. Spring 4 ne se contente pas d’être une amélioration du framework Spring. Il apporte son lot de nouveautés, avec notamment Spring Boot, l’outil de développement productif idéal pour créer vos micro-services.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -164,7 +171,7 @@ Spring est une référence en terme de développement d’application Java ba
       </li>
     
       <li class="colorJava">
-        Accès aux données
+        Accès aux données
       </li>
     
       <li class="colorJava">
@@ -185,7 +192,7 @@ Spring est une référence en terme de développement d’application Java ba
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Présentation
+        <li> Présentation
           <ul>
             
           </ul>
@@ -196,7 +203,7 @@ Spring est une référence en terme de développement d’application Java ba
             
               <li> Principaux concepts </li>
             
-              <li> Inversion de contrôle et injection de dépendances </li>
+              <li> Inversion de contrôle et injection de dépendances </li>
             
           </ul>
         </li>
@@ -209,7 +216,7 @@ Spring est une référence en terme de développement d’application Java ba
           </ul>
         </li>
       
-        <li> Accès aux données
+        <li> Accès aux données
           <ul>
             
               <li> Spring ORM, Spring DAO </li>
@@ -224,7 +231,7 @@ Spring est une référence en terme de développement d’application Java ba
             
               <li> Configuration </li>
             
-              <li> Modèle MVC, Templating </li>
+              <li> Modèle MVC, Templating </li>
             
               <li> Websockets </li>
             
@@ -236,7 +243,7 @@ Spring est une référence en terme de développement d’application Java ba
             
               <li> Configuration </li>
             
-              <li> Démarrage rapide </li>
+              <li> Démarrage rapide </li>
             
           </ul>
         </li>
@@ -254,6 +261,121 @@ Spring est une référence en terme de développement d’application Java ba
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Spring 4";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "940 € HT";
+        var pdfDurationDescription = "40% théorie, 60% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs Java";
+        var pdfRef = "TR-SPRING4";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Spring Core");
+        
+          pdfSubject.push("Spring AOP");
+        
+          pdfSubject.push("Accès aux données");
+        
+          pdfSubject.push("Spring MVC");
+        
+          pdfSubject.push("Spring Boot");
+        
+          pdfSubject.push("Spring Batch");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spring Core";
+          var activityProgram = [];
+          
+            activityProgram.push("Principaux concepts");
+          
+            activityProgram.push("Inversion de contrôle et injection de dépendances");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spring AOP";
+          var activityProgram = [];
+          
+            activityProgram.push("Mise en oeuvre");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Accès aux données";
+          var activityProgram = [];
+          
+            activityProgram.push("Spring ORM, Spring DAO");
+          
+            activityProgram.push("Transaction Manager");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spring MVC";
+          var activityProgram = [];
+          
+            activityProgram.push("Configuration");
+          
+            activityProgram.push("Modèle MVC, Templating");
+          
+            activityProgram.push("Websockets");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spring Boot";
+          var activityProgram = [];
+          
+            activityProgram.push("Configuration");
+          
+            activityProgram.push("Démarrage rapide");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spring Batch";
+          var activityProgram = [];
+          
+            activityProgram.push("Concepts de base");
+          
+            activityProgram.push("Mise en oeuvre");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation a pour objectif de vous faire découvrir Spring. Spring est une référence en terme de développement d’application Java basées sur des conteneurs légers. Spring 4 ne se contente pas d’être une amélioration du framework Spring. Il apporte son lot de nouveautés, avec notamment Spring Boot, l’outil de développement productif idéal pour créer vos micro-services.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -307,13 +429,7 @@ Spring est une référence en terme de développement d’application Java ba
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -430,31 +546,31 @@ Spring est une référence en terme de développement d’application Java ba
             {
               class: "colorJava",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

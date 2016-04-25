@@ -6,11 +6,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Développement Android</title>
+	<title>Développement Android</title>
 
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Mobilite/TR-ANDROID">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -88,7 +96,7 @@
 >
 	
 	
-	<h1 class="smalTitle">Développement Android</h1>
+	<h1 class="smalTitle">Développement Android</h1>
 	<a href="http://localhost:4000/">
 		<img src="/assets/Training-by-serli-logo-white-01.png"/>
 	</a>
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeur ayant déjà une connaissance de Java. </td>
+        <td rowspan=2 > Développeur ayant déjà une connaissance de Java. </td>
         <td rowspan=
           1
         > 1690 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-ANDROID</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation a pour objectif de vous initier au développement pour Android.
-Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.
-A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation a pour objectif de vous initier au développement pour Android.
+Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android.<br />
+A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -161,15 +168,15 @@ A travers divers exercices, vous découvrirez les possibilités de ce systèm
       </li>
     
       <li class="colorMobilite">
-        Services et Activités Android
+        Services et Activités Android
       </li>
     
       <li class="colorMobilite">
-        Persistance des données
+        Persistance des données
       </li>
     
       <li class="colorMobilite">
-        Géolocalisation
+        Géolocalisation
       </li>
     
   </ul>
@@ -178,54 +185,54 @@ A travers divers exercices, vous découvrirez les possibilités de ce systèm
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Présentation de l’environnement de développement sous Eclipse
+        <li> Présentation de l’environnement de développement sous Eclipse
           <ul>
             
               <li> Mise en place </li>
             
-              <li> Outils proposés (débugueur, émulateur...) </li>
+              <li> Outils proposés (débugueur, émulateur...) </li>
             
           </ul>
         </li>
       
-        <li> Présentation et réalisation d’un premier “Hello World”
+        <li> Présentation et réalisation d’un premier “Hello World”
           <ul>
             
-              <li> Présentation du découpage d’une application Android </li>
+              <li> Présentation du découpage d’une application Android </li>
             
           </ul>
         </li>
       
-        <li> Réalisation d’une interface basique
+        <li> Réalisation d’une interface basique
           <ul>
             
               <li> Ajout de composants </li>
             
               <li> Interaction de composants </li>
             
-              <li> Gestion des menus et des boîtes de dialogues </li>
+              <li> Gestion des menus et des boîtes de dialogues </li>
             
           </ul>
         </li>
       
-        <li> Réalisation de la paramétrisation d’une application
+        <li> Réalisation de la paramétrisation d’une application
           <ul>
             
               <li> Internationalisation </li>
             
-              <li> Adaptation à différents périphériques </li>
+              <li> Adaptation à différents périphériques </li>
             
           </ul>
         </li>
       
-        <li> Présentation et réalisation des possibilités de persistance de données
+        <li> Présentation et réalisation des possibilités de persistance de données
           <ul>
             
-              <li> Préférences d’une application </li>
+              <li> Préférences d’une application </li>
             
-              <li> Accès au système de fichier </li>
+              <li> Accès au système de fichier </li>
             
-              <li> Base de donnée SQLite </li>
+              <li> Base de donnée SQLite </li>
             
           </ul>
         </li>
@@ -240,7 +247,7 @@ A travers divers exercices, vous découvrirez les possibilités de ce systèm
           </ul>
         </li>
       
-        <li> Projet Turoré
+        <li> Projet Turoré
           <ul>
             
           </ul>
@@ -249,6 +256,119 @@ A travers divers exercices, vous découvrirez les possibilités de ce systèm
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorMobilite"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Développement Android";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1690 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeur ayant déjà une connaissance de Java.";
+        var pdfRef = "TR-ANDROID";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Framework et Outils Android");
+        
+          pdfSubject.push("Services et Activités Android");
+        
+          pdfSubject.push("Persistance des données");
+        
+          pdfSubject.push("Géolocalisation");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation de l’environnement de développement sous Eclipse";
+          var activityProgram = [];
+          
+            activityProgram.push("Mise en place");
+          
+            activityProgram.push("Outils proposés (débugueur, émulateur...)");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation et réalisation d’un premier “Hello World”";
+          var activityProgram = [];
+          
+            activityProgram.push("Présentation du découpage d’une application Android");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Réalisation d’une interface basique";
+          var activityProgram = [];
+          
+            activityProgram.push("Ajout de composants");
+          
+            activityProgram.push("Interaction de composants");
+          
+            activityProgram.push("Gestion des menus et des boîtes de dialogues");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Réalisation de la paramétrisation d’une application";
+          var activityProgram = [];
+          
+            activityProgram.push("Internationalisation");
+          
+            activityProgram.push("Adaptation à différents périphériques");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation et réalisation des possibilités de persistance de données";
+          var activityProgram = [];
+          
+            activityProgram.push("Préférences d’une application");
+          
+            activityProgram.push("Accès au système de fichier");
+          
+            activityProgram.push("Base de donnée SQLite");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Utilisation des outils de localisation";
+          var activityProgram = [];
+          
+            activityProgram.push("GPS, GeoCoding");
+          
+            activityProgram.push("API Google Maps v2");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Projet Turoré";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation a pour objectif de vous initier au développement pour Android. Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android. A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -302,13 +422,7 @@ A travers divers exercices, vous découvrirez les possibilités de ce systèm
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -425,31 +539,31 @@ A travers divers exercices, vous découvrirez les possibilités de ce systèm
             {
               class: "colorMobilite",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

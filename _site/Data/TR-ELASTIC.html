@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Data/TR-ELASTIC">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 2 jours </td>
-        <td rowspan=2 > Développeur, Opérationnel, DBA </td>
+        <td rowspan=2 > Développeur, Opérationnel, DBA </td>
         <td rowspan=
           1
         > 1340 € HT </td>
       </tr>
       <tr>
         
-          <td> 40% théorie, 60% pratique </td>
+          <td> 40% théorie, 60% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-ELASTIC</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL.
-Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic.
-Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL.<br />
+Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic.<br />
+Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -165,11 +172,11 @@ Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’e
       </li>
     
       <li class="colorData">
-        Concepts avancés
+        Concepts avancés
       </li>
     
       <li class="colorData">
-        Modèle distribué d’Elastic
+        Modèle distribué d’Elastic
       </li>
     
       <li class="colorData">
@@ -187,7 +194,7 @@ Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’e
             
               <li> Concepts de base </li>
             
-              <li> Opération de base </li>
+              <li> Opération de base </li>
             
           </ul>
         </li>
@@ -199,20 +206,20 @@ Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’e
             
               <li> _search (et _suggest) </li>
             
-              <li> Agrégations (Faceting) </li>
+              <li> Agrégations (Faceting) </li>
             
           </ul>
         </li>
       
-        <li> Concepts avancés
+        <li> Concepts avancés
           <ul>
             
-              <li> Bulk, Warmers, Percolator, Géolocalisation </li>
+              <li> Bulk, Warmers, Percolator, Géolocalisation </li>
             
           </ul>
         </li>
       
-        <li> Modèle distribué d’Elastic
+        <li> Modèle distribué d’Elastic
           <ul>
             
               <li> Split Brain </li>
@@ -239,6 +246,109 @@ Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’e
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorData"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Elastic";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1340 € HT";
+        var pdfDurationDescription = "40% théorie, 60% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeur, Opérationnel, DBA";
+        var pdfRef = "TR-ELASTIC";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Premiers pas");
+        
+          pdfSubject.push("Le Moteur de recherches");
+        
+          pdfSubject.push("Concepts avancés");
+        
+          pdfSubject.push("Modèle distribué d’Elastic");
+        
+          pdfSubject.push("Le passage en production");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Premiers pas";
+          var activityProgram = [];
+          
+            activityProgram.push("Concepts de base");
+          
+            activityProgram.push("Opération de base");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Le moteur de recherches";
+          var activityProgram = [];
+          
+            activityProgram.push("Configuration des index et du mapping");
+          
+            activityProgram.push("_search (et _suggest)");
+          
+            activityProgram.push("Agrégations (Faceting)");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Concepts avancés";
+          var activityProgram = [];
+          
+            activityProgram.push("Bulk, Warmers, Percolator, Géolocalisation");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Modèle distribué d’Elastic";
+          var activityProgram = [];
+          
+            activityProgram.push("Split Brain");
+          
+            activityProgram.push("Fonctionnement du cluster");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Le passage en production";
+          var activityProgram = [];
+          
+            activityProgram.push("Configuration");
+          
+            activityProgram.push("Sizing");
+          
+            activityProgram.push("API d’administration");
+          
+            activityProgram.push("API de supervision");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL. Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic. Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -292,13 +402,7 @@ Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’e
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -415,31 +519,31 @@ Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’e
             {
               class: "colorData",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorData",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

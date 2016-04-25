@@ -30,6 +30,19 @@ permalink: /administration/formulaireData.html
   <h1>Nouvelle Formation</h1>
   <form ng-submit="downloadTraining()" ng-controller="formulaireTraining">
     <fieldset>
+      <legend>Modifier</legend>
+      <div class="input-file-container">
+        <label for="my-fileTraining">Fichier à modifier</label>
+        <input class="input-file" id="my-fileTraining" type="file" onchange="angular.element(this).scope().setFile(this)" />
+        <label ng-if="myFile.name===undefined" for="my-fileTraining"
+          class="input-file-trigger">Select a file...</label>
+        <label ng-if="myFile.name!==undefined" for="my-fileTraining"
+          class="input-file-trigger completed">[[myFile.name]]</label>
+      </div>
+      <p><em>Dans le dossier : /_trainings</em></p>
+    </fieldset>
+
+    <fieldset>
       <legend>Générale</legend>
       <label for="title">Titre</label>
       <input id="title" type="text" ng-model="myTitle"
@@ -80,8 +93,8 @@ permalink: /administration/formulaireData.html
       <label>Sujets</label><br/>
       <div id="divSujets">
         <div ng-repeat="s in mySubject">
-          <input type="text" ng-model="s.subject"
-            placeholder="ex : Expressions Lambda" ng-class="s.subject==='' ? 'error' : ''" focus/>
+          <input type="text" ng-model="s.name"
+            placeholder="ex : Expressions Lambda" ng-class="s.name==='' ? 'error' : ''" focus/>
           <input class="littlebutton" type="button" value="x" ng-click="removeSubject($index)"/>
         </div>
       </div>

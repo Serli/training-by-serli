@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-ANDROID">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,7 +131,7 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs débutants ou expérimentés, Architectes </td>
+        <td rowspan=2 > Développeurs débutants ou expérimentés, Architectes </td>
         <td rowspan=
           1
         > 1990 € HT </td>
@@ -145,29 +153,13 @@
     <p id="ref">Réf. WK-ANDROID</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Rien de tel que de mettre les mains dans le cambouis pour apprendre une nouvelle technologie. C’est d’autant plus vrai pour le développement d’applications mobiles !</p>
-
-<p><br /></p>
-
-<p>Au cours de ce workshop, vous apprendrez à développer une application Android de A à Z : de la découverte du SDK au déploiement sur le store Google Play !</p>
-
-<p><br /></p>
-
-<p>Après avoir parcouru les notions de bases indispensables à tout développeur Android, vous commencerez le développement d’une application mobile “fil rouge” qui sera enrichie de nouvelles fonctionnalités tout au long du workshop.</p>
-
-<p><br /></p>
-
-<p>Vous découvrirez et utiliserez des librairies indispensables pour développer efficacement et élégamment : Retrofit (appels de services REST), Picasso (chargement d’images), Dagger (injection de dépendances), EventBus (gestion d’événements) et d’autres encore !</p>
-
-<p><br /></p>
-
-<p>Cette application respectera également les bonnes pratiques Material Design de Google, nouveau standard depuis Android 5.0 (Lollipop - API 21).</p>
-
-<p><br /></p>
-
-<p>Enfin, vous découvrirez la puissance de Gradle pour le build de votre application, et verrez comment la déployer sur le store Google Play.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Rien de tel que de mettre les mains dans le cambouis pour apprendre une nouvelle technologie. C’est d’autant plus vrai pour le développement d’applications mobiles !<br />
+Au cours de ce workshop, vous apprendrez à développer une application Android de A à Z : de la découverte du SDK au déploiement sur le store Google Play !<br />
+Après avoir parcouru les notions de bases indispensables à tout développeur Android, vous commencerez le développement d’une application mobile “fil rouge” qui sera enrichie de nouvelles fonctionnalités tout au long du workshop.<br />
+Vous découvrirez et utiliserez des librairies indispensables pour développer efficacement et élégamment : Retrofit (appels de services REST), Picasso (chargement d’images), Dagger (injection de dépendances), EventBus (gestion d’événements) et d’autres encore !<br />
+Cette application respectera également les bonnes pratiques Material Design de Google, nouveau standard depuis Android 5.0 (Lollipop - API 21).<br />
+Enfin, vous découvrirez la puissance de Gradle pour le build de votre application, et verrez comment la déployer sur le store Google Play.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -187,7 +179,7 @@
       </li>
     
       <li class="colorWorkshops">
-        Les interactions avec le téléphone
+        Les interactions avec le téléphone
       </li>
     
       <li class="colorWorkshops">
@@ -195,13 +187,69 @@
       </li>
     
       <li class="colorWorkshops">
-        Build et déploiement
+        Build et déploiement
       </li>
     
   </ul>
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Developpement Android";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés, Architectes";
+        var pdfRef = "WK-ANDROID";
+        var pdfSubject = [];
+        
+          pdfSubject.push("La philosophie Android");
+        
+          pdfSubject.push("Le SDK");
+        
+          pdfSubject.push("Les librairies indispensables");
+        
+          pdfSubject.push("Les interactions avec le téléphone");
+        
+          pdfSubject.push("Material Design");
+        
+          pdfSubject.push("Build et déploiement");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Rien de tel que de mettre les mains dans le cambouis pour apprendre une nouvelle technologie. C’est d’autant plus vrai pour le développement d’applications mobiles ! Au cours de ce workshop, vous apprendrez à développer une application Android de A à Z : de la découverte du SDK au déploiement sur le store Google Play ! Après avoir parcouru les notions de bases indispensables à tout développeur Android, vous commencerez le développement d’une application mobile “fil rouge” qui sera enrichie de nouvelles fonctionnalités tout au long du workshop. Vous découvrirez et utiliserez des librairies indispensables pour développer efficacement et élégamment : Retrofit (appels de services REST), Picasso (chargement d’images), Dagger (injection de dépendances), EventBus (gestion d’événements) et d’autres encore ! Cette application respectera également les bonnes pratiques Material Design de Google, nouveau standard depuis Android 5.0 (Lollipop - API 21). Enfin, vous découvrirez la puissance de Gradle pour le build de votre application, et verrez comment la déployer sur le store Google Play.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -255,13 +303,7 @@
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -378,31 +420,31 @@
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

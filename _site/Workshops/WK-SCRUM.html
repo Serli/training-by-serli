@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-SCRUM">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -145,23 +153,13 @@
     <p id="ref">Réf. WK-SCRUM</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles.</p>
-
-<p><br /></p>
-
-<p>Au cours de ce workshop vous apprendrez la méthode Scrum de manière ludique en réalisant un projet à l’aide de Legos.</p>
-
-<p><br /></p>
-
-<p>Vous découvrirez les différents rôles d’un projet Scrum (Product Owner, Scrum Master, Développeur).<br />
-Vous prendrez part aux différentes étapes du projet (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective).<br />
-Enfin, vous découvrirez la mise en place des principaux artefacts de la méthode Scrum (Product Backlog, Sprint Backlog, Définition de Fini).</p>
-
-<p><br /></p>
-
-<p>A l’issu de ce Workshop, vous appréhenderez la méthode Scrum et son apport dans un projet.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles.
+Au cours de ce workshop vous apprendrez la méthode Scrum de manière ludique en réalisant un projet à l’aide de Legos.<br />
+Vous découvrirez les différents rôles d’un projet Scrum (Product Owner, Scrum Master, Développeur).<br />
+Vous prendrez part aux différentes étapes du projet (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective).<br />
+Enfin, vous découvrirez la mise en place des principaux artefacts de la méthode Scrum (Product Backlog, Sprint Backlog, Définition de Fini).<br />
+A l’issu de ce Workshop, vous appréhenderez la méthode Scrum et son apport dans un projet.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -169,21 +167,71 @@ Enfin, vous découvrirez la mise en place des principaux artefacts de la méth
   <ul id="subject" >
     
       <li class="colorWorkshops">
-        Les Rôles
+        Les Rôles
       </li>
     
       <li class="colorWorkshops">
-        ￼'Les Évènements'
+        Les évènements
       </li>
     
       <li class="colorWorkshops">
-        ￼'Les Artefacts'
+        Les Artefacts
       </li>
     
   </ul>
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Decouvrez Scrum avec des Legos";
+        var pdfDuration = "1 jour";
+        var pdfCosts = "690 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Tout public";
+        var pdfRef = "WK-SCRUM";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Les Rôles");
+        
+          pdfSubject.push("Les évènements");
+        
+          pdfSubject.push("Les Artefacts");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles. Au cours de ce workshop vous apprendrez la méthode Scrum de manière ludique en réalisant un projet à l’aide de Legos. Vous découvrirez les différents rôles d’un projet Scrum (Product Owner, Scrum Master, Développeur). Vous prendrez part aux différentes étapes du projet (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective). Enfin, vous découvrirez la mise en place des principaux artefacts de la méthode Scrum (Product Backlog, Sprint Backlog, Définition de Fini). A l’issu de ce Workshop, vous appréhenderez la méthode Scrum et son apport dans un projet.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -237,13 +285,7 @@ Enfin, vous découvrirez la mise en place des principaux artefacts de la méth
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -360,31 +402,31 @@ Enfin, vous découvrirez la mise en place des principaux artefacts de la méth
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

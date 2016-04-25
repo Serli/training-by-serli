@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-DOCKER2">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 2 jours </td>
-        <td rowspan=2 > Techniciens (du développeur à l’exploitant) débutants ou expérimentés </td>
+        <td rowspan=2 > Techniciens (du développeur à l’exploitant) débutants ou expérimentés </td>
         <td rowspan=
           1
         > 1340 € HT </td>
       </tr>
       <tr>
         
-          <td> 20% théorie, 80% pratique </td>
+          <td> 20% théorie, 80% pratique </td>
         
         
           <td> par participant </td>
@@ -145,22 +153,12 @@
     <p id="ref">Réf. WK-DOCKER2</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Docker est aujourd’hui une solution de virtualisation légère incontournable.</p>
-
-<p><br /></p>
-
-<p>Dans ce workshop, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue jusqu’à la production, avec une présentation et une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage.</p>
-
-<p><br /></p>
-
-<p>Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Vous apprendrez ensuite à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins.</p>
-
-<p><br /></p>
-
-<p>Vous franchirez enfin l’ultime étape du déploiement en production, avec la production par Jenkins d’une image déployable. Quels outils mettre en oeuvre pour créer un cluster de conteneurs Docker, mettre en place le monitoring, gérer le cloud et la scalabilité de manière automatisée ?
-Ce workshop vous permettra de répondre à l’ensemble de ces questions.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Docker est aujourd’hui une solution de virtualisation légère incontournable.<br />
+Dans ce workshop, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue jusqu’à la production, avec une présentation et une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage.<br />
+Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Vous apprendrez ensuite à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins.<br />
+Vous franchirez enfin l’ultime étape du déploiement en production, avec la production par Jenkins d’une image déployable. Quels outils mettre en oeuvre pour créer un cluster de conteneurs Docker, mettre en place le monitoring, gérer le cloud et la scalabilité de manière automatisée ?<br />
+Ce workshop vous permettra de répondre à l’ensemble de ces questions.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -172,7 +170,7 @@ Ce workshop vous permettra de répondre à l’ensemble de ces questions.</p>
       </li>
     
       <li class="colorWorkshops">
-        Écosystème Docker
+        écosystème Docker
       </li>
     
       <li class="colorWorkshops">
@@ -199,6 +197,64 @@ Ce workshop vous permettra de répondre à l’ensemble de ces questions.</p>
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Docker : Du développement a la production";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1340 € HT";
+        var pdfDurationDescription = "20% théorie, 80% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Techniciens (du développeur à l’exploitant) débutants ou expérimentés";
+        var pdfRef = "WK-DOCKER2";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Docker");
+        
+          pdfSubject.push("écosystème Docker");
+        
+          pdfSubject.push("Docker File");
+        
+          pdfSubject.push("Fig");
+        
+          pdfSubject.push("Jenkins");
+        
+          pdfSubject.push("Ansible");
+        
+          pdfSubject.push("Kubernetes");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Docker est aujourd’hui une solution de virtualisation légère incontournable. Dans ce workshop, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue jusqu’à la production, avec une présentation et une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage. Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Vous apprendrez ensuite à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins. Vous franchirez enfin l’ultime étape du déploiement en production, avec la production par Jenkins d’une image déployable. Quels outils mettre en oeuvre pour créer un cluster de conteneurs Docker, mettre en place le monitoring, gérer le cloud et la scalabilité de manière automatisée ? Ce workshop vous permettra de répondre à l’ensemble de ces questions.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -252,13 +308,7 @@ Ce workshop vous permettra de répondre à l’ensemble de ces questions.</p>
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -375,31 +425,31 @@ Ce workshop vous permettra de répondre à l’ensemble de ces questions.</p>
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

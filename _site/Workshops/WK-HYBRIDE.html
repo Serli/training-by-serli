@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Workshops/WK-HYBRIDE">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,7 +131,7 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs débutants ou expérimentés, Architectes </td>
+        <td rowspan=2 > Développeurs débutants ou expérimentés, Architectes </td>
         <td rowspan=
           1
         > 1990 € HT </td>
@@ -145,21 +153,11 @@
     <p id="ref">Réf. WK-HYBRIDE</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Lors de ce workshop, apprenez à développer une application mobile hybride de zéro. Vous découvrirez les principaux concepts du développement hybride et les fondements d’Apache Cordova.</p>
-
-<p><br /></p>
-
-<p>Vous développerez votre application à l’aide de JavaScript et de la bibliothèque de composants graphiques IOnic. Vous utiliserez les APIs Cordova qui permettent d’interagir avec les appareils. Vous apprendrez à appréhender les différences entre chaque OS.</p>
-
-<p><br /></p>
-
-<p>Vous découvrirez les principaux outils de développement, de test et de debug.</p>
-
-<p><br /></p>
-
-<p>Enfin, vous appréhenderez les principes de build d’applications multi-plateformes basées sur Apache Cordova.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Lors de ce workshop, apprenez à développer une application mobile hybride de zéro. Vous découvrirez les principaux concepts du développement hybride et les fondements d’Apache Cordova.
+Vous développerez votre application à l’aide de JavaScript et de la bibliothèque de composants graphiques IOnic. Vous utiliserez les APIs Cordova qui permettent d’interagir avec les appareils. Vous apprendrez à appréhender les différences entre chaque OS.<br />
+Vous découvrirez les principaux outils de développement, de test et de debug.<br />
+Enfin, vous appréhenderez les principes de build d’applications multi-plateformes basées sur Apache Cordova.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -202,6 +200,66 @@
   <!-- /// program ///////////////////////////////////////////////////////// -->
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Developpement mobile hybride";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés, Architectes";
+        var pdfRef = "WK-HYBRIDE";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Apache Cordova");
+        
+          pdfSubject.push("PhoneGap");
+        
+          pdfSubject.push("Ionic");
+        
+          pdfSubject.push("JavaScript");
+        
+          pdfSubject.push("Phonegap Build");
+        
+          pdfSubject.push("CLI phonegap");
+        
+          pdfSubject.push("CLI Ionic");
+        
+          pdfSubject.push("Debuggeur remote de Chrome");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Lors de ce workshop, apprenez à développer une application mobile hybride de zéro. Vous découvrirez les principaux concepts du développement hybride et les fondements d’Apache Cordova. Vous développerez votre application à l’aide de JavaScript et de la bibliothèque de composants graphiques IOnic. Vous utiliserez les APIs Cordova qui permettent d’interagir avec les appareils. Vous apprendrez à appréhender les différences entre chaque OS. Vous découvrirez les principaux outils de développement, de test et de debug. Enfin, vous appréhenderez les principes de build d’applications multi-plateformes basées sur Apache Cordova.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -255,13 +313,7 @@
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -378,31 +430,31 @@
             {
               class: "colorWorkshops",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorWorkshops",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

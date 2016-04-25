@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/LanguagesAlternatifs/TR-AKKA">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs expérimentés Java ou Scala </td>
+        <td rowspan=2 > Développeurs expérimentés Java ou Scala </td>
         <td rowspan=
           1
         > 1990 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-AKKA</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Akka est un framework écrit en Scala qui implémente le pattern Acteur tel que défini dans Erlang. Au fur et à mesure des années, Akka s’est doté de divers modules basés sur le modèle de programmation acteur, pour devenir une référence en terme d’outillage middleware.
-Durant cette formation vous découvrirez le framework et tous ses modules ainsi que la manière de le mettre en oeuvre à travers divers cas d’utilisation.
-Initialement conçu pour Scala, cette formation est disponible à la fois en Scala et en Java.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Akka est un framework écrit en Scala qui implémente le pattern Acteur tel que défini dans Erlang. Au fur et à mesure des années, Akka s’est doté de divers modules basés sur le modèle de programmation acteur, pour devenir une référence en terme d’outillage middleware.
+Durant cette formation vous découvrirez le framework et tous ses modules ainsi que la manière de le mettre en oeuvre à travers divers cas d’utilisation.<br />
+Initialement conçu pour Scala, cette formation est disponible à la fois en Scala et en Java.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -157,7 +164,7 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
   <ul id="subject" >
     
       <li class="colorLanguagesAlternatifs">
-        Modèles de programmation
+        Modèles de programmation
       </li>
     
       <li class="colorLanguagesAlternatifs">
@@ -178,7 +185,7 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Le modèle de programmation de Akka
+        <li> Le modèle de programmation de Akka
           <ul>
             
               <li> Les acteurs </li>
@@ -189,7 +196,7 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
             
               <li> Routing </li>
             
-              <li> Resilience / tolérance aux pannes </li>
+              <li> Resilience / tolérance aux pannes </li>
             
               <li> Monitoring </li>
             
@@ -217,7 +224,7 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
             
               <li> Logging, Scheduler, Circuit Breakers </li>
             
-              <li> Intégration avec des outils tierces </li>
+              <li> Intégration avec des outils tierces </li>
             
           </ul>
         </li>
@@ -239,6 +246,112 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorLanguagesAlternatifs"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Akka";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs expérimentés Java ou Scala";
+        var pdfRef = "TR-AKKA";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Modèles de programmation");
+        
+          pdfSubject.push("Patterns de base");
+        
+          pdfSubject.push("Outils du framework");
+        
+          pdfSubject.push("Modules additionnels");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Le modèle de programmation de Akka";
+          var activityProgram = [];
+          
+            activityProgram.push("Les acteurs");
+          
+            activityProgram.push("Mailboxes");
+          
+            activityProgram.push("Dispatchers");
+          
+            activityProgram.push("Routing");
+          
+            activityProgram.push("Resilience / tolérance aux pannes");
+          
+            activityProgram.push("Monitoring");
+          
+            activityProgram.push("Remoting");
+          
+            activityProgram.push("Tests");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Patterns de base";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Outils du framework";
+          var activityProgram = [];
+          
+            activityProgram.push("Agent");
+          
+            activityProgram.push("FSM");
+          
+            activityProgram.push("Event bus");
+          
+            activityProgram.push("Logging, Scheduler, Circuit Breakers");
+          
+            activityProgram.push("Intégration avec des outils tierces");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Modules additionnels";
+          var activityProgram = [];
+          
+            activityProgram.push("Akka cluster");
+          
+            activityProgram.push("Akka streams");
+          
+            activityProgram.push("Akka HTTP");
+          
+            activityProgram.push("Akka persistence");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Akka est un framework écrit en Scala qui implémente le pattern Acteur tel que défini dans Erlang. Au fur et à mesure des années, Akka s’est doté de divers modules basés sur le modèle de programmation acteur, pour devenir une référence en terme d’outillage middleware. Durant cette formation vous découvrirez le framework et tous ses modules ainsi que la manière de le mettre en oeuvre à travers divers cas d’utilisation. Initialement conçu pour Scala, cette formation est disponible à la fois en Scala et en Java.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -292,13 +405,7 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -415,31 +522,31 @@ Initialement conçu pour Scala, cette formation est disponible à la fois en S
             {
               class: "colorLanguagesAlternatifs",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

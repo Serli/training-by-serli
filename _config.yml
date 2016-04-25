@@ -6,6 +6,7 @@ description: Training by Serli . FORMATIONS & WORKSHOPS
 baseurl: "/formations"
 url: "http://Seikicegus.github.io"
 github_username:  Seikicegus
+encoding: utf-8
 # Build Settings
 sass:
   sass_dir: _sass

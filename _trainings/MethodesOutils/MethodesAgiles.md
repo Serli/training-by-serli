@@ -7,10 +7,10 @@ public: Tous types de profils
 costs: 1340 € HT
 costs-description: par participant
 duration: 2 jours
-duration-description: 50% théorie, 50% pratique
+duration-description: 50% théorie, 50% pratique
 ref: TR-AGILES
 subject: [
-  'Agilité',
+  'Agilité',
   'Scrum',
   'Kanban',
   'Lean',
@@ -20,15 +20,15 @@ program: [
   {
     title: 'Introduction',
     activity: [
-      'Méthodes classiques',
+      'Méthodes classiques',
       'Manifeste agile'
     ]
   },{
     title: 'Scrum',
     activity: [
       'Principe',
-      'Rôles',
-      'Événements',
+      'Rôles',
+      'événements',
       'Artefacts',
       'Story mapping'
     ]
@@ -51,13 +51,13 @@ program: [
       'Kata'
     ]
   },{
-    title: 'Rétrospective',
+    title: 'Rétrospective',
     activity: []
   }
 ]
+presentation: 'Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle.
+Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets.'
 ---
 
-### Présentation
-
-Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle.
-Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets.
+Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle.  
+Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets.  

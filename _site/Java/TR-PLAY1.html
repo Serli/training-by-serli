@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Java/TR-PLAY1">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 2 jours </td>
-        <td rowspan=2 > Développeurs Java </td>
+        <td rowspan=2 > Développeurs Java </td>
         <td rowspan=
           1
         > 1140 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-PLAY1</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation vous fera découvrir le framework Play 1, le framework web productif.
-Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 1.
-Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur aux tests fonctionnels automatisés en passant par la consommation de WebServices et l’écriture de plugins.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vous fera découvrir le framework Play 1, le framework web productif.<br />
+Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 1.<br />
+Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur aux tests fonctionnels automatisés en passant par la consommation de WebServices et l’écriture de plugins.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -192,7 +199,7 @@ Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur 
           </ul>
         </li>
       
-        <li> Contrôleurs
+        <li> Contrôleurs
           <ul>
             
               <li> Services REST </li>
@@ -202,7 +209,7 @@ Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur 
           </ul>
         </li>
       
-        <li> Modèles
+        <li> Modèles
           <ul>
             
               <li> JPA </li>
@@ -219,7 +226,7 @@ Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur 
             
               <li> Les tags </li>
             
-              <li> Héritage et décoration </li>
+              <li> Héritage et décoration </li>
             
           </ul>
         </li>
@@ -255,6 +262,121 @@ Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur 
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "PlayFramework 1";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1140 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs Java";
+        var pdfRef = "TR-PLAY1";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Play 1");
+        
+          pdfSubject.push("JPA 2.0");
+        
+          pdfSubject.push("Templating Groovy");
+        
+          pdfSubject.push("HTML / CSS");
+        
+          pdfSubject.push("JavaScript");
+        
+          pdfSubject.push("Web Services (REST)");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Tour de Play Framework 1";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Contrôleurs";
+          var activityProgram = [];
+          
+            activityProgram.push("Services REST");
+          
+            activityProgram.push("Routing");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Modèles";
+          var activityProgram = [];
+          
+            activityProgram.push("JPA");
+          
+            activityProgram.push("Magie noire");
+          
+            activityProgram.push("Validation");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Templates Groovy";
+          var activityProgram = [];
+          
+            activityProgram.push("Les tags");
+          
+            activityProgram.push("Héritage et décoration");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Librairies fournies";
+          var activityProgram = [];
+          
+            activityProgram.push("Jobs asynchrones");
+          
+            activityProgram.push("Client WebService");
+          
+            activityProgram.push("Email");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les tests avec Play 1";
+          var activityProgram = [];
+          
+            activityProgram.push("Unitaires");
+          
+            activityProgram.push("Fonctionnels");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les plugins";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vous fera découvrir le framework Play 1, le framework web productif. Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 1. Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur aux tests fonctionnels automatisés en passant par la consommation de WebServices et l’écriture de plugins.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -308,13 +430,7 @@ Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur 
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -431,31 +547,31 @@ Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur 
             {
               class: "colorJava",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

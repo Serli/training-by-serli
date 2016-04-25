@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/LanguagesAlternatifs/TR-NODEJS">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs débutants ou expérimentés </td>
+        <td rowspan=2 > Développeurs débutants ou expérimentés </td>
         <td rowspan=
           1
         > 1990 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-NODEJS</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Du Javascript côté serveur, qui l’eût cru en 2009 ? Et pourtant ! Basé sur le moteur V8 de Chrome, Node.js est devenu incontournable aujourd’hui.
-Grâce à son modèle non-bloquant, Node.js permet de développer des applications robustes et performantes. Idéal pour traiter de gros volumes de données, issus par exemple de l’Internet des Objets.
-Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du temps consacré à des travaux pratiques.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Du Javascript côté serveur, qui l’eût cru en 2009 ? Et pourtant ! Basé sur le moteur V8 de Chrome, Node.js est devenu incontournable aujourd’hui.<br />
+Grâce à son modèle non-bloquant, Node.js permet de développer des applications robustes et performantes. Idéal pour traiter de gros volumes de données, issus par exemple de l’Internet des Objets.<br />
+Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du temps consacré à des travaux pratiques.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -161,7 +168,7 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
       </li>
     
       <li class="colorLanguagesAlternatifs">
-        Modularité
+        Modularité
       </li>
     
       <li class="colorLanguagesAlternatifs">
@@ -189,11 +196,11 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
         <li> Introduction et concepts fondamentaux
           <ul>
             
-              <li> Javascript côté serveur </li>
+              <li> Javascript côté serveur </li>
             
               <li> Event-loop mono-thread </li>
             
-              <li> Exécution asynchrone </li>
+              <li> Exécution asynchrone </li>
             
           </ul>
         </li>
@@ -205,24 +212,24 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
             
               <li> Les modules de base de Node </li>
             
-              <li> Création de ses propres modules </li>
+              <li> Création de ses propres modules </li>
             
           </ul>
         </li>
       
-        <li> Création d’un serveur web avec ExpressJs
+        <li> Création d’un serveur web avec ExpressJs
           <ul>
             
               <li> Routes </li>
             
               <li> Middlewares </li>
             
-              <li> Sécurité avec Passeport </li>
+              <li> Sécurité avec Passeport </li>
             
           </ul>
         </li>
       
-        <li> Persistance de données dans MongoDB
+        <li> Persistance de données dans MongoDB
           <ul>
             
           </ul>
@@ -238,10 +245,10 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
           </ul>
         </li>
       
-        <li> Concepts avancés
+        <li> Concepts avancés
           <ul>
             
-              <li> Evénements </li>
+              <li> Evénements </li>
             
               <li> Streams </li>
             
@@ -251,6 +258,118 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorLanguagesAlternatifs"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Introduction à Node.Js";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés";
+        var pdfRef = "TR-NODEJS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Concepts fondamentaux");
+        
+          pdfSubject.push("Modularité");
+        
+          pdfSubject.push("Serveur web avec Expressjs");
+        
+          pdfSubject.push("Stockage NoSQL");
+        
+          pdfSubject.push("Tests");
+        
+          pdfSubject.push("Evènements et Streams");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Introduction et concepts fondamentaux";
+          var activityProgram = [];
+          
+            activityProgram.push("Javascript côté serveur");
+          
+            activityProgram.push("Event-loop mono-thread");
+          
+            activityProgram.push("Exécution asynchrone");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les modules";
+          var activityProgram = [];
+          
+            activityProgram.push("Le gestionnaire de modules NPM");
+          
+            activityProgram.push("Les modules de base de Node");
+          
+            activityProgram.push("Création de ses propres modules");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Création d’un serveur web avec ExpressJs";
+          var activityProgram = [];
+          
+            activityProgram.push("Routes");
+          
+            activityProgram.push("Middlewares");
+          
+            activityProgram.push("Sécurité avec Passeport");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Persistance de données dans MongoDB";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les tests";
+          var activityProgram = [];
+          
+            activityProgram.push("Tests unitaires avec Mocha et Chai");
+          
+            activityProgram.push("Tests fonctionnels avec CasperJs");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Concepts avancés";
+          var activityProgram = [];
+          
+            activityProgram.push("Evénements");
+          
+            activityProgram.push("Streams");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Du Javascript côté serveur, qui l’eût cru en 2009 ? Et pourtant ! Basé sur le moteur V8 de Chrome, Node.js est devenu incontournable aujourd’hui. Grâce à son modèle non-bloquant, Node.js permet de développer des applications robustes et performantes. Idéal pour traiter de gros volumes de données, issus par exemple de l’Internet des Objets. Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du temps consacré à des travaux pratiques.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -304,13 +423,7 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -427,31 +540,31 @@ Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du
             {
               class: "colorLanguagesAlternatifs",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

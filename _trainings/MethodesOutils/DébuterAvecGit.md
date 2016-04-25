@@ -1,23 +1,23 @@
 ---
 layout: training
-title: Débuter avec Git
+title: Débuter avec Git
 permalink: /MethodesOutils/TR-GIT
 categories: MethodesOutils
-public: Développeurs, Opérationnels, Chefs de projet
+public: Développeurs, Opérationnels, Chefs de projet
 costs: 490 € HT
 costs-description: par participant
 duration: 1 jour
-duration-description: 50% théorie, 50% pratique
+duration-description: 50% théorie, 50% pratique
 ref: TR-GIT
 subject: [
   'Git (commandes de base)',
-  'Dépôts distants',
+  'Dépôts distants',
   'Branches',
   'GitHub'
 ]
 program: [
   {
-    title: 'Différents types de gestionnaires de sources',
+    title: 'Différents types de gestionnaires de sources',
     activity: []
   },{
     title: 'Principes fondamentaux',
@@ -30,7 +30,7 @@ program: [
       'add, commit, status, reset, revert'
     ]
   },{
-    title: 'Dépôts distants',
+    title: 'Dépôts distants',
     activity: [
       'Clone, push, pull'
     ]
@@ -39,23 +39,26 @@ program: [
     activity: [
       'Concepts',
       'Fusion de branches',
-      'Workflow de développement',
-      'Réécrire l’histoire'
+      'Workflow de développement',
+      'Réécrire l’histoire'
     ]
   },{
     title: 'GitHub',
     activity: [
-      'Fonctionnalités',
+      'Fonctionnalités',
       'Fork, Pull Request...'
     ]
   }
 ]
+presentation: 'Git est devenu l’outil de gestion de versions incontournable.
+Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.
+Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.
+Vous apprendrez les workflows du développement basé sur Git.
+En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.'
 ---
 
-### Présentation
-
-Git est devenu l’outil de gestion de versions incontournable.
-Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.
-Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.
-Vous apprendrez les workflows du développement basé sur Git.
-En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.
+Git est devenu l’outil de gestion de versions incontournable.  
+Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.  
+Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.  
+Vous apprendrez les workflows du développement basé sur Git.  
+En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.  

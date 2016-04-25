@@ -3,11 +3,11 @@ layout: training
 title: Selenium
 permalink: /MethodesOutils/TR-SELENIUM
 categories: MethodesOutils
-public: Testeurs, Développeurs, Chefs de projets
+public: Testeurs, Développeurs, Chefs de projets
 costs: 1140 € HT
 costs-description: par participant
 duration: 2 jours
-duration-description: 40% théorie, 60% pratique
+duration-description: 40% théorie, 60% pratique
 ref: TR-SELENIUM
 subject: [
   'Selenium',
@@ -17,7 +17,7 @@ subject: [
 ]
 program: [
   {
-    title: 'Présentation de Selenium',
+    title: 'Présentation de Selenium',
     activity: []
   },{
     title: 'Les notions de base',
@@ -31,7 +31,7 @@ program: [
   },{
     title: 'Les commandes Selenium',
     activity: [
-      'Localisation des éléments',
+      'Localisation des éléments',
       'AndWait, waitFor, store...'
     ]
   },{
@@ -49,14 +49,15 @@ program: [
     title: 'Selenium Webdriver - Page Object Pattern',
     activity: []
   },{
-    title: 'Un peu d’agilité',
+    title: 'Un peu d’agilité',
     activity: []
   }
 ]
+presentation: 'Cette formation a pour objectif de vous faire découvrir le framework de tests fonctionnels automatisés Selenium. L’objectif de cette formation est d’apprendre à automatiser vos tests d’applications Web avec Selenium.
+Vous apprendrez en outre à interpréter les résultats de vos tests fonctionnels automatisés.
+Enfin, vous appréhenderez la conception et la maintenance des tests automatisés basés sur Selenium.'
 ---
 
-### Présentation
-
-Cette formation a pour objectif de vous faire découvrir le framework de tests fonctionnels automatisés Selenium. L’objectif de cette formation est d’apprendre à automatiser vos tests d’applications Web avec Selenium.
-Vous apprendrez en outre à interpréter les résultats de vos tests fonctionnels automatisés.
-Enfin, vous appréhenderez la conception et la maintenance des tests automatisés basés sur Selenium.
+Cette formation a pour objectif de vous faire découvrir le framework de tests fonctionnels automatisés Selenium. L’objectif de cette formation est d’apprendre à automatiser vos tests d’applications Web avec Selenium.  
+Vous apprendrez en outre à interpréter les résultats de vos tests fonctionnels automatisés.
+Enfin, vous appréhenderez la conception et la maintenance des tests automatisés basés sur Selenium.  

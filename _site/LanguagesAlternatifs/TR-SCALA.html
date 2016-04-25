@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/LanguagesAlternatifs/TR-SCALA">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs expérimentés </td>
+        <td rowspan=2 > Développeurs expérimentés </td>
         <td rowspan=
           1
         > 1990 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,10 +153,9 @@
     <p id="ref">Réf. TR-SCALA</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Scala est un langage de programmation pour la JVM né en 2003. Une particularité du langage est de proposer un mélange de plusieurs paradigmes de programmation, entre la programmation fonctionnelle et la programmation orientée objet.
-Durant cette formation vous découvrirez la richesse du langage Scala et apprendrez à maîtriser toute la puissance du langage à travers diverses mises en pratiques soutenues par des passages théoriques.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Scala est un langage de programmation pour la JVM né en 2003. Une particularité du langage est de proposer un mélange de plusieurs paradigmes de programmation, entre la programmation fonctionnelle et la programmation orientée objet.<br />
+Durant cette formation vous découvrirez la richesse du langage Scala et apprendrez à maîtriser toute la puissance du langage à travers diverses mises en pratiques soutenues par des passages théoriques.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -156,23 +163,23 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
   <ul id="subject" >
     
       <li class="colorLanguagesAlternatifs">
-        ￼Programmmation fonctionnelle
+        Programmmation fonctionnelle
       </li>
     
       <li class="colorLanguagesAlternatifs">
-        ￼Les bases du langage
+        Les bases du langage
       </li>
     
       <li class="colorLanguagesAlternatifs">
-        ￼Programmation orientée objet
+        Programmation orientée objet
       </li>
     
       <li class="colorLanguagesAlternatifs">
-        ￼￼Les outils du SDK
+        Les outils du SDK
       </li>
     
       <li class="colorLanguagesAlternatifs">
-        ￼￼Ecosystème
+        Ecosystème
       </li>
     
   </ul>
@@ -190,7 +197,7 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
             
               <li> High order functions </li>
             
-              <li> Récursivité </li>
+              <li> Récursivité </li>
             
               <li> Lazy evalutation </li>
             
@@ -212,12 +219,12 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
             
               <li> Generics </li>
             
-              <li> La décomposition </li>
+              <li> La décomposition </li>
             
           </ul>
         </li>
       
-        <li> Programmation orientée objet
+        <li> Programmation orientée objet
           <ul>
             
               <li> Pyramide des types </li>
@@ -251,7 +258,7 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
           </ul>
         </li>
       
-        <li> Ecosystème
+        <li> Ecosystème
           <ul>
             
               <li> Playframework </li>
@@ -272,6 +279,143 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorLanguagesAlternatifs"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Scala";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs expérimentés";
+        var pdfRef = "TR-SCALA";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Programmmation fonctionnelle");
+        
+          pdfSubject.push("Les bases du langage");
+        
+          pdfSubject.push("Programmation orientée objet");
+        
+          pdfSubject.push("Les outils du SDK");
+        
+          pdfSubject.push("Ecosystème");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Programmation fonctionnelle";
+          var activityProgram = [];
+          
+            activityProgram.push("Functions");
+          
+            activityProgram.push("Currying");
+          
+            activityProgram.push("High order functions");
+          
+            activityProgram.push("Récursivité");
+          
+            activityProgram.push("Lazy evalutation");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les bases du langage";
+          var activityProgram = [];
+          
+            activityProgram.push("Syntaxe du langage");
+          
+            activityProgram.push("Pattern matching");
+          
+            activityProgram.push("Alias de types");
+          
+            activityProgram.push("Comprendre le _");
+          
+            activityProgram.push("Implicits");
+          
+            activityProgram.push("Generics");
+          
+            activityProgram.push("La décomposition");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Programmation orientée objet";
+          var activityProgram = [];
+          
+            activityProgram.push("Pyramide des types");
+          
+            activityProgram.push("Classes");
+          
+            activityProgram.push("Case classes");
+          
+            activityProgram.push("Singleton");
+          
+            activityProgram.push("Compagnion Object");
+          
+            activityProgram.push("Trait");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les outils du SDK";
+          var activityProgram = [];
+          
+            activityProgram.push("API de collection");
+          
+            activityProgram.push("Structures fonctionnelles");
+          
+            activityProgram.push("Option, Try, Either, Tuples, etc ...");
+          
+            activityProgram.push("API concurrent");
+          
+            activityProgram.push("Interactions avec Java");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Ecosystème";
+          var activityProgram = [];
+          
+            activityProgram.push("Playframework");
+          
+            activityProgram.push("Akka");
+          
+            activityProgram.push("Scalaz");
+          
+            activityProgram.push("Shapeless");
+          
+            activityProgram.push("Slick");
+          
+            activityProgram.push("SBT");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Scala est un langage de programmation pour la JVM né en 2003. Une particularité du langage est de proposer un mélange de plusieurs paradigmes de programmation, entre la programmation fonctionnelle et la programmation orientée objet. Durant cette formation vous découvrirez la richesse du langage Scala et apprendrez à maîtriser toute la puissance du langage à travers diverses mises en pratiques soutenues par des passages théoriques.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -325,13 +469,7 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -448,31 +586,31 @@ Durant cette formation vous découvrirez la richesse du langage Scala et appren
             {
               class: "colorLanguagesAlternatifs",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorLanguagesAlternatifs",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

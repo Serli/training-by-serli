@@ -5,8 +5,8 @@
     <description>Training by Serli . FORMATIONS &amp; WORKSHOPS</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 20 Apr 2016 17:24:26 +0200</pubDate>
-    <lastBuildDate>Wed, 20 Apr 2016 17:24:26 +0200</lastBuildDate>
+    <pubDate>Mon, 25 Apr 2016 17:12:15 +0200</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2016 17:12:15 +0200</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
      
       <item>
@@ -90,13 +90,13 @@
         <link>http://localhost:4000/Mobilite.html</link>
         <guid isPermaLink="true">http://localhost:4000/Mobilite.html</guid>
                                               
-          <category>Développement Android</category>
+          <category>Développement Android</category>
             
-          <category>Développement Hybride</category>
+          <category>Développement Hybride</category>
             
-          <category>Développement iOS</category>
+          <category>Développement iOS</category>
             
-          <category>Développement WindowsPhone</category>
+          <category>Développement WindowsPhone</category>
                                                                           
       </item>
       
@@ -107,7 +107,7 @@
         <link>http://localhost:4000/MethodesOutils.html</link>
         <guid isPermaLink="true">http://localhost:4000/MethodesOutils.html</guid>
                                             
-          <category>Débuter avec Git</category>
+          <category>Débuter avec Git</category>
                         
           <category>Industrialisation Logicielle</category>
             

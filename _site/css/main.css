@@ -81,7 +81,7 @@ html, body {
       html #container main aside.colorMethodesOutils, body #container main aside.colorMethodesOutils {
         background-color: #00cccc; }
       html #container main header, body #container main header {
-        height: 30vw;
+        height: 18vw;
         background-color: #1068b0;
         background-image: url(../assets/background-image/header.png);
         background-repeat: repeat-x;
@@ -89,22 +89,22 @@ html, body {
         display: flex;
         align-items: center; }
         html #container main header h1, body #container main header h1 {
-          max-height: 30vw;
+          max-height: 18vw;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 10vw;
+          font-size: 6vw;
           color: #ffffff;
-          line-height: 15vw;
+          line-height: 9vw;
           font-family: "gloriahallelujah", sans-serif; }
         html #container main header .bigTitle, body #container main header .bigTitle {
-          font-size: 6vw;
-          line-height: 10vw; }
+          font-size: 5vw;
+          line-height: 6vw; }
         html #container main header a img, body #container main header a img {
           display: inline;
-          height: 22vw;
+          height: 15vw;
           width: auto;
           right: 10px;
-          top: 4vw;
+          top: 40px;
           position: absolute; }
       html #container main header.colorJava, body #container main header.colorJava {
         background-color: #cc3c56; }
@@ -208,6 +208,22 @@ html, body {
           padding: 10px; }
           html #container main article #training td, body #container main article #training td {
             text-align: center; }
+          html #container main article #training input, body #container main article #training input {
+            background-color: #1068b0; }
+          html #container main article #training input.colorJava, body #container main article #training input.colorJava {
+            background-color: #cc3c56; }
+          html #container main article #training input.colorData, body #container main article #training input.colorData {
+            background-color: #ec854f; }
+          html #container main article #training input.colorMobilite, body #container main article #training input.colorMobilite {
+            background-color: #ccb400; }
+          html #container main article #training input.colorWorkshops, body #container main article #training input.colorWorkshops {
+            background-color: #458968; }
+          html #container main article #training input.colorLanguagesAlternatifs, body #container main article #training input.colorLanguagesAlternatifs {
+            background-color: #9a009a; }
+          html #container main article #training input.colorWeb, body #container main article #training input.colorWeb {
+            background-color: #895045; }
+          html #container main article #training input.colorMethodesOutils, body #container main article #training input.colorMethodesOutils {
+            background-color: #009999; }
           html #container main article #training table, body #container main article #training table {
             table-layout: fixed;
             border-collapse: separate;
@@ -362,7 +378,12 @@ html, body {
         font-size: 18px; } }
 @media all and (max-width: 800px) {
   html #container main header, body #container main header {
-    padding: 0 70px 0 70px; }
+    padding: 0 70px 0 70px;
+    height: 30vw; }
+    html #container main header h1, body #container main header h1 {
+      max-height: 30vw;
+      font-size: 10vw;
+      line-height: 15vw; }
     html #container main header a img, body #container main header a img {
       display: none; }
   html #container main article #index div, body #container main article #index div {

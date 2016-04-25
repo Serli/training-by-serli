@@ -3,16 +3,16 @@ layout: training
 title: Maven
 permalink: /MethodesOutils/TR-MAVEN
 categories: MethodesOutils
-public: Développeurs Java
+public: Développeurs Java
 costs: 490 € HT
 costs-description: par participant
 duration: 1 jour
-duration-description: 40% théorie, 60% pratique
+duration-description: 40% théorie, 60% pratique
 ref: TR-MAVEN
 subject: [
   'Configuration de build',
   'Cycle de vie du build',
-  'Gestion des dépendances automatisée',
+  'Gestion des dépendances automatisée',
   'Plugins',
   'Maven en entreprise'
 ]
@@ -20,7 +20,7 @@ program: [
   {
     title: 'Le build en Java',
     activity: [
-      'Problématiques, état de lieux'
+      'Problématiques, état de lieux'
     ]
   },{
     title: 'Maven',
@@ -37,14 +37,14 @@ program: [
     title: 'Cycle de vie, les phases',
     activity: []
   },{
-    title: 'Gestion des dépendances',
+    title: 'Gestion des dépendances',
     activity: [
-      'Configuration, transitivité, scopes'
+      'Configuration, transitivité, scopes'
     ]
   },{
     title: 'Plugins',
     activity: [
-      'Goals et intégration',
+      'Goals et intégration',
       'Le plugin release'
     ]
   },{
@@ -56,10 +56,11 @@ program: [
     ]
   }
 ]
+presentation: 'Cette formation vous permettra de découvrir Maven. Maven est l’outil incontournable d’industrialisation des build en Java.
+A l’occasion de cette formation, vous apprendrez les conventions Maven (Convetion over Configuration) ainsi que l’ensemble des éléments qui vous permettrons de mettre en oeuvre un build personnalisé et standardisé qui correspond à vos besoins.
+Enfin, vous découvrirez les subtilités de l’utilisation de Maven en entreprise.'
 ---
 
-### Présentation
-
-Cette formation vous permettra de découvrir Maven. Maven est l’outil incontournable d’industrialisation des build en Java.
-A l’occasion de cette formation, vous apprendrez les conventions Maven (Convetion over Configuration) ainsi que l’ensemble des éléments qui vous permettrons de mettre en oeuvre un build personnalisé et standardisé qui correspond à vos besoins.
-Enfin, vous découvrirez les subtilités de l’utilisation de Maven en entreprise.
+Cette formation vous permettra de découvrir Maven. Maven est l’outil incontournable d’industrialisation des build en Java.  
+A l’occasion de cette formation, vous apprendrez les conventions Maven (Convetion over Configuration) ainsi que l’ensemble des éléments qui vous permettrons de mettre en oeuvre un build personnalisé et standardisé qui correspond à vos besoins.  
+Enfin, vous découvrirez les subtilités de l’utilisation de Maven en entreprise.  

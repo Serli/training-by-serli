@@ -6,11 +6,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Débuter avec Git</title>
+	<title>Débuter avec Git</title>
 
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/MethodesOutils/TR-GIT">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -88,7 +96,7 @@
 >
 	
 	
-	<h1 class="smalTitle">Débuter avec Git</h1>
+	<h1 class="smalTitle">Débuter avec Git</h1>
 	<a href="http://localhost:4000/">
 		<img src="/assets/Training-by-serli-logo-white-01.png"/>
 	</a>
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 1 jour </td>
-        <td rowspan=2 > Développeurs, Opérationnels, Chefs de projet </td>
+        <td rowspan=2 > Développeurs, Opérationnels, Chefs de projet </td>
         <td rowspan=
           1
         > 490 € HT </td>
       </tr>
       <tr>
         
-          <td> 50% théorie, 50% pratique </td>
+          <td> 50% théorie, 50% pratique </td>
         
         
           <td> par participant </td>
@@ -145,13 +153,12 @@
     <p id="ref">Réf. TR-GIT</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Git est devenu l’outil de gestion de versions incontournable.
-Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.
-Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.
-Vous apprendrez les workflows du développement basé sur Git.
-En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Git est devenu l’outil de gestion de versions incontournable.<br />
+Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git.<br />
+Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible.<br />
+Vous apprendrez les workflows du développement basé sur Git.<br />
+En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -163,7 +170,7 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
       </li>
     
       <li class="colorMethodesOutils">
-        Dépôts distants
+        Dépôts distants
       </li>
     
       <li class="colorMethodesOutils">
@@ -180,7 +187,7 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Différents types de gestionnaires de sources
+        <li> Différents types de gestionnaires de sources
           <ul>
             
           </ul>
@@ -202,7 +209,7 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
           </ul>
         </li>
       
-        <li> Dépôts distants
+        <li> Dépôts distants
           <ul>
             
               <li> Clone, push, pull </li>
@@ -217,9 +224,9 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
             
               <li> Fusion de branches </li>
             
-              <li> Workflow de développement </li>
+              <li> Workflow de développement </li>
             
-              <li> Réécrire l’histoire </li>
+              <li> Réécrire l’histoire </li>
             
           </ul>
         </li>
@@ -227,7 +234,7 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
         <li> GitHub
           <ul>
             
-              <li> Fonctionnalités </li>
+              <li> Fonctionnalités </li>
             
               <li> Fork, Pull Request... </li>
             
@@ -237,6 +244,106 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorMethodesOutils"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Débuter avec Git";
+        var pdfDuration = "1 jour";
+        var pdfCosts = "490 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs, Opérationnels, Chefs de projet";
+        var pdfRef = "TR-GIT";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Git (commandes de base)");
+        
+          pdfSubject.push("Dépôts distants");
+        
+          pdfSubject.push("Branches");
+        
+          pdfSubject.push("GitHub");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Différents types de gestionnaires de sources";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Principes fondamentaux";
+          var activityProgram = [];
+          
+            activityProgram.push("Workflow local");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Commandes de base";
+          var activityProgram = [];
+          
+            activityProgram.push("add, commit, status, reset, revert");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Dépôts distants";
+          var activityProgram = [];
+          
+            activityProgram.push("Clone, push, pull");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Gestion des branches";
+          var activityProgram = [];
+          
+            activityProgram.push("Concepts");
+          
+            activityProgram.push("Fusion de branches");
+          
+            activityProgram.push("Workflow de développement");
+          
+            activityProgram.push("Réécrire l’histoire");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "GitHub";
+          var activityProgram = [];
+          
+            activityProgram.push("Fonctionnalités");
+          
+            activityProgram.push("Fork, Pull Request...");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Git est devenu l’outil de gestion de versions incontournable. Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git. Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible. Vous apprendrez les workflows du développement basé sur Git. En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -290,13 +397,7 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -413,31 +514,31 @@ En outre, cette formation vous permettra de découvrir le service GitHub, un in
             {
               class: "colorMethodesOutils",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorMethodesOutils",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

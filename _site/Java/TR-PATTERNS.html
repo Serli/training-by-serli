@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Java/TR-PATTERNS">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs expérimentés dans un langage Orienté Objets </td>
+        <td rowspan=2 > Développeurs expérimentés dans un langage Orienté Objets </td>
         <td rowspan=
           1
         > 1390 € HT </td>
       </tr>
       <tr>
         
-          <td> 70% théorie, 30% pratique </td>
+          <td> 70% théorie, 30% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,11 @@
     <p id="ref">Réf. TR-PATTERNS</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation vous propose de découvrir les principaux patrons de conception.
-Les design patterns permettent d’appréhender le développement sous un nouvel angle. Apprenez à réutiliser plus que les composants, apprenez à réutiliser les concepts. Renforcez la cohésion d’équipe en vous appuyant sur un langage commun. Apprenez à utiliser les patterns à bon escient.
-Durant cette formation vous verrez ou reverrez différents types de patterns à plusieurs niveaux, de la classe à l’architecture d’entreprise, en passant par l’application et le composant logiciel.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vous propose de découvrir les principaux patrons de conception.
+Les design patterns permettent d’appréhender le développement sous un nouvel angle.<br />
+Apprenez à réutiliser plus que les composants, apprenez à réutiliser les concepts. Renforcez la cohésion d’équipe en vous appuyant sur un langage commun. Apprenez à utiliser les patterns à bon escient.<br />
+Durant cette formation vous verrez ou reverrez différents types de patterns à plusieurs niveaux, de la classe à l’architecture d’entreprise, en passant par l’application et le composant logiciel.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -157,7 +165,7 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
   <ul id="subject" >
     
       <li class="colorJava">
-        Présentation des Patterns
+        Présentation des Patterns
       </li>
     
       <li class="colorJava">
@@ -185,19 +193,19 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
         <li> Rappels UML/POO
           <ul>
             
-              <li> Présentation </li>
+              <li> Présentation </li>
             
               <li> Concepts essentiels </li>
             
           </ul>
         </li>
       
-        <li> La conception à base de patterns
+        <li> La conception à base de patterns
           <ul>
             
               <li> Origines </li>
             
-              <li> Un problème, un nom, une solution </li>
+              <li> Un problème, un nom, une solution </li>
             
           </ul>
         </li>
@@ -217,7 +225,7 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
         <li> Principes GRASP
           <ul>
             
-              <li> Présentation, patterns </li>
+              <li> Présentation, patterns </li>
             
           </ul>
         </li>
@@ -227,7 +235,7 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
             
               <li> Patterns de construction d’objets </li>
             
-              <li> Différents types d’architectures </li>
+              <li> Différents types d’architectures </li>
             
               <li> MV* (MVC, MVP, MVVM) </li>
             
@@ -237,6 +245,107 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Design Patterns";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1390 € HT";
+        var pdfDurationDescription = "70% théorie, 30% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs expérimentés dans un langage Orienté Objets";
+        var pdfRef = "TR-PATTERNS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Présentation des Patterns");
+        
+          pdfSubject.push("Cas d’utilisation");
+        
+          pdfSubject.push("Patterns du Gang of Four");
+        
+          pdfSubject.push("Principes GRASP");
+        
+          pdfSubject.push("Patterns d’architectur");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Rappels UML/POO";
+          var activityProgram = [];
+          
+            activityProgram.push("Présentation");
+          
+            activityProgram.push("Concepts essentiels");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "La conception à base de patterns";
+          var activityProgram = [];
+          
+            activityProgram.push("Origines");
+          
+            activityProgram.push("Un problème, un nom, une solution");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Patterns du Gang of Four";
+          var activityProgram = [];
+          
+            activityProgram.push("Patterns de construction d’objets");
+          
+            activityProgram.push("Patterns structurels");
+          
+            activityProgram.push("Patterns comportementaux");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Principes GRASP";
+          var activityProgram = [];
+          
+            activityProgram.push("Présentation, patterns");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Patterns d’architecture";
+          var activityProgram = [];
+          
+            activityProgram.push("Patterns de construction d’objets");
+          
+            activityProgram.push("Différents types d’architectures");
+          
+            activityProgram.push("MV* (MVC, MVP, MVVM)");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vous propose de découvrir les principaux patrons de conception. Les design patterns permettent d’appréhender le développement sous un nouvel angle. Apprenez à réutiliser plus que les composants, apprenez à réutiliser les concepts. Renforcez la cohésion d’équipe en vous appuyant sur un langage commun. Apprenez à utiliser les patterns à bon escient. Durant cette formation vous verrez ou reverrez différents types de patterns à plusieurs niveaux, de la classe à l’architecture d’entreprise, en passant par l’application et le composant logiciel.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -290,13 +399,7 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -413,31 +516,31 @@ Durant cette formation vous verrez ou reverrez différents types de patterns a�
             {
               class: "colorJava",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

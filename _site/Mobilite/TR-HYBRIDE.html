@@ -6,11 +6,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Développement Hybride</title>
+	<title>Développement Hybride</title>
 
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Mobilite/TR-HYBRIDE">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -88,7 +96,7 @@
 >
 	
 	
-	<h1 class="smalTitle">Développement Hybride</h1>
+	<h1 class="smalTitle">Développement Hybride</h1>
 	<a href="http://localhost:4000/">
 		<img src="/assets/Training-by-serli-logo-white-01.png"/>
 	</a>
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeur ayant déjà une connaissance HTML/CSS et javascript </td>
+        <td rowspan=2 > Développeur ayant déjà une connaissance HTML/CSS et javascript </td>
         <td rowspan=
           1
         > 1690 € HT </td>
       </tr>
       <tr>
         
-          <td> 30% théorie, 70% pratique </td>
+          <td> 30% théorie, 70% pratique </td>
         
         
           <td> par participant </td>
@@ -145,14 +153,10 @@
     <p id="ref">Réf. TR-HYBRIDE</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation a pour objectif de vous initier au développement hybride.</p>
-
-<p><br /></p>
-
-<p>Grâce à cette formation et à vos connaissances html et Javascript, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels du développement hybride.
-A travers divers exercices, vous découvrirez les principes de fonctionnement d’une application hybride avant de mettre en oeuvre le développement d’un projet complet et de le déployer sur différentes cibles.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation a pour objectif de vous initier au développement hybride.
+Grâce à cette formation et à vos connaissances html et Javascript, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels du développement hybride.<br />
+A travers divers exercices, vous découvrirez les principes de fonctionnement d’une application hybride avant de mettre en oeuvre le développement d’un projet complet et de le déployer sur différentes cibles.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -172,7 +176,7 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
       </li>
     
       <li class="colorMobilite">
-        Accès aux capteurs
+        Accès aux capteurs
       </li>
     
       <li class="colorMobilite">
@@ -185,7 +189,7 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
     <h3>programme</h3>
     <ul id="program" >
       
-        <li> Présentation du mobile hybride
+        <li> Présentation du mobile hybride
           <ul>
             
               <li> Introduction </li>
@@ -199,7 +203,7 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
           </ul>
         </li>
       
-        <li> Outils de développement
+        <li> Outils de développement
           <ul>
             
               <li> Ligne de commande CLI </li>
@@ -208,9 +212,9 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
             
               <li> Les frameworks UI </li>
             
-              <li> Tests/debug sur un device/émulateur </li>
+              <li> Tests/debug sur un device/émulateur </li>
             
-              <li> Intégration aux environnements natifs Android/iOS </li>
+              <li> Intégration aux environnements natifs Android/iOS </li>
             
           </ul>
         </li>
@@ -218,11 +222,11 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
         <li> Les API Phonegap/Cordova
           <ul>
             
-              <li> Cycle de vie et évènements &#58; device, boutons, etc. </li>
+              <li> Cycle de vie et évènements &#58; device, boutons, etc. </li>
             
-              <li> Les notifications et les différences suivant les OS. </li>
+              <li> Les notifications et les différences suivant les OS. </li>
             
-              <li> Géolocalisation, accès aux contacts, etc. </li>
+              <li> Géolocalisation, accès aux contacts, etc. </li>
             
           </ul>
         </li>
@@ -238,7 +242,7 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
         <li> Le Framework Ionic
           <ul>
             
-              <li> Création d’une application </li>
+              <li> Création d’une application </li>
             
               <li> Les composants UI </li>
             
@@ -250,6 +254,117 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorMobilite"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "Développement Hybride";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1690 € HT";
+        var pdfDurationDescription = "30% théorie, 70% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeur ayant déjà une connaissance HTML/CSS et javascript";
+        var pdfRef = "TR-HYBRIDE";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Phonegap / Apache Cordova");
+        
+          pdfSubject.push("Framework Ionic");
+        
+          pdfSubject.push("Local Storage");
+        
+          pdfSubject.push("Accès aux capteurs");
+        
+          pdfSubject.push("Build multi-plateforme");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation du mobile hybride";
+          var activityProgram = [];
+          
+            activityProgram.push("Introduction");
+          
+            activityProgram.push("Fonctionnement");
+          
+            activityProgram.push("Apports HTML5");
+          
+            activityProgram.push("Limites de l’hybride");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Outils de développement";
+          var activityProgram = [];
+          
+            activityProgram.push("Ligne de commande CLI");
+          
+            activityProgram.push("Structure d’un projet Phonegap");
+          
+            activityProgram.push("Les frameworks UI");
+          
+            activityProgram.push("Tests/debug sur un device/émulateur");
+          
+            activityProgram.push("Intégration aux environnements natifs Android/iOS");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les API Phonegap/Cordova";
+          var activityProgram = [];
+          
+            activityProgram.push("Cycle de vie et évènements &#58; device, boutons, etc.");
+          
+            activityProgram.push("Les notifications et les différences suivant les OS.");
+          
+            activityProgram.push("Géolocalisation, accès aux contacts, etc.");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Extension de phonegap";
+          var activityProgram = [];
+          
+            activityProgram.push("Les plugins");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Le Framework Ionic";
+          var activityProgram = [];
+          
+            activityProgram.push("Création d’une application");
+          
+            activityProgram.push("Les composants UI");
+          
+            activityProgram.push("Test et debug depuis un navigateur");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation a pour objectif de vous initier au développement hybride. Grâce à cette formation et à vos connaissances html et Javascript, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels du développement hybride. A travers divers exercices, vous découvrirez les principes de fonctionnement d’une application hybride avant de mettre en oeuvre le développement d’un projet complet et de le déployer sur différentes cibles.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -303,13 +418,7 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -426,31 +535,31 @@ A travers divers exercices, vous découvrirez les principes de fonctionnement d
             {
               class: "colorMobilite",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorMobilite",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

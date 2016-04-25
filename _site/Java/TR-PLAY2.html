@@ -11,6 +11,14 @@
 	<link rel="icon" type="image/png" href="/assets/favicon.png" />
 	<link rel="stylesheet" href="/css/main.css">
 	<link rel="canonical" href="http://localhost:4000/Java/TR-PLAY2">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
 </head>
 
 
@@ -99,7 +107,7 @@
 				<article>
 
 					<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
-<div id="training" >
+<div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
   <table id="detail">
     <thead>
@@ -123,14 +131,14 @@
         <td rowspan=
           1
         > 3 jours </td>
-        <td rowspan=2 > Développeurs Java / Scala </td>
+        <td rowspan=2 > Développeurs Java / Scala </td>
         <td rowspan=
           1
         > 1690 € HT </td>
       </tr>
       <tr>
         
-          <td> 70% théorie, 30% pratique </td>
+          <td> 70% théorie, 30% pratique </td>
         
         
           <td> par participant </td>
@@ -145,11 +153,10 @@
     <p id="ref">Réf. TR-PLAY2</p>
   
   <!-- /// presentation //////////////////////////////////////////////////// -->
-  <h3 id="presentation">Présentation</h3>
-
-<p>Cette formation vous fera découvrir le framework Play 2, le framework web taillé pour le temps réel et les flux de données volumineux.
-Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 2 en utilisant le langage de votre choix, à savoir Java ou Scala.
-Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au traitement en temps réel de flux de données en passant par la manipulation de structures Json, la programmation réactive, les templates typesafe et l’écriture de plugins.</p>
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vous fera découvrir le framework Play 2, le framework web taillé pour le temps réel et les flux de données volumineux.<br />
+Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 2 en utilisant le langage de votre choix, à savoir Java ou Scala.
+Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au traitement en temps réel de flux de données en passant par la manipulation de structures Json, la programmation réactive, les templates typesafe et l’écriture de plugins.</p>
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
@@ -204,7 +211,7 @@ Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au
           </ul>
         </li>
       
-        <li> Contrôleurs
+        <li> Contrôleurs
           <ul>
             
               <li> Services REST </li>
@@ -214,10 +221,10 @@ Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au
           </ul>
         </li>
       
-        <li> Modèles
+        <li> Modèles
           <ul>
             
-              <li> Accès aux données </li>
+              <li> Accès aux données </li>
             
               <li> JPA / Ebean </li>
             
@@ -246,7 +253,7 @@ Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au
           </ul>
         </li>
       
-        <li> Temps réel
+        <li> Temps réel
           <ul>
             
               <li> Comet </li>
@@ -273,6 +280,133 @@ Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au
     </ul>
   
   <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="pdf" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      $scope.createPDF = function () {
+        var pdfTitle = "PlayFramework 2";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1690 € HT";
+        var pdfDurationDescription = "70% théorie, 30% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs Java / Scala";
+        var pdfRef = "TR-PLAY2";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Play 2");
+        
+          pdfSubject.push("Web Services (REST)");
+        
+          pdfSubject.push("Reactive Programming");
+        
+          pdfSubject.push("Akka");
+        
+          pdfSubject.push("JSON");
+        
+          pdfSubject.push("Websockets");
+        
+          pdfSubject.push("SSE");
+        
+          pdfSubject.push("Plugins");
+        
+          pdfSubject.push("Scala / Java");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Un tour de Play 2";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Contrôleurs";
+          var activityProgram = [];
+          
+            activityProgram.push("Services REST");
+          
+            activityProgram.push("Routing");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Modèles";
+          var activityProgram = [];
+          
+            activityProgram.push("Accès aux données");
+          
+            activityProgram.push("JPA / Ebean");
+          
+            activityProgram.push("Autres datastores");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "JSON";
+          var activityProgram = [];
+          
+            activityProgram.push("Manipulation");
+          
+            activityProgram.push("Validation");
+          
+            activityProgram.push("Coast-to-coast design");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Akka";
+          var activityProgram = [];
+          
+            activityProgram.push("Utiliser les acteurs");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Temps réel";
+          var activityProgram = [];
+          
+            activityProgram.push("Comet");
+          
+            activityProgram.push("SSE");
+          
+            activityProgram.push("Websockets");
+          
+            activityProgram.push("Iteratees");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Plugins";
+          var activityProgram = [];
+          
+            activityProgram.push("Dependency Injection");
+          
+            activityProgram.push("Extensions du framework");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vous fera découvrir le framework Play 2, le framework web taillé pour le temps réel et les flux de données volumineux. Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 2 en utilisant le langage de votre choix, à savoir Java ou Scala. Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au traitement en temps réel de flux de données en passant par la manipulation de structures Json, la programmation réactive, les templates typesafe et l’écriture de plugins.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent);
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
 
@@ -326,13 +460,7 @@ Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au
 
 		</div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script>
-      var app = angular.module('formation', [])
-      app .config(['$interpolateProvider', function ($interpolateProvider) {
-        $interpolateProvider.startSymbol('[[');
-        $interpolateProvider.endSymbol(']]');
-      }]);
       app.controller('Summary', function($scope) {
         $scope.trainings = [
             
@@ -449,31 +577,31 @@ Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au
             {
               class: "colorJava",
               href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
+              title: "Débuter avec Git"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
+              title: "Développement Android"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
+              title: "Développement Hybride"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
+              title: "Développement iOS"
             },
               
             {
               class: "colorJava",
               href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
+              title: "Développement WindowsPhone"
             },
               
             {

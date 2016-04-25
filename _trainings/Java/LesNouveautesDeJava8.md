@@ -3,11 +3,11 @@ layout: training
 title: Les Nouveautés De Java 8
 permalink: /Java/TR-JAVA8
 categories: Java
-public: Développeurs Java
+public: Développeurs Java
 costs: 590 € HT
 costs-description: par participant
 duration: 1 jours
-duration-description: 40% théorie, 60% pratique
+duration-description: 40% théorie, 60% pratique
 ref: TR-JAVA8
 subject: [
   'Expressions Lambda',
@@ -23,13 +23,13 @@ program: [
     title: 'Les expressions Lambda',
     activity: [
       'Programmation Fonctionnelle',
-      'Functional Interfaces & références de méthodes'
+      'Functional Interfaces & références de méthodes'
     ]
   },{
     title: 'Les Streams',
     activity: [
       'Pipeline',
-      'Parallélisation'
+      'Parallélisation'
     ]
   },{
     title: 'L’API Date&Time',
@@ -41,9 +41,11 @@ program: [
     ]
   }
 ]
+presentation: 'Cette formation vise à vous faire découvrir les nouveautés de Java 8.
+Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
+Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.'
 ---
 
-### présentation
-Cette formation vise à vous faire découvrir les nouveautés de Java 8.
-Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
-Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.
+Cette formation vise à vous faire découvrir les nouveautés de Java 8.
+Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java.
+Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8.
