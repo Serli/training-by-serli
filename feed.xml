@@ -19,7 +19,7 @@ permalink: /feed.xml
         <link>{{ somaire.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ somaire.url | prepend: site.baseurl | prepend: site.url }}</guid>
         {% for training in site.pages %} {% if training.categories == somaire.node %} {% if training.title %}
-          <category>{{ training.title | xml_escape }}</category>
+          <training>{{ training.title | xml_escape }}</training>
         {% endif %} {% endif %} {% endfor %}
       </item>
     {% endif %} {% endfor %}

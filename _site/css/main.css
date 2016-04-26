@@ -25,7 +25,7 @@ html, body {
     html #container main, body #container main {
       background-color: #ffffff;
       padding-bottom: 50px;
-      padding-top: 50px; }
+      padding-top: 65px; }
       html #container main aside, body #container main aside {
         background-color: #3db8d8;
         background-image: url(../assets/background-image/article.png);
@@ -42,7 +42,7 @@ html, body {
             html #container main aside nav ul li, body #container main aside nav ul li {
               display: inline-block; }
               html #container main aside nav ul li a, body #container main aside nav ul li a {
-                height: 50px;
+                height: 65px;
                 text-decoration: none;
                 display: block;
                 padding: 0 15px 0 15px;
@@ -65,7 +65,9 @@ html, body {
                   background-color: #009999; }
                 html #container main aside nav ul li a img, body #container main aside nav ul li a img {
                   height: 45px;
-                  width: auto; }
+                  width: auto;
+                  display: block;
+                  margin: auto; }
       html #container main aside.colorJava, body #container main aside.colorJava {
         background-color: #ff6f89; }
       html #container main aside.colorData, body #container main aside.colorData {
@@ -104,7 +106,7 @@ html, body {
           height: 15vw;
           width: auto;
           right: 10px;
-          top: 40px;
+          top: 65px;
           position: absolute; }
       html #container main header.colorJava, body #container main header.colorJava {
         background-color: #cc3c56; }
@@ -376,6 +378,15 @@ html, body {
         margin: 6px;
         padding: 6px;
         font-size: 18px; } }
+@media all and (max-width: 876px) {
+  html #container main, body #container main {
+    padding-top: 50px; }
+    html #container main aside nav ul li a, body #container main aside nav ul li a {
+      height: 50px; }
+      html #container main aside nav ul li a img, body #container main aside nav ul li a img {
+        height: 50px; }
+      html #container main aside nav ul li a span, body #container main aside nav ul li a span {
+        display: none; } }
 @media all and (max-width: 800px) {
   html #container main header, body #container main header {
     padding: 0 70px 0 70px;

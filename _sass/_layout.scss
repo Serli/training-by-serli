@@ -22,7 +22,7 @@ html, body {
 		main {
 			background-color: $white;
 			padding-bottom: 50px; // size footer
-			padding-top: 50px; // size of aside
+			padding-top: 65px; // size of aside
 
 /// MENU ///////////////////////////////////////////////////////////////////////
 			aside {
@@ -41,7 +41,7 @@ html, body {
 						li {
 							display: inline-block;
 							a {
-								height: 50px;
+								height: 65px;
 								text-decoration: none;
 								display: block;
 								padding: 0 15px 0 15px;
@@ -83,6 +83,8 @@ html, body {
 								img {
 									height: 45px;
 									width: auto;
+									display: block;
+									margin: auto;
 								}
 							}
 						}
@@ -142,7 +144,7 @@ html, body {
 						height: 15vw;
 						width: auto;
 						right: 10px;
-						top: 40px;
+						top: 65px;
 						position: absolute;
 					}
 				}
@@ -557,6 +559,26 @@ html, body {
 								margin: 6px;
 								padding: 6px;
 								font-size: 18px;;
+							}
+						}
+					}
+				}
+			}
+			@media all and (max-width: 876px) { // below 574px, the menu is displayed on line two
+				padding-top: 50px; // size of aside
+				aside {
+					nav {
+						ul {
+							li {
+								a {
+									height:50px;
+									img {
+										height: 50px;
+									}
+									span {
+										display: none;
+									}
+								}
 							}
 						}
 					}

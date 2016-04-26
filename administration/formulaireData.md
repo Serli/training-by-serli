@@ -128,10 +128,13 @@ permalink: /administration/formulaireData.html
     <a href="{{ '/administration/errorFormat.html' | prepend: site.baseurl }}">Test le format des fichiers Markdown (.md)</a>
     <br/>
     <br/>
+    <a href="{{ '/administration/ListeContenu.html' | prepend: site.baseurl }}">Liste du Contenu</a>
+    <br/>
+    <br/>
     <a href="{{ site.url }}/{{ site.baseurl }}">Page d'accueil</a>
   </p>
 
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="../js/app.js"></script>
+  <script src="../js/formulaire.js"></script>
 </div>

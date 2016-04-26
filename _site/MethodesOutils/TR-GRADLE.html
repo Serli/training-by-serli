@@ -40,6 +40,7 @@
 						href="http://localhost:4000/"
 					>
 						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
 				</a></li>
 				<!-- /// training_category ///////////////////////////////////////// -->
 				  
@@ -47,44 +48,51 @@
 						"colorMethodesOutils"
 						href="/Java.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorMethodesOutils"
 						href="/Web.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorMethodesOutils"
 						href="/LanguagesAlternatifs.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorMethodesOutils"
 						href="/Data.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorMethodesOutils"
 						href="/Mobilite.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorMethodesOutils"
 						href="/MethodesOutils.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorMethodesOutils"
 						href="/Workshops.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
 					</a></li>
-				                                                                                                
+				                                                                                                  
 				<!-- /////////////////////////////////////////////////////////////// -->
 			</ul>
 		</nav>
@@ -255,6 +263,7 @@ Cette formation vous permettra d’appréhender les principaux aspects de cet ou
       $interpolateProvider.endSymbol(']]');
     }]);
     app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
       $scope.createPDF = function () {
         var pdfTitle = "Introduction a Gradle";
         var pdfDuration = "1 jour";
@@ -337,7 +346,7 @@ Cette formation vous permettra d’appréhender les principaux aspects de cet ou
                   pdfRef,
                   pdfSubject,
                   pdfProgram,
-                  pdfContent);
+                  pdfContent); // Data sent to the function that is in a file
       };
     });
   </script>
@@ -394,310 +403,6 @@ Cette formation vous permettra d’appréhender les principaux aspects de cet ou
 
 
 		</div>
-
-    <script>
-      app.controller('Summary', function($scope) {
-        $scope.trainings = [
-            
-            {
-              class: "colorMethodesOutils",
-              href: "/Java.html",
-              title: "Java"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Web.html",
-              title: "Web"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/LanguagesAlternatifs.html",
-              title: "Languages Alternatifs"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Data.html",
-              title: "Data"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Mobilite.html",
-              title: "Mobilité"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils.html",
-              title: "Méthodes & Outils"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops.html",
-              title: "Workshops"
-            },
-                                                                                                                      
-        ];
-      });
-      app.controller('IndexSummary', function($scope) {
-				$scope.research = {
-					title: ""
-				};
-        $scope.trainings = [
-                          
-            {
-              class: "colorMethodesOutils",
-              href: "/LanguagesAlternatifs/TR-AKKA",
-              title: "Akka"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Web/TR-ANGULARJS",
-              title: "AngularJS"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Data/TR-CASSANDRA",
-              title: "Cassandra"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-SCRUM",
-              title: "Decouvrez Scrum avec des Legos"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-PATTERNS",
-              title: "Design Patterns"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-ANDROID",
-              title: "Developpement Android"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-DOCKER1",
-              title: "Developpement et integration continue avec Docker"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-IOS",
-              title: "Développement iOS"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-HYBRIDE",
-              title: "Developpement mobile hybride"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-PLAY2",
-              title: "Developpement Web sur le Framework Play 2"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-DOCKER2",
-              title: "Docker : Du développement a la production"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Data/TR-ELASTIC",
-              title: "Elastic"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-INDUS",
-              title: "Industrialisation Logicielle"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-GRADLE",
-              title: "Introduction a Gradle"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Data/TR-HADOOP",
-              title: "Introduction a Hadoop"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/LanguagesAlternatifs/TR-NODEJS",
-              title: "Introduction à Node.Js"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Web/TR-WEB",
-              title: "Introduction au développement Web"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-JAVAEE",
-              title: "Java EE"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Web/TR-JAVASCRIPT",
-              title: "Javascript Avancé"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-JAVA",
-              title: "Java"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-JAVA8",
-              title: "Les Nouveautés De Java 8"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-TESTSJAVA",
-              title: "Les Tests en Java"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-MAVEN",
-              title: "Maven"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-AGILES",
-              title: "Methodes Agiles"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Data/TR-MONGODB",
-              title: "Mongo DB"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-MONGODB",
-              title: "Mongo DB"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-SQL",
-              title: "NoSQL"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-PLAY1",
-              title: "PlayFramework 1"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-PLAY2",
-              title: "PlayFramework 2"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/LanguagesAlternatifs/TR-SCALA",
-              title: "Scala"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-SCRUM",
-              title: "Scrum"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/MethodesOutils/TR-SELENIUM",
-              title: "Selenium"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Data/TR-SPARK",
-              title: "Spark"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Java/TR-SPRING4",
-              title: "Spring 4"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-ELK",
-              title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)"
-            },
-              
-            {
-              class: "colorMethodesOutils",
-              href: "/Workshops/WK-WINDPHONE",
-              title: "Windows Mobile"
-            },
-                        
-        ];
-      });
-    </script>
 	</body>
 
 </html>

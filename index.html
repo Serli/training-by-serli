@@ -52,3 +52,21 @@ index: true
     </div>
   </div>
 </div>
+
+<script>
+  // code in that file for Jekyll can fill with data
+  app.controller('IndexSummary', function($scope) {
+    $scope.research = {
+      title: ""
+    };
+    $scope.trainings = [
+      {% for training in site.trainings %} {% if training.layout == 'training' %} {% if training.title %}
+        {
+          class: "{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}",
+          href: "{{ training.url | prepend: site.baseurl }}",
+          title: "{{ training.title }}"
+        },
+      {% endif %} {% endif %} {% endfor %}
+    ];
+  });
+</script>

@@ -16,3 +16,20 @@ layout: default
   </div>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////// -->
+<script>
+  // code in that file for Jekyll can fill with data
+  app.controller('Summary', function($scope) {
+    $scope.research = {
+      title: ""
+    };
+    $scope.trainings = [
+      {% for training in site.pages %} {% if training.categories == page.node %} {% if training.title %}
+        {
+          class: "{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}",
+          href: "{{ training.url | prepend: site.baseurl }}",
+          title: "{{ training.title }}"
+        },
+      {% endif %} {% endif %} {% endfor %}
+    ];
+  });
+</script>

@@ -1,4 +1,4 @@
-function download(filename, text) {
+function download(filename, text) { // download a file
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
   element.setAttribute('download', filename);
@@ -14,7 +14,7 @@ function download(filename, text) {
 var app = angular.module('administration', []);
 
 app .config(['$interpolateProvider', function ($interpolateProvider) {
-  $interpolateProvider.startSymbol('[[');
+  $interpolateProvider.startSymbol('[['); // because jekill use {{ }}
   $interpolateProvider.endSymbol(']]');
 }]);
 
@@ -26,11 +26,11 @@ app.controller('formulaireCategory', function($scope) {
         });
     };
   $scope.downloadCategory = function () {
-    if ($scope.isValide()) {
+    if ($scope.isValide()) { // if title and image are not empty
       var layoutCategory = "sommaire";
       var titleCategory = $scope.myTitle;
-      var nodeCategory = titleCategory.replace(/[^a-zA-Z0-9]/g, '');
-      var permalinkCategory = "/" + nodeCategory + ".html";
+      var nodeCategory = titleCategory.replace(/[^a-zA-Z0-9]/g, ''); // for a simple node
+      var permalinkCategory = "/" + nodeCategory + ".html"; // for a simple URL
       var imageCategory = $scope.myImage.name;
 
       var textCategory =
@@ -63,22 +63,22 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
   $scope.mySubject = [];
   $scope.myProgram = [];
   $scope.myContenu = "";
-  $scope.addSubject = function () {
+  $scope.addSubject = function () { // in last position
     $scope.mySubject = $scope.mySubject.concat([{name:''}]);
   };
-  $scope.removeSubject = function (n) {
+  $scope.removeSubject = function (n) { // n = num of subject
     $scope.mySubject.splice(n,1);
   };
-  $scope.addProgram = function () {
+  $scope.addProgram = function () { // in last position
     $scope.myProgram = $scope.myProgram.concat([{title: '',activity: []}]);
   };
-  $scope.removeProgram = function (n) {
+  $scope.removeProgram = function (n) { // n = num of program
     $scope.myProgram.splice(n,1);
   };
-  $scope.addActivity = function (n) {
+  $scope.addActivity = function (n) { // in last position in nth program
     $scope.myProgram[n].activity = $scope.myProgram[n].activity.concat([{name: ''}]);
   };
-  $scope.removeActivity = function (nProgram, nActivity) {
+  $scope.removeActivity = function (nProgram, nActivity) { // nActivity = num of activity in nProgramth program
     $scope.myProgram[nProgram].activity.splice(nActivity,1);
   };
   $scope.downloadTraining = function () {
@@ -87,7 +87,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       var titleTraining = $scope.myTitle;
       var refTraining = $scope.myRef;
       var categorieTraining = $scope.myCategorie;
-      var permalinkTraining = "/" + categorieTraining + "/" + refTraining;
+      var permalinkTraining = "/" + categorieTraining + "/" + refTraining; // for unique url
       var publicTraining = $scope.myPublic;
       var costsTraining = $scope.myCost;
       var costsDescriptionTraining = $scope.myCostDescription;
@@ -142,10 +142,17 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
         textTraining = textTraining + "]\n";
       }
       if (contenuTraining != "") {
-        textTraining = textTraining + "presentation: '" + contenuTraining + "'\n";
+        // the simple version for use in PDF and recap
+        textTraining = textTraining + "presentation: '" + contenuTraining
+                                                          .split('  \n').join('\n')
+                                                          .split('* ').join('')
+                                                          .split('### ').join('')
+                                                          .split('\n\n').join('\n')
+                                                          + "'\n";
       }
-      textTraining = textTraining + "---";
+      textTraining = textTraining + "---\n";
       if (contenuTraining != "") {
+        // the markdown version for use in HTML
         textTraining = textTraining + contenuTraining;
       }
       var nameFileTraining = nameTraining!=='' ? nameTraining + ".md" : "undefine.md";
@@ -159,15 +166,15 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
     result = result && $scope.myPublic!=='';
     result = result && $scope.myCost!=='';
     result = result && $scope.myDuration!=='';
-    $scope.mySubject.forEach(
+    $scope.mySubject.forEach( // may be empty
       function (element, index, array) {
         result = result && element.subject!=='';
       }
     );
-    $scope.myProgram.forEach(
+    $scope.myProgram.forEach( // may be empty
       function (element, index, array) {
         result = result && element.title!=='';
-        element.activity.forEach(
+        element.activity.forEach( // may be empty
           function (activityelement, activityindex, activityarray) {
             result = result && activityelement.name!=='';
           }
@@ -189,7 +196,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
             function() {
               var fileBody = fr.result;
 
-              function valueSingleLineFields (fields, text) {
+              function valueSingleLineFields (fields, text) { // read a simple line
                 if (fields.length<1) {
                   console.log("fields vide");
                   return "";
@@ -210,7 +217,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
                 return text.substring(preIndex, postIndex).replace(/[\n\r]/g, '').trim();
               }
 
-              function valueArrayFields (fields, text) {
+              function valueArrayFields (fields, text) { // read a tab (subjects and activity)
                 var preIndex = text.indexOf(fields);
                 if (preIndex === -1) {
                   return [];
@@ -242,7 +249,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
                 return result;
               }
 
-              function valueProgramFields (text) {
+              function valueProgramFields (text) {  // read program
                 var preIndex = text.indexOf("program: ");
                 if (preIndex === -1) {
                   return [];
@@ -299,18 +306,10 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
               $scope.myDurationDescription =  valueSingleLineFields("duration-description: ", fileBody);
               $scope.myName = $scope.myFile.name.substring(0, $scope.myFile.name.indexOf('.md')).trim();
 
-              if (fileBody.indexOf("### Présentation\n\n") !== -1) {
+              if (fileBody.lastIndexOf("---\n") !== -1) {
                 $scope.myContenu = fileBody.substring(
-                  fileBody.indexOf("### Présentation\n\n")+"### Présentation\n\n".length,
+                  fileBody.lastIndexOf("---\n")+"---\n".length,
                   fileBody.length-1).trim();
-              } else {
-                $scope.myContenu = "";
-              }
-
-              if (fileBody.indexOf("presentation: '") !== -1) {
-                $scope.myContenu = fileBody.substring(
-                  fileBody.indexOf("presentation: '")+"presentation: '".length,
-                  fileBody.indexOf("'\n---")).trim();
               } else {
                 $scope.myContenu = "";
               }
@@ -327,6 +326,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
 }]);
 
 app.directive('focus', function() {
+  // the last field created gets focus after having to click a button
   return {
     link: function(scope, element, attrs) {
       element[0].focus();

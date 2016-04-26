@@ -89,6 +89,7 @@ layout: default
       $interpolateProvider.endSymbol(']]');
     }]);
     app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
       $scope.createPDF = function () {
         var pdfTitle = "{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}";
         var pdfDuration = "{{page.duration}}";
@@ -124,7 +125,7 @@ layout: default
                   pdfRef,
                   pdfSubject,
                   pdfProgram,
-                  pdfContent);
+                  pdfContent); // Data sent to the function that is in a file
       };
     });
   </script>

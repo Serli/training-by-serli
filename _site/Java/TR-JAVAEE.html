@@ -40,6 +40,7 @@
 						href="http://localhost:4000/"
 					>
 						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
 				</a></li>
 				<!-- /// training_category ///////////////////////////////////////// -->
 				  
@@ -47,44 +48,51 @@
 						"colorJava"
 						href="/Java.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorJava"
 						href="/Web.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorJava"
 						href="/LanguagesAlternatifs.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorJava"
 						href="/Data.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorJava"
 						href="/Mobilite.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorJava"
 						href="/MethodesOutils.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
 					</a></li>
 				    
 					<li><a class=
 						"colorJava"
 						href="/Workshops.html">
 							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
 					</a></li>
-				                                                                                                
+				                                                                                                  
 				<!-- /////////////////////////////////////////////////////////////// -->
 			</ul>
 		</nav>
@@ -276,6 +284,7 @@ Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi 
       $interpolateProvider.endSymbol(']]');
     }]);
     app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
       $scope.createPDF = function () {
         var pdfTitle = "Java EE";
         var pdfDuration = "3 jours";
@@ -374,7 +383,7 @@ Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi 
                   pdfRef,
                   pdfSubject,
                   pdfProgram,
-                  pdfContent);
+                  pdfContent); // Data sent to the function that is in a file
       };
     });
   </script>
@@ -431,310 +440,6 @@ Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi 
 
 
 		</div>
-
-    <script>
-      app.controller('Summary', function($scope) {
-        $scope.trainings = [
-            
-            {
-              class: "colorJava",
-              href: "/Java.html",
-              title: "Java"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Web.html",
-              title: "Web"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/LanguagesAlternatifs.html",
-              title: "Languages Alternatifs"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Data.html",
-              title: "Data"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Mobilite.html",
-              title: "Mobilité"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils.html",
-              title: "Méthodes & Outils"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops.html",
-              title: "Workshops"
-            },
-                                                                                                                      
-        ];
-      });
-      app.controller('IndexSummary', function($scope) {
-				$scope.research = {
-					title: ""
-				};
-        $scope.trainings = [
-                          
-            {
-              class: "colorJava",
-              href: "/LanguagesAlternatifs/TR-AKKA",
-              title: "Akka"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Web/TR-ANGULARJS",
-              title: "AngularJS"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Data/TR-CASSANDRA",
-              title: "Cassandra"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-SCRUM",
-              title: "Decouvrez Scrum avec des Legos"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-PATTERNS",
-              title: "Design Patterns"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-ANDROID",
-              title: "Developpement Android"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-DOCKER1",
-              title: "Developpement et integration continue avec Docker"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-IOS",
-              title: "Développement iOS"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-HYBRIDE",
-              title: "Developpement mobile hybride"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-PLAY2",
-              title: "Developpement Web sur le Framework Play 2"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-GIT",
-              title: "Débuter avec Git"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Mobilite/TR-ANDROID",
-              title: "Développement Android"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Mobilite/TR-HYBRIDE",
-              title: "Développement Hybride"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Mobilite/TR-IOS",
-              title: "Développement iOS"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Mobilite/TR-WINDPHONE",
-              title: "Développement WindowsPhone"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-DOCKER2",
-              title: "Docker : Du développement a la production"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Data/TR-ELASTIC",
-              title: "Elastic"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-INDUS",
-              title: "Industrialisation Logicielle"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-GRADLE",
-              title: "Introduction a Gradle"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Data/TR-HADOOP",
-              title: "Introduction a Hadoop"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/LanguagesAlternatifs/TR-NODEJS",
-              title: "Introduction à Node.Js"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Web/TR-WEB",
-              title: "Introduction au développement Web"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-JAVAEE",
-              title: "Java EE"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Web/TR-JAVASCRIPT",
-              title: "Javascript Avancé"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-JAVA",
-              title: "Java"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-JAVA8",
-              title: "Les Nouveautés De Java 8"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-TESTSJAVA",
-              title: "Les Tests en Java"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-MAVEN",
-              title: "Maven"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-AGILES",
-              title: "Methodes Agiles"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Data/TR-MONGODB",
-              title: "Mongo DB"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-MONGODB",
-              title: "Mongo DB"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-SQL",
-              title: "NoSQL"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-PLAY1",
-              title: "PlayFramework 1"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-PLAY2",
-              title: "PlayFramework 2"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/LanguagesAlternatifs/TR-SCALA",
-              title: "Scala"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-SCRUM",
-              title: "Scrum"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/MethodesOutils/TR-SELENIUM",
-              title: "Selenium"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Data/TR-SPARK",
-              title: "Spark"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Java/TR-SPRING4",
-              title: "Spring 4"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-ELK",
-              title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)"
-            },
-              
-            {
-              class: "colorJava",
-              href: "/Workshops/WK-WINDPHONE",
-              title: "Windows Mobile"
-            },
-                        
-        ];
-      });
-    </script>
 	</body>
 
 </html>
