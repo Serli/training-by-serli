@@ -200,7 +200,9 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       }
       var nameFileTraining = currentDate() + "-" + nameTraining + ".md";
 
-      uploadOnGithub($scope.myPseudo, $scope.myPassword, "formations", "Summary/"+categorieTraining+"/"+nameFileTraining, textTraining, "test commit auto de puis le formulaire");
+      uploadOnGithub($scope.myPseudo, $scope.myPassword,
+        "formations", "Summary/"+categorieTraining+"/_posts/"+nameFileTraining,
+        textTraining, "Commit auto du Formulaire");
       //download(nameFileTraining, textTraining);
     }
   };
