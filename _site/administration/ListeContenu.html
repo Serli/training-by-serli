@@ -31,7 +31,7 @@
     <ul>
         <li ng-repeat="n in (trainings|filter:research.title)" ng-style="{ 'color' : (n.class!='After') ? 'black' : 'darkgray' }">
           <!-- /// training //////////////////////////////////////////////// -->
-          <h2>[[n.title]]</h2>
+          <h2>[[n.date]] - [[n.title]]</h2>
           <ul ng-if="(n.class!='After')||research.news">
             <li>[[n.public]]</li>
             <li>[[n.costs]] [[n.costsdescription]]</li>
@@ -113,6 +113,7 @@
       
         {
           class: comparedDate("2016-04-27", lastVisite),
+          date: "27 April 2016",
           href: "/Workshops/WK-WINDPHONE",
           title: "Windows Mobile",
           public: "Développeurs débutants ou expérimentés, Architectes",
@@ -150,6 +151,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-ELK",
           title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)",
           public: "Tous types de profils.",
@@ -181,6 +183,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-SQL",
           title: "NoSQL",
           public: "Développeurs débutants ou expérimentés",
@@ -214,6 +217,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-MONGODB",
           title: "Mongo DB",
           public: "Développeurs débutants ou expérimentés",
@@ -249,6 +253,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-DOCKER2",
           title: "Docker : Du développement a la production",
           public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
@@ -286,6 +291,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-PLAY2",
           title: "Developpement Web sur le Framework Play 2",
           public: "Développeur Java ou Scala.",
@@ -321,6 +327,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-HYBRIDE",
           title: "Developpement mobile hybride",
           public: "Développeurs débutants ou expérimentés, Architectes",
@@ -360,6 +367,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-IOS",
           title: "Développement iOS",
           public: "Développeurs débutants ou expérimentés, Architectes",
@@ -397,6 +405,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-DOCKER1",
           title: "Developpement et integration continue avec Docker",
           public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
@@ -430,6 +439,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-ANDROID",
           title: "Developpement Android",
           public: "Développeurs débutants ou expérimentés, Architectes",
@@ -465,6 +475,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Workshops/WK-SCRUM",
           title: "Decouvrez Scrum avec des Legos",
           public: "Tout public",
@@ -494,6 +505,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Web/TR-JAVASCRIPT",
           title: "Javascript Avancé",
           public: "Développeurs expérimentés, Architectes",
@@ -580,6 +592,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Web/TR-WEB",
           title: "Introduction au développement Web",
           public: "Tout public",
@@ -656,6 +669,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Web/TR-ANGULARJS",
           title: "AngularJS",
           public: "Développeurs débutants ou expérimentés",
@@ -741,6 +755,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Mobilite/TR-WINDPHONE",
           title: "Développement WindowsPhone",
           public: "Développeurs C# et Chefs de projets techniques",
@@ -837,6 +852,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Mobilite/TR-IOS",
           title: "Développement iOS",
           public: "Développeur ayant de l’expérience dans un langage Orienté Objets",
@@ -943,6 +959,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Mobilite/TR-HYBRIDE",
           title: "Développement Hybride",
           public: "Développeur ayant déjà une connaissance HTML/CSS et javascript",
@@ -1033,6 +1050,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Mobilite/TR-ANDROID",
           title: "Développement Android",
           public: "Développeur ayant déjà une connaissance de Java.",
@@ -1125,6 +1143,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-SELENIUM",
           title: "Selenium",
           public: "Testeurs, Développeurs, Chefs de projets",
@@ -1210,6 +1229,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-SCRUM",
           title: "Scrum",
           public: "Tout public",
@@ -1291,6 +1311,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-AGILES",
           title: "Methodes Agiles",
           public: "Tous types de profils",
@@ -1380,6 +1401,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-MAVEN",
           title: "Maven",
           public: "Développeurs Java",
@@ -1468,6 +1490,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-GRADLE",
           title: "Introduction a Gradle",
           public: "Développeurs Java",
@@ -1547,6 +1570,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-INDUS",
           title: "Industrialisation Logicielle",
           public: "Développeurs, Opérationnels, Chefs de projet",
@@ -1635,6 +1659,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/MethodesOutils/TR-GIT",
           title: "Débuter avec Git",
           public: "Développeurs, Opérationnels, Chefs de projet",
@@ -1714,6 +1739,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/LanguagesAlternatifs/TR-SCALA",
           title: "Scala",
           public: "Développeurs expérimentés",
@@ -1830,6 +1856,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/LanguagesAlternatifs/TR-NODEJS",
           title: "Introduction à Node.Js",
           public: "Développeurs débutants ou expérimentés",
@@ -1921,6 +1948,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/LanguagesAlternatifs/TR-AKKA",
           title: "Akka",
           public: "Développeurs expérimentés Java ou Scala",
@@ -2006,6 +2034,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-SPRING4",
           title: "Spring 4",
           public: "Développeurs Java",
@@ -2100,6 +2129,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-PLAY2",
           title: "PlayFramework 2",
           public: "Développeurs Java / Scala",
@@ -2206,6 +2236,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-PLAY1",
           title: "PlayFramework 1",
           public: "Développeurs Java",
@@ -2300,6 +2331,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-TESTSJAVA",
           title: "Les Tests en Java",
           public: "Développeurs Java, débutants ou expérimentés",
@@ -2378,6 +2410,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-JAVA8",
           title: "Les Nouveautés De Java 8",
           public: "Développeurs Java",
@@ -2444,6 +2477,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-JAVA",
           title: "Java",
           public: "Développeurs",
@@ -2522,6 +2556,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-JAVAEE",
           title: "Java EE",
           public: "Développeurs Java",
@@ -2617,6 +2652,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Java/TR-PATTERNS",
           title: "Design Patterns",
           public: "Développeurs expérimentés dans un langage Orienté Objets",
@@ -2697,6 +2733,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Data/TR-SPARK",
           title: "Spark",
           public: "Développeurs Java expérimentés",
@@ -2775,6 +2812,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Data/TR-MONGODB",
           title: "Mongo DB",
           public: "Développeurs débutants ou expérimentés, Architectes, DBA",
@@ -2901,6 +2939,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Data/TR-HADOOP",
           title: "Introduction a Hadoop",
           public: "Développeurs Java expérimentés",
@@ -2986,6 +3025,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Data/TR-ELASTIC",
           title: "Elastic",
           public: "Développeur, Opérationnel, DBA",
@@ -3068,6 +3108,7 @@
       
         {
           class: comparedDate("2016-04-01", lastVisite),
+          date: "01 April 2016",
           href: "/Data/TR-CASSANDRA",
           title: "Cassandra",
           public: "Développeurs",

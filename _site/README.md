@@ -16,13 +16,19 @@ en ligne : si certaine modification ne s'affiche pas :
 
 # Ajout de formation
 
-ajouter des fichiers .md dans le dossier : *_trainings*  
-voir le README_training.md pour plus d'informations
+Dans le dossier : *Summary/[ Name Catégorie ]/posts*  
 
 ## Génération automatique de nouveau fichier
 
-/administration/formulaireData.html
+Formulaire qui met à jour github :  
+  */administration/formulaireData.html*  
 
-## Vérification automatique du format des nouveaux fichiers
+## Liste du contenu et des mise à jour
 
-/administration/errorFormat.html
+Ensemble du contenu du site avec mise en avant des nouveautés :  
+  */administration/ListeContenu.html*  
+
+# Ajout de Catégorie
+
+Ajout dans le fichier : *data/group.yml*  
+Puis, Création du dossier et de l'index associé dans : *Summary*  

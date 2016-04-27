@@ -32,7 +32,24 @@
 <header class=
 	"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
 >
-	{% if page.title %}{% assign title = page.title %}{% else %}{% assign title = site.title %}{% endif %}
+	{% if page.title %}
+		{% assign title = page.title %}
+	{% else %}
+		{% if page.summary %}
+			{% assign title = site.title  %}
+			{% for somaire in site.data.group %}
+				{% if somaire.name == page.summary %}
+					{% if somaire.title %}
+						{% assign title = somaire.title %}
+					{% else %}
+						{% assign title = somaire.name %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			{% assign title = site.title %}
+		{% endif %}
+	{% endif %}
 	{% assign my_lenght = title|size %}
 	<h1 class="{% if 25 <= my_lenght %}bigTitle{% else %}smalTitle{% endif %}">{{ title }}</h1>
 	<a href="{{ site.url }}/{{ site.baseurl }}">

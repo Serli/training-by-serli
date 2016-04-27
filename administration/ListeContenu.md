@@ -12,7 +12,7 @@ permalink: /administration/ListeContenu.html
     <ul>
         <li ng-repeat="n in (trainings|filter:research.title)" ng-style="{ 'color' : (n.class!='After') ? 'black' : 'darkgray' }">
           <!-- /// training //////////////////////////////////////////////// -->
-          <h2>[[n.title]]</h2>
+          <h2>[[n.date]] - [[n.title]]</h2>
           <ul ng-if="(n.class!='After')||research.news">
             <li>[[n.public]]</li>
             <li>[[n.costs]] [[n.costsdescription]]</li>
@@ -93,6 +93,7 @@ permalink: /administration/ListeContenu.html
       {% for training in site.posts %}
         {
           class: comparedDate("{{ training.date | date: '%Y-%m-%d' }}", lastVisite),
+          date: "{{ training.date | date_to_long_string }}",
           href: "{{ training.url | prepend: site.baseurl }}",
           title: "{% if training.title %}{{training.title}}{% else %}{{site.title}}{% endif %}",
           public: "{{ training.public }}",
