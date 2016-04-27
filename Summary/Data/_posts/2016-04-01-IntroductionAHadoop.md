@@ -1,7 +1,7 @@
 ---
 layout: training
 title: Introduction a Hadoop
-permalink: Data/TR-HADOOP
+permalink: /Data/TR-HADOOP
 public: Développeurs Java expérimentés
 costs: 1140 € HT
 costs-description: par participant

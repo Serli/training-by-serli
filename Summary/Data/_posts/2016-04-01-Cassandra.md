@@ -1,7 +1,7 @@
 ---
 layout: training
 title: Cassandra
-permalink: Data/TR-CASSANDRA
+permalink: /Data/TR-CASSANDRA
 public: Développeurs
 costs: 1340 € HT
 costs-description: par participant

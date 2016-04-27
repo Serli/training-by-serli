@@ -346,12 +346,12 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
 
               function valueCategoryFields (text) {
                 var searchString = '/';
-                var preIndex = text.indexOf("permalink: ");
+                var preIndex = text.indexOf("permalink: /");
                 if (preIndex === -1) {
-                  console.log("fields inconnu : permalink: ");
+                  console.log("fields inconnu : permalink: /");
                   return "";
                 }
-                preIndex = preIndex + "permalink: ".length;
+                preIndex = preIndex + "permalink: /".length;
                 var postIndex = text.substring(preIndex).indexOf(searchString);
                 if (postIndex === -1) {
                   console.log("aucun /");
