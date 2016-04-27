@@ -52,7 +52,7 @@ function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, 
           deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
         });
       }).error(function(err) {
-        if (err.message === "Not Found") {
+        if (err.status == 404) {
           var filedata = '{"message":"'+commitMessage+'","content":"'+basecontent+'"}';
           $.ajax({
             url: apiurl,
@@ -69,6 +69,8 @@ function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, 
             deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
       		});
         } else {
+          console.log('ERROR');
+          console.log(err);
           deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
         }
   		});
