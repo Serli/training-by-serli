@@ -25,23 +25,23 @@
 
 			<div class="formulaireData" ng-app="administration">
   <h1>Nouvelle Formation</h1>
-  <form ng-submit="downloadTraining()" ng-controller="formulaireTraining">
+  <form ng-submit="uploadTraining()" ng-controller="formulaireTraining">
+    <fieldset>
+      <legend>Pré-Remplir</legend>
+      <div class="input-file-container">
+        <label for="my-fileTraining">Fichier à charger</label>
+        <input class="input-file" id="my-fileTraining" type="file" onchange="angular.element(this).scope().setFile(this)" />
+        <label ng-if="myFile.name===undefined" for="my-fileTraining" class="input-file-trigger">Select a file...</label>
+        <label ng-if="myFile.name!==undefined" for="my-fileTraining" class="input-file-trigger completed">[[myFile.name]]</label>
+      </div>
+    </fieldset>
+
     <fieldset>
       <legend>Connection GitHub</legend>
       <label for="pseudo">Pseudo</label>
       <input id="pseudo" type="text" ng-model="myPseudo" ng-class="myPseudo==='' ? 'error' : ''" /><br />
       <label for="password">Password</label>
       <input id="password" type="password" ng-model="myPassword" ng-class="myPassword==='' ? 'error' : ''" /><br />
-    </fieldset>
-    <fieldset>
-      <legend>Modifier</legend>
-      <div class="input-file-container">
-        <label for="my-fileTraining">Fichier à modifier</label>
-        <input class="input-file" id="my-fileTraining" type="file" onchange="angular.element(this).scope().setFile(this)" />
-        <label ng-if="myFile.name===undefined" for="my-fileTraining" class="input-file-trigger">Select a file...</label>
-        <label ng-if="myFile.name!==undefined" for="my-fileTraining" class="input-file-trigger completed">[[myFile.name]]</label>
-      </div>
-      <p><em>Dans le dossier : /_trainings</em></p>
     </fieldset>
 
     <fieldset>
@@ -50,6 +50,7 @@
       <input id="title" type="text" ng-model="myTitle" placeholder="ex : Les nouveautés de Java 8" ng-class="myTitle==='' ? 'error' : ''" /><br />
       <label for="ref">Référence</label>
       <input id="ref" type="text" ng-model="myRef" placeholder="ex : TR-JAVA8" ng-class="myRef==='' ? 'error' : ''" /><br />
+      <p ng-if="existingReference()"><em ng-style="{'color': 'red'}">Attention : la référence existe déjà le fichier sera écrasé</em></p>
       <label for="category">Catégorie</label>
       <select id="category" ng-model="myCategorie" ng-class="myCategorie==='' ? 'error' : ''">
       
@@ -131,7 +132,7 @@
 
     </fieldset>
 
-    <input class="button" type="submit" value="Download" ng-class="!isValide() ? 'errorDownload' : ''" />
+    <input class="button" type="submit" value="Ajout Formation" ng-class="!isValide() ? 'errorDownload' : ''" />
   </form>
 
   <br /><hr />
@@ -149,6 +150,216 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <script>
+    var listRef = [
+      
+        {
+          ref: "WK-WINDPHONE",
+          path: "Summary/Workshops/_posts/2016-04-27-WindowsMobile.md"
+        },
+      
+        {
+          ref: "WK-ELK",
+          path: "Summary/Workshops/_posts/2016-04-01-ValorisezVosDonneesAvecLaStackElasticLogstashKibana.md"
+        },
+      
+        {
+          ref: "WK-SQL",
+          path: "Summary/Workshops/_posts/2016-04-01-NoSQL.md"
+        },
+      
+        {
+          ref: "WK-MONGODB",
+          path: "Summary/Workshops/_posts/2016-04-01-MongoDB.md"
+        },
+      
+        {
+          ref: "WK-DOCKER2",
+          path: "Summary/Workshops/_posts/2016-04-01-DockerDuDeveloppementALaProduction.md"
+        },
+      
+        {
+          ref: "WK-PLAY2",
+          path: "Summary/Workshops/_posts/2016-04-01-DeveloppementWebSurLeFrameworkPlay2.md"
+        },
+      
+        {
+          ref: "WK-HYBRIDE",
+          path: "Summary/Workshops/_posts/2016-04-01-DeveloppementMobileHybride.md"
+        },
+      
+        {
+          ref: "WK-IOS",
+          path: "Summary/Workshops/_posts/2016-04-01-DeveloppementIOS.md"
+        },
+      
+        {
+          ref: "WK-DOCKER1",
+          path: "Summary/Workshops/_posts/2016-04-01-DeveloppementEtIntegrationContinueAvecDocker.md"
+        },
+      
+        {
+          ref: "WK-ANDROID",
+          path: "Summary/Workshops/_posts/2016-04-01-DeveloppementAndroid.md"
+        },
+      
+        {
+          ref: "WK-SCRUM",
+          path: "Summary/Workshops/_posts/2016-04-01-DecouvrezScrumAvecDesLegos.md"
+        },
+      
+        {
+          ref: "TR-JAVASCRIPT",
+          path: "Summary/Web/_posts/2016-04-01-JavascriptAvance.md"
+        },
+      
+        {
+          ref: "TR-WEB",
+          path: "Summary/Web/_posts/2016-04-01-IntroductionAuDeveloppementWeb.md"
+        },
+      
+        {
+          ref: "TR-ANGULARJS",
+          path: "Summary/Web/_posts/2016-04-01-AngularJS.md"
+        },
+      
+        {
+          ref: "TR-WINDPHONE",
+          path: "Summary/Mobilite/_posts/2016-04-01-DéveloppementWindowsPhone.md"
+        },
+      
+        {
+          ref: "TR-IOS",
+          path: "Summary/Mobilite/_posts/2016-04-01-DéveloppementIOS.md"
+        },
+      
+        {
+          ref: "TR-HYBRIDE",
+          path: "Summary/Mobilite/_posts/2016-04-01-DéveloppementHybride.md"
+        },
+      
+        {
+          ref: "TR-ANDROID",
+          path: "Summary/Mobilite/_posts/2016-04-01-DéveloppementAndroid.md"
+        },
+      
+        {
+          ref: "TR-SELENIUM",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-Selenium.md"
+        },
+      
+        {
+          ref: "TR-SCRUM",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-Scrum.md"
+        },
+      
+        {
+          ref: "TR-AGILES",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-MethodesAgiles.md"
+        },
+      
+        {
+          ref: "TR-MAVEN",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-Maven.md"
+        },
+      
+        {
+          ref: "TR-GRADLE",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-IntroductionAGradle.md"
+        },
+      
+        {
+          ref: "TR-INDUS",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-IndustrialisationLogicielle.md"
+        },
+      
+        {
+          ref: "TR-GIT",
+          path: "Summary/MethodesOutils/_posts/2016-04-01-DébuterAvecGit.md"
+        },
+      
+        {
+          ref: "TR-SCALA",
+          path: "Summary/LanguagesAlternatifs/_posts/2016-04-01-Scala.md"
+        },
+      
+        {
+          ref: "TR-NODEJS",
+          path: "Summary/LanguagesAlternatifs/_posts/2016-04-01-IntroductionANodeJs.md"
+        },
+      
+        {
+          ref: "TR-AKKA",
+          path: "Summary/LanguagesAlternatifs/_posts/2016-04-01-Akka.md"
+        },
+      
+        {
+          ref: "TR-SPRING4",
+          path: "Summary/Java/_posts/2016-04-01-Spring4.md"
+        },
+      
+        {
+          ref: "TR-PLAY2",
+          path: "Summary/Java/_posts/2016-04-01-PlayFramework2.md"
+        },
+      
+        {
+          ref: "TR-PLAY1",
+          path: "Summary/Java/_posts/2016-04-01-PlayFramework1.md"
+        },
+      
+        {
+          ref: "TR-TESTSJAVA",
+          path: "Summary/Java/_posts/2016-04-01-LesTestsEnJava.md"
+        },
+      
+        {
+          ref: "TR-JAVA8",
+          path: "Summary/Java/_posts/2016-04-01-LesNouveautesDeJava8.md"
+        },
+      
+        {
+          ref: "TR-JAVA",
+          path: "Summary/Java/_posts/2016-04-01-LanguageJava.md"
+        },
+      
+        {
+          ref: "TR-JAVAEE",
+          path: "Summary/Java/_posts/2016-04-01-JavaEE.md"
+        },
+      
+        {
+          ref: "TR-PATTERNS",
+          path: "Summary/Java/_posts/2016-04-01-DesignPatterns.md"
+        },
+      
+        {
+          ref: "TR-SPARK",
+          path: "Summary/Data/_posts/2016-04-01-Spark.md"
+        },
+      
+        {
+          ref: "TR-MONGODB",
+          path: "Summary/Data/_posts/2016-04-01-MongoDB.md"
+        },
+      
+        {
+          ref: "TR-HADOOP",
+          path: "Summary/Data/_posts/2016-04-01-IntroductionAHadoop.md"
+        },
+      
+        {
+          ref: "TR-ELASTIC",
+          path: "Summary/Data/_posts/2016-04-01-Elastic.md"
+        },
+      
+        {
+          ref: "TR-CASSANDRA",
+          path: "Summary/Data/_posts/2016-04-01-Cassandra.md"
+        },
+      
+    ];
+  </script>
   <script src="../js/formulaire.js"></script>
 </div>
 

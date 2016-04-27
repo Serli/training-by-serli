@@ -1,17 +1,19 @@
-function download(filename, text) { // download a file
-  var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-  element.setAttribute('download', filename);
-
-  element.style.display = 'none';
-  document.body.appendChild(element);
-
-  element.click();
-
-  document.body.removeChild(element);
+function deleteToken (authid, btoaPseudoPassword, callback) {
+  $.ajax({
+    url: 'https://api.github.com/authorizations/'+authid,
+    type: 'DELETE',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "Basic " + btoaPseudoPassword);
+    }
+  }).done(function(response) {
+    console.log('DELETE');
+    if (callback != undefined) {
+      callback();
+    }
+  });
 }
 
-function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, commitMessage) {
+function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, commitMessage, callback) {
   var authid, token, contents_url;
   $.ajax({
     url: 'https://api.github.com/authorizations',
@@ -27,49 +29,101 @@ function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, 
       var filename = pathFile;
       var basecontent = btoa(unescape(encodeURIComponent(contentFile)));
       var apiurl = "https://api.github.com/repos/"+pseudoGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
-      var filedata = '{"message":"'+commitMessage+'","content":"'+basecontent+'"}';
-
       $.ajax({
         url: apiurl,
-        type: 'PUT',
+        type: 'GET',
         beforeSend: function(xhr) {
           xhr.setRequestHeader("Authorization", "token "+token);
-        },
-        data: filedata
+        }
       }).done(function(response) {
+        var filedata = '{"message":"'+commitMessage+'","content":"'+basecontent+'","sha":"'+response.sha+'"}';
         $.ajax({
-          url: 'https://api.github.com/authorizations/'+authid,
-          type: 'DELETE',
+          url: apiurl,
+          type: 'PUT',
           beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
-          }
+            xhr.setRequestHeader("Authorization", "token "+token);
+          },
+          data: filedata
         }).done(function(response) {
-          console.log('DELETE');
+          deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+        }).error(function(err) {
+          console.log('ERROR');
+          console.log(err);
+          deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
         });
       }).error(function(err) {
-  			console.log('ERROR');
-  			console.log(err);
-        $.ajax({
-          url: 'https://api.github.com/authorizations/'+authid,
-          type: 'DELETE',
-          beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
-          }
-        }).done(function(response) {
-          console.log('DELETE TOKEN');
-        });
+        if (err.message === "Not Found") {
+          var filedata = '{"message":"'+commitMessage+'","content":"'+basecontent+'"}';
+          $.ajax({
+            url: apiurl,
+            type: 'PUT',
+            beforeSend: function(xhr) {
+              xhr.setRequestHeader("Authorization", "token "+token);
+            },
+            data: filedata
+          }).done(function(response) {
+            deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+          }).error(function(err) {
+      			console.log('ERROR');
+      			console.log(err);
+            deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+      		});
+        } else {
+          deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+        }
   		});
     } catch (e) {
       console.log(e);
+      deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+    }
+  });
+}
+
+function deleteOnGithub(pseudoGit, passwordGit, repoGit, pathFile, commitMessage, callback) {
+  var authid, token, contents_url;
+  $.ajax({
+    url: 'https://api.github.com/authorizations',
+    type: 'POST',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
+    },
+    data: '{"scopes":["repo"],"note":"test 3 : ajout fichier dans'+repoGit+'"}'
+  }).done(function(response) {
+    try {
+      authid = response.id;
+  		token = response.token;
+      var filename = pathFile;
+      var apiurl = "https://api.github.com/repos/"+pseudoGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
       $.ajax({
-        url: 'https://api.github.com/authorizations/'+authid,
-        type: 'DELETE',
+        url: apiurl,
+        type: 'GET',
         beforeSend: function(xhr) {
-          xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
+          xhr.setRequestHeader("Authorization", "token "+token);
         }
       }).done(function(response) {
-        console.log('DELETE TOKEN');
-      });
+        var filedata = '{"message":"'+commitMessage+'","sha":"'+response.sha+'"}';
+        $.ajax({
+          url: apiurl,
+          type: 'DELETE',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "token "+token);
+          },
+          data: filedata
+        }).done(function(response) {
+          deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+        }).error(function(err) {
+          console.log('ERROR');
+          console.log(err);
+          deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+        });
+      }).error(function(err) {
+        console.log('ERROR');
+        console.log(err);
+        deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
+  		});
+    } catch (e) {
+      console.log(e);
+      deleteToken (authid, btoa(pseudoGit+":"+passwordGit), callback);
     }
   });
 }
@@ -83,6 +137,20 @@ function currentDate () {
   var mois    = date.getMonth() + 1;
   var jour    = date.getDate();
   return ""+annee+"-"+twoDigit(mois)+"-"+twoDigit(jour);
+}
+
+function pathFileReference(ref) {
+  var result = undefined;
+  listRef.forEach(function (element, index, array) {
+    if (element.ref===ref) {
+      result = element.path;
+    }
+  });
+  return result;
+}
+
+function existingReference(ref) {
+  return pathFileReference(ref) !== undefined;
 }
 
 var app = angular.module('administration', []);
@@ -125,7 +193,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
   $scope.removeActivity = function (nProgram, nActivity) { // nActivity = num of activity in nProgramth program
     $scope.myProgram[nProgram].activity.splice(nActivity,1);
   };
-  $scope.downloadTraining = function () {
+  $scope.uploadTraining = function () {
     if ($scope.isValide()) {
       var layoutTraining = "training";
       var titleTraining = $scope.myTitle;
@@ -200,8 +268,19 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       }
       var nameFileTraining = currentDate() + "-" + nameTraining + ".md";
 
-      uploadOnGithub($scope.myPseudo, $scope.myPassword, "formations", "Summary/"+categorieTraining+"/"+nameFileTraining, textTraining, "test commit auto de puis le formulaire");
-      //download(nameFileTraining, textTraining);
+      var upload = function () {
+        uploadOnGithub($scope.myPseudo, $scope.myPassword,
+          "formations", "Summary/"+categorieTraining+"/_posts/"+nameFileTraining,
+          textTraining, "Commit auto du Formulaire ajout d'une formation");
+      }
+
+      if(pathFileReference(refTraining)!==undefined) {
+        deleteOnGithub($scope.myPseudo, $scope.myPassword,
+          "formations", pathFileReference(refTraining),
+          "Commit auto du Formulaire supression d'une formation", upload);
+      } else {
+        upload();
+      }
     }
   };
   $scope.isValide = function () {
@@ -387,6 +466,9 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
         fr.readAsText($scope.myFile);
       }
     );
+  };
+  $scope.existingReference = function () {
+    return existingReference($scope.myRef);
   };
 }]);
 

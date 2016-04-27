@@ -5,25 +5,25 @@ permalink: /administration/formulaireData.html
 
 <div class="formulaireData" ng-app="administration">
   <h1>Nouvelle Formation</h1>
-  <form ng-submit="downloadTraining()" ng-controller="formulaireTraining">
+  <form ng-submit="uploadTraining()" ng-controller="formulaireTraining">
     <fieldset>
-      <legend>Connection GitHub</legend>
-      <label for="pseudo">Pseudo</label>
-      <input id="pseudo" type="text" ng-model="myPseudo" ng-class="myPseudo==='' ? 'error' : ''"/><br/>
-      <label for="password">Password</label>
-      <input id="password" type="password" ng-model="myPassword" ng-class="myPassword==='' ? 'error' : ''"/><br/>
-    </fieldset>
-    <fieldset>
-      <legend>Modifier</legend>
+      <legend>Pré-Remplir</legend>
       <div class="input-file-container">
-        <label for="my-fileTraining">Fichier à modifier</label>
+        <label for="my-fileTraining">Fichier à charger</label>
         <input class="input-file" id="my-fileTraining" type="file" onchange="angular.element(this).scope().setFile(this)" />
         <label ng-if="myFile.name===undefined" for="my-fileTraining"
           class="input-file-trigger">Select a file...</label>
         <label ng-if="myFile.name!==undefined" for="my-fileTraining"
           class="input-file-trigger completed">[[myFile.name]]</label>
       </div>
-      <p><em>Dans le dossier : /_trainings</em></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Connection GitHub</legend>
+      <label for="pseudo">Pseudo</label>
+      <input id="pseudo" type="text" ng-model="myPseudo" ng-class="myPseudo==='' ? 'error' : ''"/><br/>
+      <label for="password">Password</label>
+      <input id="password" type="password" ng-model="myPassword" ng-class="myPassword==='' ? 'error' : ''"/><br/>
     </fieldset>
 
     <fieldset>
@@ -34,6 +34,7 @@ permalink: /administration/formulaireData.html
       <label for="ref">Référence</label>
       <input id="ref" type="text" ng-model="myRef" placeholder="ex : TR-JAVA8"
          ng-class="myRef==='' ? 'error' : ''"/><br/>
+      <p ng-if="existingReference()"><em ng-style="{'color': 'red'}">Attention : la référence existe déjà le fichier sera écrasé</em></p>
       <label for="category">Catégorie</label>
       <select id="category" ng-model="myCategorie" ng-class="myCategorie==='' ? 'error' : ''">
       {% for somaire in site.data.group %}
@@ -101,7 +102,7 @@ permalink: /administration/formulaireData.html
 
     </fieldset>
 
-    <input class="button" type="submit" value="Download"
+    <input class="button" type="submit" value="Ajout Formation"
       ng-class="!isValide() ? 'errorDownload' : ''">
   </form>
 
@@ -120,5 +121,15 @@ permalink: /administration/formulaireData.html
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <script>
+    var listRef = [
+      {% for training in site.posts %}
+        {
+          ref: "{{ training.ref }}",
+          path: "{{ training.path }}"
+        },
+      {% endfor %}
+    ];
+  </script>
   <script src="../js/formulaire.js"></script>
 </div>
