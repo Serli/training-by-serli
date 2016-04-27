@@ -11,6 +11,80 @@ function download(filename, text) { // download a file
   document.body.removeChild(element);
 }
 
+function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, commitMessage) {
+  var authid, token, contents_url;
+  $.ajax({
+    url: 'https://api.github.com/authorizations',
+    type: 'POST',
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
+    },
+    data: '{"scopes":["repo"],"note":"test 3 : ajout fichier dans'+repoGit+'"}'
+  }).done(function(response) {
+    try {
+      authid = response.id;
+  		token = response.token;
+      var filename = pathFile;
+      var basecontent = btoa(unescape(encodeURIComponent(contentFile)));
+      var apiurl = "https://api.github.com/repos/"+pseudoGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
+      var filedata = '{"message":"'+commitMessage+'","content":"'+basecontent+'"}';
+
+      $.ajax({
+        url: apiurl,
+        type: 'PUT',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader("Authorization", "token "+token);
+        },
+        data: filedata
+      }).done(function(response) {
+        $.ajax({
+          url: 'https://api.github.com/authorizations/'+authid,
+          type: 'DELETE',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
+          }
+        }).done(function(response) {
+          console.log('DELETE');
+        });
+      }).error(function(err) {
+  			console.log('ERROR');
+  			console.log(err);
+        $.ajax({
+          url: 'https://api.github.com/authorizations/'+authid,
+          type: 'DELETE',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
+          }
+        }).done(function(response) {
+          console.log('DELETE TOKEN');
+        });
+  		});
+    } catch (e) {
+      console.log(e);
+      $.ajax({
+        url: 'https://api.github.com/authorizations/'+authid,
+        type: 'DELETE',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader("Authorization", "Basic " + btoa(pseudoGit+":"+passwordGit));
+        }
+      }).done(function(response) {
+        console.log('DELETE TOKEN');
+      });
+    }
+  });
+}
+
+function twoDigit(n){
+  return n > 9 ? "" + n: "0" + n;
+}
+function currentDate () {
+  var date = new Date();
+  var annee   = date.getFullYear();
+  var mois    = date.getMonth() + 1;
+  var jour    = date.getDate();
+  return ""+annee+"-"+twoDigit(mois)+"-"+twoDigit(jour);
+}
+
 var app = angular.module('administration', []);
 
 app .config(['$interpolateProvider', function ($interpolateProvider) {
@@ -18,39 +92,9 @@ app .config(['$interpolateProvider', function ($interpolateProvider) {
   $interpolateProvider.endSymbol(']]');
 }]);
 
-app.controller('formulaireCategory', function($scope) {
-  $scope.myTitle = "";
-  $scope.setFile = function(element) {
-        $scope.$apply(function($scope) {
-            $scope.myImage = element.files[0];
-        });
-    };
-  $scope.downloadCategory = function () {
-    if ($scope.isValide()) { // if title and image are not empty
-      var layoutCategory = "sommaire";
-      var titleCategory = $scope.myTitle;
-      var nodeCategory = titleCategory.replace(/[^a-zA-Z0-9]/g, ''); // for a simple node
-      var permalinkCategory = "/" + nodeCategory + ".html"; // for a simple URL
-      var imageCategory = $scope.myImage.name;
-
-      var textCategory =
-      "---" + "\n" +
-      "layout: " + layoutCategory + "\n" +
-      "title: " + titleCategory + "\n" +
-      "permalink: " + permalinkCategory + "\n" +
-      "node: " + nodeCategory + "\n" +
-      "image: /assets/TrainingsCategories/WhiteIcon/" + imageCategory + "\n" +
-      "---";
-      var nameFileCategory = nodeCategory + ".md";
-      download(nameFileCategory, textCategory);
-    }
-  };
-  $scope.isValide = function () {
-    return ($scope.myTitle!=='' && $scope.myImage!==undefined);
-  };
-});
-
 app.controller('formulaireTraining', ['$scope', function($scope) {
+  $scope.myPseudo = "";
+  $scope.myPassword = "";
   $scope.myTitle = "";
   $scope.myRef = "";
   $scope.myCategorie = "";
@@ -103,7 +147,6 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       "layout: " + layoutTraining + "\n" +
       "title: " + titleTraining + "\n" +
       "permalink: " + permalinkTraining + "\n" +
-      "categories: " + categorieTraining + "\n" +
       "public: " + publicTraining + "\n" +
       "costs: " + costsTraining + "\n" +
       "costs-description: " + costsDescriptionTraining + "\n" +
@@ -155,17 +198,22 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
         // the markdown version for use in HTML
         textTraining = textTraining + contenuTraining;
       }
-      var nameFileTraining = nameTraining!=='' ? nameTraining + ".md" : "undefine.md";
-      download(nameFileTraining, textTraining);
+      var nameFileTraining = currentDate() + "-" + nameTraining + ".md";
+
+      uploadOnGithub($scope.myPseudo, $scope.myPassword, "formations", "Summary/"+categorieTraining+"/"+nameFileTraining, textTraining, "test commit auto de puis le formulaire");
+      //download(nameFileTraining, textTraining);
     }
   };
   $scope.isValide = function () {
-    var result = $scope.myTitle!=='';
+    var result = $scope.myPseudo!=='';
+    result = result && $scope.myPassword!=='';
+    result = result && $scope.myTitle!=='';
     result = result && $scope.myRef!=='';
     result = result && $scope.myCategorie!=='';
     result = result && $scope.myPublic!=='';
     result = result && $scope.myCost!=='';
     result = result && $scope.myDuration!=='';
+    result = result && $scope.myName!=='';
     $scope.mySubject.forEach( // may be empty
       function (element, index, array) {
         result = result && element.subject!=='';
@@ -211,6 +259,23 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
                 var postIndex = text.substring(preIndex).indexOf(searchString);
                 if (postIndex === -1) {
                   console.log("aucun retour à la ligne");
+                  return "";
+                }
+                postIndex = preIndex + postIndex;
+                return text.substring(preIndex, postIndex).replace(/[\n\r]/g, '').trim();
+              }
+
+              function valueCategoryFields (text) {
+                var searchString = '/';
+                var preIndex = text.indexOf("permalink: ");
+                if (preIndex === -1) {
+                  console.log("fields inconnu : permalink: ");
+                  return "";
+                }
+                preIndex = preIndex + "permalink: ".length;
+                var postIndex = text.substring(preIndex).indexOf(searchString);
+                if (postIndex === -1) {
+                  console.log("aucun /");
                   return "";
                 }
                 postIndex = preIndex + postIndex;
@@ -298,13 +363,13 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
 
               $scope.myTitle = valueSingleLineFields("title: ", fileBody);
               $scope.myRef =  valueSingleLineFields("ref: ", fileBody);
-              $scope.myCategorie =  valueSingleLineFields("categories: ", fileBody);
+              $scope.myCategorie =  valueCategoryFields(fileBody);
               $scope.myPublic =  valueSingleLineFields("public: ", fileBody);
               $scope.myCost =  valueSingleLineFields("costs: ", fileBody);
               $scope.myCostDescription =  valueSingleLineFields("costs-description: ", fileBody);
               $scope.myDuration =  valueSingleLineFields("duration: ", fileBody);
               $scope.myDurationDescription =  valueSingleLineFields("duration-description: ", fileBody);
-              $scope.myName = $scope.myFile.name.substring(0, $scope.myFile.name.indexOf('.md')).trim();
+              $scope.myName = $scope.myFile.name.substring("YYYY-MM-DD-".length, $scope.myFile.name.indexOf('.md')).trim();
 
               if (fileBody.lastIndexOf("---\n") !== -1) {
                 $scope.myContenu = fileBody.substring(

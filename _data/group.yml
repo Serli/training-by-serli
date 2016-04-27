@@ -1,0 +1,23 @@
+- name: Java
+  image: /assets/TrainingsCategories/WhiteIcon/java.png
+
+- name: Web
+  image: /assets/TrainingsCategories/WhiteIcon/web.png
+
+- name: LanguagesAlternatifs
+  title: Languages Alternatifs
+  image: /assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png
+
+- name: Data
+  image: /assets/TrainingsCategories/WhiteIcon/data.png
+
+- name: Mobilite
+  title: Mobilité
+  image: /assets/TrainingsCategories/WhiteIcon/mobilite.png
+
+- name: MethodesOutils
+  title: Méthodes & Outils
+  image: /assets/TrainingsCategories/WhiteIcon/methodes-outils.png
+
+- name: Workshops
+  image: /assets/TrainingsCategories/WhiteIcon/workshop.png

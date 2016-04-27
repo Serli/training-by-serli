@@ -1,7 +1,6 @@
 <!-- /// FOOTER //////////////////////////////////////////////////////////// -->
 <footer class=
-  "{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
->
+  "{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}">
   <nav>
     <a href="http://www.serli.com">
       <img src="{{ site.baseurl }}/assets/brand.png"/>

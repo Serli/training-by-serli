@@ -4,31 +4,15 @@ permalink: /administration/formulaireData.html
 ---
 
 <div class="formulaireData" ng-app="administration">
-  <h1>Nouvelle Catégorie</h1>
-  <form ng-submit="downloadCategory()" ng-controller="formulaireCategory">
-    <fieldset>
-      <label for="name" >Nom Categorie</label>
-      <input id="name" type="text" ng-model="myTitle"
-        placeholder="ex : Java" ng-class="myTitle==='' ? 'error' : ''"/><br/>
-      <div class="input-file-container">
-        <label for="my-file">Icone Categorie</label>
-    		<input class="input-file" id="my-file" type="file" onchange="angular.element(this).scope().setFile(this)" />
-    		<label ng-if="myImage.name===undefined" for="my-file"
-          class="input-file-trigger error">Select a file...</label>
-    		<label ng-if="myImage.name!==undefined" for="my-file"
-          class="input-file-trigger completed">[[myImage.name]]</label>
-    	</div>
-      <p><em>Dans le dossier : /assets/TrainingsCategories/WhiteIcon</em></p>
-    </fieldset>
-
-    <input type="submit" value="Download"
-      ng-class="!isValide() ? 'errorDownload' : ''">
-  </form>
-
-  <br/><hr/>
-
   <h1>Nouvelle Formation</h1>
   <form ng-submit="downloadTraining()" ng-controller="formulaireTraining">
+    <fieldset>
+      <legend>Connection GitHub</legend>
+      <label for="pseudo">Pseudo</label>
+      <input id="pseudo" type="text" ng-model="myPseudo" ng-class="myPseudo==='' ? 'error' : ''"/><br/>
+      <label for="password">Password</label>
+      <input id="password" type="password" ng-model="myPassword" ng-class="myPassword==='' ? 'error' : ''"/><br/>
+    </fieldset>
     <fieldset>
       <legend>Modifier</legend>
       <div class="input-file-container">
@@ -52,13 +36,11 @@ permalink: /administration/formulaireData.html
          ng-class="myRef==='' ? 'error' : ''"/><br/>
       <label for="category">Catégorie</label>
       <select id="category" ng-model="myCategorie" ng-class="myCategorie==='' ? 'error' : ''">
-      {% for somaire in site.pages %}
-        {% if somaire.layout == 'sommaire' %}
-          {% if somaire.title %}
-            {% if somaire.node %}
-              <option value="{{somaire.node}}">{{somaire.title}}</option>
-            {% endif %}
-          {% endif %}
+      {% for somaire in site.data.group %}
+        {% if somaire.title %}
+            <option value="{{somaire.name}}">{{somaire.title}}</option>
+        {% else %}
+            <option value="{{somaire.name}}">{{somaire.name}}</option>
         {% endif %}
       {% endfor %}
       </select><br/>
@@ -81,7 +63,8 @@ permalink: /administration/formulaireData.html
     </fieldset>
     <fieldset>
       <label for="namefile">Nom du fichier</label>
-      <input id="namefile" type="text" ng-model="myName" placeholder="ex : LesNouveautesDeJava8"/><br/>
+      <input id="namefile" type="text" ng-model="myName" ng-class="myName==='' ? 'error' : ''"
+        placeholder="ex : {{site.time| date: '%Y-%m-%d-'}}LesNouveautesDeJava8"/><br/>
     </fieldset>
     <fieldset>
       <legend>Facultatif</legend>
@@ -136,5 +119,6 @@ permalink: /administration/formulaireData.html
 
 
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script src="../js/formulaire.js"></script>
 </div>

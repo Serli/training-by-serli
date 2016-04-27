@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Training by Serli</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000/Summary/Web/">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container">
+			<main class=" mainother ">
+
+				
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorWeb"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"colorWeb"
+						href="http://localhost:4000/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorWeb"
+>
+	
+	
+	<h1 class="smalTitle">Training by Serli</h1>
+	<a href="http://localhost:4000/">
+		<img src="/assets/Training-by-serli-logo-white-01.png"/>
+	</a>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+				<article>
+
+					<!-- /// SUMMARY /////////////////////////////////////////////////////////// -->
+<div ng-app="formation" ng-controller="Summary">
+  <input class="colorWeb"
+    type="text" ng-model="research.title" placeholder="Search...">
+  <div id="summary">
+    <ul ng-repeat="n in (trainings|filter:research)">
+      <!-- /// training ////////////////////////////////////////////////////// -->
+        <li class="[[n.class]]">
+          <a href="[[n.href]]">[[n.title]]</a>
+        </li>
+      <!-- /////////////////////////////////////////////////////////////////// -->
+    </ul>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<script>
+  // code in that file for Jekyll can fill with data
+  app.controller('Summary', function($scope) {
+    $scope.research = {
+      title: ""
+    };
+    $scope.trainings = [
+       
+        {
+          class: "colorWeb",
+          href: "/Web/TR-JAVASCRIPT",
+          title: "Javascript Avancé"
+        },
+        
+        {
+          class: "colorWeb",
+          href: "/Web/TR-WEB",
+          title: "Introduction au développement Web"
+        },
+        
+        {
+          class: "colorWeb",
+          href: "/Web/TR-ANGULARJS",
+          title: "AngularJS"
+        },
+       
+    ];
+  });
+</script>
+
+
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorWeb">
+  <nav>
+    <a href="http://www.serli.com">
+      <img src="/assets/brand.png"/>
+    </a>
+		<div>
+	    <ul>
+        <!-- /// rss /////////////////////////////////////////////////////// -->
+        <li id="rss">
+          <a href="http://localhost:4000/feed.xml">
+            <img src="/assets/rss.png" />
+          </a>
+        </li>
+        <!-- /// mail ////////////////////////////////////////////////////// -->
+	      <li>
+          <img src="/assets/footer/mail.png" />
+          <a href="mailto:formation@serli.com">formation@serli.com</a>
+        </li>
+        <!-- /// telephone ///////////////////////////////////////////////// -->
+	      <li>
+          <img src="/assets/footer/telephone.png" />
+          <span>+33(0)5 49 49 49 30</span>
+        </li>
+        <!-- /// lien ////////////////////////////////////////////////////// -->
+	      <li>
+          <img src="/assets/footer/lien.png" />
+          <a href="http://www.serli.com">www.serli.com</a>
+        </li>
+        <!-- /// adresse /////////////////////////////////////////////////// -->
+	      <li>
+          <img src="/assets/footer/adresse.png" />
+          <span>Serli - Avenue Thomas Edison - BP 20160 - 86960 Futuroscope Cedex</span>
+        </li>
+        <!-- /////////////////////////////////////////////////////////////// -->
+	    </ul>
+		</div>
+  </nav>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>

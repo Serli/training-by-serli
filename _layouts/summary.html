@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<!-- /// SUMMARY /////////////////////////////////////////////////////////// -->
+<div ng-app="formation" ng-controller="Summary">
+  <input class="{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
+    type="text" ng-model="research.title" placeholder="Search...">
+  <div id="summary">
+    <ul ng-repeat="n in (trainings|filter:research)">
+      <!-- /// training ////////////////////////////////////////////////////// -->
+        <li class="[[n.class]]">
+          <a href="[[n.href]]">[[n.title]]</a>
+        </li>
+      <!-- /////////////////////////////////////////////////////////////////// -->
+    </ul>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<script>
+  // code in that file for Jekyll can fill with data
+  app.controller('Summary', function($scope) {
+    $scope.research = {
+      title: ""
+    };
+    $scope.trainings = [
+      {% for training in site.categories[page.summary] %} {% if training.title %}
+        {
+          class: "{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}",
+          href: "{{ training.url | prepend: site.baseurl }}",
+          title: "{{ training.title }}"
+        },
+      {% endif %} {% endfor %}
+    ];
+  });
+</script>

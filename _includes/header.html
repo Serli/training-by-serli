@@ -1,28 +1,28 @@
 
 <!-- /// MENU ////////////////////////////////////////////////////////////// -->
 <aside class=
-	"{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
+	"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
 >
 	<div class="container">
 		<nav>
 			<ul>
 				<!-- /// home ////////////////////////////////////////////////////// -->
 				<li><a class=
-						"{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
+						"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
 						href="{{ site.url }}/{{ site.baseurl }}"
 					>
 						<img src="{{ site.baseurl }}/assets/TrainingsCategories/WhiteIcon/home.png"/>
 						<span>Home</span>
 				</a></li>
 				<!-- /// training_category ///////////////////////////////////////// -->
-				{% for somaire in site.pages %} {% if somaire.layout == 'sommaire' %} {% if somaire.title %}
+				{% for somaire in site.data.group %}
 					<li><a class=
-						"{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
-						href="{{ somaire.url | prepend: site.baseurl }}">
+						"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
+						href="{{ site.baseurl }}/Summary/{{somaire.name}}">
 							<img src="{{ site.baseurl }}{{somaire.image}}"/>
-							<span>{{somaire.title}}</span>
+							<span>{% if somaire.title %}{{somaire.title}}{%else%}{{somaire.name}}{% endif %}</span>
 					</a></li>
-				{% endif %} {% endif %} {% endfor %}
+				{% endfor %}
 				<!-- /////////////////////////////////////////////////////////////// -->
 			</ul>
 		</nav>
@@ -30,7 +30,7 @@
 </aside>
 <!-- /// TITLE ///////////////////////////////////////////////////////////// -->
 <header class=
-	"{% if page.categories %}color{{page.categories}}{% else %}{% if page.node %}color{{page.node}}{% else %}colordefault{% endif %}{% endif %}"
+	"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
 >
 	{% if page.title %}{% assign title = page.title %}{% else %}{% assign title = site.title %}{% endif %}
 	{% assign my_lenght = title|size %}

@@ -12,16 +12,17 @@ permalink: /feed.xml
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for somaire in site.pages limit:10 %} {% if somaire.layout == 'sommaire' %}
-      <item>
-        <title>{{ somaire.title | xml_escape }}</title>
-        <description>{{ somaire.content | xml_escape }}</description>
-        <link>{{ somaire.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ somaire.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for training in site.pages %} {% if training.categories == somaire.node %} {% if training.title %}
-          <training>{{ training.title | xml_escape }}</training>
-        {% endif %} {% endif %} {% endfor %}
-      </item>
-    {% endif %} {% endfor %}
+    {% for somaire in site.data.group %}
+      <summary>
+        <title>{{ somaire.name | xml_escape }}</title>
+        <link>{{ site.baseurl }}/Summary/{{somaire.name}}</link>
+        {% for training in site.categories[somaire.name] %}
+          <activity>
+            <title>{{ training.title | xml_escape }}</title>
+            <lastBuildDate>{{ training.date | date_to_rfc822 }}</lastBuildDate>
+          </activity>
+        {% endfor %}
+      </summary>
+    {% endfor %}
   </channel>
 </rss>

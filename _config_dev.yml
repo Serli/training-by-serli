@@ -10,6 +10,6 @@ encoding: utf-8
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['js', '_trainings']
+include: ['js']
 kramdown:
   input: GFM

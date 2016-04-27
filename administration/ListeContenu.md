@@ -4,13 +4,16 @@ permalink: /administration/ListeContenu.html
 ---
 
 <div ng-app="administration" ng-controller="ListContenu">
-  <input type="text" ng-model="research.title" placeholder="Search...">
+  <input type="text" ng-model="research.title" placeholder="Search..."/>
+  <select ng-model="research.news"
+          ng-options="choix.v as choix.n for choix in [{ n: 'ALL', v: true }, { n: 'NEWS', v: false }]">
+  </select>
   <div>
     <ul>
-        <li ng-repeat="n in (trainings|filter:research)">
+        <li ng-repeat="n in (trainings|filter:research.title)" ng-style="{ 'color' : (n.class!='After') ? 'black' : 'darkgray' }">
           <!-- /// training //////////////////////////////////////////////// -->
           <h2>[[n.title]]</h2>
-          <ul>
+          <ul ng-if="(n.class!='After')||research.news">
             <li>[[n.public]]</li>
             <li>[[n.costs]] [[n.costsdescription]]</li>
             <li>[[n.duration]] [[n.durationdescription]]</li>
@@ -32,6 +35,7 @@ permalink: /administration/ListeContenu.html
             <li>[[n.presentation]]</li>
           </ul>
           <!-- ///////////////////////////////////////////////////////////// -->
+          <hr/>
         </li>
     </ul>
   </div>
@@ -50,6 +54,28 @@ permalink: /administration/ListeContenu.html
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script>
+  var lastVisite = localStorage.getItem("lastVisite");
+  function twoDigit(n){
+    return n > 9 ? "" + n: "0" + n;
+  }
+  function currentDate () {
+    var date = new Date();
+    var annee   = date.getFullYear();
+    var mois    = date.getMonth() + 1;
+    var jour    = date.getDate();
+    return ""+annee+"-"+twoDigit(mois)+"-"+twoDigit(jour);
+  }
+  function comparedDate(ADate, BDate){
+    if (ADate.localeCompare(BDate) == -1) {
+      return "After";
+    } else if (ADate.localeCompare(BDate) == 1) {
+      return "Before";
+    } else {
+      return "Equal";
+    }
+  }
+  localStorage.setItem("lastVisite", currentDate());
+
   // code in that file for Jekyll can fill with data
   var app = angular.module('administration', []);
 
@@ -60,11 +86,13 @@ permalink: /administration/ListeContenu.html
 
   app.controller('ListContenu', function($scope) {
     $scope.research = {
-      title: ""
+      title: "",
+      news: false
     };
     $scope.trainings = [
-      {% for training in site.pages %} {% if training.layout == 'training' %} {% if training.title %}
+      {% for training in site.posts %}
         {
+          class: comparedDate("{{ training.date | date: '%Y-%m-%d' }}", lastVisite),
           href: "{{ training.url | prepend: site.baseurl }}",
           title: "{% if training.title %}{{training.title}}{% else %}{{site.title}}{% endif %}",
           public: "{{ training.public }}",
@@ -94,7 +122,7 @@ permalink: /administration/ListeContenu.html
           }(),
           presentation: "{{ training.presentation }}"
         },
-      {% endif %} {% endif %} {% endfor %}
+      {% endfor %}
     ];
   });
 </script>

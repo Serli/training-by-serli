@@ -55,7 +55,7 @@ layout: default
   <!-- /// subjects //////////////////////////////////////////////////////// -->
   <ul id="subject" >
     {% for s in page.subject %}
-      <li class="{% if page.categories %}color{{page.categories}}{% else %}{% if page.title %}color{{page.title}}{% else %}colordefault{% endif %}{% endif %}">
+      <li class="{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}">
         {{ s }}
       </li>
     {% endfor %}
@@ -77,7 +77,7 @@ layout: default
   {% endif %}
   <!-- ///////////////////////////////////////////////////////////////////// -->
 
-  <input class="{% if page.categories %}color{{page.categories}}{% else %}{% if page.title %}color{{page.title}}{% else %}colordefault{% endif %}{% endif %}"
+  <input class="{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
     type="button" value="pdf" ng-click="createPDF()"/>
 
   <script src="../js/imageData.js"></script>
