@@ -113,7 +113,7 @@ La catégorie existe-t-elle ?
   <hr/>
 </fieldset>
 
-<a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Générateur de fichier Markdown (.md)</a>
+<a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Ajout modification des formations</a>
 <br/>
 <br/>
 <a href="{{ '/administration/ListeContenu.html' | prepend: site.baseurl }}">Liste du Contenu</a>

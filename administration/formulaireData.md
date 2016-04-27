@@ -4,6 +4,27 @@ permalink: /administration/formulaireData.html
 ---
 
 <div class="formulaireData" ng-app="administration">
+  <h1>Suppression Formation</h1>
+  <form ng-submit="uploadTraining()" ng-controller="formulaireRemoveTraining">
+    <fieldset>
+      <legend>Connection GitHub</legend>
+      <label for="pseudo">Pseudo</label>
+      <input id="pseudo" type="text" ng-model="myPseudo" ng-class="myPseudo==='' ? 'error' : ''"/><br/>
+      <label for="password">Password</label>
+      <input id="password" type="password" ng-model="myPassword" ng-class="myPassword==='' ? 'error' : ''"/><br/>
+    </fieldset>
+
+    <fieldset>
+      <label for="ref">Référence</label>
+      <input id="ref" type="text" ng-model="myRef" placeholder="ex : TR-JAVA8"
+         ng-class="myRef==='' || !existingReference() ? 'error' : ''"/><br/>
+    </fieldset>
+
+    <input class="button" type="submit" value="Suppression"
+      ng-class="!isValide() ? 'errorDownload' : ''">
+  </from>
+
+
   <h1>Nouvelle Formation</h1>
   <form ng-submit="uploadTraining()" ng-controller="formulaireTraining">
     <fieldset>
@@ -102,7 +123,7 @@ permalink: /administration/formulaireData.html
 
     </fieldset>
 
-    <input class="button" type="submit" value="Ajout Formation"
+    <input class="button" type="submit" value="Ajout"
       ng-class="!isValide() ? 'errorDownload' : ''">
   </form>
 

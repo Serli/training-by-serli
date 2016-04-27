@@ -279,7 +279,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       if(pathFileReference(refTraining)!==undefined) {
         deleteOnGithub($scope.myPseudo, $scope.myPassword,
           "formations", pathFileReference(refTraining),
-          "Commit auto du Formulaire supression d'une formation", upload);
+          "Commit auto du Formulaire supression d'une formation pour modification", upload);
       } else {
         upload();
       }
@@ -468,6 +468,30 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
         fr.readAsText($scope.myFile);
       }
     );
+  };
+  $scope.existingReference = function () {
+    return existingReference($scope.myRef);
+  };
+}]);
+
+app.controller('formulaireRemoveTraining', ['$scope', function($scope) {
+  $scope.myPseudo = "";
+  $scope.myPassword = "";
+  $scope.myRef = "";
+
+  $scope.uploadTraining = function () {
+    if ($scope.isValide()) {
+      deleteOnGithub($scope.myPseudo, $scope.myPassword,
+        "formations", pathFileReference($scope.myRef),
+        "Commit auto du Formulaire supression d'une formation");
+    }
+  };
+  $scope.isValide = function () {
+    var result = $scope.myPseudo!=='';
+    result = result && $scope.myPassword!=='';
+    result = result && $scope.myRef!=='';
+    result = result && existingReference($scope.myRef);
+    return result;
   };
   $scope.existingReference = function () {
     return existingReference($scope.myRef);

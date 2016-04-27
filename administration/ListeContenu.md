@@ -44,7 +44,7 @@ permalink: /administration/ListeContenu.html
     <a href="{{ '/administration/errorFormat.html' | prepend: site.baseurl }}">Test le format des fichiers Markdown (.md)</a>
     <br/>
     <br/>
-    <a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Générateur de fichier Markdown (.md)</a>
+    <a href="{{ '/administration/formulaireData.html' | prepend: site.baseurl }}">Ajout et modification des formations</a>
     <br/>
     <br/>
     <a href="{{ site.url }}/{{ site.baseurl }}">Page d'accueil</a>
