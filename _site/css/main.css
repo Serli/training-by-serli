@@ -23,7 +23,6 @@ html, body {
     position: relative;
     min-height: 100%; }
     html #container main, body #container main {
-      background-color: #ffffff;
       padding-bottom: 50px;
       padding-top: 65px; }
       html #container main aside, body #container main aside {
@@ -83,27 +82,27 @@ html, body {
       html #container main aside.colorMethodesOutils, body #container main aside.colorMethodesOutils {
         background-color: #00cccc; }
       html #container main header, body #container main header {
-        height: 18vw;
+        height: 140px;
         background-color: #1068b0;
         background-image: url(../assets/background-image/header.png);
         background-repeat: repeat-x;
-        padding: 0 35vw 0 70px;
+        padding: 0 250px 0 70px;
         display: flex;
         align-items: center; }
         html #container main header h1, body #container main header h1 {
-          max-height: 18vw;
+          max-height: 140px;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: 6vw;
+          font-size: 60px;
           color: #ffffff;
-          line-height: 9vw;
+          line-height: 70px;
           font-family: "gloriahallelujah", sans-serif; }
         html #container main header .bigTitle, body #container main header .bigTitle {
-          font-size: 5vw;
-          line-height: 6vw; }
+          font-size: 30px;
+          line-height: 46px; }
         html #container main header a img, body #container main header a img {
           display: inline;
-          height: 15vw;
+          height: 130px;
           width: auto;
           right: 10px;
           top: 65px;
@@ -126,12 +125,12 @@ html, body {
         margin-top: 10px;
         margin-bottom: 10px; }
         html #container main article input, body #container main article input {
-          font-size: 3vw;
+          font-size: 30px;
           display: block;
           margin: auto;
           width: 50vw;
           color: #ffffff;
-          padding: 1vw;
+          padding: 5px;
           border: none;
           background-color: #1068b0;
           background-image: url(../assets/background-image/article.png);
@@ -181,13 +180,13 @@ html, body {
           padding: 0 15vw 0 15vw; }
           html #container main article #summary ul li, body #container main article #summary ul li {
             list-style: none;
-            background-color: #3db8d8;
+            background-color: #1068b0;
             background-image: url(../assets/background-image/article.png);
             background-repeat: repeat-x;
             margin: 0;
-            margin-top: 1vh;
-            padding: 1vw;
-            font-size: 3vw; }
+            margin-top: 5px;
+            padding: 5px;
+            font-size: 30px; }
             html #container main article #summary ul li a, body #container main article #summary ul li a {
               text-decoration: none;
               display: block;
@@ -302,10 +301,6 @@ html, body {
           html #container main article #index div ul, body #container main article #index div ul {
             padding: 10px;
             padding-left: 30px; }
-    html #container .maindefault, body #container .maindefault {
-      background-color: #3db8d8; }
-      html #container .maindefault #summary ul li, body #container .maindefault #summary ul li {
-        background-color: #1068b0; }
     html #container footer, body #container footer {
       height: 50px;
       position: absolute;
@@ -359,73 +354,80 @@ html, body {
       background-color: #895045; }
     html #container footer.colorMethodesOutils, body #container footer.colorMethodesOutils {
       background-color: #009999; }
+  html .containerdefault, body .containerdefault {
+    background-color: #3db8d8; }
 
-@media all and (max-width: 620px) {
-  html #container main, body #container main {
-    padding-top: 30px; }
-    html #container main aside nav ul li a, body #container main aside nav ul li a {
-      height: 30px;
-      padding: 0 5px 0 5px; }
-      html #container main aside nav ul li a img, body #container main aside nav ul li a img {
-        height: 30px;
-        width: auto; }
-    html #container main article input, body #container main article input {
-      font-size: 18px;
-      padding: 6px; }
-    html #container main article #summary, body #container main article #summary {
-      padding: 0; }
-      html #container main article #summary ul li, body #container main article #summary ul li {
-        margin: 6px;
-        padding: 6px;
-        font-size: 18px; } }
 @media all and (max-width: 876px) {
-  html #container main, body #container main {
-    padding-top: 50px; }
-    html #container main aside nav ul li a, body #container main aside nav ul li a {
-      height: 50px; }
-      html #container main aside nav ul li a img, body #container main aside nav ul li a img {
+  html body #container main {
+    padding-top: 54px; }
+    html body #container main aside {
+      height: 54px; }
+      html body #container main aside nav ul li {
         height: 50px; }
-      html #container main aside nav ul li a span, body #container main aside nav ul li a span {
-        display: none; } }
-@media all and (max-width: 800px) {
-  html #container main header, body #container main header {
-    padding: 0 70px 0 70px;
-    height: 30vw; }
-    html #container main header h1, body #container main header h1 {
-      max-height: 30vw;
-      font-size: 10vw;
-      line-height: 15vw; }
-    html #container main header a img, body #container main header a img {
-      display: none; }
-  html #container main article #index div, body #container main article #index div {
-    width: 95%; } }
-@media all and (min-width: 1300px) {
-  html #container main article #index div, body #container main article #index div {
-    width: 31%; } }
+        html body #container main aside nav ul li a {
+          height: 54px; }
+          html body #container main aside nav ul li a img {
+            height: 50px; }
+          html body #container main aside nav ul li a span {
+            display: none; } }
 @media all and (max-width: 770px) {
-  html #container main, body #container main {
+  html body #container main {
     padding-bottom: 120px; }
-  html #container footer, body #container footer {
+  html body #container footer {
     height: 120px; }
-    html #container footer nav ul li, body #container footer nav ul li {
+    html body #container footer nav ul li {
       display: inherit; }
-    html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+    html body #container footer nav ul #rss img {
       top: auto;
       height: 60px; } }
-@media all and (max-width: 480px) {
-  html #container main, body #container main {
+@media all and (max-width: 660px) {
+  html body #container main {
+    padding-top: 34px; }
+    html body #container main aside {
+      height: 34px; }
+      html body #container main aside nav ul li {
+        height: 30px; }
+        html body #container main aside nav ul li a {
+          height: 34px; }
+          html body #container main aside nav ul li a img {
+            height: 30px; }
+          html body #container main aside nav ul li a span {
+            display: none; }
+    html body #container main header {
+      padding: 0 70px 0 70px; }
+      html body #container main header h1 {
+        font-size: 30px;
+        line-height: 46px; }
+      html body #container main header a img {
+        display: none; }
+    html body #container main article input {
+      font-size: 20px; }
+    html body #container main article #summary ul li {
+      font-size: 20px; } }
+@media all and (max-width: 508px) {
+  html body #container main {
+    padding-top: 70px;
     padding-bottom: 150px; }
-  html #container footer, body #container footer {
+    html body #container main aside {
+      height: 70px; }
+      html body #container main aside nav ul li {
+        height: 30px; }
+        html body #container main aside nav ul li a {
+          height: 35px; }
+          html body #container main aside nav ul li a img {
+            height: 30px; }
+          html body #container main aside nav ul li a span {
+            display: none; }
+  html body #container footer {
     height: 150px; }
-    html #container footer nav ul li, body #container footer nav ul li {
+    html body #container footer nav ul li {
       display: inherit; }
-    html #container footer nav ul #rss img, body #container footer nav ul #rss img {
+    html body #container footer nav ul #rss img {
       top: auto;
       position: absolute;
       left: 10px;
       bottom: 50px;
       height: 90px; } }
-
 /**
  * Syntax highlighting styles
  */

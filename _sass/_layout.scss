@@ -20,7 +20,6 @@ html, body {
 		position: relative;
 		min-height: 100%; // for the footer is at the bottom of the page, even if it is empty
 		main {
-			background-color: $white;
 			padding-bottom: 50px; // size footer
 			padding-top: 65px; // size of aside
 
@@ -117,31 +116,31 @@ html, body {
 
 /// TITLE //////////////////////////////////////////////////////////////////////
 			header {
-				height: 18vw;
+				height: 140px;
 				background-color: $darkblue; // default color
 				background-image: url(../assets/background-image/header.png);
 				background-repeat: repeat-x;
 				//margin-top: 50px; // size of aside
-				padding: 0 35vw 0 70px;
+				padding: 0 250px 0 70px;
 				display: flex;
 				align-items: center;
 				h1 {
-					max-height: 18vw;
+					max-height: 140px;
 					overflow: hidden;
 					text-overflow: ellipsis;
-					font-size: 6vw;
+					font-size: 60px;
 					color: $white;
-					line-height : 9vw;
+					line-height : 70px;
 					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
 				}
 				.bigTitle {
-					font-size: 5vw;
-					line-height : 6vw;
+					font-size: 30px;
+					line-height : 46px;
 				}
 				a {
 					img {
    					display: inline;
-						height: 15vw;
+						height: 130px;
 						width: auto;
 						right: 10px;
 						top: 65px;
@@ -176,12 +175,12 @@ html, body {
 				margin-top: 10px;
 				margin-bottom: 10px;
 				input {
-					font-size: 3vw;
+					font-size: 30px;
 					display:block;
 					margin:auto;
 					width: 50vw;
 					color: $white;
-					padding: 1vw;
+					padding: 5px;
 					border: none;
 					background-color: $darkblue;
 					background-image: url(../assets/background-image/article.png);
@@ -253,13 +252,13 @@ html, body {
 					ul {
 						li {
 							list-style: none;
-							background-color: $blue; // default color
+							background-color: $darkblue; // default color
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
 							margin: 0;
-							margin-top: 1vh;
-							padding: 1vw;
-							font-size: 3vw;
+							margin-top: 5px;
+							padding: 5px;
+							font-size: 30px;
 							a {
 								text-decoration: none;
 								display: block;
@@ -439,16 +438,6 @@ html, body {
 				}
 			}
 		}
-		.maindefault{
-			background-color: $blue;
-			#summary {
-				ul {
-					li {
-						background-color: $darkblue;
-					}
-				}
-			}
-		}
 
 /// FOOTER /////////////////////////////////////////////////////////////////////
 		footer {
@@ -524,59 +513,31 @@ html, body {
 			}
 		////////////////////////////////////////////////////////////////////////////
 	}
+	.containerdefault{
+		background-color: $blue;
+	}
 }
 
-html, body {
-	#container {
-		main {
-			@media all and (max-width: 620px) { // below 574px, the menu is displayed on line two
-				padding-top: 30px; // size of aside
-				aside {
-					nav {
-						ul {
-							li {
-								a {
-									height:30px;
-									padding: 0 5px 0 5px;
-									img {
-										height: 30px;
-										width: auto;
-									}
-								}
-							}
-						}
-					}
-				}
-				article {////////////////////////////////////////
-					input {
-						font-size: 18px;
-						padding: 6px;
-					}
-					#summary {
-						padding: 0;
-						ul {
-							li {
-								margin: 6px;
-								padding: 6px;
-								font-size: 18px;;
-							}
-						}
-					}
-				}
-			}
-			@media all and (max-width: 876px) { // below 574px, the menu is displayed on line two
-				padding-top: 50px; // size of aside
-				aside {
-					nav {
-						ul {
-							li {
-								a {
+@media all and (max-width: 876px) { // aside 1
+	html {
+		body {
+			#container {
+				main {
+					padding-top: 54px; // size of aside
+					aside {
+						height:54px;
+						nav {
+							ul {
+								li {
 									height:50px;
-									img {
-										height: 50px;
-									}
-									span {
-										display: none;
+									a {
+										height:54px;
+										img {
+											height: 50px;
+										}
+										span {
+											display: none;
+										}
 									}
 								}
 							}
@@ -584,78 +545,132 @@ html, body {
 					}
 				}
 			}
-			@media all and (max-width: 800px) { // below 700px is not displayed image
-				header {
-					padding: 0 70px 0 70px;
-					height: 30vw;
-					h1 {
-						max-height: 30vw;
-						font-size: 10vw;
-						line-height : 15vw;
-					}
-					a {
-						img {
-							display: none;
-						}
-					}
-				}
-				article {
-					#index {
-						div {
-							width: 95%;
-						}
-					}
-				}
-			}
-			@media all and (min-width: 1300px) { // below 700px is not displayed image
-				article {
-					#index {
-						div {
-							width: 31%;
-						}
-					}
-				}
-			}
 		}
-		@media all and (max-width: 770px) { // below 700px, the list is greater
-			main {
-				padding-bottom: 120px;
-			}
-			footer {
-				height: 120px;
-				nav {
-					ul {
-						li {
-							display: inherit;
-						}
-						#rss {
-							img {
-								top: auto;
-								height: 60px;
+	}
+}
+@media all and (max-width: 770px) { // footer 1
+	html {
+		body {
+			#container {
+				main {
+					padding-bottom: 120px;
+				}
+				footer {
+					height: 120px;
+					nav {
+						ul {
+							li {
+								display: inherit;
+							}
+							#rss {
+								img {
+									top: auto;
+									height: 60px;
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-		@media all and (max-width: 480px) {
-			main {
-				padding-bottom: 150px;
-			}
-			footer {
-				height: 150px;
-				nav {
-					ul {
-						li {
-							display: inherit;
+	}
+}
+@media all and (max-width: 660px) { // aside 2 + header 1 + summary 1
+	html {
+		body {
+			#container {
+				main {
+					padding-top: 34px; // size of aside
+					aside {
+						height:34px;
+						nav {
+							ul {
+								li {
+									height:30px;
+									a {
+										height:34px;
+										img {
+											height: 30px;
+										}
+										span {
+											display: none;
+										}
+									}
+								}
+							}
 						}
-						#rss {
+					}
+					header {
+						padding: 0 70px 0 70px;
+						h1 {
+							font-size: 30px;
+							line-height : 46px;
+						}
+						a {
 							img {
-								top: auto;
-								position: absolute;
-								left: 10px;
-								bottom: 50px;
-								height: 90px;
+								display: none;
+							}
+						}
+					}
+					article {
+						input {
+							font-size: 20px;
+						}
+						#summary {
+							ul {
+								li {
+									font-size: 20px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media all and (max-width: 508px) { // aside 3 + footer 2
+	html {
+		body {
+			#container {
+				main {
+					padding-top: 70px; // size of aside
+					padding-bottom: 150px;
+					aside {
+						height:70px;
+						nav {
+							ul {
+								li {
+									height:30px;
+									a {
+										height:35px;
+										img {
+											height: 30px;
+										}
+										span {
+											display: none;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				footer {
+					height: 150px;
+					nav {
+						ul {
+							li {
+								display: inherit;
+							}
+							#rss {
+								img {
+									top: auto;
+									position: absolute;
+									left: 10px;
+									bottom: 50px;
+									height: 90px;
+								}
 							}
 						}
 					}

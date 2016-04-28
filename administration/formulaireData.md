@@ -130,9 +130,6 @@ permalink: /administration/formulaireData.html
   <br/><hr/>
 
   <p>
-    <a href="{{ '/administration/errorFormat.html' | prepend: site.baseurl }}">Test le format des fichiers Markdown (.md)</a>
-    <br/>
-    <br/>
     <a href="{{ '/administration/ListeContenu.html' | prepend: site.baseurl }}">Liste du Contenu</a>
     <br/>
     <br/>
