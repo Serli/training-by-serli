@@ -574,6 +574,50 @@ html, body {
 	}
 	.containerdefault{
 		background-color: $blue;
+		main {
+			article {
+				#summary {
+					ul {
+						@-webkit-keyframes mydisplay {
+								0% {
+									height: 0;
+									visibility: hidden;
+									position: absolute;
+								}
+								90% {
+									height: 0;
+									visibility: hidden;
+									position: absolute;
+								}
+								100% {
+									height: auto;
+									visibility: visible;
+									position: inherit;
+								}
+						}
+						@-moz-keyframes mydisplay {
+								0% {
+									height: 0;
+									visibility: hidden;
+									position: absolute;
+								}
+								90% {
+									height: 0;
+									visibility: hidden;
+									position: absolute;
+								}
+								100% {
+									height: auto;
+									visibility: visible;
+									position: inherit;
+								}
+						}
+						-webkit-animation: mydisplay 0.2s;
+						-moz-animation: mydisplay 0.2s;
+					}
+				}
+			}
+		}
 	}
 }
 

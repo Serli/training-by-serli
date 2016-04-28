@@ -401,7 +401,35 @@ html, body {
       background-color: #009999; }
   html .containerdefault, body .containerdefault {
     background-color: #3db8d8; }
-
+    html .containerdefault main article #summary ul, body .containerdefault main article #summary ul {
+      -webkit-animation: mydisplay 0.2s;
+      -moz-animation: mydisplay 0.2s; }
+@-webkit-keyframes mydisplay {
+  0% {
+    height: 0;
+    visibility: hidden;
+    position: absolute; }
+  90% {
+    height: 0;
+    visibility: hidden;
+    position: absolute; }
+  100% {
+    height: auto;
+    visibility: visible;
+    position: inherit; } }
+@-moz-keyframes mydisplay {
+  0% {
+    height: 0;
+    visibility: hidden;
+    position: absolute; }
+  90% {
+    height: 0;
+    visibility: hidden;
+    position: absolute; }
+  100% {
+    height: auto;
+    visibility: visible;
+    position: inherit; } }
 @media all and (max-width: 876px) {
   html body #container main {
     padding-top: 54px; }
