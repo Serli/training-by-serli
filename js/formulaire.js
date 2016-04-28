@@ -13,7 +13,7 @@ function deleteToken (authid, btoaPseudoPassword, callback) {
   });
 }
 
-function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, commitMessage, callback) {
+function uploadOnGithub(pseudoGit, passwordGit, organizationGit, repoGit, pathFile, contentFile, commitMessage, callback) {
   var authid, token, contents_url;
   $.ajax({
     url: 'https://api.github.com/authorizations',
@@ -28,7 +28,7 @@ function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, 
   		token = response.token;
       var filename = pathFile;
       var basecontent = btoa(unescape(encodeURIComponent(contentFile)));
-      var apiurl = "https://api.github.com/repos/"+pseudoGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
+      var apiurl = "https://api.github.com/repos/"+organizationGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
       $.ajax({
         url: apiurl,
         type: 'GET',
@@ -81,7 +81,7 @@ function uploadOnGithub(pseudoGit, passwordGit, repoGit, pathFile, contentFile, 
   });
 }
 
-function deleteOnGithub(pseudoGit, passwordGit, repoGit, pathFile, commitMessage, callback) {
+function deleteOnGithub(pseudoGit, passwordGit, organizationGit, repoGit, pathFile, commitMessage, callback) {
   var authid, token, contents_url;
   $.ajax({
     url: 'https://api.github.com/authorizations',
@@ -95,7 +95,7 @@ function deleteOnGithub(pseudoGit, passwordGit, repoGit, pathFile, commitMessage
       authid = response.id;
   		token = response.token;
       var filename = pathFile;
-      var apiurl = "https://api.github.com/repos/"+pseudoGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
+      var apiurl = "https://api.github.com/repos/"+organizationGit+"/"+repoGit+"/contents/{+path}".replace('{+path}',filename);
       $.ajax({
         url: apiurl,
         type: 'GET',
@@ -271,13 +271,13 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       var nameFileTraining = currentDate() + "-" + nameTraining + ".md";
 
       var upload = function () {
-        uploadOnGithub($scope.myPseudo, $scope.myPassword,
+        uploadOnGithub($scope.myPseudo, $scope.myPassword, "Serli",
           "formations", "Summary/"+categorieTraining+"/_posts/"+nameFileTraining,
           textTraining, "Commit auto du Formulaire ajout d'une formation");
       }
 
       if(pathFileReference(refTraining)!==undefined) {
-        deleteOnGithub($scope.myPseudo, $scope.myPassword,
+        deleteOnGithub($scope.myPseudo, $scope.myPassword,, "Serli",
           "formations", pathFileReference(refTraining),
           "Commit auto du Formulaire supression d'une formation pour modification", upload);
       } else {
