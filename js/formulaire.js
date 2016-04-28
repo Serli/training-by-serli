@@ -277,7 +277,7 @@ app.controller('formulaireTraining', ['$scope', function($scope) {
       }
 
       if(pathFileReference(refTraining)!==undefined) {
-        deleteOnGithub($scope.myPseudo, $scope.myPassword,, "Serli",
+        deleteOnGithub($scope.myPseudo, $scope.myPassword, "Serli",
           "formations", pathFileReference(refTraining),
           "Commit auto du Formulaire supression d'une formation pour modification", upload);
       } else {
