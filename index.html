@@ -4,17 +4,17 @@ index: true
 ---
 <div  ng-app="formation" ng-controller="IndexSummary">
   <input type="text" ng-model="research.title" placeholder="Search...">
-  <div id="summary" ng-if="research.title!=''">
-    <ul ng-repeat="n in (trainings|filter:research)">
+  <div id="summary">
+    <ul ng-repeat="n in (trainings)">
       <!-- /// training ////////////////////////////////////////////////////// -->
-        <li class="[[n.class]]">
+        <li class="[[n.class]] [[(n.title.toLowerCase().indexOf(research.title.toLowerCase()) > -1) && research.title!='' ? 'draw' : 'notdraw']]">
           <a href="[[n.href]]">[[n.title]]</a>
         </li>
       <!-- /////////////////////////////////////////////////////////////////// -->
     </ul>
   </div>
   <div id="index">
-    <div ng-if="research.title==''">
+    <div>
       <h3>FAITES MONTER EN COMPÉTENCES VOS ÉQUIPES</h3>
       <p>
         Maintenir la connaissance et le niveau d’expertise technique de vos équipes informatiques comporte de nombreux enjeux :
@@ -25,7 +25,7 @@ index: true
         <li>pour gagner en performance et garder un temps d'avance.</li>
       </ul>
     </div>
-    <div ng-if="research.title==''">
+    <div>
       <h3 class="followedImg" >FORMEZ-VOUS AVEC DES EXPERTS</h3>
       <img src="{{ site.baseurl }}/assets/Experts-01.png"/>
       <p>
@@ -41,7 +41,7 @@ index: true
         Ils expérimentent les dernières technologies et sont régulièrement invités lors de conférences internationales pour présenter les résultats de leurs travaux (JavaOne, ScalaIO, Devoxx France, EclipseCon...).
       </p>
     </div>
-    <div ng-if="research.title==''">
+    <div>
       <h3>NOUS VOUS ACCOMPAGNONS VERS LA MAÎTRISE DES TECHNOLOGIES</h3>
       <p>
         Les ingénieurs - formateurs de Serli sont des passionnés d’informatique, aux méthodes pédagogiques fondées sur l’écoute, la pratique et l’adaptation.

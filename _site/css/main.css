@@ -183,14 +183,59 @@ html, body {
             background-color: #1068b0;
             background-image: url(../assets/background-image/article.png);
             background-repeat: repeat-x;
-            margin: 0;
-            margin-top: 5px;
-            padding: 5px;
-            font-size: 30px; }
+            margin: 0; }
             html #container main article #summary ul li a, body #container main article #summary ul li a {
               text-decoration: none;
               display: block;
               color: #ffffff; }
+            html #container main article #summary ul li.draw, body #container main article #summary ul li.draw {
+              -webkit-animation: come 0.2s;
+              -moz-animation: come 0.2s;
+              margin-top: 5px;
+              padding: 5px;
+              font-size: 30px; }
+@-webkit-keyframes come {
+  from {
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 0px; }
+  to {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 30px; } }
+@-moz-keyframes come {
+  from {
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 0px; }
+  to {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 30px; } }
+            html #container main article #summary ul li.notdraw, body #container main article #summary ul li.notdraw {
+              -webkit-animation: notcome 0.2s;
+              -moz-animation: notcome 0.2s;
+              margin-top: 0px;
+              padding: 0px;
+              font-size: 0px; }
+@-webkit-keyframes notcome {
+  from {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 30px; }
+  to {
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 0px; } }
+@-moz-keyframes notcome {
+  from {
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 30px; }
+  to {
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 0px; } }
           html #container main article #summary ul li.colorJava, body #container main article #summary ul li.colorJava {
             background-color: #ff6f89; }
           html #container main article #summary ul li.colorData, body #container main article #summary ul li.colorData {

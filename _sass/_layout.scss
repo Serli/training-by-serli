@@ -256,13 +256,72 @@ html, body {
 							background-image: url(../assets/background-image/article.png);
 							background-repeat: repeat-x;
 							margin: 0;
-							margin-top: 5px;
-							padding: 5px;
-							font-size: 30px;
 							a {
 								text-decoration: none;
 								display: block;
 								color: $white;
+							}
+							&.draw {
+								@-webkit-keyframes come {
+								    from {
+											margin-top: 0px;
+											padding: 0px;
+											font-size: 0px;
+										}
+								    to {
+											margin-top: 5px;
+											padding: 5px;
+											font-size: 30px;
+										}
+								}
+								@-moz-keyframes come {
+								    from {
+											margin-top: 0px;
+											padding: 0px;
+											font-size: 0px;
+										}
+								    to {
+											margin-top: 5px;
+											padding: 5px;
+											font-size: 30px;
+										}
+								}
+								-webkit-animation: come 0.2s;
+								-moz-animation: come 0.2s;
+								margin-top: 5px;
+								padding: 5px;
+								font-size: 30px;
+							}
+							&.notdraw {
+								@-webkit-keyframes notcome {
+								    from {
+											margin-top: 5px;
+											padding: 5px;
+											font-size: 30px;
+										}
+								    to {
+											margin-top: 0px;
+											padding: 0px;
+											font-size: 0px;
+										}
+								}
+								@-moz-keyframes notcome {
+								    from {
+											margin-top: 5px;
+											padding: 5px;
+											font-size: 30px;
+										}
+								    to {
+											margin-top: 0px;
+											padding: 0px;
+											font-size: 0px;
+										}
+								}
+								-webkit-animation: notcome 0.2s;
+								-moz-animation: notcome 0.2s;
+								margin-top: 0px;
+								padding: 0px;
+								font-size: 0px;
 							}
 						}
 						// depending on the class a different color ////////////////////////
