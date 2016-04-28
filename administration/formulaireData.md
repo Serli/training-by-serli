@@ -22,7 +22,7 @@ permalink: /administration/formulaireData.html
 
     <input class="button" type="submit" value="Suppression"
       ng-class="!isValide() ? 'errorDownload' : ''">
-  </from>
+  </form>
 
 
   <h1>Nouvelle Formation</h1>
