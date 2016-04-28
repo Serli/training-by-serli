@@ -31,7 +31,8 @@ permalink: /administration/formulaireData.html
       <legend>Pré-Remplir</legend>
       <div class="input-file-container">
         <label for="my-fileTraining">Fichier à charger</label>
-        <input class="input-file" id="my-fileTraining" type="file" onchange="angular.element(this).scope().setFile(this)" />
+        <input class="input-file" id="my-fileTraining" type="file"
+          onchange="angular.element(this).scope().setFile(this)" />
         <label ng-if="myFile.name===undefined" for="my-fileTraining"
           class="input-file-trigger">Select a file...</label>
         <label ng-if="myFile.name!==undefined" for="my-fileTraining"
@@ -136,8 +137,6 @@ permalink: /administration/formulaireData.html
     <a href="{{ site.url }}/{{ site.baseurl }}">Page d'accueil</a>
   </p>
 
-
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script>
     var listRef = [
