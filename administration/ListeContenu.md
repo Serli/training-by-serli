@@ -93,4 +93,4 @@ permalink: /administration/ListeContenu.html
     {% endfor %}
   ];
 </script>
-<script src="../js/ListContenu.js"></script>
+<script src="../js/listContenu.js"></script>
