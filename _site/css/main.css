@@ -324,7 +324,7 @@ html, body {
             html #container main article #training #subject li.colorMethodesOutils, body #container main article #training #subject li.colorMethodesOutils {
               background-color: #00cccc; }
         html #container main article #index div, body #container main article #index div {
-          width: 47%;
+          width: 30%;
           display: inline-block;
           vertical-align: top;
           margin: 1%;
@@ -430,6 +430,9 @@ html, body {
     height: auto;
     visibility: visible;
     position: inherit; } }
+@media all and (max-width: 1100px) {
+  body #container main article #index div {
+    width: 47%; } }
 @media all and (max-width: 876px) {
   html body #container main {
     padding-top: 54px; }
@@ -475,8 +478,12 @@ html, body {
         display: none; }
     html body #container main article input {
       font-size: 20px; }
-    html body #container main article #summary ul li {
-      font-size: 20px; } }
+    html body #container main article #summary {
+      padding: 0 15px 0 15px; }
+      html body #container main article #summary ul li {
+        font-size: 20px; }
+    html body #container main article #index div {
+      width: 97%; } }
 @media all and (max-width: 508px) {
   html body #container main {
     padding-top: 70px;

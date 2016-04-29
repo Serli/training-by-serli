@@ -10,19 +10,23 @@ permalink: /administration/ListeContenu.html
   </select>
   <div>
     <ul>
-        <li ng-repeat="n in (trainings|filter:research.title)" ng-style="{ 'color' : (n.class!='After') ? 'black' : 'darkgray' }">
+        <li ng-repeat="n in (trainings|filter:research.title)"
+          ng-style="{ 'color' : (n.myClass=='Old') ? 'darkgray' : ((n.myClass=='Maj') ? 'green' : ((n.myClass=='Add') ? 'blue' : 'red' )) }">
           <!-- /// training //////////////////////////////////////////////// -->
-          <h2>[[n.date]] - [[n.title]]</h2>
-          <ul ng-if="(n.class!='After')||research.news">
-            <li>[[n.public]]</li>
-            <li>[[n.costs]] [[n.costsdescription]]</li>
-            <li>[[n.duration]] [[n.durationdescription]]</li>
+          <h2>[[n.date]][[n.title]]</h2>
+          <ul ng-if="(n.myClass!='Old')||research.news">
+            <li ng-if="n.myClass=='Remove'"><h4>Supprimer</h4></li>
+            <li ng-if="n.myClass=='Maj'"><h4>Modifier</h4></li>
+            <li ng-if="n.myClass=='Add'"><h4>Ajouter</h4></li>
+            <li ng-if="n.public!='' && n.myClass!='Remove'">[[n.public]]</li>
+            <li ng-if="n.costs!='' && n.myClass!='Remove'">[[n.costs]] [[n.costsdescription]]</li>
+            <li ng-if="n.duration!='' && n.myClass!='Remove'">[[n.duration]] [[n.durationdescription]]</li>
             <li>[[n.ref]]</li>
-            <li>SUJETS :</li>
+            <li ng-if="n.subject!=[] && n.myClass!='Remove'">SUJETS :</li>
             <ul>
               <li ng-repeat="s in n.subject">[[s]]</li>
             </ul>
-            <li>PROGRAMME :</li>
+            <li ng-if="n.program!=[] && n.myClass!='Remove'">PROGRAMME :</li>
             <ul>
               <li ng-repeat="p in n.program">
                 [[p.name]]
@@ -31,8 +35,8 @@ permalink: /administration/ListeContenu.html
                 </ul>
               </li>
             </ul>
-            <li>PRÉSENTATION :</li>
-            <li>[[n.presentation]]</li>
+            <li ng-if="n.presentation!='' && n.myClass!='Remove'">PRÉSENTATION :</li>
+            <li ng-if="n.presentation!='' && n.myClass!='Remove'">[[n.presentation]]</li>
           </ul>
           <!-- ///////////////////////////////////////////////////////////// -->
           <hr/>
@@ -51,76 +55,42 @@ permalink: /administration/ListeContenu.html
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
 <script>
-  var lastVisite = localStorage.getItem("lastVisite");
-  function twoDigit(n){
-    return n > 9 ? "" + n: "0" + n;
-  }
-  function currentDate () {
-    var date = new Date();
-    var annee   = date.getFullYear();
-    var mois    = date.getMonth() + 1;
-    var jour    = date.getDate();
-    return ""+annee+"-"+twoDigit(mois)+"-"+twoDigit(jour);
-  }
-  function comparedDate(ADate, BDate){
-    if (ADate.localeCompare(BDate) == -1) {
-      return "After";
-    } else if (ADate.localeCompare(BDate) == 1) {
-      return "Before";
-    } else {
-      return "Equal";
-    }
-  }
-  localStorage.setItem("lastVisite", currentDate());
-
-  // code in that file for Jekyll can fill with data
-  var app = angular.module('administration', []);
-
-  app .config(['$interpolateProvider', function ($interpolateProvider) {
-    $interpolateProvider.startSymbol('[[');
-    $interpolateProvider.endSymbol(']]');
-  }]);
-
-  app.controller('ListContenu', function($scope) {
-    $scope.research = {
-      title: "",
-      news: false
-    };
-    $scope.trainings = [
-      {% for training in site.posts %}
-        {
-          class: comparedDate("{{ training.date | date: '%Y-%m-%d' }}", lastVisite),
-          date: "{{ training.date | date_to_long_string }}",
-          href: "{{ training.url | prepend: site.baseurl }}",
-          title: "{% if training.title %}{{training.title}}{% else %}{{site.title}}{% endif %}",
-          public: "{{ training.public }}",
-          costs: "{{ training.costs }}",
-          costsdescription: "{{ training.costs-description }}",
-          duration: "{{ training.duration }}",
-          durationdescription: "{{ training.duration-description }}",
-          ref: "{{ training.ref }}",
-          subject: function () {
-            var resultSubject = [];
-            {% for s in training.subject %}
-              resultSubject.push("{{s}}");
+  var ListeContenuSite = [
+    {% for training in site.posts %}
+      {
+        myClass: "Old",
+        myDate: "{{ training.date | date: '%Y-%m-%d' }}",
+        date: "{{ training.date | date_to_long_string }} - ",
+        href: "{{ training.url | prepend: site.baseurl }}",
+        title: "{% if training.title %}{{training.title}}{% else %}{{site.title}}{% endif %}",
+        public: "{{ training.public }}",
+        costs: "{{ training.costs }}",
+        costsdescription: "{{ training.costs-description }}",
+        duration: "{{ training.duration }}",
+        durationdescription: "{{ training.duration-description }}",
+        ref: "{{ training.ref }}",
+        subject: function () {
+          var resultSubject = [];
+          {% for s in training.subject %}
+            resultSubject.push("{{s}}");
+          {% endfor %}
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          {% for p in training.program %}
+            var nameProgram = "{{p.title}}";
+            var activityProgram = [];
+            {% for a in p.activity %}
+              activityProgram.push("{{a}}");
             {% endfor %}
-            return resultSubject;
-          }(),
-          program: function () {
-            var resultProgram  = [];
-            {% for p in training.program %}
-              var nameProgram = "{{p.title}}";
-              var activityProgram = [];
-              {% for a in p.activity %}
-                activityProgram.push("{{a}}");
-              {% endfor %}
-              resultProgram.push({name:nameProgram, activity:activityProgram});
-            {% endfor %}
-            return resultProgram;
-          }(),
-          presentation: "{{ training.presentation }}"
-        },
-      {% endfor %}
-    ];
-  });
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          {% endfor %}
+          return resultProgram;
+        }(),
+        presentation: "{{ training.presentation }}"
+      },
+    {% endfor %}
+  ];
 </script>
+<script src="../js/ListContenu.js"></script>

@@ -466,7 +466,7 @@ html, body {
 				}
 				#index {
 					div {
-						width: 47%;
+						width: 30%;
 						display: inline-block;
 						vertical-align: top;
 						margin: 1%;
@@ -621,6 +621,21 @@ html, body {
 	}
 }
 
+@media all and (max-width: 1100px) { // aside 1
+	body {
+		#container {
+			main {
+				article {
+					#index {
+						div {
+								width: 47%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 @media all and (max-width: 876px) { // aside 1
 	html {
 		body {
@@ -720,10 +735,16 @@ html, body {
 							font-size: 20px;
 						}
 						#summary {
+							padding: 0 15px 0 15px;
 							ul {
 								li {
 									font-size: 20px;
 								}
+							}
+						}
+						#index {
+							div {
+									width: 97%;
 							}
 						}
 					}
