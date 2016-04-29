@@ -31,18 +31,14 @@ ListeContenuSite.forEach(function (element, index, array) {
 });
 localStorage.setItem("lastListRef", actualListRef);
 
-lastListRef = lastListRef.split("\n");
-lastListRef.forEach(function (element, index, array) {
-  lastListRef[index] = element.split(":");
-});
-
-console.log(ListeContenuSite);
-
-console.log(actualListRef);
-console.log(lastListRef);
-
-console.log(lastVisite);
-console.log(currentDate());
+if (lastListRef != undefined) {
+  lastListRef = lastListRef.split("\n");
+  lastListRef.forEach(function (element, index, array) {
+    lastListRef[index] = element.split(":");
+  });
+} else {
+  lastListRef = [];
+}
 
 // code in that file for Jekyll can fill with data
 var app = angular.module('administration', []);
@@ -60,7 +56,6 @@ app.controller('ListContenu', function($scope) {
   $scope.trainings = ListeContenuSite;
   $scope.trainings.forEach(function (element, index, array) {
     if (element.myDate.localeCompare(lastVisite) == -1) {
-      console.log("Old");
       $scope.trainings[index].myClass = "Old";
     } else {
       var existRef = false;
@@ -68,10 +63,8 @@ app.controller('ListContenu', function($scope) {
         existRef = existRef || lastListRefelement[0] == element.ref;
       });
       if (existRef) {
-        console.log("Maj");
         $scope.trainings[index].myClass = "Maj";
       } else {
-        console.log("Add");
         $scope.trainings[index].myClass = "Add";
       }
     }
