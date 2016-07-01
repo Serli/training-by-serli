@@ -7,9 +7,24 @@
 
 * {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif; }
+  padding: 0; }
 
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  zoom: 1; }
+
+/* IE6 */
+*:first-child + html .clearfix {
+  zoom: 1; }
+
+/* IE7 */
 img {
   height: 20px;
   width: auto; }
@@ -17,183 +32,132 @@ img {
 @font-face {
   font-family: "gloriahallelujah";
   src: url("../assets/gloriahallelujah.ttf"); }
+.container {
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .container {
+      width: 720px; } }
+  @media (min-width: 992px) {
+    .container {
+      width: 720px; } }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1140px; } }
+
+body {
+  font-family: "Open Sans", sans-serif; }
+
 html, body {
   height: 100%; }
   html #container, body #container {
     position: relative;
     min-height: 100%; }
-    html #container main, body #container main {
-      padding-bottom: 50px;
-      padding-top: 65px; }
-      html #container main aside, body #container main aside {
-        background-color: #3db8d8;
-        background-image: url(../assets/background-image/article.png);
-        background-repeat: repeat-x;
-        position: absolute;
-        top: 0px;
-        left: 0;
-        width: 100%;
-        z-index: 2; }
-        html #container main aside nav, body #container main aside nav {
-          margin: 0 auto; }
-          html #container main aside nav ul, body #container main aside nav ul {
-            list-style: none; }
-            html #container main aside nav ul li, body #container main aside nav ul li {
-              display: inline-block; }
-              html #container main aside nav ul li a, body #container main aside nav ul li a {
-                height: 65px;
-                text-decoration: none;
-                display: block;
-                padding: 0 15px 0 15px;
-                color: #ffffff; }
-                html #container main aside nav ul li a:hover, html #container main aside nav ul li a:active, body #container main aside nav ul li a:hover, body #container main aside nav ul li a:active {
-                  background: #1068b0; }
-                html #container main aside nav ul li a:hover.colorJava, html #container main aside nav ul li a:active.colorJava, body #container main aside nav ul li a:hover.colorJava, body #container main aside nav ul li a:active.colorJava {
-                  background-color: #cc3c56; }
-                html #container main aside nav ul li a:hover.colorData, html #container main aside nav ul li a:active.colorData, body #container main aside nav ul li a:hover.colorData, body #container main aside nav ul li a:active.colorData {
-                  background-color: #ec854f; }
-                html #container main aside nav ul li a:hover.colorMobilite, html #container main aside nav ul li a:active.colorMobilite, body #container main aside nav ul li a:hover.colorMobilite, body #container main aside nav ul li a:active.colorMobilite {
-                  background-color: #ccb400; }
-                html #container main aside nav ul li a:hover.colorWorkshops, html #container main aside nav ul li a:active.colorWorkshops, body #container main aside nav ul li a:hover.colorWorkshops, body #container main aside nav ul li a:active.colorWorkshops {
-                  background-color: #458968; }
-                html #container main aside nav ul li a:hover.colorLanguagesAlternatifs, html #container main aside nav ul li a:active.colorLanguagesAlternatifs, body #container main aside nav ul li a:hover.colorLanguagesAlternatifs, body #container main aside nav ul li a:active.colorLanguagesAlternatifs {
-                  background-color: #9a009a; }
-                html #container main aside nav ul li a:hover.colorWeb, html #container main aside nav ul li a:active.colorWeb, body #container main aside nav ul li a:hover.colorWeb, body #container main aside nav ul li a:active.colorWeb {
-                  background-color: #895045; }
-                html #container main aside nav ul li a:hover.colorMethodesOutils, html #container main aside nav ul li a:active.colorMethodesOutils, body #container main aside nav ul li a:hover.colorMethodesOutils, body #container main aside nav ul li a:active.colorMethodesOutils {
-                  background-color: #009999; }
-                html #container main aside nav ul li a img, body #container main aside nav ul li a img {
-                  height: 45px;
-                  width: auto;
-                  display: block;
-                  margin: auto; }
-      html #container main aside.colorJava, body #container main aside.colorJava {
-        background-color: #ff6f89; }
-      html #container main aside.colorData, body #container main aside.colorData {
-        background-color: #ffa87f; }
-      html #container main aside.colorMobilite, body #container main aside.colorMobilite {
-        background-color: #FFD700; }
-      html #container main aside.colorWorkshops, body #container main aside.colorWorkshops {
-        background-color: #78BC9B; }
-      html #container main aside.colorLanguagesAlternatifs, body #container main aside.colorLanguagesAlternatifs {
-        background-color: #CD00CD; }
-      html #container main aside.colorWeb, body #container main aside.colorWeb {
-        background-color: #BC8078; }
-      html #container main aside.colorMethodesOutils, body #container main aside.colorMethodesOutils {
-        background-color: #00cccc; }
-      html #container main header, body #container main header {
-        height: 140px;
-        background-color: #1068b0;
-        background-image: url(../assets/background-image/header.png);
-        background-repeat: repeat-x;
-        padding: 0 250px 0 70px;
-        display: flex;
-        align-items: center; }
-        html #container main header h1, body #container main header h1 {
-          max-height: 140px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 60px;
-          color: #ffffff;
-          line-height: 70px;
-          font-family: "gloriahallelujah", sans-serif; }
-        html #container main header .bigTitle, body #container main header .bigTitle {
-          font-size: 30px;
-          line-height: 46px; }
-        html #container main header a img, body #container main header a img {
-          display: inline;
-          height: 130px;
-          width: auto;
-          right: 10px;
-          top: 65px;
-          position: absolute; }
-      html #container main header.colorJava, body #container main header.colorJava {
-        background-color: #cc3c56; }
-      html #container main header.colorData, body #container main header.colorData {
-        background-color: #ec854f; }
-      html #container main header.colorMobilite, body #container main header.colorMobilite {
-        background-color: #ccb400; }
-      html #container main header.colorWorkshops, body #container main header.colorWorkshops {
-        background-color: #458968; }
-      html #container main header.colorLanguagesAlternatifs, body #container main header.colorLanguagesAlternatifs {
-        background-color: #9a009a; }
-      html #container main header.colorWeb, body #container main header.colorWeb {
-        background-color: #895045; }
-      html #container main header.colorMethodesOutils, body #container main header.colorMethodesOutils {
-        background-color: #009999; }
-      html #container main article, body #container main article {
-        margin-top: 10px;
-        margin-bottom: 10px; }
-        html #container main article input, body #container main article input {
-          font-size: 30px;
-          display: block;
-          margin: auto;
-          width: 50vw;
-          color: #ffffff;
-          padding: 5px;
-          border: none;
-          background-color: #1068b0;
-          background-image: url(../assets/background-image/article.png);
-          background-repeat: repeat-x; }
-          html #container main article input:focus, body #container main article input:focus {
-            background-image: none;
-            outline: none; }
-        html #container main article input.colorJava, body #container main article input.colorJava {
-          background-color: #cc3c56; }
-          html #container main article input.colorJava:focus, body #container main article input.colorJava:focus {
-            background-color: #ff6f89; }
-        html #container main article input.colorData, body #container main article input.colorData {
-          background-color: #ec854f; }
-          html #container main article input.colorData:focus, body #container main article input.colorData:focus {
-            background-color: #ffa87f; }
-        html #container main article input.colorMobilite, body #container main article input.colorMobilite {
-          background-color: #ccb400; }
-          html #container main article input.colorMobilite:focus, body #container main article input.colorMobilite:focus {
-            background-color: #FFD700; }
-        html #container main article input.colorWorkshops, body #container main article input.colorWorkshops {
-          background-color: #458968; }
-          html #container main article input.colorWorkshops:focus, body #container main article input.colorWorkshops:focus {
-            background-color: #78BC9B; }
-        html #container main article input.colorLanguagesAlternatifs, body #container main article input.colorLanguagesAlternatifs {
-          background-color: #9a009a; }
-          html #container main article input.colorLanguagesAlternatifs:focus, body #container main article input.colorLanguagesAlternatifs:focus {
-            background-color: #CD00CD; }
-        html #container main article input.colorWeb, body #container main article input.colorWeb {
-          background-color: #895045; }
-          html #container main article input.colorWeb:focus, body #container main article input.colorWeb:focus {
-            background-color: #BC8078; }
-        html #container main article input.colorMethodesOutils, body #container main article input.colorMethodesOutils {
-          background-color: #009999; }
-          html #container main article input.colorMethodesOutils:focus, body #container main article input.colorMethodesOutils:focus {
-            background-color: #00cccc; }
-        html #container main article ::-webkit-input-placeholder, body #container main article ::-webkit-input-placeholder {
-          color: #ffffff; }
-        html #container main article ::-moz-placeholder, body #container main article ::-moz-placeholder {
-          /* firefox 19+ */
-          color: #ffffff; }
-        html #container main article :-ms-input-placeholder, body #container main article :-ms-input-placeholder {
-          /* ie */
-          color: #ffffff; }
-        html #container main article input:-moz-placeholder, body #container main article input:-moz-placeholder {
-          color: #ffffff; }
-        html #container main article #summary, body #container main article #summary {
-          padding: 0 15vw 0 15vw; }
-          html #container main article #summary ul li, body #container main article #summary ul li {
-            list-style: none;
-            background-color: #1068b0;
-            background-image: url(../assets/background-image/article.png);
-            background-repeat: repeat-x;
-            margin: 0; }
-            html #container main article #summary ul li a, body #container main article #summary ul li a {
+    html #container main aside, body #container main aside {
+      background-color: #3db8d8;
+      width: 100%;
+      padding: 10px 0 10px 0; }
+      html #container main aside nav, body #container main aside nav {
+        margin: 0 auto; }
+        html #container main aside nav ul, body #container main aside nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          height: 25px; }
+          html #container main aside nav ul li, body #container main aside nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            height: 30px; }
+            html #container main aside nav ul li a, body #container main aside nav ul li a {
               text-decoration: none;
               display: block;
+              height: 25px;
+              line-height: 25px;
               color: #ffffff; }
-            html #container main article #summary ul li.draw, body #container main article #summary ul li.draw {
-              -webkit-animation: come 0.2s;
-              -moz-animation: come 0.2s;
-              margin-top: 5px;
-              padding: 5px;
-              font-size: 30px; }
+              html #container main aside nav ul li a img, body #container main aside nav ul li a img {
+                height: 25px;
+                width: auto;
+                display: inline-block;
+                margin: auto;
+                float: left;
+                margin-right: 5px; }
+              html #container main aside nav ul li a span, body #container main aside nav ul li a span {
+                display: inline-block;
+                float: left;
+                font-size: 14px;
+                font-weight: 600; }
+            html #container main aside nav ul li:hover, html #container main aside nav ul li:active, html #container main aside nav ul li:focus, body #container main aside nav ul li:hover, body #container main aside nav ul li:active, body #container main aside nav ul li:focus {
+              border-bottom: 2px solid #ffffff; }
+    html #container main header, body #container main header {
+      background-color: #1068b0;
+      align-items: center;
+      padding: 15px 0 45px 0; }
+      html #container main header .container, body #container main header .container {
+        background: url(../assets/background-image/img-banner-formation.png) no-repeat right;
+        position: relative; }
+      html #container main header h1, body #container main header h1 {
+        width: 360px;
+        height: 177px;
+        text-indent: -99999em;
+        background: url(../assets/background-image/Training-by-serli-logo.png) no-repeat;
+        background-size: 100% auto; }
+      html #container main header .bigTitle, body #container main header .bigTitle {
+        font-size: 30px;
+        line-height: 46px; }
+    html #container main article, body #container main article {
+      padding: 30px 0 30px 0; }
+      html #container main article .page-title, body #container main article .page-title {
+        margin-bottom: 40px; }
+        html #container main article .page-title h2, body #container main article .page-title h2 {
+          color: #1068b0;
+          font-size: 30px;
+          border-bottom: 2px solid #1068b0;
+          display: inline-block;
+          font-weight: 800;
+          padding-bottom: 10px; }
+      html #container main article input, body #container main article input {
+        font-size: 22px;
+        display: block;
+        margin-bottom: 30px;
+        width: 100%;
+        color: #1068b0;
+        padding: 5px;
+        border-top: 10px solid #1068b0;
+        border-bottom: 10px solid #1068b0;
+        border-left: 200px solid #1068b0;
+        border-right: 200px solid #1068b0;
+        background-color: #ffffff;
+        background-repeat: repeat-x; }
+        html #container main article input:focus, body #container main article input:focus {
+          background-image: none;
+          outline: none; }
+      html #container main article ::-webkit-input-placeholder, body #container main article ::-webkit-input-placeholder {
+        color: #BAC4CC; }
+      html #container main article ::-moz-placeholder, body #container main article ::-moz-placeholder {
+        /* firefox 19+ */
+        color: #BAC4CC; }
+      html #container main article :-ms-input-placeholder, body #container main article :-ms-input-placeholder {
+        /* ie */
+        color: #BAC4CC; }
+      html #container main article input:-moz-placeholder, body #container main article input:-moz-placeholder {
+        color: #BAC4CC; }
+      html #container main article #summary, body #container main article #summary {
+        padding: 0 15vw 0 15vw; }
+        html #container main article #summary ul li, body #container main article #summary ul li {
+          list-style: none;
+          background-color: #1068b0;
+          background-image: url(../assets/background-image/article.png);
+          background-repeat: repeat-x;
+          margin: 0; }
+          html #container main article #summary ul li a, body #container main article #summary ul li a {
+            text-decoration: none;
+            display: block;
+            color: #ffffff; }
+          html #container main article #summary ul li.draw, body #container main article #summary ul li.draw {
+            -webkit-animation: come 0.2s;
+            -moz-animation: come 0.2s;
+            margin-top: 5px;
+            padding: 5px;
+            font-size: 30px; }
 @-webkit-keyframes come {
   from {
     margin-top: 0px;
@@ -212,12 +176,12 @@ html, body {
     margin-top: 5px;
     padding: 5px;
     font-size: 30px; } }
-            html #container main article #summary ul li.notdraw, body #container main article #summary ul li.notdraw {
-              -webkit-animation: notcome 0.2s;
-              -moz-animation: notcome 0.2s;
-              margin-top: 0px;
-              padding: 0px;
-              font-size: 0px; }
+          html #container main article #summary ul li.notdraw, body #container main article #summary ul li.notdraw {
+            -webkit-animation: notcome 0.2s;
+            -moz-animation: notcome 0.2s;
+            margin-top: 0px;
+            padding: 0px;
+            font-size: 0px; }
 @-webkit-keyframes notcome {
   from {
     margin-top: 5px;
@@ -236,127 +200,102 @@ html, body {
     margin-top: 0px;
     padding: 0px;
     font-size: 0px; } }
-          html #container main article #summary ul li.colorJava, body #container main article #summary ul li.colorJava {
-            background-color: #ff6f89; }
-          html #container main article #summary ul li.colorData, body #container main article #summary ul li.colorData {
-            background-color: #ffa87f; }
-          html #container main article #summary ul li.colorMobilite, body #container main article #summary ul li.colorMobilite {
-            background-color: #FFD700; }
-          html #container main article #summary ul li.colorWorkshops, body #container main article #summary ul li.colorWorkshops {
-            background-color: #78BC9B; }
-          html #container main article #summary ul li.colorLanguagesAlternatifs, body #container main article #summary ul li.colorLanguagesAlternatifs {
-            background-color: #CD00CD; }
-          html #container main article #summary ul li.colorWeb, body #container main article #summary ul li.colorWeb {
-            background-color: #BC8078; }
-          html #container main article #summary ul li.colorMethodesOutils, body #container main article #summary ul li.colorMethodesOutils {
-            background-color: #00cccc; }
-        html #container main article #training, body #container main article #training {
-          padding: 10px; }
-          html #container main article #training td, body #container main article #training td {
-            text-align: center; }
-          html #container main article #training input, body #container main article #training input {
-            background-color: #1068b0; }
-          html #container main article #training input.colorJava, body #container main article #training input.colorJava {
-            background-color: #cc3c56; }
-          html #container main article #training input.colorData, body #container main article #training input.colorData {
-            background-color: #ec854f; }
-          html #container main article #training input.colorMobilite, body #container main article #training input.colorMobilite {
-            background-color: #ccb400; }
-          html #container main article #training input.colorWorkshops, body #container main article #training input.colorWorkshops {
-            background-color: #458968; }
-          html #container main article #training input.colorLanguagesAlternatifs, body #container main article #training input.colorLanguagesAlternatifs {
-            background-color: #9a009a; }
-          html #container main article #training input.colorWeb, body #container main article #training input.colorWeb {
-            background-color: #895045; }
-          html #container main article #training input.colorMethodesOutils, body #container main article #training input.colorMethodesOutils {
-            background-color: #009999; }
-          html #container main article #training table, body #container main article #training table {
-            table-layout: fixed;
-            border-collapse: separate;
-            border-spacing: 10px 0; }
-          html #container main article #training h3, body #container main article #training h3 {
-            font-weight: normal;
-            padding-top: 20px;
-            padding-bottom: 10px;
-            text-transform: uppercase;
-            clear: both; }
-          html #container main article #training #detail, body #container main article #training #detail {
-            width: 100%; }
-            html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
-              height: 30px; }
-              html #container main article #training #detail thead tr td img, body #container main article #training #detail thead tr td img {
-                height: 30px;
-                width: auto; }
-            html #container main article #training #detail tbody tr, body #container main article #training #detail tbody tr {
-              background-color: #b0b0b0;
-              font-style: italic; }
-            html #container main article #training #detail tbody tr:first-child, body #container main article #training #detail tbody tr:first-child {
-              font-style: normal; }
-          html #container main article #training ul, body #container main article #training ul {
+      html #container main article #training, body #container main article #training {
+        padding: 10px; }
+        html #container main article #training td, body #container main article #training td {
+          text-align: center; }
+        html #container main article #training input, body #container main article #training input {
+          background-color: #1068b0; }
+        html #container main article #training table, body #container main article #training table {
+          table-layout: fixed;
+          border-collapse: separate;
+          border-spacing: 10px 0; }
+        html #container main article #training h3, body #container main article #training h3 {
+          font-weight: normal;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          text-transform: uppercase;
+          clear: both; }
+        html #container main article #training #detail, body #container main article #training #detail {
+          width: 100%; }
+          html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
+            height: 30px; }
+            html #container main article #training #detail thead tr td img, body #container main article #training #detail thead tr td img {
+              height: 30px;
+              width: auto; }
+          html #container main article #training #detail tbody tr, body #container main article #training #detail tbody tr {
+            background-color: #b0b0b0;
+            font-style: italic; }
+          html #container main article #training #detail tbody tr:first-child, body #container main article #training #detail tbody tr:first-child {
+            font-style: normal; }
+        html #container main article #training ul, body #container main article #training ul {
+          padding-left: 50px;
+          list-style: disc;
+          font-weight: bold; }
+          html #container main article #training ul li ul, body #container main article #training ul li ul {
             padding-left: 50px;
-            list-style: disc;
-            font-weight: bold; }
-            html #container main article #training ul li ul, body #container main article #training ul li ul {
-              padding-left: 50px;
-              list-style: none;
-              font-weight: normal; }
-          html #container main article #training #subject, body #container main article #training #subject {
-            padding-left: 0; }
-            html #container main article #training #subject li, body #container main article #training #subject li {
-              display: inline-block;
-              background-color: #3db8d8;
-              margin: 5px;
-              padding: 5px;
-              color: #ffffff;
-              font-weight: normal; }
-            html #container main article #training #subject li.colorJava, body #container main article #training #subject li.colorJava {
-              background-color: #ff6f89; }
-            html #container main article #training #subject li.colorData, body #container main article #training #subject li.colorData {
-              background-color: #ffa87f; }
-            html #container main article #training #subject li.colorMobilite, body #container main article #training #subject li.colorMobilite {
-              background-color: #FFD700; }
-            html #container main article #training #subject li.colorWorkshops, body #container main article #training #subject li.colorWorkshops {
-              background-color: #78BC9B; }
-            html #container main article #training #subject li.colorLanguagesAlternatifs, body #container main article #training #subject li.colorLanguagesAlternatifs {
-              background-color: #CD00CD; }
-            html #container main article #training #subject li.colorWeb, body #container main article #training #subject li.colorWeb {
-              background-color: #BC8078; }
-            html #container main article #training #subject li.colorMethodesOutils, body #container main article #training #subject li.colorMethodesOutils {
-              background-color: #00cccc; }
+            list-style: none;
+            font-weight: normal; }
+        html #container main article #training #subject, body #container main article #training #subject {
+          padding-left: 0; }
+          html #container main article #training #subject li, body #container main article #training #subject li {
+            display: inline-block;
+            background-color: #3db8d8;
+            margin: 5px;
+            padding: 5px;
+            color: #ffffff;
+            font-weight: normal; }
+          html #container main article #training #subject li.colorJava, body #container main article #training #subject li.colorJava {
+            background-color: #ff6f89; }
+          html #container main article #training #subject li.colorData, body #container main article #training #subject li.colorData {
+            background-color: #ffa87f; }
+          html #container main article #training #subject li.colorMobilite, body #container main article #training #subject li.colorMobilite {
+            background-color: #FFD700; }
+          html #container main article #training #subject li.colorWorkshops, body #container main article #training #subject li.colorWorkshops {
+            background-color: #78BC9B; }
+          html #container main article #training #subject li.colorLanguagesAlternatifs, body #container main article #training #subject li.colorLanguagesAlternatifs {
+            background-color: #CD00CD; }
+          html #container main article #training #subject li.colorWeb, body #container main article #training #subject li.colorWeb {
+            background-color: #BC8078; }
+          html #container main article #training #subject li.colorMethodesOutils, body #container main article #training #subject li.colorMethodesOutils {
+            background-color: #00cccc; }
+      html #container main article #index, body #container main article #index {
+        outline: 1px solid red; }
         html #container main article #index div, body #container main article #index div {
-          width: 30%;
-          display: inline-block;
-          vertical-align: top;
-          margin: 1%;
-          background-color: #439be3;
-          color: #ffffff; }
+          width: 32%;
+          display: block;
+          background-color: #3db8d8;
+          color: #ffffff;
+          float: left;
+          min-height: 460px;
+          font-size: 14px; }
+          html #container main article #index div:nth-child(1), html #container main article #index div:nth-child(2), body #container main article #index div:nth-child(1), body #container main article #index div:nth-child(2) {
+            margin-right: 2%; }
           html #container main article #index div h3, body #container main article #index div h3 {
-            font-weight: normal;
+            font-weight: 800;
             background-color: #1068b0;
-            padding: 10px; }
+            padding: 15px;
+            height: 74px;
+            margin-bottom: 20px; }
           html #container main article #index div .followedImg, body #container main article #index div .followedImg {
             padding-right: 70px; }
           html #container main article #index div img, body #container main article #index div img {
             position: relative;
             height: 70px;
-            float: right;
-            bottom: 70px; }
+            bottom: 70px;
+            outline: 1px solid red; }
           html #container main article #index div p, body #container main article #index div p {
-            padding: 10px; }
+            padding: 0 15px 0 15px;
+            margin-bottom: 10px; }
           html #container main article #index div ul, body #container main article #index div ul {
-            padding: 10px;
+            padding: 0 15px 0 15px;
             padding-left: 30px; }
     html #container footer, body #container footer {
       height: 50px;
-      position: absolute;
-      bottom: 0;
       background-color: #1068b0;
-      background-image: url(../assets/background-image/header.png);
-      background-repeat: repeat-x;
       width: 100%;
       display: flex;
       align-items: center;
-      padding: 0 0 0 120px;
       color: #ffffff; }
       html #container footer nav img, body #container footer nav img {
         height: 30px;
@@ -385,25 +324,9 @@ html, body {
             position: relative;
             height: 40px;
             width: auto; }
-    html #container footer.colorJava, body #container footer.colorJava {
-      background-color: #cc3c56; }
-    html #container footer.colorData, body #container footer.colorData {
-      background-color: #ec854f; }
-    html #container footer.colorMobilite, body #container footer.colorMobilite {
-      background-color: #ccb400; }
-    html #container footer.colorWorkshops, body #container footer.colorWorkshops {
-      background-color: #458968; }
-    html #container footer.colorLanguagesAlternatifs, body #container footer.colorLanguagesAlternatifs {
-      background-color: #9a009a; }
-    html #container footer.colorWeb, body #container footer.colorWeb {
-      background-color: #895045; }
-    html #container footer.colorMethodesOutils, body #container footer.colorMethodesOutils {
-      background-color: #009999; }
-  html .containerdefault, body .containerdefault {
-    background-color: #3db8d8; }
-    html .containerdefault main article #summary ul, body .containerdefault main article #summary ul {
-      -webkit-animation: mydisplay 0.2s;
-      -moz-animation: mydisplay 0.2s; }
+  html .containerdefault main article #summary ul, body .containerdefault main article #summary ul {
+    -webkit-animation: mydisplay 0.2s;
+    -moz-animation: mydisplay 0.2s; }
 @-webkit-keyframes mydisplay {
   0% {
     height: 0;
@@ -430,84 +353,6 @@ html, body {
     height: auto;
     visibility: visible;
     position: inherit; } }
-@media all and (max-width: 1100px) {
-  body #container main article #index div {
-    width: 47%; } }
-@media all and (max-width: 876px) {
-  html body #container main {
-    padding-top: 54px; }
-    html body #container main aside {
-      height: 54px; }
-      html body #container main aside nav ul li {
-        height: 50px; }
-        html body #container main aside nav ul li a {
-          height: 54px; }
-          html body #container main aside nav ul li a img {
-            height: 50px; }
-          html body #container main aside nav ul li a span {
-            display: none; } }
-@media all and (max-width: 770px) {
-  html body #container main {
-    padding-bottom: 120px; }
-  html body #container footer {
-    height: 120px; }
-    html body #container footer nav ul li {
-      display: inherit; }
-    html body #container footer nav ul #rss img {
-      top: auto;
-      height: 60px; } }
-@media all and (max-width: 660px) {
-  html body #container main {
-    padding-top: 34px; }
-    html body #container main aside {
-      height: 34px; }
-      html body #container main aside nav ul li {
-        height: 30px; }
-        html body #container main aside nav ul li a {
-          height: 34px; }
-          html body #container main aside nav ul li a img {
-            height: 30px; }
-          html body #container main aside nav ul li a span {
-            display: none; }
-    html body #container main header {
-      padding: 0 70px 0 70px; }
-      html body #container main header h1 {
-        font-size: 30px;
-        line-height: 46px; }
-      html body #container main header a img {
-        display: none; }
-    html body #container main article input {
-      font-size: 20px; }
-    html body #container main article #summary {
-      padding: 0 15px 0 15px; }
-      html body #container main article #summary ul li {
-        font-size: 20px; }
-    html body #container main article #index div {
-      width: 97%; } }
-@media all and (max-width: 508px) {
-  html body #container main {
-    padding-top: 70px;
-    padding-bottom: 150px; }
-    html body #container main aside {
-      height: 70px; }
-      html body #container main aside nav ul li {
-        height: 30px; }
-        html body #container main aside nav ul li a {
-          height: 35px; }
-          html body #container main aside nav ul li a img {
-            height: 30px; }
-          html body #container main aside nav ul li a span {
-            display: none; }
-  html body #container footer {
-    height: 150px; }
-    html body #container footer nav ul li {
-      display: inherit; }
-    html body #container footer nav ul #rss img {
-      top: auto;
-      position: absolute;
-      left: 10px;
-      bottom: 50px;
-      height: 90px; } }
 /**
  * Syntax highlighting styles
  */

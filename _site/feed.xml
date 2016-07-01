@@ -3,15 +3,15 @@
   <channel>
     <title>Training by Serli</title>
     <description>Training by Serli . FORMATIONS &amp; WORKSHOPS</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 29 Apr 2016 10:43:50 +0200</pubDate>
-    <lastBuildDate>Fri, 29 Apr 2016 10:43:50 +0200</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <link>http://localhost:4000//formations/</link>
+    <atom:link href="http://localhost:4000//formations/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 01 Jul 2016 15:16:35 +0200</pubDate>
+    <lastBuildDate>Fri, 01 Jul 2016 15:16:35 +0200</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <summary>
         <title>Java</title>
-        <link>/Summary/Java</link>
+        <link>/formations/Summary/Java</link>
         
           <activity>
             <title>Spring 4</title>
@@ -57,7 +57,7 @@
     
       <summary>
         <title>Web</title>
-        <link>/Summary/Web</link>
+        <link>/formations/Summary/Web</link>
         
           <activity>
             <title>AngularJS</title>
@@ -78,7 +78,7 @@
     
       <summary>
         <title>LanguagesAlternatifs</title>
-        <link>/Summary/LanguagesAlternatifs</link>
+        <link>/formations/Summary/LanguagesAlternatifs</link>
         
           <activity>
             <title>Scala</title>
@@ -99,7 +99,7 @@
     
       <summary>
         <title>Data</title>
-        <link>/Summary/Data</link>
+        <link>/formations/Summary/Data</link>
         
           <activity>
             <title>Spark</title>
@@ -130,7 +130,7 @@
     
       <summary>
         <title>Mobilite</title>
-        <link>/Summary/Mobilite</link>
+        <link>/formations/Summary/Mobilite</link>
         
           <activity>
             <title>Développement WindowsPhone</title>
@@ -156,7 +156,7 @@
     
       <summary>
         <title>MethodesOutils</title>
-        <link>/Summary/MethodesOutils</link>
+        <link>/formations/Summary/MethodesOutils</link>
         
           <activity>
             <title>Selenium</title>
@@ -197,7 +197,7 @@
     
       <summary>
         <title>Workshops</title>
-        <link>/Summary/Workshops</link>
+        <link>/formations/Summary/Workshops</link>
         
           <activity>
             <title>Windows Mobile</title>

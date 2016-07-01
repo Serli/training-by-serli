@@ -1,3 +1,33 @@
+<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
+>
+	<div class="container">
+		{% if page.title %}
+			{% assign title = page.title %}
+		{% else %}
+			{% if page.summary %}
+				{% assign title = site.title  %}
+				{% for somaire in site.data.group %}
+					{% if somaire.name == page.summary %}
+						{% if somaire.title %}
+							{% assign title = somaire.title %}
+						{% else %}
+							{% assign title = somaire.name %}
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				{% assign title = site.title %}
+			{% endif %}
+		{% endif %}
+		{% assign my_lenght = title|size %}
+		<a href="{{ site.url }}/{{ site.baseurl }}">
+			<h1 class="{% if 25 <= my_lenght %}bigTitle{% else %}smalTitle{% endif %}">{{ title }}</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
 
 <!-- /// MENU ////////////////////////////////////////////////////////////// -->
 <aside class=
@@ -8,7 +38,7 @@
 			<ul>
 				<!-- /// home ////////////////////////////////////////////////////// -->
 				<li><a class=
-						"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
+						"clearfix {% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
 						href="{{ site.url }}/{{ site.baseurl }}"
 					>
 						<img src="{{ site.baseurl }}/assets/TrainingsCategories/WhiteIcon/home.png"/>
@@ -28,32 +58,3 @@
 		</nav>
 	</div>
 </aside>
-<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
-<header class=
-	"{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
->
-	{% if page.title %}
-		{% assign title = page.title %}
-	{% else %}
-		{% if page.summary %}
-			{% assign title = site.title  %}
-			{% for somaire in site.data.group %}
-				{% if somaire.name == page.summary %}
-					{% if somaire.title %}
-						{% assign title = somaire.title %}
-					{% else %}
-						{% assign title = somaire.name %}
-					{% endif %}
-				{% endif %}
-			{% endfor %}
-		{% else %}
-			{% assign title = site.title %}
-		{% endif %}
-	{% endif %}
-	{% assign my_lenght = title|size %}
-	<h1 class="{% if 25 <= my_lenght %}bigTitle{% else %}smalTitle{% endif %}">{{ title }}</h1>
-	<a href="{{ site.url }}/{{ site.baseurl }}">
-		<img src="{{ site.baseurl }}/assets/Training-by-serli-logo-white-01.png"/>
-	</a>
-</header>
-<!-- /////////////////////////////////////////////////////////////////////// -->

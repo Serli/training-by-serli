@@ -1,8 +1,18 @@
 *{ // default initialization
 	margin: 0;
 	padding: 0;
-  font-family: sans-serif;
 }
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
 
 img { // default initialization of the image size
 	height: 20px;
@@ -13,238 +23,139 @@ img { // default initialization of the image size
 	font-family: "gloriahallelujah";
 	src: url('../assets/gloriahallelujah.ttf');
 }
-
+.container{
+	margin:0 auto;
+	@media (min-width:768px){
+		width:720px;
+	}
+	@media (min-width:992px){
+		width:720px;
+	}
+	@media (min-width:1200px){
+		width:1140px;
+	}
+}
+body{
+	font-family:$typo-open;
+}
 html, body {
 	height: 100%;
 	#container {
 		position: relative;
 		min-height: 100%; // for the footer is at the bottom of the page, even if it is empty
 		main {
-			padding-bottom: 50px; // size footer
-			padding-top: 65px; // size of aside
-
 /// MENU ///////////////////////////////////////////////////////////////////////
 			aside {
-				background-color: $blue; // default color
-				background-image: url(../assets/background-image/article.png);
-				background-repeat: repeat-x;
-				position: absolute;
-				top: 0px;
-				left: 0;
+				background-color: $blue-serli-light; // default color
 				width: 100%;
-				z-index: 2;
+				padding:10px 0 10px 0;
 				nav {
 					margin: 0 auto;
 					ul {
 						list-style: none;
+						padding:0;
+						margin:0;
+						height:25px;
 						li {
 							display: inline-block;
+							margin-right:20px;
+							height:30px;
 							a {
-								height: 65px;
 								text-decoration: none;
 								display: block;
-								padding: 0 15px 0 15px;
+								height:25px;
+								line-height:25px;
 								color: $white;
-								// depending on the class a different color ////////////////////
-									&:hover,
-									&:active {
-										background: $darkblue;
-									}
-									&:hover.colorJava,
-									&:active.colorJava{
-										background-color: $darkred;
-									}
-									&:hover.colorData,
-									&:active.colorData{
-										background-color: $darkorange;
-									}
-									&:hover.colorMobilite,
-									&:active.colorMobilite{
-										background-color: $darkyellow;
-									}
-									&:hover.colorWorkshops,
-									&:active.colorWorkshops{
-										background-color: $darkgreen;
-									}
-									&:hover.colorLanguagesAlternatifs,
-									&:active.colorLanguagesAlternatifs{
-										background-color: $darkpurple;
-									}
-									&:hover.colorWeb,
-									&:active.colorWeb{
-										background-color: $darkmaroon;
-									}
-									&:hover.colorMethodesOutils,
-									&:active.colorMethodesOutils{
-										background-color: $darkaqua;
-									}
-								////////////////////////////////////////////////////////////////
 								img {
-									height: 45px;
+									height: 25px;
 									width: auto;
-									display: block;
+									display: inline-block;
 									margin: auto;
+									float:left;
+									margin-right:5px;
 								}
+								span{
+									display:inline-block;
+									float:left;
+									font-size:14px;
+									font-weight:600;
+								}
+							}
+							&:hover,
+							&:active,
+							&:focus {
+								border-bottom:2px solid #ffffff;
 							}
 						}
 					}
 				}
 			}
-			// depending on the class a different color //////////////////////////////
-				aside.colorJava{
-					background-color: $red;
-				}
-				aside.colorData{
-					background-color: $orange;
-				}
-				aside.colorMobilite{
-					background-color: $yellow;
-				}
-				aside.colorWorkshops{
-					background-color: $green;
-				}
-				aside.colorLanguagesAlternatifs{
-					background-color: $purple;
-				}
-				aside.colorWeb{
-					background-color: $maroon;
-				}
-				aside.colorMethodesOutils{
-					background-color: $aqua;
-				}
-			//////////////////////////////////////////////////////////////////////////
+
 
 /// TITLE //////////////////////////////////////////////////////////////////////
 			header {
-				height: 140px;
-				background-color: $darkblue; // default color
-				background-image: url(../assets/background-image/header.png);
-				background-repeat: repeat-x;
-				//margin-top: 50px; // size of aside
-				padding: 0 250px 0 70px;
-				display: flex;
+				background-color: $blue-serli; // default color
 				align-items: center;
-				h1 {
-					max-height: 140px;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					font-size: 60px;
-					color: $white;
-					line-height : 70px;
-					font-family: "gloriahallelujah", sans-serif; // "training by Serli" font
+				padding:15px 0 45px 0;
+				.container{
+					background:url(../assets/background-image/img-banner-formation.png) no-repeat right;
+					position:relative;
+				}
+ 				h1 {
+					width:360px;
+					height:177px;
+					text-indent:-99999em;
+					background:url(../assets/background-image/Training-by-serli-logo.png) no-repeat;
+					background-size:100% auto;
 				}
 				.bigTitle {
 					font-size: 30px;
 					line-height : 46px;
 				}
-				a {
-					img {
-   					display: inline;
-						height: 130px;
-						width: auto;
-						right: 10px;
-						top: 65px;
-						position: absolute;
+			}
+			article {
+				padding:30px 0 30px 0;
+				.page-title{
+					margin-bottom:40px;
+					h2{
+						color:$blue-serli;
+						font-size:30px;
+						border-bottom:2px solid $blue-serli;
+						display:inline-block;
+						font-weight:800;
+						padding-bottom:10px;
 					}
 				}
-			}
-			// depending on the class a different color //////////////////////////////
-				header.colorJava{
-					background-color: $darkred;
-				}
-				header.colorData{
-					background-color: $darkorange;
-				}
-				header.colorMobilite{
-					background-color: $darkyellow;
-				}
-				header.colorWorkshops{
-					background-color: $darkgreen;
-				}
-				header.colorLanguagesAlternatifs{
-					background-color: $darkpurple;
-				}
-				header.colorWeb{
-					background-color: $darkmaroon;
-				}
-				header.colorMethodesOutils{
-					background-color: $darkaqua;
-				}
-			//////////////////////////////////////////////////////////////////////////
-			article {
-				margin-top: 10px;
-				margin-bottom: 10px;
 				input {
-					font-size: 30px;
+					font-size: 22px;
 					display:block;
-					margin:auto;
-					width: 50vw;
-					color: $white;
+					margin-bottom:30px;
+					width: 100%;
+					color: $blue-serli;
 					padding: 5px;
-					border: none;
-					background-color: $darkblue;
-					background-image: url(../assets/background-image/article.png);
+					border-top: 10px solid $blue-serli;
+					border-bottom: 10px solid $blue-serli;
+					border-left: 200px solid $blue-serli;
+					border-right: 200px solid $blue-serli;
+					background-color: $white;
 					background-repeat: repeat-x;
 					&:focus {
 						background-image: none;
 					  outline: none;
 					}
 				}
-				// depending on the class a different color ////////////////////////////
-					input.colorJava{
-						background-color: $darkred;
-						&:focus {
-							background-color: $red;
-						}
-					}
-					input.colorData{
-						background-color: $darkorange;
-						&:focus {
-							background-color: $orange;
-						}
-					}
-					input.colorMobilite{
-						background-color: $darkyellow;
-						&:focus {
-							background-color: $yellow;
-						}
-					}
-					input.colorWorkshops{
-						background-color: $darkgreen;
-						&:focus {
-							background-color: $green;
-						}
-					}
-					input.colorLanguagesAlternatifs{
-						background-color: $darkpurple;
-						&:focus {
-							background-color: $purple;
-						}
-					}
-					input.colorWeb{
-						background-color: $darkmaroon;
-						&:focus {
-							background-color: $maroon;
-						}
-					}
-					input.colorMethodesOutils{
-						background-color: $darkaqua;
-						&:focus {
-							background-color: $aqua;
-						}
-					}
-				////////////////////////////////////////////////////////////////////////
+
 				::-webkit-input-placeholder {
-					color:$white;
+					color:#BAC4CC;
 				}
 				::-moz-placeholder { /* firefox 19+ */
-					color:$white;
+					color:#BAC4CC;
 				}
 				:-ms-input-placeholder { /* ie */
-					color:$white;
+					color:#BAC4CC;
 				}
 				input:-moz-placeholder {
-					color:$white;
+					color:#BAC4CC;
 				}
 // CATEGORY ////////////////////////////////////////////////////////////////////
 				#summary {
@@ -324,29 +235,6 @@ html, body {
 								font-size: 0px;
 							}
 						}
-						// depending on the class a different color ////////////////////////
-							li.colorJava{
-								background-color: $red;
-							}
-							li.colorData{
-								background-color: $orange;
-							}
-							li.colorMobilite{
-								background-color: $yellow;
-							}
-							li.colorWorkshops{
-								background-color: $green;
-							}
-							li.colorLanguagesAlternatifs{
-								background-color: $purple;
-							}
-							li.colorWeb{
-								background-color: $maroon;
-							}
-							li.colorMethodesOutils{
-								background-color: $aqua;
-							}
-						////////////////////////////////////////////////////////////////////
 					}
 				}
 
@@ -359,29 +247,6 @@ html, body {
 					input {
 						background-color: $darkblue;
 					}
-					// depending on the class a different color ////////////////////////
-						input.colorJava{
-							background-color: $darkred;
-						}
-						input.colorData{
-							background-color: $darkorange;
-						}
-						input.colorMobilite{
-							background-color: $darkyellow;
-						}
-						input.colorWorkshops{
-							background-color: $darkgreen;
-						}
-						input.colorLanguagesAlternatifs{
-							background-color: $darkpurple;
-						}
-						input.colorWeb{
-							background-color: $darkmaroon;
-						}
-						input.colorMethodesOutils{
-							background-color: $darkaqua;
-						}
-					////////////////////////////////////////////////////////////////////
 					table {
 						table-layout:fixed;
 						border-collapse: separate;
@@ -465,17 +330,24 @@ html, body {
 					}
 				}
 				#index {
+					outline:1px solid red;
 					div {
-						width: 30%;
-						display: inline-block;
-						vertical-align: top;
-						margin: 1%;
-						background-color: $lightblue;
+						width: 32%;
+						display:block;
+						background-color: $blue-serli-light;
 						color: $white;
+						float:left;
+						min-height:460px;
+						font-size:14px;
+						&:nth-child(1), &:nth-child(2){
+							margin-right:2%;
+						}
 						h3 {
-							font-weight: normal;
-							background-color: $darkblue;
-							padding: 10px;
+							font-weight: 800;
+							background-color: $blue-serli;
+							padding: 15px;
+							height:74px;
+							margin-bottom:20px;
 						}
 						.followedImg {
 							padding-right: 70px;
@@ -483,14 +355,15 @@ html, body {
 						img {
 							position: relative;
 							height: 70px;
-							float: right;
 							bottom: 70px;
+							outline:1px solid red;
 						}
 						p {
-							padding: 10px;
+							padding: 0 15px 0 15px;
+							margin-bottom:10px;
 						}
 						ul {
-							padding: 10px;
+							padding: 0 15px 0 15px;
 							padding-left: 30px;
 						}
 					}
@@ -501,15 +374,10 @@ html, body {
 /// FOOTER /////////////////////////////////////////////////////////////////////
 		footer {
 			height: 50px;
-			position: absolute;
-			bottom: 0;
-			background-color: $darkblue; // default color
-			background-image: url(../assets/background-image/header.png);
-			background-repeat: repeat-x;
+			background-color: $blue-serli;
 			width: 100%;
 			display: flex;
 			align-items: center;
-			padding: 0 0 0 120px;
 			color: $white;
 			nav {
 				img {
@@ -548,32 +416,8 @@ html, body {
 				}
 			}
 		}
-		// depending on the class a different color ////////////////////////////////
-			footer.colorJava{
-				background-color: $darkred;
-			}
-			footer.colorData{
-				background-color: $darkorange;
-			}
-			footer.colorMobilite{
-				background-color: $darkyellow;
-			}
-			footer.colorWorkshops{
-				background-color: $darkgreen;
-			}
-			footer.colorLanguagesAlternatifs{
-				background-color: $darkpurple;
-			}
-			footer.colorWeb{
-				background-color: $darkmaroon;
-			}
-			footer.colorMethodesOutils{
-				background-color: $darkaqua;
-			}
-		////////////////////////////////////////////////////////////////////////////
 	}
 	.containerdefault{
-		background-color: $blue;
 		main {
 			article {
 				#summary {
@@ -621,185 +465,185 @@ html, body {
 	}
 }
 
-@media all and (max-width: 1100px) { // aside 1
-	body {
-		#container {
-			main {
-				article {
-					#index {
-						div {
-								width: 47%;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media all and (max-width: 876px) { // aside 1
-	html {
-		body {
-			#container {
-				main {
-					padding-top: 54px; // size of aside
-					aside {
-						height:54px;
-						nav {
-							ul {
-								li {
-									height:50px;
-									a {
-										height:54px;
-										img {
-											height: 50px;
-										}
-										span {
-											display: none;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media all and (max-width: 770px) { // footer 1
-	html {
-		body {
-			#container {
-				main {
-					padding-bottom: 120px;
-				}
-				footer {
-					height: 120px;
-					nav {
-						ul {
-							li {
-								display: inherit;
-							}
-							#rss {
-								img {
-									top: auto;
-									height: 60px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media all and (max-width: 660px) { // aside 2 + header 1 + summary 1
-	html {
-		body {
-			#container {
-				main {
-					padding-top: 34px; // size of aside
-					aside {
-						height:34px;
-						nav {
-							ul {
-								li {
-									height:30px;
-									a {
-										height:34px;
-										img {
-											height: 30px;
-										}
-										span {
-											display: none;
-										}
-									}
-								}
-							}
-						}
-					}
-					header {
-						padding: 0 70px 0 70px;
-						h1 {
-							font-size: 30px;
-							line-height : 46px;
-						}
-						a {
-							img {
-								display: none;
-							}
-						}
-					}
-					article {
-						input {
-							font-size: 20px;
-						}
-						#summary {
-							padding: 0 15px 0 15px;
-							ul {
-								li {
-									font-size: 20px;
-								}
-							}
-						}
-						#index {
-							div {
-									width: 97%;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-@media all and (max-width: 508px) { // aside 3 + footer 2
-	html {
-		body {
-			#container {
-				main {
-					padding-top: 70px; // size of aside
-					padding-bottom: 150px;
-					aside {
-						height:70px;
-						nav {
-							ul {
-								li {
-									height:30px;
-									a {
-										height:35px;
-										img {
-											height: 30px;
-										}
-										span {
-											display: none;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-				footer {
-					height: 150px;
-					nav {
-						ul {
-							li {
-								display: inherit;
-							}
-							#rss {
-								img {
-									top: auto;
-									position: absolute;
-									left: 10px;
-									bottom: 50px;
-									height: 90px;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
+// @media all and (max-width: 1100px) { // aside 1
+// 	body {
+// 		#container {
+// 			main {
+// 				article {
+// 					#index {
+// 						div {
+// 								width: 47%;
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media all and (max-width: 876px) { // aside 1
+// 	html {
+// 		body {
+// 			#container {
+// 				main {
+// 					padding-top: 54px; // size of aside
+// 					aside {
+// 						height:54px;
+// 						nav {
+// 							ul {
+// 								li {
+// 									height:50px;
+// 									a {
+// 										height:54px;
+// 										img {
+// 											height: 50px;
+// 										}
+// 										span {
+// 											display: none;
+// 										}
+// 									}
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media all and (max-width: 770px) { // footer 1
+// 	html {
+// 		body {
+// 			#container {
+// 				main {
+// 					padding-bottom: 120px;
+// 				}
+// 				footer {
+// 					height: 120px;
+// 					nav {
+// 						ul {
+// 							li {
+// 								display: inherit;
+// 							}
+// 							#rss {
+// 								img {
+// 									top: auto;
+// 									height: 60px;
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media all and (max-width: 660px) { // aside 2 + header 1 + summary 1
+// 	html {
+// 		body {
+// 			#container {
+// 				main {
+// 					padding-top: 34px; // size of aside
+// 					aside {
+// 						height:34px;
+// 						nav {
+// 							ul {
+// 								li {
+// 									height:30px;
+// 									a {
+// 										height:34px;
+// 										img {
+// 											height: 30px;
+// 										}
+// 										span {
+// 											display: none;
+// 										}
+// 									}
+// 								}
+// 							}
+// 						}
+// 					}
+// 					header {
+// 						padding: 0 70px 0 70px;
+// 						h1 {
+// 							font-size: 30px;
+// 							line-height : 46px;
+// 						}
+// 						a {
+// 							img {
+// 								display: none;
+// 							}
+// 						}
+// 					}
+// 					article {
+// 						input {
+// 							font-size: 20px;
+// 						}
+// 						#summary {
+// 							padding: 0 15px 0 15px;
+// 							ul {
+// 								li {
+// 									font-size: 20px;
+// 								}
+// 							}
+// 						}
+// 						#index {
+// 							div {
+// 									width: 97%;
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+// @media all and (max-width: 508px) { // aside 3 + footer 2
+// 	html {
+// 		body {
+// 			#container {
+// 				main {
+// 					padding-top: 70px; // size of aside
+// 					padding-bottom: 150px;
+// 					aside {
+// 						height:70px;
+// 						nav {
+// 							ul {
+// 								li {
+// 									height:30px;
+// 									a {
+// 										height:35px;
+// 										img {
+// 											height: 30px;
+// 										}
+// 										span {
+// 											display: none;
+// 										}
+// 									}
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 				footer {
+// 					height: 150px;
+// 					nav {
+// 						ul {
+// 							li {
+// 								display: inherit;
+// 							}
+// 							#rss {
+// 								img {
+// 									top: auto;
+// 									position: absolute;
+// 									left: 10px;
+// 									bottom: 50px;
+// 									height: 90px;
+// 								}
+// 							}
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
