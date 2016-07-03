@@ -2,7 +2,9 @@
 	margin: 0;
 	padding: 0;
 }
-
+.hello{
+	outline:1px solid red;
+}
 .clearfix:after {
 	visibility: hidden;
 	display: block;
@@ -25,13 +27,15 @@ img { // default initialization of the image size
 }
 .container{
 	margin:0 auto;
-	@media (min-width:768px){
+	padding:0 15px 0 15px;
+	@media (min-width:$screen-sm){
 		width:720px;
+		padding:0;
 	}
-	@media (min-width:992px){
-		width:720px;
+	@media (min-width:$screen-md){
+		width:980px;
 	}
-	@media (min-width:1200px){
+	@media (min-width:$screen-lg){
 		width:1140px;
 	}
 }
@@ -49,6 +53,12 @@ html, body {
 				background-color: $blue-serli-light; // default color
 				width: 100%;
 				padding:10px 0 10px 0;
+				.container{
+					padding:0 5px 0 5px;
+					@media (min-width:$screen-sm){
+						padding:0;
+					}
+				}
 				nav {
 					margin: 0 auto;
 					ul {
@@ -56,10 +66,20 @@ html, body {
 						padding:0;
 						margin:0;
 						height:25px;
+						text-align:center;
+						@media (min-width:$screen-sm){
+							text-align:left;
+						}
 						li {
 							display: inline-block;
-							margin-right:20px;
+							margin-right:10px;
 							height:30px;
+							@media (min-width:$screen-sm){
+								margin-right:15px;
+							}
+							@media (min-width:$screen-md){
+								margin-right:20px;
+							}
 							a {
 								text-decoration: none;
 								display: block;
@@ -72,13 +92,28 @@ html, body {
 									display: inline-block;
 									margin: auto;
 									float:left;
-									margin-right:5px;
+									@media (min-width:$screen-sm){
+										margin-right:5px;
+										height: 18px;
+										width:auto;
+									}
+									@media (min-width:$screen-md){
+										height: 25px;
+										width: auto;
+									}
 								}
 								span{
-									display:inline-block;
+									display:none;
 									float:left;
 									font-size:14px;
 									font-weight:600;
+									@media (min-width:$screen-sm){
+										display:inline-block;
+										font-size:13px;
+									}
+									@media (min-width:$screen-md){
+										font-size:14px;
+									}
 								}
 							}
 							&:hover,
@@ -96,17 +131,30 @@ html, body {
 			header {
 				background-color: $blue-serli; // default color
 				align-items: center;
-				padding:15px 0 45px 0;
+				padding:15px 0 15px 0;
+				@media (min-width:$screen-sm){
+					padding:15px 0 45px 0;
+				}
 				.container{
-					background:url(../assets/background-image/img-banner-formation.png) no-repeat right;
 					position:relative;
+					padding:0 15px 0 15px;
+					@media (min-width:$screen-sm){
+						padding:0;
+						background:url(../assets/background-image/img-banner-formation.png) no-repeat right;
+					}
 				}
  				h1 {
-					width:360px;
-					height:177px;
+					width:200px;
+					height:100px;
 					text-indent:-99999em;
 					background:url(../assets/background-image/Training-by-serli-logo.png) no-repeat;
 					background-size:100% auto;
+					margin:0 auto;
+					@media (min-width:$screen-sm){
+						width:360px;
+						height:177px;
+						margin:initial;
+					}
 				}
 				.bigTitle {
 					font-size: 30px;
@@ -135,10 +183,18 @@ html, body {
 					padding: 5px;
 					border-top: 10px solid $blue-serli;
 					border-bottom: 10px solid $blue-serli;
-					border-left: 200px solid $blue-serli;
-					border-right: 200px solid $blue-serli;
+					border-left: 15px solid $blue-serli;
+					border-right: 15px solid $blue-serli;
 					background-color: $white;
 					background-repeat: repeat-x;
+					@media (min-width:$screen-sm){
+						border-left: 100px solid $blue-serli;
+						border-right: 100px solid $blue-serli;
+					}
+					@media (min-width:$screen-md){
+						border-left: 200px solid $blue-serli;
+						border-right: 200px solid $blue-serli;
+					}
 					&:focus {
 						background-image: none;
 					  outline: none;
@@ -159,49 +215,76 @@ html, body {
 				}
 // CATEGORY ////////////////////////////////////////////////////////////////////
 				#summary {
-					padding: 0 15vw 0 15vw;
+					@extend .clearfix;
+
+					@media (min-width:$screen-sm){
+						margin-left:-15px;
+						margin-right:-15px;
+					}
+					// ul{
+					// 	&:nth-child(3) .draw, &:nth-child(6) .draw,
+					// 	&:nth-child(9) .draw, &:nth-child(12) .draw,
+					// 	&:nth-child(15) li, &:nth-child(18) li,
+					// 	&:nth-child(21) li, &:nth-child(24) li,
+					// 	&:nth-child(27) li, &:nth-child(30) li,
+					// 	&:nth-child(33) li, &:nth-child(36) li,
+					// 	&:nth-child(39) li, &:nth-child(42) li,
+					// 	&:nth-child(45) li, &:nth-child(48) li,
+					// 	&:nth-child(51) li, &:nth-child(54) li,
+					// 	&:nth-child(57) li, &:nth-child(60) li{
+					// 		margin-right:0%;
+					// 	}
+					// }
 					ul {
+
 						li {
 							list-style: none;
-							background-color: $darkblue; // default color
-							background-image: url(../assets/background-image/article.png);
+							background-color: #b0b0b0; // default color
 							background-repeat: repeat-x;
 							margin: 0;
-							a {
-								text-decoration: none;
-								display: block;
-								color: $white;
+							width:100%;
+							@media (min-width:$screen-sm){
+								width:32%;
+								float:left;
 							}
+
 							&.draw {
-								@-webkit-keyframes come {
-								    from {
-											margin-top: 0px;
-											padding: 0px;
-											font-size: 0px;
-										}
-								    to {
-											margin-top: 5px;
-											padding: 5px;
-											font-size: 30px;
-										}
+								text-align:center;
+								display:inline-block;
+								height:150px;
+								line-height:150px;
+								margin-left:1%;
+								margin-bottom:30px;
+								@media (min-width:$screen-sm){
+									height:170px;
+									line-height:170px;
 								}
-								@-moz-keyframes come {
-								    from {
-											margin-top: 0px;
-											padding: 0px;
-											font-size: 0px;
-										}
-								    to {
-											margin-top: 5px;
-											padding: 5px;
-											font-size: 30px;
-										}
+								@media (min-width:$screen-md){
+									height:150px;
+									line-height:150px;
+								}
+								@media (min-width:$screen-lg){
+									height:130px;
+									line-height:130px;
+								}
+								a {
+									text-decoration: none;
+									display: inline-block;
+									color: $blue-serli;
+									font-weight:600;
+									font-size:20px;
+									text-transform:uppercase;
+									text-align:center;
+									display:inline-block;
+									vertical-align:middle;
+									line-height:25px;
+									padding:15px;
+									&:hover{
+										color:$white;
+									}
 								}
 								-webkit-animation: come 0.2s;
 								-moz-animation: come 0.2s;
-								margin-top: 5px;
-								padding: 5px;
-								font-size: 30px;
 							}
 							&.notdraw {
 								@-webkit-keyframes notcome {
@@ -240,12 +323,24 @@ html, body {
 
 /// TRAINING ///////////////////////////////////////////////////////////////////
 				#training {
-					padding: 10px;
 					td {
 						text-align: center;
+						height:25px;
+						font-size:10px;
+						@media (min-width:$screen-sm){
+							font-size:12px;
+						}
 					}
 					input {
-						background-color: $darkblue;
+						background-color: $blue-serli;
+						border:none;
+						color:$white;
+						width:250px;
+						margin-top:30px;
+						font-weight:800;
+						&:hover{
+							background-color: $blue-serli-light;
+						}
 					}
 					table {
 						table-layout:fixed;
@@ -298,65 +393,69 @@ html, body {
 						padding-left: 0;
 						li {
 							display: inline-block;
-							background-color: $blue; // default color
+							background-color: $blue-serli-light; // default color
 							margin: 5px;
 							padding: 5px;
 							color: $white;
 							font-weight: normal;
 						}
-						// depending on the class a different color ////////////////////////
-							li.colorJava{
-								background-color: $red;
-							}
-							li.colorData{
-								background-color: $orange;
-							}
-							li.colorMobilite{
-								background-color: $yellow;
-							}
-							li.colorWorkshops{
-								background-color: $green;
-							}
-							li.colorLanguagesAlternatifs{
-								background-color: $purple;
-							}
-							li.colorWeb{
-								background-color: $maroon;
-							}
-							li.colorMethodesOutils{
-								background-color: $aqua;
-							}
-						////////////////////////////////////////////////////////////////////
 					}
 				}
 				#index {
-					outline:1px solid red;
+					margin-top:40px;
 					div {
-						width: 32%;
+						width: 100%;
 						display:block;
 						background-color: $blue-serli-light;
 						color: $white;
 						float:left;
-						min-height:460px;
+						padding-bottom:15px;
 						font-size:14px;
-						&:nth-child(1), &:nth-child(2){
-							margin-right:2%;
+						position:relative;
+						margin-bottom:30px;
+						@media (min-width:$screen-sm){
+							width: 32%;
+							margin-bottom:0;
+							min-height:560px;
+							&:nth-child(1), &:nth-child(2){
+								margin-right:2%;
+							}
+						}
+						@media (min-width:$screen-md){
+							min-height:450px;
+						}
+						@media (min-width:$screen-lg){
+							min-height:400px;
 						}
 						h3 {
 							font-weight: 800;
 							background-color: $blue-serli;
-							padding: 15px;
+							padding: 10px;
 							height:74px;
 							margin-bottom:20px;
+							font-size:14px;
+							@media (min-width:$screen-sm){
+								font-size:12px;
+								padding: 10px;
+							}
+							@media (min-width:$screen-md){
+								font-size:14px;
+								padding: 10px;
+							}
+							@media (min-width:$screen-lg){
+								font-size:16px;
+								padding: 15px;
+							}
 						}
 						.followedImg {
 							padding-right: 70px;
 						}
 						img {
-							position: relative;
+							position: absolute;
 							height: 70px;
 							bottom: 70px;
-							outline:1px solid red;
+							top:-15px;
+							right:0;
 						}
 						p {
 							padding: 0 15px 0 15px;
@@ -373,45 +472,69 @@ html, body {
 
 /// FOOTER /////////////////////////////////////////////////////////////////////
 		footer {
-			height: 50px;
 			background-color: $blue-serli;
 			width: 100%;
 			display: flex;
 			align-items: center;
 			color: $white;
-			nav {
-				img {
-					height: 30px;
-					width: 90px;
-					left: 10px;
-					bottom: 10px;
-					position: absolute;
+			padding:30px 0 30px 0;
+			.footer-block{
+				width:100%;
+				float:left;
+				font-size:14px;
+				margin-bottom:40px;
+				@media (min-width:$screen-sm){
+					width:32%;
+					margin-bottom:0;
+					&:nth-child(1), &:nth-child(2){
+						margin-right:2%;
+					}
 				}
-				ul {
-					max-width: 1000px;
-					list-style: none;
-					li {
-						display: inline-block;
-						padding: 0 15px 0 15px;
-						img {
-							height: 20px;
-							width: 20px;
-							left: 0px;
-							bottom: 0px;
-							position: relative;
-						}
-						a {
-							color: $white;
+				h3{
+					margin-bottom:20px;
+					padding-bottom:5px;
+					border-bottom:2px solid #ffffff;
+					text-transform:uppercase;
+					font-weight:300;
+				}
+				ul{
+					list-style-type:none;
+				}
+			}
+			.footer-infos-block{
+				li{
+					margin-bottom:5px;
+					img{
+						height:15px;
+						width:auto;
+						margin-right:10px;
+					}
+					a{
+						color:$white;
+						&:hover{
+							color:$blue-serli-light;
 						}
 					}
-					#rss  {
-						float: left;
-						img {
-							top: 4px;
-							position: relative;
-							height: 40px;
-							width: auto;
+				}
+			}
+			.footer-social-block{
+				ul{
+					li{
+						float:left;
+						img{
+							height:32px;
+							width:auto;
 						}
+					}
+					#facebook{
+						margin-right:4px;
+					}
+					#twitter{
+						margin-right:10px;
+					}
+					#rss img{
+						height:22px;
+						margin-top:5px;
 					}
 				}
 			}
