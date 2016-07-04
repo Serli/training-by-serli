@@ -74,12 +74,19 @@ html, body {
 							display: inline-block;
 							margin-right:10px;
 							height:30px;
+							&:last-child{
+								margin-right:0;
+							}
 							@media (min-width:$screen-sm){
 								margin-right:15px;
 							}
 							@media (min-width:$screen-md){
-								margin-right:20px;
+								margin-right:25px;
 							}
+							@media (min-width:$screen-lg){
+								margin-right:45px;
+							}
+
 							a {
 								text-decoration: none;
 								display: block;
@@ -141,6 +148,7 @@ html, body {
 					@media (min-width:$screen-sm){
 						padding:0;
 						background:url(../assets/background-image/img-banner-formation.png) no-repeat right;
+						background-size:auto 100%;
 					}
 				}
  				h1 {
@@ -151,6 +159,11 @@ html, body {
 					background-size:100% auto;
 					margin:0 auto;
 					@media (min-width:$screen-sm){
+						width:270px;
+						height:133px;
+						margin:initial;
+					}
+					@media (min-width:$screen-md){
 						width:360px;
 						height:177px;
 						margin:initial;
@@ -255,6 +268,11 @@ html, body {
 								line-height:150px;
 								margin-left:1%;
 								margin-bottom:30px;
+								border-left:3px solid $blue-serli;
+								transition: all 0.3s ease-in-out;
+								&:hover{
+									border-left:10px solid $blue-serli;
+								}
 								@media (min-width:$screen-sm){
 									height:170px;
 									line-height:170px;
@@ -271,7 +289,7 @@ html, body {
 									text-decoration: none;
 									display: inline-block;
 									color: $blue-serli;
-									font-weight:600;
+									font-weight:800;
 									font-size:20px;
 									text-transform:uppercase;
 									text-align:center;

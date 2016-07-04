@@ -81,12 +81,17 @@ html, body {
             display: inline-block;
             margin-right: 10px;
             height: 30px; }
+            html #container main aside nav ul li:last-child, body #container main aside nav ul li:last-child {
+              margin-right: 0; }
             @media (min-width: 768px) {
               html #container main aside nav ul li, body #container main aside nav ul li {
                 margin-right: 15px; } }
             @media (min-width: 992px) {
               html #container main aside nav ul li, body #container main aside nav ul li {
-                margin-right: 20px; } }
+                margin-right: 25px; } }
+            @media (min-width: 1200px) {
+              html #container main aside nav ul li, body #container main aside nav ul li {
+                margin-right: 45px; } }
             html #container main aside nav ul li a, body #container main aside nav ul li a {
               text-decoration: none;
               display: block;
@@ -135,7 +140,8 @@ html, body {
         @media (min-width: 768px) {
           html #container main header .container, body #container main header .container {
             padding: 0;
-            background: url(../assets/background-image/img-banner-formation.png) no-repeat right; } }
+            background: url(../assets/background-image/img-banner-formation.png) no-repeat right;
+            background-size: auto 100%; } }
       html #container main header h1, body #container main header h1 {
         width: 200px;
         height: 100px;
@@ -144,6 +150,11 @@ html, body {
         background-size: 100% auto;
         margin: 0 auto; }
         @media (min-width: 768px) {
+          html #container main header h1, body #container main header h1 {
+            width: 270px;
+            height: 133px;
+            margin: initial; } }
+        @media (min-width: 992px) {
           html #container main header h1, body #container main header h1 {
             width: 360px;
             height: 177px;
@@ -217,8 +228,12 @@ html, body {
           line-height: 150px;
           margin-left: 1%;
           margin-bottom: 30px;
+          border-left: 3px solid #1068b0;
+          transition: all 0.3s ease-in-out;
           -webkit-animation: come 0.2s;
           -moz-animation: come 0.2s; }
+          html #container main article #summary ul li.draw:hover, body #container main article #summary ul li.draw:hover {
+            border-left: 10px solid #1068b0; }
           @media (min-width: 768px) {
             html #container main article #summary ul li.draw, body #container main article #summary ul li.draw {
               height: 170px;
@@ -235,7 +250,7 @@ html, body {
             text-decoration: none;
             display: inline-block;
             color: #1068b0;
-            font-weight: 600;
+            font-weight: 800;
             font-size: 20px;
             text-transform: uppercase;
             text-align: center;
