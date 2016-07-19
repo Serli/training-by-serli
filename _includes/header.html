@@ -22,7 +22,7 @@
 			{% endif %}
 		{% endif %}
 		{% assign my_lenght = title|size %}
-		<a href="{{ site.url }}/{{ site.baseurl }}">
+		<a href="{{ site.baseurl }}/">
 			<h1 class="{% if 25 <= my_lenght %}bigTitle{% else %}smalTitle{% endif %}">{{ title }}</h1>
 		</a>
 	</div>
@@ -39,7 +39,7 @@
 				<!-- /// home ////////////////////////////////////////////////////// -->
 				<li><a class=
 						"clearfix {% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
-						href="{{ site.url }}/{{ site.baseurl }}"
+						href="{{ site.baseurl }}/"
 					>
 						<img src="{{ site.baseurl }}/assets/TrainingsCategories/WhiteIcon/home.png"/>
 						<span>Home</span>
