@@ -52,6 +52,9 @@ img {
 body {
   font-family: "Open Sans", sans-serif; }
 
+.containerdefault .page-title {
+  display: none; }
+
 html, body {
   height: 100%; }
   html #container, body #container {
@@ -85,7 +88,7 @@ html, body {
               margin-right: 0; }
             @media (min-width: 768px) {
               html #container main aside nav ul li, body #container main aside nav ul li {
-                margin-right: 15px; } }
+                margin-right: 10px; } }
             @media (min-width: 992px) {
               html #container main aside nav ul li, body #container main aside nav ul li {
                 margin-right: 25px; } }
@@ -117,11 +120,11 @@ html, body {
                 display: none;
                 float: left;
                 font-size: 14px;
-                font-weight: 600; }
+                font-weight: 500; }
                 @media (min-width: 768px) {
                   html #container main aside nav ul li a span, body #container main aside nav ul li a span {
                     display: inline-block;
-                    font-size: 13px; } }
+                    font-size: 11px; } }
                 @media (min-width: 992px) {
                   html #container main aside nav ul li a span, body #container main aside nav ul li a span {
                     font-size: 14px; } }
@@ -153,11 +156,6 @@ html, body {
           html #container main header h1, body #container main header h1 {
             width: 270px;
             height: 133px;
-            margin: initial; } }
-        @media (min-width: 992px) {
-          html #container main header h1, body #container main header h1 {
-            width: 360px;
-            height: 177px;
             margin: initial; } }
       html #container main header .bigTitle, body #container main header .bigTitle {
         font-size: 30px;
@@ -216,7 +214,9 @@ html, body {
         background-color: #e5e6e8;
         background-repeat: repeat-x;
         margin: 0;
-        width: 100%; }
+        width: 100%;
+        height: 0;
+        line-height: 0; }
         @media (min-width: 768px) {
           html #container main article #summary ul li, body #container main article #summary ul li {
             width: 32%;
@@ -292,14 +292,18 @@ html, body {
           html #container main article #training td, body #container main article #training td {
             font-size: 12px; } }
       html #container main article #training input, body #container main article #training input {
-        background-color: #1068b0;
         border: none;
         color: #ffffff;
-        width: 250px;
+        width: 280px;
         margin-top: 30px;
-        font-weight: 800; }
+        font-weight: 800;
+        padding: 15px 0 15px 45px;
+        font-size: 14px;
+        background: #1068b0 url(../assets/download.png) no-repeat 15px center;
+        background-size: 30px auto; }
         html #container main article #training input:hover, body #container main article #training input:hover {
-          background-color: #3db8d8; }
+          background: #3db8d8 url(../assets/download.png) no-repeat 15px center;
+          background-size: 30px auto; }
       html #container main article #training table, body #container main article #training table {
         table-layout: fixed;
         border-collapse: separate;
@@ -313,12 +317,12 @@ html, body {
       html #container main article #training #detail, body #container main article #training #detail {
         width: 100%; }
         html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
-          height: 30px; }
+          height: 50px; }
           html #container main article #training #detail thead tr td img, body #container main article #training #detail thead tr td img {
             height: 30px;
             width: auto; }
         html #container main article #training #detail tbody tr, body #container main article #training #detail tbody tr {
-          background-color: #b0b0b0;
+          background-color: #e5e6e8;
           font-style: italic; }
         html #container main article #training #detail tbody tr:first-child, body #container main article #training #detail tbody tr:first-child {
           font-style: normal; }

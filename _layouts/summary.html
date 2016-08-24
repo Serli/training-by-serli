@@ -4,11 +4,11 @@ layout: default
 <!-- /// SUMMARY /////////////////////////////////////////////////////////// -->
 <div ng-app="formation" ng-controller="Summary">
   <input class="{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
-    type="text" ng-model="research.title" placeholder="Search...">
+    type="text" ng-model="research.title" placeholder="Rechercher une formation">
   <div id="summary">
-    <ul ng-repeat="n in (trainings)">
+    <ul class="clearfix">
       <!-- /// training ////////////////////////////////////////////////////// -->
-        <li class="[[n.class]] [[(n.title.toLowerCase().indexOf(research.title.toLowerCase()) > -1) ? 'draw' : 'notdraw']]">
+        <li ng-repeat="n in (trainings)" class="[[n.class]] [[(n.title.toLowerCase().indexOf(research.title.toLowerCase()) > -1) ? 'draw' : 'notdraw']]">
           <a href="[[n.href]]">[[n.title]]</a>
         </li>
       <!-- /////////////////////////////////////////////////////////////////// -->
