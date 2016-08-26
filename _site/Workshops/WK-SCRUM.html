@@ -122,43 +122,41 @@
 						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
-  <table id="detail">
-    <thead>
-      <tr>
-        <td>
-          <img src="/formations/assets/detail/duration.png" />
-           DURÉE
-        </td>
-        <td>
-          <img src="/formations/assets/detail/public.png" />
-           PUBLIC
-        </td>
-        <td>
-          <img src="/formations/assets/detail/price.png" />
-           TARIF
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan=
-          1
-        > 1 jour </td>
-        <td rowspan=2 > Tout public </td>
-        <td rowspan=
-          1
-        > 690 € HT </td>
-      </tr>
-      <tr>
-        
-          <td> 100% pratique </td>
-        
-        
-          <td> par participant </td>
-        
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>1 jour</p>
+          <p><em>100% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Tout public</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>690 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
   <!-- /// reference /////////////////////////////////////////////////////// -->

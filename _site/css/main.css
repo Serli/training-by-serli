@@ -349,6 +349,51 @@ html, body {
         padding-bottom: 10px;
         text-transform: uppercase;
         clear: both; }
+      @media (min-width: 768px) {
+        html #container main article #training .detail, body #container main article #training .detail {
+          display: flex; } }
+      html #container main article #training .detail .detail-block, body #container main article #training .detail .detail-block {
+        width: 100%;
+        float: left;
+        background: #e5e6e8;
+        margin-bottom: 20px; }
+        @media (min-width: 768px) {
+          html #container main article #training .detail .detail-block, body #container main article #training .detail .detail-block {
+            width: 32%;
+            margin-right: 2%;
+            margin-bottom: 0; }
+            html #container main article #training .detail .detail-block:nth-child(3), body #container main article #training .detail .detail-block:nth-child(3) {
+              margin-right: 0; } }
+        html #container main article #training .detail .detail-block .detail-header, body #container main article #training .detail .detail-block .detail-header {
+          text-align: center;
+          background: #ffffff; }
+          html #container main article #training .detail .detail-block .detail-header p, body #container main article #training .detail .detail-block .detail-header p {
+            display: inline-block; }
+        html #container main article #training .detail .detail-block .detail-duration-header p, body #container main article #training .detail .detail-block .detail-duration-header p {
+          background: url(../assets/detail/duration.png) no-repeat left;
+          background-size: auto 30px;
+          padding: 10px 0 10px 40px;
+          font-weight: 600; }
+        html #container main article #training .detail .detail-block .detail-public-header p, body #container main article #training .detail .detail-block .detail-public-header p {
+          background: url(../assets/detail/public.png) no-repeat left;
+          background-size: auto 30px;
+          padding: 10px 0 10px 35px;
+          font-weight: 600; }
+        html #container main article #training .detail .detail-block .detail-price-header p, body #container main article #training .detail .detail-block .detail-price-header p {
+          background: url(../assets/detail/price.png) no-repeat left;
+          background-size: auto 30px;
+          padding: 10px 0 10px 40px;
+          font-weight: 600; }
+        html #container main article #training .detail .detail-block .detail-content, body #container main article #training .detail .detail-block .detail-content {
+          text-align: center;
+          min-height: 50px;
+          padding: 5px;
+          display: flex;
+          justify-content: center;
+          flex-direction: column; }
+          html #container main article #training .detail .detail-block .detail-content p, body #container main article #training .detail .detail-block .detail-content p {
+            font-size: 14px;
+            line-height: 20px; }
       html #container main article #training #detail, body #container main article #training #detail {
         width: 100%; }
         html #container main article #training #detail thead tr td, body #container main article #training #detail thead tr td {
