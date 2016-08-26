@@ -47,6 +47,13 @@ layout: default
   {% if page.ref %}
     <p id="ref">Réf. {{ page.ref }}</p>
   {% endif %}
+
+  <div class="interaction-container clearfix">
+    <input class="{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
   <!-- /// presentation //////////////////////////////////////////////////// -->
   <h3>PRÉSENTATION</h3>
   {{content}}

@@ -152,6 +152,16 @@ html, body {
 					padding:0 15px 0 15px;
 					@media (min-width:$screen-sm){
 						padding:0;
+						background:url(../assets/background-image/img-banner-formation.png) no-repeat bottom right;
+						background-size:auto 65%;
+					}
+					@media (min-width:$screen-md){
+						padding:0;
+						background:url(../assets/background-image/img-banner-formation.png) no-repeat bottom right;
+						background-size:auto 75%;
+					}
+					@media (min-width:$screen-lg){
+						padding:0;
 						background:url(../assets/background-image/img-banner-formation.png) no-repeat right;
 						background-size:auto 100%;
 					}
@@ -350,19 +360,48 @@ html, body {
 							font-size:12px;
 						}
 					}
+					.interaction-container{
+						margin-top:20px;
+						input{
+							width: 135px;
+							float:left;
+							margin:0;
+							margin-right:10px;
+						}
+						a{
+							display:inline-block;
+							width: 135px;
+							height:40px;
+							line-height:40px;
+							background:$blue-serli url(../assets/register.png) no-repeat 10px center;
+							background-size:auto 25px;
+							color:$white;
+							font-weight:700;
+							font-size:14px;
+							text-decoration:none;
+							float:left;
+							padding:0 0 0 45px;
+							&:hover{
+								background:$blue-serli-light url(../assets/register.png) no-repeat 10px center;
+								background-size:auto 25px;
+							}
+						}
+					}
 					input {
 						border:none;
 						color:$white;
 						width:280px;
 						margin-top:30px;
 						font-weight:800;
-						padding:15px 0 15px 45px;
+						height: 40px;
+						line-height:40px;
+						padding:0 0 0 35px;
 						font-size:14px;
-						background:$blue-serli url(../assets/download.png) no-repeat 15px center;
-						background-size:30px auto;
+						background:$blue-serli url(../assets/download.png) no-repeat 10px center;
+						background-size:25px auto;
 						&:hover{
-							background:$blue-serli-light url(../assets/download.png) no-repeat 15px center;
-							background-size:30px auto;
+							background:$blue-serli-light url(../assets/download.png) no-repeat 10px center;
+							background-size:25px auto;
 						}
 					}
 					table {
