@@ -122,49 +122,54 @@
 						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
-  <table id="detail">
-    <thead>
-      <tr>
-        <td>
-          <img src="/formations/assets/detail/duration.png" />
-           DURÉE
-        </td>
-        <td>
-          <img src="/formations/assets/detail/public.png" />
-           PUBLIC
-        </td>
-        <td>
-          <img src="/formations/assets/detail/price.png" />
-           TARIF
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan=
-          1
-        > 3 jours </td>
-        <td rowspan=2 > Développeurs expérimentés Java ou Scala </td>
-        <td rowspan=
-          1
-        > 1990 € HT </td>
-      </tr>
-      <tr>
-        
-          <td> 50% théorie, 50% pratique </td>
-        
-        
-          <td> par participant </td>
-        
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>3 jours</p>
+          <p><em>50% théorie, 50% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs expérimentés Java ou Scala</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1990 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
   <!-- /// reference /////////////////////////////////////////////////////// -->
   
     <p id="ref">Réf. TR-AKKA</p>
   
+
+  <div class="interaction-container clearfix">
+    <input class="colorLanguagesAlternatifs"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
   <!-- /// presentation //////////////////////////////////////////////////// -->
   <h3>PRÉSENTATION</h3>
   <p>Akka est un framework écrit en Scala qui implémente le pattern Acteur tel que défini dans Erlang. Au fur et à mesure des années, Akka s’est doté de divers modules basés sur le modèle de programmation acteur, pour devenir une référence en terme d’outillage middleware.

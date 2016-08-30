@@ -152,6 +152,16 @@ html, body {
 					padding:0 15px 0 15px;
 					@media (min-width:$screen-sm){
 						padding:0;
+						background:url(../assets/background-image/img-banner-formation.png) no-repeat bottom right;
+						background-size:auto 65%;
+					}
+					@media (min-width:$screen-md){
+						padding:0;
+						background:url(../assets/background-image/img-banner-formation.png) no-repeat bottom right;
+						background-size:auto 75%;
+					}
+					@media (min-width:$screen-lg){
+						padding:0;
 						background:url(../assets/background-image/img-banner-formation.png) no-repeat right;
 						background-size:auto 100%;
 					}
@@ -350,19 +360,48 @@ html, body {
 							font-size:12px;
 						}
 					}
+					.interaction-container{
+						margin-top:20px;
+						input{
+							width: 135px;
+							float:left;
+							margin:0;
+							margin-right:10px;
+						}
+						a{
+							display:inline-block;
+							width: 135px;
+							height:40px;
+							line-height:40px;
+							background:$blue-serli url(../assets/register.png) no-repeat 10px center;
+							background-size:auto 25px;
+							color:$white;
+							font-weight:700;
+							font-size:14px;
+							text-decoration:none;
+							float:left;
+							padding:0 0 0 45px;
+							&:hover{
+								background:$blue-serli-light url(../assets/register.png) no-repeat 10px center;
+								background-size:auto 25px;
+							}
+						}
+					}
 					input {
 						border:none;
 						color:$white;
 						width:280px;
 						margin-top:30px;
 						font-weight:800;
-						padding:15px 0 15px 45px;
+						height: 40px;
+						line-height:40px;
+						padding:0 0 0 35px;
 						font-size:14px;
-						background:$blue-serli url(../assets/download.png) no-repeat 15px center;
-						background-size:30px auto;
+						background:$blue-serli url(../assets/download.png) no-repeat 10px center;
+						background-size:25px auto;
 						&:hover{
-							background:$blue-serli-light url(../assets/download.png) no-repeat 15px center;
-							background-size:30px auto;
+							background:$blue-serli-light url(../assets/download.png) no-repeat 10px center;
+							background-size:25px auto;
 						}
 					}
 					table {
@@ -376,6 +415,68 @@ html, body {
 						padding-bottom: 10px;
 						text-transform: uppercase;
 						clear: both;
+					}
+					.detail{
+						@media (min-width:$screen-sm){
+							display:flex;
+						}
+						.detail-block{
+							width:100%;
+							float:left;
+							background:#e5e6e8;
+							margin-bottom:20px;
+							@media (min-width:$screen-sm){
+								width:32%;
+								margin-right:2%;
+								margin-bottom:0;
+								&:nth-child(3){
+									margin-right:0;
+								}
+							}
+							.detail-header{
+								text-align:center;
+								background:$white;
+								p{
+									display:inline-block;
+								}
+							}
+							.detail-duration-header{
+								p{
+									background:url(../assets/detail/duration.png) no-repeat left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 40px;
+									font-weight:600;
+								}
+							}
+							.detail-public-header{
+								p{
+									background:url(../assets/detail/public.png) no-repeat left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 35px;
+									font-weight:600;
+								}
+							}
+							.detail-price-header{
+								p{
+									background:url(../assets/detail/price.png) no-repeat left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 40px;
+									font-weight:600;
+								}
+							}
+							.detail-content{
+								text-align:center;
+								min-height:50px;
+								padding:5px;
+								display: flex;
+  							justify-content: center;
+  							flex-direction: column;
+								p{
+									font-size:14px;
+									line-height: 20px;
+								}
+							}
+						}
 					}
 					#detail {
 						width: 100%;
@@ -392,7 +493,7 @@ html, body {
 						}
 						tbody {
 							tr {
-								background-color: #e5e6e8;;
+								background-color: #e5e6e8;
 								font-style: italic;
 							}
 							tr:first-child {

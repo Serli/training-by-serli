@@ -4,49 +4,54 @@ layout: default
 <!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
-  <table id="detail">
-    <thead>
-      <tr>
-        <td>
-          <img src="{{ site.baseurl }}/assets/detail/duration.png" />
-          {{' '}}DURÉE
-        </td>
-        <td>
-          <img src="{{ site.baseurl }}/assets/detail/public.png" />
-          {{' '}}PUBLIC
-        </td>
-        <td>
-          <img src="{{ site.baseurl }}/assets/detail/price.png" />
-          {{' '}}TARIF
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan=
-          {% if page.duration-description %}1{%else%}2{%endif%}
-        > {{ page.duration }} </td>
-        <td rowspan=2 > {{ page.public }} </td>
-        <td rowspan=
-          {% if page.costs-description %}1{%else%}2{%endif%}
-        > {{ page.costs }} </td>
-      </tr>
-      <tr>
-        {% if page.duration-description %}
-          <td> {{ page.duration-description }} </td>
-        {%endif%}
-        {% if page.costs-description %}
-          <td> {{ page.costs-description }} </td>
-        {%endif%}
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p>{{' '}}DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>{{ page.duration }}</p>
+          <p><em>{{ page.duration-description }}</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p>{{' '}}PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>{{ page.public }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p>{{' '}}TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>{{ page.costs }}</p>
+          <p><em>{{ page.costs-description }}</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
   <!-- /// reference /////////////////////////////////////////////////////// -->
   {% if page.ref %}
     <p id="ref">Réf. {{ page.ref }}</p>
   {% endif %}
+
+  <div class="interaction-container clearfix">
+    <input class="{% if page.summary %}color{{page.summary}}{% else %}{% if page.categories %}color{{page.categories[1]}}{% else %}colordefault{% endif %}{% endif %}"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
   <!-- /// presentation //////////////////////////////////////////////////// -->
   <h3>PRÉSENTATION</h3>
   {{content}}

@@ -122,49 +122,54 @@
 						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
 <div id="training" ng-app="formation" ng-controller="Training">
   <!-- /// detail ////////////////////////////////////////////////////////// -->
-  <table id="detail">
-    <thead>
-      <tr>
-        <td>
-          <img src="/formations/assets/detail/duration.png" />
-           DURÉE
-        </td>
-        <td>
-          <img src="/formations/assets/detail/public.png" />
-           PUBLIC
-        </td>
-        <td>
-          <img src="/formations/assets/detail/price.png" />
-           TARIF
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan=
-          1
-        > 2 jours </td>
-        <td rowspan=2 > Développeurs expérimentés, Architectes </td>
-        <td rowspan=
-          1
-        > 1140 € HT </td>
-      </tr>
-      <tr>
-        
-          <td> 50% théorie, 50% pratique </td>
-        
-        
-          <td> par participant </td>
-        
-      </tr>
-    </tbody>
-  </table>
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>2 jours</p>
+          <p><em>50% théorie, 50% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs expérimentés, Architectes</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1140 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
   <!-- /// reference /////////////////////////////////////////////////////// -->
   
     <p id="ref">Réf. TR-JAVASCRIPT</p>
   
+
+  <div class="interaction-container clearfix">
+    <input class="colorWeb"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
   <!-- /// presentation //////////////////////////////////////////////////// -->
   <h3>PRÉSENTATION</h3>
   <p>Avec l’arrivée de HTML 5 et des frameworks MVC clients, le JavaScript a désormais pris une part très importante dans le développement de clients web.<br />
