@@ -1,28 +1,22 @@
 ---
 layout: training
-title: Developpement Web sur le Framework Play 2
-permalink: /Workshops/WK-PLAY2
-public: Développeur Java ou Scala.
-costs: 1990 € HT
+title: Angular JS
+permalink: /Workshops/WK-ANGULARJS
+public: Développeurs débutants ou expérimentés.
+costs: 1140 € HT
 costs-description: par participant
-duration: 3 jours
+duration: 2 jours
 duration-description: 100% pratique
-ref: WK-PLAY2
+ref: WK-ANGULARJS
 subject: [
-  'Play 2',
-  'Java ou Scala',
-  'Javascript',
-  'Akka',
-  'HTML5',
-  'CSS3'
+  'Découverte d'Angular JS',
+  'Injection de dépendances',
+  'Directives',
+  'Tests Unitaires et tests end-to-end',
+  'Ecosystème et outillage',
 ]
-presentation: 'Au cours de ce workshop de trois jours, apprenez à développer rapidement des applications web basées sur le framework Play.
-Destiné à une équipe de 1 à 4 développeurs, cet atelier vous permettra de mettre en oeuvre une application tirant au mieux partie du framework Play en 3 jours.
-Découvrez la simplicité proposée par le Play et la rapidité de mise en oeuvre associée.
-Apprenez à tirer le meilleur parti du développement asynchrone et du système d’acteurs proposé par Akka. Créez de nouveaux usages en tirant parti des nouveautés temps réel offertes par HTML5.'
+presentation: 'JavaScript est aujourd'hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernièrs années.
+Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end !
+Une formation sous la forme d'un workshop avec 100% de travaux pratiques, au cours de laquelle vous réaliserez entièrement une application, pour aborder les différents aspects du développement Angular un par un.
+La meilleure façon d'aborder AngularJS !'
 ---
-
-Au cours de ce workshop de trois jours, apprenez à développer rapidement des applications web basées sur le framework Play.  
-Destiné à une équipe de 1 à 4 développeurs, cet atelier vous permettra de mettre en oeuvre une application tirant au mieux partie du framework Play en 3 jours.  
-Découvrez la simplicité proposée par le Play et la rapidité de mise en oeuvre associée.  
-Apprenez à tirer le meilleur parti du développement asynchrone et du système d’acteurs proposé par Akka. Créez de nouveaux usages en tirant parti des nouveautés temps réel offertes par HTML5.  
