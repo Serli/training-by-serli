@@ -6,9 +6,9 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Administration</title>
-	<link rel="icon" type="image/png" href="/formations/assets/favicon.png" />
-	<link rel="canonical" href="http://localhost:4000//formations/administration/ListeContenu.html">
-	<link rel="stylesheet" href="/formations/css/administration.css">
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="canonical" href="http://localhost:4000//administration/ListeContenu.html">
+	<link rel="stylesheet" href="/css/administration.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script>
 		var app = angular.module('formation', [])
@@ -63,10 +63,10 @@
   </div>
 
   <p>
-    <a href="/formations/administration/formulaireData.html">Ajout et modification des formations</a>
+    <a href="/administration/formulaireData.html">Ajout et modification des formations</a>
     <br />
     <br />
-    <a href="http://localhost:4000///formations">Page d'accueil</a>
+    <a href="http://localhost:4000//">Page d'accueil</a>
   </p>
 
 </div>
@@ -78,9 +78,309 @@
     
       {
         myClass: "Old",
+        myDate: "2016-08-30",
+        date: "30 August 2016 - ",
+        href: "/Workshops/WK-REACTJS",
+        title: "React JS",
+        public: "Développeurs.",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-REACTJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Applications web avec React");
+          
+            resultSubject.push("Applications mobiles avec React-native");
+          
+            resultSubject.push("SPA avec React-router");
+          
+            resultSubject.push("ES2015 avec babel");
+          
+            resultSubject.push("Tests avec mocha / chai / sinon / enzyme");
+          
+            resultSubject.push("Build avec Webpack");
+          
+            resultSubject.push("React ninja ;-)");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Ce workshop vous permettra de prendre en main et maîtriser React, la librairie Javascript développée par Facebook. Au cours de ce workshop, vous mettrez en application les concepts fondamentaux de React et vous utiliserez diverses librairies incontournables de l’écosystème React, telles que react-router pour le développement d’application “Single Page” ou encore redux, implémentation du pattern Flux. Vous aurez également l’occasion de tenter une incursion dans le monde du développement mobile avec react-native. Vous manipulerez également l’écosystème riche de React en terme de d’outillage de build, de qualité et de test. Au terme de ces deux jours de workshop, vous serez à même de développer efficacement des applications web modernes ainsi que des applications mobiles en utilisant React comme brique de base !"
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-08-30",
+        date: "30 August 2016 - ",
+        href: "/Web/WK-ANGULARJS",
+        title: "AngularJS",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "20% théorie, 80% pratique",
+        ref: "TR-ANGULARJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Découverte d’AngularJS");
+          
+            resultSubject.push("Injection de dépendances");
+          
+            resultSubject.push("Directives");
+          
+            resultSubject.push("Tests unitaires et tests end-to-end");
+          
+            resultSubject.push("Ecosystème et outillage");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Qu'est-ce qu'une application web moderne ?";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Développer avec AngularJS (ES 6 pur)";
+            var activityProgram = [];
+            
+              activityProgram.push("HTML et 'direct binding'");
+            
+              activityProgram.push("Utiliser les filtres");
+            
+              activityProgram.push("$q promises avec RXJS");
+            
+              activityProgram.push("La communication Client-Serveur avec $http");
+            
+              activityProgram.push("Utiliser les services");
+            
+              activityProgram.push("Utiliser les Routes avec UI Router");
+            
+              activityProgram.push("'Scope inheritance'");
+            
+              activityProgram.push("Créer des directives spécifiques");
+            
+              activityProgram.push("Intégration dans un portail (bootstrap d'application)");
+            
+              activityProgram.push("Industrialisation (NPM / Webpack)");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les tests avec Angular JS";
+            var activityProgram = [];
+            
+              activityProgram.push("Test unitaire avec Jasmine");
+            
+              activityProgram.push("Test unitaire de composants AngularJS avec Jasmine et Karma + Chai");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modularisation du projet";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Préparation à l'arrivée d'Angular 2";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années. Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end ! Une formation avec 80% de travaux pratiques, la meilleure façon d’aborder AngularJS !"
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-08-30",
+        date: "30 August 2016 - ",
+        href: "/Web/TR-REACTJS",
+        title: "ReactJS",
+        public: "Développeurs ayant une maîtrise des fondamentaux du web et du langage JavaScript.",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-REACTJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Les bases de React");
+          
+            resultSubject.push("Outillage");
+          
+            resultSubject.push("Testing");
+          
+            resultSubject.push("Single Page Application avec React-Routeur");
+          
+            resultSubject.push("Concepts avancés");
+          
+            resultSubject.push("Pattern Flux");
+          
+            resultSubject.push("Redux");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction";
+            var activityProgram = [];
+            
+              activityProgram.push("Le développement web aujourd'hui");
+            
+              activityProgram.push("Tour d'horizon des frameworks JavaScript");
+            
+              activityProgram.push("React : positionnemen, historique des utilisateurs");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "La philosophie de React";
+            var activityProgram = [];
+            
+              activityProgram.push("Simplicité");
+            
+              activityProgram.push("Le V de MVC");
+            
+              activityProgram.push("Approche déclarative");
+            
+              activityProgram.push("Composants réutilisables et composables");
+            
+              activityProgram.push("Composants à état");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les bases de React";
+            var activityProgram = [];
+            
+              activityProgram.push("Le rendu d'un composant");
+            
+              activityProgram.push("La syntaxe JSX");
+            
+              activityProgram.push("Les propriétés");
+            
+              activityProgram.push("L'état");
+            
+              activityProgram.push("Cycle de vie et appels AJAX");
+            
+              activityProgram.push("Gestion du style");
+            
+              activityProgram.push("Virtual DOM");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Outillage";
+            var activityProgram = [];
+            
+              activityProgram.push("Choix d'un IDE");
+            
+              activityProgram.push("Babel et webpack");
+            
+              activityProgram.push("ESLint");
+            
+              activityProgram.push("React Developer Tools");
+            
+              activityProgram.push("Starters Packs");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Bonnes pratiques";
+            var activityProgram = [];
+            
+              activityProgram.push("Penser React");
+            
+              activityProgram.push("Smart vs. Dumbs components");
+            
+              activityProgram.push("Par où commencer le développement ?");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Testing";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Single Page Application";
+            var activityProgram = [];
+            
+              activityProgram.push("Généralités");
+            
+              activityProgram.push("Utilisation de react-router");
+            
+              activityProgram.push("History");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Concepts avancés";
+            var activityProgram = [];
+            
+              activityProgram.push("Utilisation du contexte");
+            
+              activityProgram.push("Higher Order Components");
+            
+              activityProgram.push("Animations");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Utilisation de librairies tierces";
+            var activityProgram = [];
+            
+              activityProgram.push("Material-UI");
+            
+              activityProgram.push("ChartJS");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Communications entre les composants";
+            var activityProgram = [];
+            
+              activityProgram.push("Les limites du modèle parent/child");
+            
+              activityProgram.push("Le pattern Flux");
+            
+              activityProgram.push("Les implémentations de Flux");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Redux";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts de base");
+            
+              activityProgram.push("Comment utiliser Redux");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Pour aller plus loin...";
+            var activityProgram = [];
+            
+              activityProgram.push("Performances");
+            
+              activityProgram.push("React Native");
+            
+              activityProgram.push("JavaScript Universel");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vous permettra de découvrir React, la librairie Javascript développée par Facebook. Au cours de cette formation, vous apprendrez les concepts fondamentaux de React ainsi que des concepts plus avancés telles que react-router pour le développement d’application “Single Page” ou encore redux, implémentation du pattern Flux. Vous appréhenderez également l’écosystème riche de React en terme de d’outillage et de testing. Au terme de ces trois jours de formation, vous serez à même de développer efficacement des applications web modernes !"
+      },
+    
+      {
+        myClass: "Old",
         myDate: "2016-04-29",
         date: "29 April 2016 - ",
-        href: "/formations/Web/TR-ANGULARJS",
+        href: "/Web/TR-ANGULARJS",
         title: "AngularJS",
         public: "Développeurs débutants ou expérimentés",
         costs: "1690 € HT",
@@ -167,7 +467,7 @@
         myClass: "Old",
         myDate: "2016-04-27",
         date: "27 April 2016 - ",
-        href: "/formations/Workshops/WK-WINDPHONE",
+        href: "/Workshops/WK-WINDPHONE",
         title: "Windows Mobile",
         public: "Développeurs débutants ou expérimentés, Architectes",
         costs: "1990 € HT",
@@ -206,7 +506,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-ELK",
+        href: "/Workshops/WK-ELK",
         title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)",
         public: "Tous types de profils.",
         costs: "1340 € HT",
@@ -239,7 +539,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-SQL",
+        href: "/Workshops/WK-SQL",
         title: "NoSQL",
         public: "Développeurs débutants ou expérimentés",
         costs: "1990 € HT",
@@ -274,7 +574,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-MONGODB",
+        href: "/Workshops/WK-MONGODB",
         title: "Mongo DB",
         public: "Développeurs débutants ou expérimentés",
         costs: "1340 € HT",
@@ -311,7 +611,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-DOCKER2",
+        href: "/Workshops/WK-DOCKER2",
         title: "Docker : Du développement a la production",
         public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
         costs: "1340 € HT",
@@ -350,7 +650,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-PLAY2",
+        href: "/Workshops/WK-PLAY2",
         title: "Developpement Web sur le Framework Play 2",
         public: "Développeur Java ou Scala.",
         costs: "1990 € HT",
@@ -387,7 +687,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-HYBRIDE",
+        href: "/Workshops/WK-HYBRIDE",
         title: "Developpement mobile hybride",
         public: "Développeurs débutants ou expérimentés, Architectes",
         costs: "1990 € HT",
@@ -428,7 +728,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-IOS",
+        href: "/Workshops/WK-IOS",
         title: "Développement iOS",
         public: "Développeurs débutants ou expérimentés, Architectes",
         costs: "1990 € HT",
@@ -467,7 +767,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-DOCKER1",
+        href: "/Workshops/WK-DOCKER1",
         title: "Developpement et integration continue avec Docker",
         public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
         costs: "690 € HT",
@@ -502,7 +802,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-ANDROID",
+        href: "/Workshops/WK-ANDROID",
         title: "Developpement Android",
         public: "Développeurs débutants ou expérimentés, Architectes",
         costs: "1990 € HT",
@@ -539,7 +839,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Workshops/WK-SCRUM",
+        href: "/Workshops/WK-SCRUM",
         title: "Decouvrez Scrum avec des Legos",
         public: "Tout public",
         costs: "690 € HT",
@@ -570,7 +870,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Web/TR-JAVASCRIPT",
+        href: "/Web/TR-JAVASCRIPT",
         title: "Javascript Avancé",
         public: "Développeurs expérimentés, Architectes",
         costs: "1140 € HT",
@@ -658,7 +958,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Web/TR-WEB",
+        href: "/Web/TR-WEB",
         title: "Introduction au développement Web",
         public: "Tout public",
         costs: "490 € HT",
@@ -736,7 +1036,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Mobilite/TR-WINDPHONE",
+        href: "/Mobilite/TR-WINDPHONE",
         title: "Développement WindowsPhone",
         public: "Développeurs C# et Chefs de projets techniques",
         costs: "2790 € HT",
@@ -834,7 +1134,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Mobilite/TR-IOS",
+        href: "/Mobilite/TR-IOS",
         title: "Développement iOS",
         public: "Développeur ayant de l’expérience dans un langage Orienté Objets",
         costs: "1990 € HT",
@@ -942,7 +1242,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Mobilite/TR-HYBRIDE",
+        href: "/Mobilite/TR-HYBRIDE",
         title: "Développement Hybride",
         public: "Développeur ayant déjà une connaissance HTML/CSS et javascript",
         costs: "1690 € HT",
@@ -1034,7 +1334,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Mobilite/TR-ANDROID",
+        href: "/Mobilite/TR-ANDROID",
         title: "Développement Android",
         public: "Développeur ayant déjà une connaissance de Java.",
         costs: "1690 € HT",
@@ -1128,7 +1428,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-SELENIUM",
+        href: "/MethodesOutils/TR-SELENIUM",
         title: "Selenium",
         public: "Testeurs, Développeurs, Chefs de projets",
         costs: "1140 € HT",
@@ -1215,7 +1515,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-SCRUM",
+        href: "/MethodesOutils/TR-SCRUM",
         title: "Scrum",
         public: "Tout public",
         costs: "590 € HT",
@@ -1298,7 +1598,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-AGILES",
+        href: "/MethodesOutils/TR-AGILES",
         title: "Methodes Agiles",
         public: "Tous types de profils",
         costs: "1340 € HT",
@@ -1389,7 +1689,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-MAVEN",
+        href: "/MethodesOutils/TR-MAVEN",
         title: "Maven",
         public: "Développeurs Java",
         costs: "490 € HT",
@@ -1479,7 +1779,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-GRADLE",
+        href: "/MethodesOutils/TR-GRADLE",
         title: "Introduction a Gradle",
         public: "Développeurs Java",
         costs: "490 € HT",
@@ -1560,7 +1860,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-INDUS",
+        href: "/MethodesOutils/TR-INDUS",
         title: "Industrialisation Logicielle",
         public: "Développeurs, Opérationnels, Chefs de projet",
         costs: "590 € HT",
@@ -1650,7 +1950,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/MethodesOutils/TR-GIT",
+        href: "/MethodesOutils/TR-GIT",
         title: "Débuter avec Git",
         public: "Développeurs, Opérationnels, Chefs de projet",
         costs: "490 € HT",
@@ -1731,7 +2031,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/LanguagesAlternatifs/TR-SCALA",
+        href: "/LanguagesAlternatifs/TR-SCALA",
         title: "Scala",
         public: "Développeurs expérimentés",
         costs: "1990 € HT",
@@ -1849,7 +2149,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/LanguagesAlternatifs/TR-NODEJS",
+        href: "/LanguagesAlternatifs/TR-NODEJS",
         title: "Introduction à Node.Js",
         public: "Développeurs débutants ou expérimentés",
         costs: "1990 € HT",
@@ -1942,7 +2242,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/LanguagesAlternatifs/TR-AKKA",
+        href: "/LanguagesAlternatifs/TR-AKKA",
         title: "Akka",
         public: "Développeurs expérimentés Java ou Scala",
         costs: "1990 € HT",
@@ -2029,7 +2329,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-SPRING4",
+        href: "/Java/TR-SPRING4",
         title: "Spring 4",
         public: "Développeurs Java",
         costs: "940 € HT",
@@ -2125,7 +2425,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-PLAY2",
+        href: "/Java/TR-PLAY2",
         title: "PlayFramework 2",
         public: "Développeurs Java / Scala",
         costs: "1690 € HT",
@@ -2233,7 +2533,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-PLAY1",
+        href: "/Java/TR-PLAY1",
         title: "PlayFramework 1",
         public: "Développeurs Java",
         costs: "1140 € HT",
@@ -2329,7 +2629,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-TESTSJAVA",
+        href: "/Java/TR-TESTSJAVA",
         title: "Les Tests en Java",
         public: "Développeurs Java, débutants ou expérimentés",
         costs: "490 € HT",
@@ -2409,7 +2709,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-JAVA8",
+        href: "/Java/TR-JAVA8",
         title: "Les Nouveautés De Java 8",
         public: "Développeurs Java",
         costs: "590 € HT",
@@ -2477,7 +2777,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-JAVA",
+        href: "/Java/TR-JAVA",
         title: "Java",
         public: "Développeurs",
         costs: "2290 € HT",
@@ -2557,7 +2857,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-JAVAEE",
+        href: "/Java/TR-JAVAEE",
         title: "Java EE",
         public: "Développeurs Java",
         costs: "1390 € HT",
@@ -2654,7 +2954,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Java/TR-PATTERNS",
+        href: "/Java/TR-PATTERNS",
         title: "Design Patterns",
         public: "Développeurs expérimentés dans un langage Orienté Objets",
         costs: "1390 € HT",
@@ -2736,7 +3036,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Data/TR-SPARK",
+        href: "/Data/TR-SPARK",
         title: "Spark",
         public: "Développeurs Java expérimentés",
         costs: "1340 € HT",
@@ -2816,7 +3116,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Data/TR-MONGODB",
+        href: "/Data/TR-MONGODB",
         title: "Mongo DB",
         public: "Développeurs débutants ou expérimentés, Architectes, DBA",
         costs: "1340 € HT",
@@ -2944,7 +3244,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Data/TR-HADOOP",
+        href: "/Data/TR-HADOOP",
         title: "Introduction a Hadoop",
         public: "Développeurs Java expérimentés",
         costs: "1140 € HT",
@@ -3031,7 +3331,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Data/TR-ELASTIC",
+        href: "/Data/TR-ELASTIC",
         title: "Elastic",
         public: "Développeur, Opérationnel, DBA",
         costs: "1340 € HT",
@@ -3115,7 +3415,7 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/formations/Data/TR-CASSANDRA",
+        href: "/Data/TR-CASSANDRA",
         title: "Cassandra",
         public: "Développeurs",
         costs: "1340 € HT",
