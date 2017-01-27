@@ -1,6 +1,6 @@
 ---
 layout: training
-title: Les Nouveautés De Java 8
+title: Les Nouveautés De Java 888
 permalink: /Java/TR-JAVA8
 public: Développeurs Java
 costs: 590 € HT
