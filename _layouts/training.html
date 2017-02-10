@@ -38,10 +38,40 @@ layout: default
         </div>
       </div>
     </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-required-level-header">
+          <p>{{' '}}NIVEAU REQUIS</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>{{ page.required-level }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
   <!-- /// reference /////////////////////////////////////////////////////// -->
+  <div class="objectives-and-level clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-educational-objectives-header">
+          <p>{{' '}}OBJECTIFS PÉDAGOGIQUES</p>
+        </div>
+        <div class="detail-educational-objectives"
+          <ul>
+          {% for educational-objective in page.educational-objectives %}
+            <li>{{educational-objective}}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+
   {% if page.ref %}
     <p id="ref">Réf. {{ page.ref }}</p>
   {% endif %}

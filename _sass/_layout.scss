@@ -41,6 +41,7 @@ img { // default initialization of the image size
 }
 body{
 	font-family:$typo-open;
+	margin-bottom: 50px;
 }
 .containerdefault{
 	.page-title{
@@ -186,6 +187,7 @@ html, body {
 			}
 			article {
 				padding:30px 0 30px 0;
+				// margin-bottom: 50px;
 				.page-title{
 					margin-bottom:40px;
 					h2{
@@ -426,10 +428,10 @@ html, body {
 							background:#e5e6e8;
 							margin-bottom:20px;
 							@media (min-width:$screen-sm){
-								width:32%;
+								width:23.5%;
 								margin-right:2%;
 								margin-bottom:0;
-								&:nth-child(3){
+								&:nth-child(4){
 									margin-right:0;
 								}
 							}
@@ -463,6 +465,75 @@ html, body {
 									padding: 10px 0 10px 40px;
 									font-weight:600;
 								}
+							}
+							.detail-required-level-header{
+								p{
+									background:url(../assets/detail/public.png) no-repeat left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 35px;
+									font-weight:600;
+								}
+							}
+							.detail-content{
+								text-align:center;
+								min-height:50px;
+								padding:5px;
+								display: flex;
+  							justify-content: center;
+  							flex-direction: column;
+								p{
+									font-size:14px;
+									line-height: 20px;
+								}
+							}
+						}
+					}
+					.objectives-and-level{
+						@media (min-width:$screen-sm){
+							display:flex;
+						}
+						.detail-block{
+							width:100%;
+							float:left;
+							background:#e5e6e8;
+							margin-bottom:20px;
+							@media (min-width:$screen-sm){
+								width:100%;
+								margin-right:0%;
+								margin-bottom:0;
+								&:nth-child(2){
+									margin-right:0;
+								}
+							}
+							.detail-header{
+								text-align:center;
+								background:$white;
+								p{
+									display:inline-block;
+								}
+							}
+							.detail-educational-objectives-header{
+								p{
+									background:url(../assets/detail/public.png) no-repeat left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 35px;
+									font-weight:600;
+								}
+							}
+							.detail-required-level-header{
+								p{
+									background:url(../assets/detail/public.png) no-repeat left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 35px;
+									font-weight:600;
+								}
+							}
+							.detail-educational-objectives {
+									text-align: left;
+									background-size:auto 30px;
+									padding: 10px 0 10px 35px;
+									font-weight:600;
+									margin-right:0%;
 							}
 							.detail-content{
 								text-align:center;
