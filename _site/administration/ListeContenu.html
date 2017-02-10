@@ -78,6 +78,125 @@
     
       {
         myClass: "Old",
+        myDate: "2017-02-09",
+        date: "09 February 2017 - ",
+        href: "/MethodesOutils/TR-DOCKER",
+        title: "Developpement et integration continue avec Docker",
+        public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
+        costs: "690 € HT",
+        costsdescription: "par participant",
+        duration: "1 jour",
+        durationdescription: "100% pratique",
+        ref: "TR-DOCKER",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Docker");
+          
+            resultSubject.push("écosystème Docker");
+          
+            resultSubject.push("Docker File");
+          
+            resultSubject.push("Fig");
+          
+            resultSubject.push("Jenkins + plug-ins Docker");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Docker est aujourd’hui une solution incontournable de virtualisation légère à base de conteneurs. Dans ce workshop 100% pratique, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue autour d’une présentation et d’une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage. Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Par la suite, vous apprendrez à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins pour isoler les builds et assurer meilleures convergence et reproductibilité entre le build sur le poste du développeur et celui sur Jenkins."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2017-02-09",
+        date: "09 February 2017 - ",
+        href: "/Data/TR-SQL",
+        title: "NoSQL",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "TR-SQL",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("MongoDB");
+          
+            resultSubject.push("ElasticSearch");
+          
+            resultSubject.push("Le meilleur des deux mondes");
+          
+            resultSubject.push("Intégration");
+          
+            resultSubject.push("Java");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction";
+            var activityProgram = [];
+            
+              activityProgram.push("Présentation du workshop");
+            
+              activityProgram.push("Bases de données");
+            
+              activityProgram.push("Conception NoSQL");
+            
+              activityProgram.push("Premiers pas avec MongoDB");
+            
+              activityProgram.push("Premiers pas avec Elastic");
+            
+              activityProgram.push("Premier TP");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "MongoDB";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts avancés");
+            
+              activityProgram.push("Agrégations");
+            
+              activityProgram.push("Intégration avec Java");
+            
+              activityProgram.push("Réplication et Sharding");
+            
+              activityProgram.push("Mise en oeuvre de la partie MongoDB dans le workshop");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Elastic";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts de base");
+            
+              activityProgram.push("Mapping/_search/suggest");
+            
+              activityProgram.push("Concepts avancés");
+            
+              activityProgram.push("Modèle distribué et passage en production");
+            
+              activityProgram.push("Mise en oeuvre de la partie Elastic dans le workshop");
+            
+              activityProgram.push("Kata ELK : Elastic / Logstash / Kibana");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Au cours de cette formation, apprenez à intégrer MongoDB et ElasticSearch dans votre application. Cette formation est centrée sur les fonctionnalités des deux bases NoSQL. Comment intégrer MongoDB dans une application Java ? Comment intégrer ElasticSearch à votre application existante ? Vous saurez répondre à ces questions à la suite de cette formation. Elle présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre. Enfin, cette formation vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch."
+      },
+    
+      {
+        myClass: "Old",
         myDate: "2016-08-30",
         date: "30 August 2016 - ",
         href: "/Workshops/WK-REACTJS",
@@ -506,39 +625,6 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/Workshops/WK-ELK",
-        title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana  (ELK)",
-        public: "Tous types de profils.",
-        costs: "1340 € HT",
-        costsdescription: "par participant",
-        duration: "2 jours",
-        durationdescription: "100% pratique",
-        ref: "WK-ELK",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("ElasticSearch");
-          
-            resultSubject.push("Logstash");
-          
-            resultSubject.push("Kibana");
-          
-            resultSubject.push("Création de tableaux de bord métier");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-          return resultProgram;
-        }(),
-        presentation: "La stack ElasticSearch (Elastic), Kibana, Logstash ouvre de nouvelles perspectives en terme de valorisation de données. Elasticsearch est un des moteurs de recherches les plus puissants du marché, il vous permettra de stocker des volumétries importantes de données, tout en vous assurant des performances exceptionnelles. Logstash est un outil de gestion et de management des logs qui vous permettra de structurer et d’apporter de la valeur ajoutée à vos logs. Kibana est un outil de visualisation qui vous permettra de visualiser les données qui sont stockées dans ElasticSearch dans une interface totalement paramétrable et conforme à l’état de l’art."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
         href: "/Workshops/WK-SQL",
         title: "NoSQL",
         public: "Développeurs débutants ou expérimentés",
@@ -568,43 +654,6 @@
           return resultProgram;
         }(),
         presentation: "Au cours de ce workshop, apprenez à intégrer MongoDB et ElasticSearch dans votre application. Ce workshop est centré sur les fonctionnalités des deux bases NoSQL. Comment intégrer MongoDB dans une application Java ? Comment intégrer ElasticSearch à votre application existante ? Vous saurez répondre à ces questions à la suite de ce workshop. Ce workshop présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre. Enfin, ce workshop vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/Workshops/WK-MONGODB",
-        title: "Mongo DB",
-        public: "Développeurs débutants ou expérimentés",
-        costs: "1340 € HT",
-        costsdescription: "par participant",
-        duration: "2 jours",
-        durationdescription: "100% pratique",
-        ref: "WK-MONGODB",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Prise en main de MongoDB");
-          
-            resultSubject.push("Bonnes pratiques de modélisation");
-          
-            resultSubject.push("Recherche full-text");
-          
-            resultSubject.push("Recherche géographique");
-          
-            resultSubject.push("Aggregation framework");
-          
-            resultSubject.push("Mise en place d’un cluster");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-          return resultProgram;
-        }(),
-        presentation: "MongoDB est une des bases de données NoSQL orientée documents les plus populaires. La meilleure façon d’apprendre à utiliser MongoDB est de \"mettre les mains dans le cambouis\", au travers d’un workshop ! Dans un premiers temps, vous vous familiariserez avec les fonctionnalités de base de MongoDB grâce au Shell Javascript. Ensuite, vous développerez une application Java manipulant des données publiques et proposant les fonctionnalités suivantes : Recherche full-text et pagination des résultats. Recherche géographique et affichage sur une Google Map. Calcul de statistiques grâce à l’Aggregation Framework. Enfin, vous mettrez un place un cluster permettant d’assurer la haute disponibilité de votre application (réplication) et pouvant supporter une grande quantité de données (sharding)."
       },
     
       {
@@ -1242,98 +1291,6 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/Mobilite/TR-HYBRIDE",
-        title: "Développement Hybride",
-        public: "Développeur ayant déjà une connaissance HTML/CSS et javascript",
-        costs: "1690 € HT",
-        costsdescription: "par participant",
-        duration: "3 jours",
-        durationdescription: "30% théorie, 70% pratique",
-        ref: "TR-HYBRIDE",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Phonegap / Apache Cordova");
-          
-            resultSubject.push("Framework Ionic");
-          
-            resultSubject.push("Local Storage");
-          
-            resultSubject.push("Accès aux capteurs");
-          
-            resultSubject.push("Build multi-plateforme");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Présentation du mobile hybride";
-            var activityProgram = [];
-            
-              activityProgram.push("Introduction");
-            
-              activityProgram.push("Fonctionnement");
-            
-              activityProgram.push("Apports HTML5");
-            
-              activityProgram.push("Limites de l’hybride");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Outils de développement";
-            var activityProgram = [];
-            
-              activityProgram.push("Ligne de commande CLI");
-            
-              activityProgram.push("Structure d’un projet Phonegap");
-            
-              activityProgram.push("Les frameworks UI");
-            
-              activityProgram.push("Tests/debug sur un device/émulateur");
-            
-              activityProgram.push("Intégration aux environnements natifs Android/iOS");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les API Phonegap/Cordova";
-            var activityProgram = [];
-            
-              activityProgram.push("Cycle de vie et évènements &#58; device, boutons, etc.");
-            
-              activityProgram.push("Les notifications et les différences suivant les OS.");
-            
-              activityProgram.push("Géolocalisation, accès aux contacts, etc.");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Extension de phonegap";
-            var activityProgram = [];
-            
-              activityProgram.push("Les plugins");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Le Framework Ionic";
-            var activityProgram = [];
-            
-              activityProgram.push("Création d’une application");
-            
-              activityProgram.push("Les composants UI");
-            
-              activityProgram.push("Test et debug depuis un navigateur");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation a pour objectif de vous initier au développement hybride. Grâce à cette formation et à vos connaissances html et Javascript, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels du développement hybride. A travers divers exercices, vous découvrirez les principes de fonctionnement d’une application hybride avant de mettre en oeuvre le développement d’un projet complet et de le déployer sur différentes cibles."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
         href: "/Mobilite/TR-ANDROID",
         title: "Développement Android",
         public: "Développeur ayant déjà une connaissance de Java.",
@@ -1515,89 +1472,6 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/MethodesOutils/TR-SCRUM",
-        title: "Scrum",
-        public: "Tout public",
-        costs: "590 € HT",
-        costsdescription: "par participant",
-        duration: "1 jour",
-        durationdescription: "100% théorique",
-        ref: "TR-SCRUM",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Scrum");
-          
-            resultSubject.push("Les artéfacts");
-          
-            resultSubject.push("Les rôles");
-          
-            resultSubject.push("Les évènements");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Présentation";
-            var activityProgram = [];
-            
-              activityProgram.push("Scrum parmi les méthodes Agiles");
-            
-              activityProgram.push("Les grands principes de Scrum");
-            
-              activityProgram.push("Principe d’engagement collectif");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les artéfacts";
-            var activityProgram = [];
-            
-              activityProgram.push("L’incrément");
-            
-              activityProgram.push("Product Backlog");
-            
-              activityProgram.push("Spring Backlog");
-            
-              activityProgram.push("Définition de fini");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les rôles";
-            var activityProgram = [];
-            
-              activityProgram.push("Product Owner &#58; le responsable du produit");
-            
-              activityProgram.push("Scrum Master &#58; le facilitateur");
-            
-              activityProgram.push("L’équipe de développement");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les évènements";
-            var activityProgram = [];
-            
-              activityProgram.push("Le Sprint");
-            
-              activityProgram.push("Daily Scrum");
-            
-              activityProgram.push("Sprint Planning");
-            
-              activityProgram.push("Sprint Review");
-            
-              activityProgram.push("Sprint Retrospective &#58; amélioration du processus en continu");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles. Cette formation vous permettra d’acquérir les clés de la réussite d’un projet Scrum. Vous apprendrez les différents rôles définis par Scrum. Vous comprendrez les principaux événements d’un projet Scrum et leur mise en oeuvre."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
         href: "/MethodesOutils/TR-AGILES",
         title: "Methodes Agiles",
         public: "Tous types de profils",
@@ -1683,267 +1557,6 @@
           return resultProgram;
         }(),
         presentation: "Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle. Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/MethodesOutils/TR-MAVEN",
-        title: "Maven",
-        public: "Développeurs Java",
-        costs: "490 € HT",
-        costsdescription: "par participant",
-        duration: "1 jour",
-        durationdescription: "40% théorie, 60% pratique",
-        ref: "TR-MAVEN",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Configuration de build");
-          
-            resultSubject.push("Cycle de vie du build");
-          
-            resultSubject.push("Gestion des dépendances automatisée");
-          
-            resultSubject.push("Plugins");
-          
-            resultSubject.push("Maven en entreprise");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Le build en Java";
-            var activityProgram = [];
-            
-              activityProgram.push("Problématiques, état de lieux");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Maven";
-            var activityProgram = [];
-            
-              activityProgram.push("Configuration (settings.xml), installation, commandes");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Configuration du build";
-            var activityProgram = [];
-            
-              activityProgram.push("Concepts essentiels");
-            
-              activityProgram.push("Anatomie du pom.xml");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Cycle de vie, les phases";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Gestion des dépendances";
-            var activityProgram = [];
-            
-              activityProgram.push("Configuration, transitivité, scopes");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Plugins";
-            var activityProgram = [];
-            
-              activityProgram.push("Goals et intégration");
-            
-              activityProgram.push("Le plugin release");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Maven en entreprise";
-            var activityProgram = [];
-            
-              activityProgram.push("Repository d’entreprise");
-            
-              activityProgram.push("Projets multi-modules");
-            
-              activityProgram.push("Profils");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation vous permettra de découvrir Maven. Maven est l’outil incontournable d’industrialisation des build en Java. A l’occasion de cette formation, vous apprendrez les conventions Maven (Convetion over Configuration) ainsi que l’ensemble des éléments qui vous permettrons de mettre en oeuvre un build personnalisé et standardisé qui correspond à vos besoins. Enfin, vous découvrirez les subtilités de l’utilisation de Maven en entreprise."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/MethodesOutils/TR-GRADLE",
-        title: "Introduction a Gradle",
-        public: "Développeurs Java",
-        costs: "490 € HT",
-        costsdescription: "par participant",
-        duration: "1 jour",
-        durationdescription: "40% théorie, 60% pratique",
-        ref: "TR-GRADLE",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Configuration de build");
-          
-            resultSubject.push("Projets Java");
-          
-            resultSubject.push("Dépendances");
-          
-            resultSubject.push("Intégration");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Le build en Java";
-            var activityProgram = [];
-            
-              activityProgram.push("Problématiques, état de lieux, Maven, Ant, Gradle");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Configuration du build";
-            var activityProgram = [];
-            
-              activityProgram.push("Principales notions");
-            
-              activityProgram.push("Définition des tâches (Task)");
-            
-              activityProgram.push("DSL");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Java Quickstart";
-            var activityProgram = [];
-            
-              activityProgram.push("Plugins, conventions");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Gestion des dépendances";
-            var activityProgram = [];
-            
-              activityProgram.push("Déclaration des dépendances");
-            
-              activityProgram.push("Scopes");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Projets multi-modules";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Intégration";
-            var activityProgram = [];
-            
-              activityProgram.push("Intégration dans les IDE");
-            
-              activityProgram.push("Graddle Wapper");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation a pour objectif de vous faire découvrir Gradle. Positionné à mi-chemin entre Maven et Ant, cet outil de build Java/Groovy allie le meilleur des deux mondes. Cet outil permet à la fois d’adopter une approche de configuration basée sur l’exception (Maven) et de mettre en place des scripts de build d’une manière très souple (Ant). Cette formation vous permettra d’appréhender les principaux aspects de cet outil de build à la fois moderne et novateur."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/MethodesOutils/TR-INDUS",
-        title: "Industrialisation Logicielle",
-        public: "Développeurs, Opérationnels, Chefs de projet",
-        costs: "590 € HT",
-        costsdescription: "par participant",
-        duration: "1 jour",
-        durationdescription: "50% théorie, 50% pratique",
-        ref: "TR-INDUS",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Git");
-          
-            resultSubject.push("Test automatisés");
-          
-            resultSubject.push("Maven");
-          
-            resultSubject.push("Sonar");
-          
-            resultSubject.push("Nexus");
-          
-            resultSubject.push("Jenkins");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Principes de qualité logicielle";
-            var activityProgram = [];
-            
-              activityProgram.push("Forge logicielle, présentation générale");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Gestionnaire de version : Git";
-            var activityProgram = [];
-            
-              activityProgram.push("Workflows essentiels");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Outils de build : Maven";
-            var activityProgram = [];
-            
-              activityProgram.push("Build reproductible");
-            
-              activityProgram.push("Gestion des livraisons");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Serveur d’intégration continue : Jenkins";
-            var activityProgram = [];
-            
-              activityProgram.push("Concept de base");
-            
-              activityProgram.push("Principaux plugins");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Qualimétrie : Sonar";
-            var activityProgram = [];
-            
-              activityProgram.push("Intégration");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Repository d’entreprise : Nexus";
-            var activityProgram = [];
-            
-              activityProgram.push("Principe de fonctionnement");
-            
-              activityProgram.push("Mode proxy");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Mise en oeuvre d’un prototype de forge logicielle";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation a pour objectif de vous présenter les différents aspects de l’industrialisation logicielle. Quelles sont les briques incontournables qui composent une forge logicielle? Quels principes mettre en oeuvre pour instaurer une démarche de qualité permanente ? Grâce à cette formation, vous saurez répondre à l’ensemble de ces questions. A travers une sélection d’outils Open-Source caractéristiques des différents éléments d’une forge logicielle, cette formation vous permettra de mettre en oeuvre un prototype de forge."
       },
     
       {
@@ -2533,250 +2146,6 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/Java/TR-PLAY1",
-        title: "PlayFramework 1",
-        public: "Développeurs Java",
-        costs: "1140 € HT",
-        costsdescription: "par participant",
-        duration: "2 jours",
-        durationdescription: "50% théorie, 50% pratique",
-        ref: "TR-PLAY1",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Play 1");
-          
-            resultSubject.push("JPA 2.0");
-          
-            resultSubject.push("Templating Groovy");
-          
-            resultSubject.push("HTML / CSS");
-          
-            resultSubject.push("JavaScript");
-          
-            resultSubject.push("Web Services (REST)");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Tour de Play Framework 1";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Contrôleurs";
-            var activityProgram = [];
-            
-              activityProgram.push("Services REST");
-            
-              activityProgram.push("Routing");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Modèles";
-            var activityProgram = [];
-            
-              activityProgram.push("JPA");
-            
-              activityProgram.push("Magie noire");
-            
-              activityProgram.push("Validation");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Templates Groovy";
-            var activityProgram = [];
-            
-              activityProgram.push("Les tags");
-            
-              activityProgram.push("Héritage et décoration");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Librairies fournies";
-            var activityProgram = [];
-            
-              activityProgram.push("Jobs asynchrones");
-            
-              activityProgram.push("Client WebService");
-            
-              activityProgram.push("Email");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les tests avec Play 1";
-            var activityProgram = [];
-            
-              activityProgram.push("Unitaires");
-            
-              activityProgram.push("Fonctionnels");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les plugins";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation vous fera découvrir le framework Play 1, le framework web productif. Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 1. Vous connaîtrez les principaux atouts de ce framework, du simple contrôleur aux tests fonctionnels automatisés en passant par la consommation de WebServices et l’écriture de plugins."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/Java/TR-TESTSJAVA",
-        title: "Les Tests en Java",
-        public: "Développeurs Java, débutants ou expérimentés",
-        costs: "490 € HT",
-        costsdescription: "par participant",
-        duration: "1 jours",
-        durationdescription: "40% théorie, 60% pratique",
-        ref: "TR-TESTSJAVA",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Principes fondamentaux");
-          
-            resultSubject.push("Junit (Conventions)");
-          
-            resultSubject.push("Mocks");
-          
-            resultSubject.push("Tests d’intégration");
-          
-            resultSubject.push("Test-Driven Development (TDD)");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Présentation :";
-            var activityProgram = [];
-            
-              activityProgram.push("Problématiques");
-            
-              activityProgram.push("état de l’art");
-            
-              activityProgram.push("Industrialisation logicielle");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Junit";
-            var activityProgram = [];
-            
-              activityProgram.push("Anatomie d’un test");
-            
-              activityProgram.push("Assertions");
-            
-              activityProgram.push("Conventions");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Mocks";
-            var activityProgram = [];
-            
-              activityProgram.push("Principe de fonctionnement");
-            
-              activityProgram.push("EasyMock");
-            
-              activityProgram.push("JUnit");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Outils de tests d’intégrations";
-            var activityProgram = [];
-            
-              activityProgram.push("DBUnit, Arquillian, Citrus, ...");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Kata de TDD";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation a pour objectif de vous faire appréhender les tests automatisés dans vos applications Java. Vous découvrirez les concepts fondamentaux de tests (unitaires, d’intégration) ainsi que les outils pour les mettre en oeuvre dans votre code Java. Vous apprendrez les pratiques et patterns les plus répandus sur les tests automatisés."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/Java/TR-JAVA8",
-        title: "Les Nouveautés De Java 8",
-        public: "Développeurs Java",
-        costs: "590 € HT",
-        costsdescription: "par participant",
-        duration: "1 jours",
-        durationdescription: "40% théorie, 60% pratique",
-        ref: "TR-JAVA8",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Expressions Lambda");
-          
-            resultSubject.push("Streams");
-          
-            resultSubject.push("Date&Time API");
-          
-            resultSubject.push("Programmation Reactive");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Tour d’horizon de Java 8";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les expressions Lambda";
-            var activityProgram = [];
-            
-              activityProgram.push("Programmation Fonctionnelle");
-            
-              activityProgram.push("Functional Interfaces & références de méthodes");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Les Streams";
-            var activityProgram = [];
-            
-              activityProgram.push("Pipeline");
-            
-              activityProgram.push("Parallélisation");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "L’API Date&Time";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Programmation Reactive";
-            var activityProgram = [];
-            
-              activityProgram.push("CompletableFuture");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation vise à vous faire découvrir les nouveautés de Java 8. Java 8 est une réelle révolution en terme d’évolutions du langage Java. Les expressions Lambda apportent de nouvelles perspectives pour les développeurs Java. Cette formation vous apprendra l’essentiel des nouvelles fonctionnalités de Java 8."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
         href: "/Java/TR-JAVA",
         title: "Java",
         public: "Développeurs",
@@ -2851,185 +2220,6 @@
           return resultProgram;
         }(),
         presentation: "Cette formation vise à vous faire découvrir l’univers de Java. Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités. Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/Java/TR-JAVAEE",
-        title: "Java EE",
-        public: "Développeurs Java",
-        costs: "1390 € HT",
-        costsdescription: "par participant",
-        duration: "3 jours",
-        durationdescription: "50% théorie, 50% pratique",
-        ref: "TR-JAVAEE",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Java EE");
-          
-            resultSubject.push("EJB");
-          
-            resultSubject.push("JPA");
-          
-            resultSubject.push("CDI");
-          
-            resultSubject.push("JSF");
-          
-            resultSubject.push("JAX-WS");
-          
-            resultSubject.push("JAX-RS");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Tour d’horizon Java EE";
-            var activityProgram = [];
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "EJB";
-            var activityProgram = [];
-            
-              activityProgram.push("Présentation");
-            
-              activityProgram.push("Session Beans (Sécurité, Transactions)");
-            
-              activityProgram.push("Message Driven Beans");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "JPA";
-            var activityProgram = [];
-            
-              activityProgram.push("Mapping");
-            
-              activityProgram.push("Bean Validation (JSR 303)");
-            
-              activityProgram.push("Entity Manager");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "JSF";
-            var activityProgram = [];
-            
-              activityProgram.push("Principe de fonctionnement");
-            
-              activityProgram.push("Managed Beans");
-            
-              activityProgram.push("Front-end (JSP, Facelets, Composants)");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "CDI";
-            var activityProgram = [];
-            
-              activityProgram.push("Mise en place");
-            
-              activityProgram.push("Décorateurs, Intercepteurs et Observeurs");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Web Services";
-            var activityProgram = [];
-            
-              activityProgram.push("Architecture REST");
-            
-              activityProgram.push("JAX-RS");
-            
-              activityProgram.push("JAX-WS");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation vous fera découvrir Java EE, la spécification de Java destinée aux applications d’entreprise. Vous découvrirez les concepts fondamentaux des applications d’entreprise en Java. Vous connaîtrez les principales spécifications de Java EE, leurs usages ainsi que les bonnes pratiques associées. Vous apprendrez à architecturer des applications d’entreprise basées sur la plateforme Java EE."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
-        href: "/Java/TR-PATTERNS",
-        title: "Design Patterns",
-        public: "Développeurs expérimentés dans un langage Orienté Objets",
-        costs: "1390 € HT",
-        costsdescription: "par participant",
-        duration: "3 jours",
-        durationdescription: "70% théorie, 30% pratique",
-        ref: "TR-PATTERNS",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("Présentation des Patterns");
-          
-            resultSubject.push("Cas d’utilisation");
-          
-            resultSubject.push("Patterns du Gang of Four");
-          
-            resultSubject.push("Principes GRASP");
-          
-            resultSubject.push("Patterns d’architectur");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Rappels UML/POO";
-            var activityProgram = [];
-            
-              activityProgram.push("Présentation");
-            
-              activityProgram.push("Concepts essentiels");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "La conception à base de patterns";
-            var activityProgram = [];
-            
-              activityProgram.push("Origines");
-            
-              activityProgram.push("Un problème, un nom, une solution");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Patterns du Gang of Four";
-            var activityProgram = [];
-            
-              activityProgram.push("Patterns de construction d’objets");
-            
-              activityProgram.push("Patterns structurels");
-            
-              activityProgram.push("Patterns comportementaux");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Principes GRASP";
-            var activityProgram = [];
-            
-              activityProgram.push("Présentation, patterns");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "Patterns d’architecture";
-            var activityProgram = [];
-            
-              activityProgram.push("Patterns de construction d’objets");
-            
-              activityProgram.push("Différents types d’architectures");
-            
-              activityProgram.push("MV* (MVC, MVP, MVVM)");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Cette formation vous propose de découvrir les principaux patrons de conception. Les design patterns permettent d’appréhender le développement sous un nouvel angle. Apprenez à réutiliser plus que les composants, apprenez à réutiliser les concepts. Renforcez la cohésion d’équipe en vous appuyant sur un langage commun. Apprenez à utiliser les patterns à bon escient. Durant cette formation vous verrez ou reverrez différents types de patterns à plusieurs niveaux, de la classe à l’architecture d’entreprise, en passant par l’application et le composant logiciel."
       },
     
       {
@@ -3244,93 +2434,6 @@
         myClass: "Old",
         myDate: "2016-04-01",
         date: "01 April 2016 - ",
-        href: "/Data/TR-HADOOP",
-        title: "Introduction a Hadoop",
-        public: "Développeurs Java expérimentés",
-        costs: "1140 € HT",
-        costsdescription: "par participant",
-        duration: "2 jours",
-        durationdescription: "50% théorie, 50% pratique",
-        ref: "TR-HADOOP",
-        subject: function () {
-          var resultSubject = [];
-          
-            resultSubject.push("HDFS");
-          
-            resultSubject.push("MapReduce");
-          
-            resultSubject.push("YARN");
-          
-            resultSubject.push("Hive");
-          
-            resultSubject.push("Pig");
-          
-            resultSubject.push("Zookeeper");
-          
-            resultSubject.push("HBase");
-          
-          return resultSubject;
-        }(),
-        program: function () {
-          var resultProgram  = [];
-          
-            var nameProgram = "Présentation";
-            var activityProgram = [];
-            
-              activityProgram.push("Le Big Data");
-            
-              activityProgram.push("L’écosystème Hadoop");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "HDFS";
-            var activityProgram = [];
-            
-              activityProgram.push("Modèle de données");
-            
-              activityProgram.push("Client Java");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "MapReduce";
-            var activityProgram = [];
-            
-              activityProgram.push("Principe de base");
-            
-              activityProgram.push("Mapper, Reducer");
-            
-              activityProgram.push("Combiner");
-            
-              activityProgram.push("InPutFormat et OutPutFormat");
-            
-              activityProgram.push("Tests unitaires");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-            var nameProgram = "L’écosystème Hadoop";
-            var activityProgram = [];
-            
-              activityProgram.push("YARN");
-            
-              activityProgram.push("Hive");
-            
-              activityProgram.push("Pig");
-            
-              activityProgram.push("Zookeeper");
-            
-              activityProgram.push("HBase");
-            
-            resultProgram.push({name:nameProgram, activity:activityProgram});
-          
-          return resultProgram;
-        }(),
-        presentation: "Hadoop est un des outils incontournables du Big Data. Au cours de cette formation vous découvrirez l’écosystème Hadoop. Vous comprendrez les problématiques liées au traitement de gros volumes de données. Vous étudierez des cas concrets de calculs à l’aide de MapReduce. Entrecoupée de travaux pratiques, cette formation sera l’occasion de découvrir ou de redécouvrir un des outils fondamentaux du Big Data."
-      },
-    
-      {
-        myClass: "Old",
-        myDate: "2016-04-01",
-        date: "01 April 2016 - ",
         href: "/Data/TR-ELASTIC",
         title: "Elastic",
         public: "Développeur, Opérationnel, DBA",
@@ -3409,6 +2512,106 @@
           return resultProgram;
         }(),
         presentation: "Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL. Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic. Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Data/TR-ELKB",
+        title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana - Beats",
+        public: "Tous types de profils.",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "100% pratique",
+        ref: "TR-ELKB",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("ElasticSearch");
+          
+            resultSubject.push("Logstash");
+          
+            resultSubject.push("Kibana");
+          
+            resultSubject.push("Beats");
+          
+            resultSubject.push("Création de tableaux de bord métier");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Installation de la stack";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Elastic";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Prise en main");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Kibana";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Exploration des données");
+            
+              activityProgram.push("Création de vues");
+            
+              activityProgram.push("Création de dashboards");
+            
+              activityProgram.push("Découvrir Timelion, l’outil de visualisation des timeseries");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Logstash";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Streaming de Twitter");
+            
+              activityProgram.push("Parsing de logs");
+            
+              activityProgram.push("Mise en oeuvre de la stack complète");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Beats";
+            var activityProgram = [];
+            
+              activityProgram.push("Découvrir les différents agents beats");
+            
+              activityProgram.push("Utiliser filebeat, metricbeat et packetbeat");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Stack Elastic en production";
+            var activityProgram = [];
+            
+              activityProgram.push("Architecture & HA");
+            
+              activityProgram.push("Sécurité");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "La stack ElasticSearch (Elastic), Kibana, Logstash ouvre de nouvelles perspectives en terme de valorisation de données. Elasticsearch est un des moteurs de recherches les plus puissants du marché, il vous permettra de stocker des volumétries importantes de données, tout en vous assurant des performances exceptionnelles. Logstash est un outil de gestion et de management des logs qui vous permettra de structurer et d’apporter de la valeur ajoutée à vos logs. Kibana est un outil de visualisation qui vous permettra de visualiser les données qui sont stockées dans ElasticSearch dans une interface totalement paramétrable et conforme à l’état de l’art."
       },
     
       {
