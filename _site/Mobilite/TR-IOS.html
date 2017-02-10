@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Développement iOS</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000//Mobilite/TR-IOS">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container" class=" containerother ">
+			<main>
+
+				<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorMobilite"
+>
+	<div class="container">
+		
+		
+		<a href="/">
+			<h1 class="smalTitle">Développement iOS</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorMobilite"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"clearfix colorMobilite"
+						href="/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorMobilite"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+				<article>
+					<div class="container">
+						<div class="page-title">
+							<h2>Développement iOS</h2>
+						</div>
+						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+<div id="training" ng-app="formation" ng-controller="Training">
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>3 jours</p>
+          <p><em>50% théorie, 50% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeur ayant de l’expérience dans un langage Orienté Objets</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1990 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+  
+    <p id="ref">Réf. TR-IOS</p>
+  
+
+  <div class="interaction-container clearfix">
+    <input class="colorMobilite"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation a pour objectif de vous initier au développement iOS.<br />
+Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.<br />
+Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.</p>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
+  <ul id="subject" >
+    
+      <li class="colorMobilite">
+        Objective-C
+      </li>
+    
+      <li class="colorMobilite">
+        Le développement iOS et ses spécificités
+      </li>
+    
+      <li class="colorMobilite">
+        Framework Foundation
+      </li>
+    
+      <li class="colorMobilite">
+        Design Patterns iOS
+      </li>
+    
+      <li class="colorMobilite">
+        Concepts Haut-Niveau
+      </li>
+    
+  </ul>
+  <!-- /// program ///////////////////////////////////////////////////////// -->
+  
+    <h3>programme</h3>
+    <ul id="program" >
+      
+        <li> Présentation de l’Objective-C
+          <ul>
+            
+              <li> Syntaxe, concepts, propriétés </li>
+            
+          </ul>
+        </li>
+      
+        <li> Présentation de l’environnement de développement
+          <ul>
+            
+              <li> XCode 5, Standard, Assistant et Version </li>
+            
+              <li> Interface Builder </li>
+            
+              <li> Auto Layout </li>
+            
+          </ul>
+        </li>
+      
+        <li> Présentation d’une application iOS
+          <ul>
+            
+          </ul>
+        </li>
+      
+        <li> Spécificité du déploiement iOS
+          <ul>
+            
+          </ul>
+        </li>
+      
+        <li> Présentation du framework Foundation
+          <ul>
+            
+              <li> Classes de bases, Collections... </li>
+            
+          </ul>
+        </li>
+      
+        <li> Présentation des principaux Design Patterns d’iOS
+          <ul>
+            
+              <li> MVC, Délégation, KVC, KVO, Class Cluster </li>
+            
+          </ul>
+        </li>
+      
+        <li> Présentation des concepts de haut niveau
+          <ul>
+            
+              <li> Storyboards, Contrôleurs principaux, Segues, IBOutlet et IBAction </li>
+            
+          </ul>
+        </li>
+      
+        <li> Création d’interface utilisateur
+          <ul>
+            
+              <li> Vues, Contrôleurs, Alertes... </li>
+            
+          </ul>
+        </li>
+      
+        <li> Connectivité
+          <ul>
+            
+              <li> Consommation de Web Services REST, JSON </li>
+            
+          </ul>
+        </li>
+      
+        <li> Persistance des données
+          <ul>
+            
+          </ul>
+        </li>
+      
+        <li> Projet Tutoré
+          <ul>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorMobilite"
+    type="button" value="Télécharger la Fiche Formation" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
+      $scope.createPDF = function () {
+        var pdfTitle = "Développement iOS";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeur ayant de l’expérience dans un langage Orienté Objets";
+        var pdfRef = "TR-IOS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Objective-C");
+        
+          pdfSubject.push("Le développement iOS et ses spécificités");
+        
+          pdfSubject.push("Framework Foundation");
+        
+          pdfSubject.push("Design Patterns iOS");
+        
+          pdfSubject.push("Concepts Haut-Niveau");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Présentation de l’Objective-C";
+          var activityProgram = [];
+          
+            activityProgram.push("Syntaxe, concepts, propriétés");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation de l’environnement de développement";
+          var activityProgram = [];
+          
+            activityProgram.push("XCode 5, Standard, Assistant et Version");
+          
+            activityProgram.push("Interface Builder");
+          
+            activityProgram.push("Auto Layout");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation d’une application iOS";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Spécificité du déploiement iOS";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation du framework Foundation";
+          var activityProgram = [];
+          
+            activityProgram.push("Classes de bases, Collections...");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation des principaux Design Patterns d’iOS";
+          var activityProgram = [];
+          
+            activityProgram.push("MVC, Délégation, KVC, KVO, Class Cluster");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Présentation des concepts de haut niveau";
+          var activityProgram = [];
+          
+            activityProgram.push("Storyboards, Contrôleurs principaux, Segues, IBOutlet et IBAction");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Création d’interface utilisateur";
+          var activityProgram = [];
+          
+            activityProgram.push("Vues, Contrôleurs, Alertes...");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Connectivité";
+          var activityProgram = [];
+          
+            activityProgram.push("Consommation de Web Services REST, JSON");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Persistance des données";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Projet Tutoré";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation a pour objectif de vous initier au développement iOS. Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS. Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent); // Data sent to the function that is in a file
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+					</div>
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorMobilite">
+  <div class="container clearfix">
+
+      <div class="footer-block footer-address-block">
+        <h3>Nous trouver :</h3>
+        <div>
+          <a href="http://www.serli.com" title="SERLI" target="_blank">
+            <img src="/assets/brand.png"/>
+          </a>
+        </div>
+        <span>Avenue Thomas Edison<br>BP 20160 - 86960<br>Futuroscope Cedex</span>
+      </div>
+      <div class="footer-block footer-infos-block">
+        <h3>Nous contacter :</h3>
+        <ul>
+          <li>
+            <img src="/assets/footer/telephone.png" />
+            <span>+33(0)5 49 49 49 30</span>
+          </li>
+          <li>
+            <img src="/assets/footer/mail.png" />
+            <a href="mailto:formation@serli.com" title="Nous envoyer un mail">formation@serli.com</a>
+          </li>
+          <li>
+            <img src="/assets/footer/lien.png" />
+            <a href="http://www.serli.com/contact" title="Nous contacter" target="_blank">www.serli.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block footer-social-block">
+        <h3>Nous suivre :</h3>
+        <ul class="clearfix">
+          <li id="facebook">
+            <a href="https://www.facebook.com/SerliFr/?fref=ts" target="_blank" title="Facebook">
+              <img src="/assets/icon-facebook.png" />
+            </a>
+          </li>
+          <li id="twitter">
+            <a href="https://twitter.com/SerliFr?lang=fr" target="_blank" title="Twitter">
+              <img src="/assets/icon-twitter.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>

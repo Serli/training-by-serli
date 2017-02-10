@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Mongo DB</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000//Data/TR-MONGODB">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container" class=" containerother ">
+			<main>
+
+				<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorData"
+>
+	<div class="container">
+		
+		
+		<a href="/">
+			<h1 class="smalTitle">Mongo DB</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorData"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"clearfix colorData"
+						href="/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorData"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+				<article>
+					<div class="container">
+						<div class="page-title">
+							<h2>Mongo DB</h2>
+						</div>
+						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+<div id="training" ng-app="formation" ng-controller="Training">
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>2 jours</p>
+          <p><em>40% théorie, 60% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs débutants ou expérimentés, Architectes, DBA</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1340 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+  
+    <p id="ref">Réf. TR-MONGODB</p>
+  
+
+  <div class="interaction-container clearfix">
+    <input class="colorData"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vous permettra de découvrir MongoDB, la base de données NoSQL orientée documents la plus populaire !<br />
+Au cours de cette formation, vous apprendrez les concepts de fondamentaux de MongoDB ainsi que des fonctionnalités avancées telles que l’Aggregation Framework et la recherche géographique.<br />
+Vous découvrirez également les principes du modèle distribué de MongoDB (réplication et sharding) au travers de patterns d’architecture permettant le passage en production.</p>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
+  <ul id="subject" >
+    
+      <li class="colorData">
+        Introduction NoSQL
+      </li>
+    
+      <li class="colorData">
+        Prise en main de MongoDB
+      </li>
+    
+      <li class="colorData">
+        Index et Performances
+      </li>
+    
+      <li class="colorData">
+        Conception de documents
+      </li>
+    
+      <li class="colorData">
+        Aggregation Framework
+      </li>
+    
+      <li class="colorData">
+        Réplication et Sharding
+      </li>
+    
+      <li class="colorData">
+        Déploiement
+      </li>
+    
+  </ul>
+  <!-- /// program ///////////////////////////////////////////////////////// -->
+  
+    <h3>programme</h3>
+    <ul id="program" >
+      
+        <li> Introduction NoSQL
+          <ul>
+            
+              <li> Le NoSQL, qu’est-ce que c’est ? </li>
+            
+              <li> Les bases orientées documents </li>
+            
+              <li> Théorème de CAP </li>
+            
+              <li> La base MongoDB </li>
+            
+          </ul>
+        </li>
+      
+        <li> Prise en main de MongoDB
+          <ul>
+            
+              <li> Installation </li>
+            
+              <li> Format des documents (BSON) </li>
+            
+              <li> Opérations CRUD </li>
+            
+              <li> Tableaux </li>
+            
+              <li> Requêtes complexes </li>
+            
+              <li> Ecosystème </li>
+            
+          </ul>
+        </li>
+      
+        <li> Index et performances
+          <ul>
+            
+              <li> Index simples et composites </li>
+            
+              <li> Index full-text </li>
+            
+              <li> Index géographique </li>
+            
+              <li> Explain plan </li>
+            
+          </ul>
+        </li>
+      
+        <li> Conception de documents
+          <ul>
+            
+              <li> Les bonnes pratiques </li>
+            
+              <li> Du relationnel au document </li>
+            
+              <li> Cas d’utilisation concrets </li>
+            
+          </ul>
+        </li>
+      
+        <li> Aggregation Framework
+          <ul>
+            
+              <li> Opérations simples </li>
+            
+              <li> Map-Reduce </li>
+            
+              <li> Aggregation Pipeline </li>
+            
+          </ul>
+        </li>
+      
+        <li> Réplication et Sharding
+          <ul>
+            
+              <li> Réplication vs. Répartition </li>
+            
+              <li> Politiques de lecture et d’écriture </li>
+            
+              <li> Mise en oeuvre </li>
+            
+          </ul>
+        </li>
+      
+        <li> Déploiement
+          <ul>
+            
+              <li> Patterns d’architecture </li>
+            
+              <li> Sauvegarde et restauration </li>
+            
+              <li> Supervision </li>
+            
+              <li> Les offres SaaS </li>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorData"
+    type="button" value="Télécharger la Fiche Formation" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
+      $scope.createPDF = function () {
+        var pdfTitle = "Mongo DB";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1340 € HT";
+        var pdfDurationDescription = "40% théorie, 60% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés, Architectes, DBA";
+        var pdfRef = "TR-MONGODB";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Introduction NoSQL");
+        
+          pdfSubject.push("Prise en main de MongoDB");
+        
+          pdfSubject.push("Index et Performances");
+        
+          pdfSubject.push("Conception de documents");
+        
+          pdfSubject.push("Aggregation Framework");
+        
+          pdfSubject.push("Réplication et Sharding");
+        
+          pdfSubject.push("Déploiement");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Introduction NoSQL";
+          var activityProgram = [];
+          
+            activityProgram.push("Le NoSQL, qu’est-ce que c’est ?");
+          
+            activityProgram.push("Les bases orientées documents");
+          
+            activityProgram.push("Théorème de CAP");
+          
+            activityProgram.push("La base MongoDB");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Prise en main de MongoDB";
+          var activityProgram = [];
+          
+            activityProgram.push("Installation");
+          
+            activityProgram.push("Format des documents (BSON)");
+          
+            activityProgram.push("Opérations CRUD");
+          
+            activityProgram.push("Tableaux");
+          
+            activityProgram.push("Requêtes complexes");
+          
+            activityProgram.push("Ecosystème");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Index et performances";
+          var activityProgram = [];
+          
+            activityProgram.push("Index simples et composites");
+          
+            activityProgram.push("Index full-text");
+          
+            activityProgram.push("Index géographique");
+          
+            activityProgram.push("Explain plan");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Conception de documents";
+          var activityProgram = [];
+          
+            activityProgram.push("Les bonnes pratiques");
+          
+            activityProgram.push("Du relationnel au document");
+          
+            activityProgram.push("Cas d’utilisation concrets");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Aggregation Framework";
+          var activityProgram = [];
+          
+            activityProgram.push("Opérations simples");
+          
+            activityProgram.push("Map-Reduce");
+          
+            activityProgram.push("Aggregation Pipeline");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Réplication et Sharding";
+          var activityProgram = [];
+          
+            activityProgram.push("Réplication vs. Répartition");
+          
+            activityProgram.push("Politiques de lecture et d’écriture");
+          
+            activityProgram.push("Mise en oeuvre");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Déploiement";
+          var activityProgram = [];
+          
+            activityProgram.push("Patterns d’architecture");
+          
+            activityProgram.push("Sauvegarde et restauration");
+          
+            activityProgram.push("Supervision");
+          
+            activityProgram.push("Les offres SaaS");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vous permettra de découvrir MongoDB, la base de données NoSQL orientée documents la plus populaire ! Au cours de cette formation, vous apprendrez les concepts de fondamentaux de MongoDB ainsi que des fonctionnalités avancées telles que l’Aggregation Framework et la recherche géographique. Vous découvrirez également les principes du modèle distribué de MongoDB (réplication et sharding) au travers de patterns d’architecture permettant le passage en production.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent); // Data sent to the function that is in a file
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+					</div>
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorData">
+  <div class="container clearfix">
+
+      <div class="footer-block footer-address-block">
+        <h3>Nous trouver :</h3>
+        <div>
+          <a href="http://www.serli.com" title="SERLI" target="_blank">
+            <img src="/assets/brand.png"/>
+          </a>
+        </div>
+        <span>Avenue Thomas Edison<br>BP 20160 - 86960<br>Futuroscope Cedex</span>
+      </div>
+      <div class="footer-block footer-infos-block">
+        <h3>Nous contacter :</h3>
+        <ul>
+          <li>
+            <img src="/assets/footer/telephone.png" />
+            <span>+33(0)5 49 49 49 30</span>
+          </li>
+          <li>
+            <img src="/assets/footer/mail.png" />
+            <a href="mailto:formation@serli.com" title="Nous envoyer un mail">formation@serli.com</a>
+          </li>
+          <li>
+            <img src="/assets/footer/lien.png" />
+            <a href="http://www.serli.com/contact" title="Nous contacter" target="_blank">www.serli.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block footer-social-block">
+        <h3>Nous suivre :</h3>
+        <ul class="clearfix">
+          <li id="facebook">
+            <a href="https://www.facebook.com/SerliFr/?fref=ts" target="_blank" title="Facebook">
+              <img src="/assets/icon-facebook.png" />
+            </a>
+          </li>
+          <li id="twitter">
+            <a href="https://twitter.com/SerliFr?lang=fr" target="_blank" title="Twitter">
+              <img src="/assets/icon-twitter.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>

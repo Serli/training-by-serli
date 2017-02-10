@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Javascript Avancé</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000//Web/TR-JAVASCRIPT">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container" class=" containerother ">
+			<main>
+
+				<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorWeb"
+>
+	<div class="container">
+		
+		
+		<a href="/">
+			<h1 class="smalTitle">Javascript Avancé</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorWeb"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"clearfix colorWeb"
+						href="/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+				<article>
+					<div class="container">
+						<div class="page-title">
+							<h2>Javascript Avancé</h2>
+						</div>
+						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+<div id="training" ng-app="formation" ng-controller="Training">
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>2 jours</p>
+          <p><em>50% théorie, 50% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs expérimentés, Architectes</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1140 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+  
+    <p id="ref">Réf. TR-JAVASCRIPT</p>
+  
+
+  <div class="interaction-container clearfix">
+    <input class="colorWeb"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
+  <p>Avec l’arrivée de HTML 5 et des frameworks MVC clients, le JavaScript a désormais pris une part très importante dans le développement de clients web.<br />
+A l’occasion de cette formation vous découvrirez les secrets du JavaScript moderne. Les erreurs fréquentes et comment les éviter, les patterns essentiels.<br />
+Vous apprendrez enfin l’industrialisation du JavaScript qui a été révolutionnée par l’arrivée de Node.js.</p>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
+  <ul id="subject" >
+    
+      <li class="colorWeb">
+        JavaScript
+      </li>
+    
+      <li class="colorWeb">
+        Design Patterns
+      </li>
+    
+      <li class="colorWeb">
+        ES6
+      </li>
+    
+      <li class="colorWeb">
+        Industrialisation
+      </li>
+    
+      <li class="colorWeb">
+        npm
+      </li>
+    
+      <li class="colorWeb">
+        Gestion des dépendances
+      </li>
+    
+      <li class="colorWeb">
+        Tests automatisés
+      </li>
+    
+  </ul>
+  <!-- /// program ///////////////////////////////////////////////////////// -->
+  
+    <h3>programme</h3>
+    <ul id="program" >
+      
+        <li> Le javaScript Moderne
+          <ul>
+            
+              <li> Un peu d’histoire </li>
+            
+              <li> Les enjeux </li>
+            
+          </ul>
+        </li>
+      
+        <li> Les bonnes pratiques
+          <ul>
+            
+              <li> Les pièges du langage </li>
+            
+              <li> éléments essentiels </li>
+            
+          </ul>
+        </li>
+      
+        <li> Les patterns essentiels
+          <ul>
+            
+              <li> IIFE </li>
+            
+              <li> Le pattern module </li>
+            
+              <li> Autres patterns essentiels </li>
+            
+          </ul>
+        </li>
+      
+        <li> ES6
+          <ul>
+            
+              <li> Tour d’horizon </li>
+            
+              <li> Les grandes nouveautés </li>
+            
+          </ul>
+        </li>
+      
+        <li> Industrialisation du JavaScript
+          <ul>
+            
+              <li> npm &#58; La boîte à outils </li>
+            
+              <li> Les scripts de build et la gestion de dépendances </li>
+            
+              <li> Les tests </li>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWeb"
+    type="button" value="Télécharger la Fiche Formation" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
+      $scope.createPDF = function () {
+        var pdfTitle = "Javascript Avancé";
+        var pdfDuration = "2 jours";
+        var pdfCosts = "1140 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs expérimentés, Architectes";
+        var pdfRef = "TR-JAVASCRIPT";
+        var pdfSubject = [];
+        
+          pdfSubject.push("JavaScript");
+        
+          pdfSubject.push("Design Patterns");
+        
+          pdfSubject.push("ES6");
+        
+          pdfSubject.push("Industrialisation");
+        
+          pdfSubject.push("npm");
+        
+          pdfSubject.push("Gestion des dépendances");
+        
+          pdfSubject.push("Tests automatisés");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Le javaScript Moderne";
+          var activityProgram = [];
+          
+            activityProgram.push("Un peu d’histoire");
+          
+            activityProgram.push("Les enjeux");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les bonnes pratiques";
+          var activityProgram = [];
+          
+            activityProgram.push("Les pièges du langage");
+          
+            activityProgram.push("éléments essentiels");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Les patterns essentiels";
+          var activityProgram = [];
+          
+            activityProgram.push("IIFE");
+          
+            activityProgram.push("Le pattern module");
+          
+            activityProgram.push("Autres patterns essentiels");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "ES6";
+          var activityProgram = [];
+          
+            activityProgram.push("Tour d’horizon");
+          
+            activityProgram.push("Les grandes nouveautés");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Industrialisation du JavaScript";
+          var activityProgram = [];
+          
+            activityProgram.push("npm &#58; La boîte à outils");
+          
+            activityProgram.push("Les scripts de build et la gestion de dépendances");
+          
+            activityProgram.push("Les tests");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Avec l’arrivée de HTML 5 et des frameworks MVC clients, le JavaScript a désormais pris une part très importante dans le développement de clients web. A l’occasion de cette formation vous découvrirez les secrets du JavaScript moderne. Les erreurs fréquentes et comment les éviter, les patterns essentiels. Vous apprendrez enfin l’industrialisation du JavaScript qui a été révolutionnée par l’arrivée de Node.js.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent); // Data sent to the function that is in a file
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+					</div>
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorWeb">
+  <div class="container clearfix">
+
+      <div class="footer-block footer-address-block">
+        <h3>Nous trouver :</h3>
+        <div>
+          <a href="http://www.serli.com" title="SERLI" target="_blank">
+            <img src="/assets/brand.png"/>
+          </a>
+        </div>
+        <span>Avenue Thomas Edison<br>BP 20160 - 86960<br>Futuroscope Cedex</span>
+      </div>
+      <div class="footer-block footer-infos-block">
+        <h3>Nous contacter :</h3>
+        <ul>
+          <li>
+            <img src="/assets/footer/telephone.png" />
+            <span>+33(0)5 49 49 49 30</span>
+          </li>
+          <li>
+            <img src="/assets/footer/mail.png" />
+            <a href="mailto:formation@serli.com" title="Nous envoyer un mail">formation@serli.com</a>
+          </li>
+          <li>
+            <img src="/assets/footer/lien.png" />
+            <a href="http://www.serli.com/contact" title="Nous contacter" target="_blank">www.serli.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block footer-social-block">
+        <h3>Nous suivre :</h3>
+        <ul class="clearfix">
+          <li id="facebook">
+            <a href="https://www.facebook.com/SerliFr/?fref=ts" target="_blank" title="Facebook">
+              <img src="/assets/icon-facebook.png" />
+            </a>
+          </li>
+          <li id="twitter">
+            <a href="https://twitter.com/SerliFr?lang=fr" target="_blank" title="Twitter">
+              <img src="/assets/icon-twitter.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>

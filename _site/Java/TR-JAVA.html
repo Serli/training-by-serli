@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Java</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000//Java/TR-JAVA">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container" class=" containerother ">
+			<main>
+
+				<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorJava"
+>
+	<div class="container">
+		
+		
+		<a href="/">
+			<h1 class="smalTitle">Java</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorJava"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"clearfix colorJava"
+						href="/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorJava"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+				<article>
+					<div class="container">
+						<div class="page-title">
+							<h2>Java</h2>
+						</div>
+						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+<div id="training" ng-app="formation" ng-controller="Training">
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>5 jours</p>
+          <p><em>50% théorie, 50% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>2290 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+  
+    <p id="ref">Réf. TR-JAVA</p>
+  
+
+  <div class="interaction-container clearfix">
+    <input class="colorJava"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
+  <p>Cette formation vise à vous faire découvrir l’univers de Java.
+Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités.
+Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté.</p>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
+  <ul id="subject" >
+    
+      <li class="colorJava">
+        Bases du langage
+      </li>
+    
+      <li class="colorJava">
+        Collections
+      </li>
+    
+      <li class="colorJava">
+        Entrées / Sorties
+      </li>
+    
+      <li class="colorJava">
+        Concurrence
+      </li>
+    
+      <li class="colorJava">
+        JDBC
+      </li>
+    
+      <li class="colorJava">
+        Outils
+      </li>
+    
+  </ul>
+  <!-- /// program ///////////////////////////////////////////////////////// -->
+  
+    <h3>programme</h3>
+    <ul id="program" >
+      
+        <li> Bases du langage
+          <ul>
+            
+              <li> Syntaxe </li>
+            
+              <li> Vision Objet </li>
+            
+              <li> Exceptions (Multi-catch, Try with resources...) </li>
+            
+              <li> Types génériques </li>
+            
+              <li> Annotations </li>
+            
+          </ul>
+        </li>
+      
+        <li> Fonctionnalités / API
+          <ul>
+            
+              <li> Collections </li>
+            
+              <li> Dates </li>
+            
+              <li> Entrées / Sorties (nio2) </li>
+            
+              <li> Sérialisation </li>
+            
+              <li> Concurrence </li>
+            
+              <li> Base de données (JDBC) </li>
+            
+          </ul>
+        </li>
+      
+        <li> Outils
+          <ul>
+            
+              <li> Java Development Kit </li>
+            
+              <li> Eclipse IDE </li>
+            
+              <li> JavaDoc </li>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorJava"
+    type="button" value="Télécharger la Fiche Formation" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
+      $scope.createPDF = function () {
+        var pdfTitle = "Java";
+        var pdfDuration = "5 jours";
+        var pdfCosts = "2290 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs";
+        var pdfRef = "TR-JAVA";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Bases du langage");
+        
+          pdfSubject.push("Collections");
+        
+          pdfSubject.push("Entrées / Sorties");
+        
+          pdfSubject.push("Concurrence");
+        
+          pdfSubject.push("JDBC");
+        
+          pdfSubject.push("Outils");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Bases du langage";
+          var activityProgram = [];
+          
+            activityProgram.push("Syntaxe");
+          
+            activityProgram.push("Vision Objet");
+          
+            activityProgram.push("Exceptions (Multi-catch, Try with resources...)");
+          
+            activityProgram.push("Types génériques");
+          
+            activityProgram.push("Annotations");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Fonctionnalités / API";
+          var activityProgram = [];
+          
+            activityProgram.push("Collections");
+          
+            activityProgram.push("Dates");
+          
+            activityProgram.push("Entrées / Sorties (nio2)");
+          
+            activityProgram.push("Sérialisation");
+          
+            activityProgram.push("Concurrence");
+          
+            activityProgram.push("Base de données (JDBC)");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Outils";
+          var activityProgram = [];
+          
+            activityProgram.push("Java Development Kit");
+          
+            activityProgram.push("Eclipse IDE");
+          
+            activityProgram.push("JavaDoc");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Cette formation vise à vous faire découvrir l’univers de Java. Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités. Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent); // Data sent to the function that is in a file
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+					</div>
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorJava">
+  <div class="container clearfix">
+
+      <div class="footer-block footer-address-block">
+        <h3>Nous trouver :</h3>
+        <div>
+          <a href="http://www.serli.com" title="SERLI" target="_blank">
+            <img src="/assets/brand.png"/>
+          </a>
+        </div>
+        <span>Avenue Thomas Edison<br>BP 20160 - 86960<br>Futuroscope Cedex</span>
+      </div>
+      <div class="footer-block footer-infos-block">
+        <h3>Nous contacter :</h3>
+        <ul>
+          <li>
+            <img src="/assets/footer/telephone.png" />
+            <span>+33(0)5 49 49 49 30</span>
+          </li>
+          <li>
+            <img src="/assets/footer/mail.png" />
+            <a href="mailto:formation@serli.com" title="Nous envoyer un mail">formation@serli.com</a>
+          </li>
+          <li>
+            <img src="/assets/footer/lien.png" />
+            <a href="http://www.serli.com/contact" title="Nous contacter" target="_blank">www.serli.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block footer-social-block">
+        <h3>Nous suivre :</h3>
+        <ul class="clearfix">
+          <li id="facebook">
+            <a href="https://www.facebook.com/SerliFr/?fref=ts" target="_blank" title="Facebook">
+              <img src="/assets/icon-facebook.png" />
+            </a>
+          </li>
+          <li id="twitter">
+            <a href="https://twitter.com/SerliFr?lang=fr" target="_blank" title="Twitter">
+              <img src="/assets/icon-twitter.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>

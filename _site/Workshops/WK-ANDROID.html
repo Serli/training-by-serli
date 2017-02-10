@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Developpement Android</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000//Workshops/WK-ANDROID">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container" class=" containerother ">
+			<main>
+
+				<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorWorkshops"
+>
+	<div class="container">
+		
+		
+		<a href="/">
+			<h1 class="smalTitle">Developpement Android</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorWorkshops"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"clearfix colorWorkshops"
+						href="/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWorkshops"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+				<article>
+					<div class="container">
+						<div class="page-title">
+							<h2>Developpement Android</h2>
+						</div>
+						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+<div id="training" ng-app="formation" ng-controller="Training">
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>3 jours</p>
+          <p><em>100% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs débutants ou expérimentés, Architectes</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1990 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+  
+    <p id="ref">Réf. WK-ANDROID</p>
+  
+
+  <div class="interaction-container clearfix">
+    <input class="colorWorkshops"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
+  <p>Rien de tel que de mettre les mains dans le cambouis pour apprendre une nouvelle technologie. C’est d’autant plus vrai pour le développement d’applications mobiles !<br />
+Au cours de ce workshop, vous apprendrez à développer une application Android de A à Z : de la découverte du SDK au déploiement sur le store Google Play !<br />
+Après avoir parcouru les notions de bases indispensables à tout développeur Android, vous commencerez le développement d’une application mobile “fil rouge” qui sera enrichie de nouvelles fonctionnalités tout au long du workshop.<br />
+Vous découvrirez et utiliserez des librairies indispensables pour développer efficacement et élégamment : Retrofit (appels de services REST), Picasso (chargement d’images), Dagger (injection de dépendances), EventBus (gestion d’événements) et d’autres encore !<br />
+Cette application respectera également les bonnes pratiques Material Design de Google, nouveau standard depuis Android 5.0 (Lollipop - API 21).<br />
+Enfin, vous découvrirez la puissance de Gradle pour le build de votre application, et verrez comment la déployer sur le store Google Play.</p>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
+  <ul id="subject" >
+    
+      <li class="colorWorkshops">
+        La philosophie Android
+      </li>
+    
+      <li class="colorWorkshops">
+        Le SDK
+      </li>
+    
+      <li class="colorWorkshops">
+        Les librairies indispensables
+      </li>
+    
+      <li class="colorWorkshops">
+        Les interactions avec le téléphone
+      </li>
+    
+      <li class="colorWorkshops">
+        Material Design
+      </li>
+    
+      <li class="colorWorkshops">
+        Build et déploiement
+      </li>
+    
+  </ul>
+  <!-- /// program ///////////////////////////////////////////////////////// -->
+  
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWorkshops"
+    type="button" value="Télécharger la Fiche Formation" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
+      $scope.createPDF = function () {
+        var pdfTitle = "Developpement Android";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1990 € HT";
+        var pdfDurationDescription = "100% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés, Architectes";
+        var pdfRef = "WK-ANDROID";
+        var pdfSubject = [];
+        
+          pdfSubject.push("La philosophie Android");
+        
+          pdfSubject.push("Le SDK");
+        
+          pdfSubject.push("Les librairies indispensables");
+        
+          pdfSubject.push("Les interactions avec le téléphone");
+        
+          pdfSubject.push("Material Design");
+        
+          pdfSubject.push("Build et déploiement");
+        
+        var pdfProgram  = [];
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Rien de tel que de mettre les mains dans le cambouis pour apprendre une nouvelle technologie. C’est d’autant plus vrai pour le développement d’applications mobiles ! Au cours de ce workshop, vous apprendrez à développer une application Android de A à Z : de la découverte du SDK au déploiement sur le store Google Play ! Après avoir parcouru les notions de bases indispensables à tout développeur Android, vous commencerez le développement d’une application mobile “fil rouge” qui sera enrichie de nouvelles fonctionnalités tout au long du workshop. Vous découvrirez et utiliserez des librairies indispensables pour développer efficacement et élégamment : Retrofit (appels de services REST), Picasso (chargement d’images), Dagger (injection de dépendances), EventBus (gestion d’événements) et d’autres encore ! Cette application respectera également les bonnes pratiques Material Design de Google, nouveau standard depuis Android 5.0 (Lollipop - API 21). Enfin, vous découvrirez la puissance de Gradle pour le build de votre application, et verrez comment la déployer sur le store Google Play.";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent); // Data sent to the function that is in a file
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+					</div>
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorWorkshops">
+  <div class="container clearfix">
+
+      <div class="footer-block footer-address-block">
+        <h3>Nous trouver :</h3>
+        <div>
+          <a href="http://www.serli.com" title="SERLI" target="_blank">
+            <img src="/assets/brand.png"/>
+          </a>
+        </div>
+        <span>Avenue Thomas Edison<br>BP 20160 - 86960<br>Futuroscope Cedex</span>
+      </div>
+      <div class="footer-block footer-infos-block">
+        <h3>Nous contacter :</h3>
+        <ul>
+          <li>
+            <img src="/assets/footer/telephone.png" />
+            <span>+33(0)5 49 49 49 30</span>
+          </li>
+          <li>
+            <img src="/assets/footer/mail.png" />
+            <a href="mailto:formation@serli.com" title="Nous envoyer un mail">formation@serli.com</a>
+          </li>
+          <li>
+            <img src="/assets/footer/lien.png" />
+            <a href="http://www.serli.com/contact" title="Nous contacter" target="_blank">www.serli.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block footer-social-block">
+        <h3>Nous suivre :</h3>
+        <ul class="clearfix">
+          <li id="facebook">
+            <a href="https://www.facebook.com/SerliFr/?fref=ts" target="_blank" title="Facebook">
+              <img src="/assets/icon-facebook.png" />
+            </a>
+          </li>
+          <li id="twitter">
+            <a href="https://twitter.com/SerliFr?lang=fr" target="_blank" title="Twitter">
+              <img src="/assets/icon-twitter.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>

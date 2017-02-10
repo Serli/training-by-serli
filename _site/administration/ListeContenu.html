@@ -1,0 +1,2714 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Administration</title>
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="canonical" href="http://localhost:4000//administration/ListeContenu.html">
+	<link rel="stylesheet" href="/css/administration.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+		var app = angular.module('formation', [])
+		app .config(['$interpolateProvider', function ($interpolateProvider) {
+			$interpolateProvider.startSymbol('[[');
+			$interpolateProvider.endSymbol(']]');
+		}]);
+	</script>
+</head>
+
+<body>
+	<main>
+		<article>
+
+			<div ng-app="administration" ng-controller="ListContenu">
+  <input type="text" ng-model="research.title" placeholder="Search..." />
+  <select ng-model="research.news" ng-options="choix.v as choix.n for choix in [{ n: 'ALL', v: true }, { n: 'NEWS', v: false }]">
+  </select>
+  <div>
+    <ul>
+        <li ng-repeat="n in (trainings|filter:research.title)" ng-style="{ 'color' : (n.myClass=='Old') ? 'darkgray' : ((n.myClass=='Maj') ? 'green' : ((n.myClass=='Add') ? 'blue' : 'red' )) }">
+          <!-- /// training //////////////////////////////////////////////// -->
+          <h2>[[n.date]][[n.title]]</h2>
+          <ul ng-if="(n.myClass!='Old')||research.news">
+            <li ng-if="n.myClass=='Remove'"><h4>Supprimer</h4></li>
+            <li ng-if="n.myClass=='Maj'"><h4>Modifier</h4></li>
+            <li ng-if="n.myClass=='Add'"><h4>Ajouter</h4></li>
+            <li ng-if="n.public!='' &amp;&amp; n.myClass!='Remove'">[[n.public]]</li>
+            <li ng-if="n.costs!='' &amp;&amp; n.myClass!='Remove'">[[n.costs]] [[n.costsdescription]]</li>
+            <li ng-if="n.duration!='' &amp;&amp; n.myClass!='Remove'">[[n.duration]] [[n.durationdescription]]</li>
+            <li>[[n.ref]]</li>
+            <li ng-if="n.subject!=[] &amp;&amp; n.myClass!='Remove'">SUJETS :</li>
+            <ul>
+              <li ng-repeat="s in n.subject">[[s]]</li>
+            </ul>
+            <li ng-if="n.program!=[] &amp;&amp; n.myClass!='Remove'">PROGRAMME :</li>
+            <ul>
+              <li ng-repeat="p in n.program">
+                [[p.name]]
+                <ul>
+                  <li ng-repeat="a in p.activity">[[a]]</li>
+                </ul>
+              </li>
+            </ul>
+            <li ng-if="n.presentation!='' &amp;&amp; n.myClass!='Remove'">PRÉSENTATION :</li>
+            <li ng-if="n.presentation!='' &amp;&amp; n.myClass!='Remove'">[[n.presentation]]</li>
+          </ul>
+          <!-- ///////////////////////////////////////////////////////////// -->
+          <hr />
+        </li>
+    </ul>
+  </div>
+
+  <p>
+    <a href="/administration/formulaireData.html">Ajout et modification des formations</a>
+    <br />
+    <br />
+    <a href="http://localhost:4000//">Page d'accueil</a>
+  </p>
+
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+<script>
+  var ListeContenuSite = [
+    
+      {
+        myClass: "Old",
+        myDate: "2017-02-09",
+        date: "09 February 2017 - ",
+        href: "/MethodesOutils/TR-DOCKER",
+        title: "Developpement et integration continue avec Docker",
+        public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
+        costs: "690 € HT",
+        costsdescription: "par participant",
+        duration: "1 jour",
+        durationdescription: "100% pratique",
+        ref: "TR-DOCKER",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Docker");
+          
+            resultSubject.push("écosystème Docker");
+          
+            resultSubject.push("Docker File");
+          
+            resultSubject.push("Fig");
+          
+            resultSubject.push("Jenkins + plug-ins Docker");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Docker est aujourd’hui une solution incontournable de virtualisation légère à base de conteneurs. Dans ce workshop 100% pratique, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue autour d’une présentation et d’une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage. Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Par la suite, vous apprendrez à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins pour isoler les builds et assurer meilleures convergence et reproductibilité entre le build sur le poste du développeur et celui sur Jenkins."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2017-02-09",
+        date: "09 February 2017 - ",
+        href: "/Data/TR-SQL",
+        title: "NoSQL",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "TR-SQL",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("MongoDB");
+          
+            resultSubject.push("ElasticSearch");
+          
+            resultSubject.push("Le meilleur des deux mondes");
+          
+            resultSubject.push("Intégration");
+          
+            resultSubject.push("Java");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction";
+            var activityProgram = [];
+            
+              activityProgram.push("Présentation du workshop");
+            
+              activityProgram.push("Bases de données");
+            
+              activityProgram.push("Conception NoSQL");
+            
+              activityProgram.push("Premiers pas avec MongoDB");
+            
+              activityProgram.push("Premiers pas avec Elastic");
+            
+              activityProgram.push("Premier TP");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "MongoDB";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts avancés");
+            
+              activityProgram.push("Agrégations");
+            
+              activityProgram.push("Intégration avec Java");
+            
+              activityProgram.push("Réplication et Sharding");
+            
+              activityProgram.push("Mise en oeuvre de la partie MongoDB dans le workshop");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Elastic";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts de base");
+            
+              activityProgram.push("Mapping/_search/suggest");
+            
+              activityProgram.push("Concepts avancés");
+            
+              activityProgram.push("Modèle distribué et passage en production");
+            
+              activityProgram.push("Mise en oeuvre de la partie Elastic dans le workshop");
+            
+              activityProgram.push("Kata ELK : Elastic / Logstash / Kibana");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Au cours de cette formation, apprenez à intégrer MongoDB et ElasticSearch dans votre application. Cette formation est centrée sur les fonctionnalités des deux bases NoSQL. Comment intégrer MongoDB dans une application Java ? Comment intégrer ElasticSearch à votre application existante ? Vous saurez répondre à ces questions à la suite de cette formation. Elle présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre. Enfin, cette formation vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-08-30",
+        date: "30 August 2016 - ",
+        href: "/Workshops/WK-REACTJS",
+        title: "React JS",
+        public: "Développeurs.",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-REACTJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Applications web avec React");
+          
+            resultSubject.push("Applications mobiles avec React-native");
+          
+            resultSubject.push("SPA avec React-router");
+          
+            resultSubject.push("ES2015 avec babel");
+          
+            resultSubject.push("Tests avec mocha / chai / sinon / enzyme");
+          
+            resultSubject.push("Build avec Webpack");
+          
+            resultSubject.push("React ninja ;-)");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Ce workshop vous permettra de prendre en main et maîtriser React, la librairie Javascript développée par Facebook. Au cours de ce workshop, vous mettrez en application les concepts fondamentaux de React et vous utiliserez diverses librairies incontournables de l’écosystème React, telles que react-router pour le développement d’application “Single Page” ou encore redux, implémentation du pattern Flux. Vous aurez également l’occasion de tenter une incursion dans le monde du développement mobile avec react-native. Vous manipulerez également l’écosystème riche de React en terme de d’outillage de build, de qualité et de test. Au terme de ces deux jours de workshop, vous serez à même de développer efficacement des applications web modernes ainsi que des applications mobiles en utilisant React comme brique de base !"
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-08-30",
+        date: "30 August 2016 - ",
+        href: "/Web/WK-ANGULARJS",
+        title: "AngularJS",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "20% théorie, 80% pratique",
+        ref: "TR-ANGULARJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Découverte d’AngularJS");
+          
+            resultSubject.push("Injection de dépendances");
+          
+            resultSubject.push("Directives");
+          
+            resultSubject.push("Tests unitaires et tests end-to-end");
+          
+            resultSubject.push("Ecosystème et outillage");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Qu'est-ce qu'une application web moderne ?";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Développer avec AngularJS (ES 6 pur)";
+            var activityProgram = [];
+            
+              activityProgram.push("HTML et 'direct binding'");
+            
+              activityProgram.push("Utiliser les filtres");
+            
+              activityProgram.push("$q promises avec RXJS");
+            
+              activityProgram.push("La communication Client-Serveur avec $http");
+            
+              activityProgram.push("Utiliser les services");
+            
+              activityProgram.push("Utiliser les Routes avec UI Router");
+            
+              activityProgram.push("'Scope inheritance'");
+            
+              activityProgram.push("Créer des directives spécifiques");
+            
+              activityProgram.push("Intégration dans un portail (bootstrap d'application)");
+            
+              activityProgram.push("Industrialisation (NPM / Webpack)");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les tests avec Angular JS";
+            var activityProgram = [];
+            
+              activityProgram.push("Test unitaire avec Jasmine");
+            
+              activityProgram.push("Test unitaire de composants AngularJS avec Jasmine et Karma + Chai");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modularisation du projet";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Préparation à l'arrivée d'Angular 2";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années. Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end ! Une formation avec 80% de travaux pratiques, la meilleure façon d’aborder AngularJS !"
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-08-30",
+        date: "30 August 2016 - ",
+        href: "/Web/TR-REACTJS",
+        title: "ReactJS",
+        public: "Développeurs ayant une maîtrise des fondamentaux du web et du langage JavaScript.",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-REACTJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Les bases de React");
+          
+            resultSubject.push("Outillage");
+          
+            resultSubject.push("Testing");
+          
+            resultSubject.push("Single Page Application avec React-Routeur");
+          
+            resultSubject.push("Concepts avancés");
+          
+            resultSubject.push("Pattern Flux");
+          
+            resultSubject.push("Redux");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction";
+            var activityProgram = [];
+            
+              activityProgram.push("Le développement web aujourd'hui");
+            
+              activityProgram.push("Tour d'horizon des frameworks JavaScript");
+            
+              activityProgram.push("React : positionnemen, historique des utilisateurs");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "La philosophie de React";
+            var activityProgram = [];
+            
+              activityProgram.push("Simplicité");
+            
+              activityProgram.push("Le V de MVC");
+            
+              activityProgram.push("Approche déclarative");
+            
+              activityProgram.push("Composants réutilisables et composables");
+            
+              activityProgram.push("Composants à état");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les bases de React";
+            var activityProgram = [];
+            
+              activityProgram.push("Le rendu d'un composant");
+            
+              activityProgram.push("La syntaxe JSX");
+            
+              activityProgram.push("Les propriétés");
+            
+              activityProgram.push("L'état");
+            
+              activityProgram.push("Cycle de vie et appels AJAX");
+            
+              activityProgram.push("Gestion du style");
+            
+              activityProgram.push("Virtual DOM");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Outillage";
+            var activityProgram = [];
+            
+              activityProgram.push("Choix d'un IDE");
+            
+              activityProgram.push("Babel et webpack");
+            
+              activityProgram.push("ESLint");
+            
+              activityProgram.push("React Developer Tools");
+            
+              activityProgram.push("Starters Packs");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Bonnes pratiques";
+            var activityProgram = [];
+            
+              activityProgram.push("Penser React");
+            
+              activityProgram.push("Smart vs. Dumbs components");
+            
+              activityProgram.push("Par où commencer le développement ?");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Testing";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Single Page Application";
+            var activityProgram = [];
+            
+              activityProgram.push("Généralités");
+            
+              activityProgram.push("Utilisation de react-router");
+            
+              activityProgram.push("History");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Concepts avancés";
+            var activityProgram = [];
+            
+              activityProgram.push("Utilisation du contexte");
+            
+              activityProgram.push("Higher Order Components");
+            
+              activityProgram.push("Animations");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Utilisation de librairies tierces";
+            var activityProgram = [];
+            
+              activityProgram.push("Material-UI");
+            
+              activityProgram.push("ChartJS");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Communications entre les composants";
+            var activityProgram = [];
+            
+              activityProgram.push("Les limites du modèle parent/child");
+            
+              activityProgram.push("Le pattern Flux");
+            
+              activityProgram.push("Les implémentations de Flux");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Redux";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts de base");
+            
+              activityProgram.push("Comment utiliser Redux");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Pour aller plus loin...";
+            var activityProgram = [];
+            
+              activityProgram.push("Performances");
+            
+              activityProgram.push("React Native");
+            
+              activityProgram.push("JavaScript Universel");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vous permettra de découvrir React, la librairie Javascript développée par Facebook. Au cours de cette formation, vous apprendrez les concepts fondamentaux de React ainsi que des concepts plus avancés telles que react-router pour le développement d’application “Single Page” ou encore redux, implémentation du pattern Flux. Vous appréhenderez également l’écosystème riche de React en terme de d’outillage et de testing. Au terme de ces trois jours de formation, vous serez à même de développer efficacement des applications web modernes !"
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-29",
+        date: "29 April 2016 - ",
+        href: "/Web/TR-ANGULARJS",
+        title: "AngularJS",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1690 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-ANGULARJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Découverte d’AngularJS");
+          
+            resultSubject.push("Injection de dépendances");
+          
+            resultSubject.push("Directives");
+          
+            resultSubject.push("Tests unitaires et tests end-to-end");
+          
+            resultSubject.push("Ecosystème et outillage");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Rappels des principes de base du web";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Découverte d’AngularJS";
+            var activityProgram = [];
+            
+              activityProgram.push("Binding et templating, filtres");
+            
+              activityProgram.push("Contrôleurs et scope");
+            
+              activityProgram.push("Routage");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Injection de dépendances";
+            var activityProgram = [];
+            
+              activityProgram.push("L’injection de dépendances dans AngularJS");
+            
+              activityProgram.push("Modules et services");
+            
+              activityProgram.push("Bonnes pratiques d’organisation du code");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Composants réutilisables avec les directives";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Tests unitaires et tests end-to-end";
+            var activityProgram = [];
+            
+              activityProgram.push("Les outils de tests unitaires Karma, Jasmine, les Mocks");
+            
+              activityProgram.push("Tests end-to-end avec Protractor");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Ecosystème et outillage";
+            var activityProgram = [];
+            
+              activityProgram.push("Build avec Grunt");
+            
+              activityProgram.push("Outils de debug");
+            
+              activityProgram.push("Librairies tierces");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années. Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end ! Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder AngularJS !"
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-27",
+        date: "27 April 2016 - ",
+        href: "/Workshops/WK-WINDPHONE",
+        title: "Windows Mobile",
+        public: "Développeurs débutants ou expérimentés, Architectes",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-WINDPHONE",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push(".Net Compact Framework");
+          
+            resultSubject.push("Silverlight");
+          
+            resultSubject.push("XAML");
+          
+            resultSubject.push("Expression Blend");
+          
+            resultSubject.push("Visual Studio");
+          
+            resultSubject.push("MVVM");
+          
+            resultSubject.push("Windows Phone Store");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Au cours de ce workshop, apprenez à développer une application Windows Phone 8. Apprenez à mener à bien un développement Windows Phone 8 à l’aide de Expression Blend. Vous pourrez ensuite concevoir l’ensemble de votre code applicatif, sous Visual Studio, à l’aide de .Net Compact Framework, afin de mesurer la puissance que vous apporte ce framework. Aussi bien pour l’écriture de vos IHM que pour votre code métier ou pour les interactions avec les capteurs de l’appareil. Vous découvrirez l’ensemble des outils permettant de mener votre développement à bien, IDE, émulateur, tests sur appareil. Enfin vous découvrirez comment intégrer vos développements dans TFC et comment déployer votre application dans Windows Store."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-SQL",
+        title: "NoSQL",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-SQL",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("MongoDB");
+          
+            resultSubject.push("ElasticSearch");
+          
+            resultSubject.push("Le meilleur des deux mondes");
+          
+            resultSubject.push("Intégration");
+          
+            resultSubject.push("Java");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Au cours de ce workshop, apprenez à intégrer MongoDB et ElasticSearch dans votre application. Ce workshop est centré sur les fonctionnalités des deux bases NoSQL. Comment intégrer MongoDB dans une application Java ? Comment intégrer ElasticSearch à votre application existante ? Vous saurez répondre à ces questions à la suite de ce workshop. Ce workshop présente en outre la mise en oeuvre opérationnelle de ces deux technologies, les outils à utiliser, les méthodes de développement et la mise en oeuvre. Enfin, ce workshop vous offrira toutes les clés pour envisager le passage en production des outils que vous avez mis en oeuvre avec MongoDB et ElasticSearch."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-DOCKER2",
+        title: "Docker : Du développement a la production",
+        public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "20% théorie, 80% pratique",
+        ref: "WK-DOCKER2",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Docker");
+          
+            resultSubject.push("écosystème Docker");
+          
+            resultSubject.push("Docker File");
+          
+            resultSubject.push("Fig");
+          
+            resultSubject.push("Jenkins");
+          
+            resultSubject.push("Ansible");
+          
+            resultSubject.push("Kubernetes");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Docker est aujourd’hui une solution de virtualisation légère incontournable. Dans ce workshop, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue jusqu’à la production, avec une présentation et une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage. Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Vous apprendrez ensuite à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins. Vous franchirez enfin l’ultime étape du déploiement en production, avec la production par Jenkins d’une image déployable. Quels outils mettre en oeuvre pour créer un cluster de conteneurs Docker, mettre en place le monitoring, gérer le cloud et la scalabilité de manière automatisée ? Ce workshop vous permettra de répondre à l’ensemble de ces questions."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-PLAY2",
+        title: "Developpement Web sur le Framework Play 2",
+        public: "Développeur Java ou Scala.",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-PLAY2",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Play 2");
+          
+            resultSubject.push("Java ou Scala");
+          
+            resultSubject.push("Javascript");
+          
+            resultSubject.push("Akka");
+          
+            resultSubject.push("HTML5");
+          
+            resultSubject.push("CSS3");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Au cours de ce workshop de trois jours, apprenez à développer rapidement des applications web basées sur le framework Play. Destiné à une équipe de 1 à 4 développeurs, cet atelier vous permettra de mettre en oeuvre une application tirant au mieux partie du framework Play en 3 jours. Découvrez la simplicité proposée par le Play et la rapidité de mise en oeuvre associée. Apprenez à tirer le meilleur parti du développement asynchrone et du système d’acteurs proposé par Akka. Créez de nouveaux usages en tirant parti des nouveautés temps réel offertes par HTML5."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-HYBRIDE",
+        title: "Developpement mobile hybride",
+        public: "Développeurs débutants ou expérimentés, Architectes",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-HYBRIDE",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Apache Cordova");
+          
+            resultSubject.push("PhoneGap");
+          
+            resultSubject.push("Ionic");
+          
+            resultSubject.push("JavaScript");
+          
+            resultSubject.push("Phonegap Build");
+          
+            resultSubject.push("CLI phonegap");
+          
+            resultSubject.push("CLI Ionic");
+          
+            resultSubject.push("Debuggeur remote de Chrome");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Lors de ce workshop, apprenez à développer une application mobile hybride de zéro. Vous découvrirez les principaux concepts du développement hybride et les fondements d’Apache Cordova. Vous développerez votre application à l’aide de JavaScript et de la bibliothèque de composants graphiques IOnic. Vous utiliserez les APIs Cordova qui permettent d’interagir avec les appareils. Vous apprendrez à appréhender les différences entre chaque OS. Vous découvrirez les principaux outils de développement, de test et de debug. Enfin, vous appréhenderez les principes de build d’applications multi-plateformes basées sur Apache Cordova."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-IOS",
+        title: "Développement iOS",
+        public: "Développeurs débutants ou expérimentés, Architectes",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-IOS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Objective-C");
+          
+            resultSubject.push("Framework Foundation et Cocoa");
+          
+            resultSubject.push("Design Patterns iOS");
+          
+            resultSubject.push("Concepts Haut-Niveau");
+          
+            resultSubject.push("Xcode");
+          
+            resultSubject.push("Interface Builder");
+          
+            resultSubject.push("Déploiement sur l’Apple Store");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Durant ce workshop, apprenez à développer une application iOS dans son ensemble. Apprenez les concepts de base de l’Objective-C et commencez à développer votre nouvelle application. Après avoir posé les bases du design d’applications iOS, vous apprendrez à prendre en main Interface Builder afin de dessiner votre application et de concevoir la cinématique entre les écrans. Vous développerez ensuite les fonctionnalités de votre application à l’aide d’Objective-C, ainsi que l’interaction avec les différentes fonctionnalités de l’appareil ainsi que les APIs essentielles. Vous découvrirez les principaux patterns structurants du framework. Vous appréhenderez le cycle de développement dans son ensemble (simulateur, tests/debug sur device) Vous comprendrez comment appréhender les spécificités des différents appareils cibles (plusieurs versions d’iPhones + iPads). Vous apprendrez enfin à construire votre application et à la déployer sur l’Apple Store."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-DOCKER1",
+        title: "Developpement et integration continue avec Docker",
+        public: "Techniciens (du développeur à l’exploitant) débutants ou expérimentés",
+        costs: "690 € HT",
+        costsdescription: "par participant",
+        duration: "1 jour",
+        durationdescription: "100% pratique",
+        ref: "WK-DOCKER1",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Docker");
+          
+            resultSubject.push("écosystème Docker");
+          
+            resultSubject.push("Docker File");
+          
+            resultSubject.push("Fig");
+          
+            resultSubject.push("Jenkins + plug-ins Docker");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Docker est aujourd’hui une solution incontournable de virtualisation légère à base de conteneurs. Dans ce workshop, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue autour d’une présentation et d’une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage. Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement. Par la suite, vous apprendrez à utiliser Docker et l’image précédemment créée, dans votre chaîne d’intégration continue avec Jenkins pour isoler les builds et assurer meilleures convergence et reproductibilité entre le build sur le poste du développeur et celui sur Jenkins."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-ANDROID",
+        title: "Developpement Android",
+        public: "Développeurs débutants ou expérimentés, Architectes",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "100% pratique",
+        ref: "WK-ANDROID",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("La philosophie Android");
+          
+            resultSubject.push("Le SDK");
+          
+            resultSubject.push("Les librairies indispensables");
+          
+            resultSubject.push("Les interactions avec le téléphone");
+          
+            resultSubject.push("Material Design");
+          
+            resultSubject.push("Build et déploiement");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Rien de tel que de mettre les mains dans le cambouis pour apprendre une nouvelle technologie. C’est d’autant plus vrai pour le développement d’applications mobiles ! Au cours de ce workshop, vous apprendrez à développer une application Android de A à Z : de la découverte du SDK au déploiement sur le store Google Play ! Après avoir parcouru les notions de bases indispensables à tout développeur Android, vous commencerez le développement d’une application mobile “fil rouge” qui sera enrichie de nouvelles fonctionnalités tout au long du workshop. Vous découvrirez et utiliserez des librairies indispensables pour développer efficacement et élégamment : Retrofit (appels de services REST), Picasso (chargement d’images), Dagger (injection de dépendances), EventBus (gestion d’événements) et d’autres encore ! Cette application respectera également les bonnes pratiques Material Design de Google, nouveau standard depuis Android 5.0 (Lollipop - API 21). Enfin, vous découvrirez la puissance de Gradle pour le build de votre application, et verrez comment la déployer sur le store Google Play."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Workshops/WK-SCRUM",
+        title: "Decouvrez Scrum avec des Legos",
+        public: "Tout public",
+        costs: "690 € HT",
+        costsdescription: "par participant",
+        duration: "1 jour",
+        durationdescription: "100% pratique",
+        ref: "WK-SCRUM",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Les Rôles");
+          
+            resultSubject.push("Les évènements");
+          
+            resultSubject.push("Les Artefacts");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+          return resultProgram;
+        }(),
+        presentation: "Ces dernières années, Scrum est devenu la méthode incontournable parmi les méthodes Agiles. Au cours de ce workshop vous apprendrez la méthode Scrum de manière ludique en réalisant un projet à l’aide de Legos. Vous découvrirez les différents rôles d’un projet Scrum (Product Owner, Scrum Master, Développeur). Vous prendrez part aux différentes étapes du projet (Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective). Enfin, vous découvrirez la mise en place des principaux artefacts de la méthode Scrum (Product Backlog, Sprint Backlog, Définition de Fini). A l’issu de ce Workshop, vous appréhenderez la méthode Scrum et son apport dans un projet."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Web/TR-JAVASCRIPT",
+        title: "Javascript Avancé",
+        public: "Développeurs expérimentés, Architectes",
+        costs: "1140 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-JAVASCRIPT",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("JavaScript");
+          
+            resultSubject.push("Design Patterns");
+          
+            resultSubject.push("ES6");
+          
+            resultSubject.push("Industrialisation");
+          
+            resultSubject.push("npm");
+          
+            resultSubject.push("Gestion des dépendances");
+          
+            resultSubject.push("Tests automatisés");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Le javaScript Moderne";
+            var activityProgram = [];
+            
+              activityProgram.push("Un peu d’histoire");
+            
+              activityProgram.push("Les enjeux");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les bonnes pratiques";
+            var activityProgram = [];
+            
+              activityProgram.push("Les pièges du langage");
+            
+              activityProgram.push("éléments essentiels");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les patterns essentiels";
+            var activityProgram = [];
+            
+              activityProgram.push("IIFE");
+            
+              activityProgram.push("Le pattern module");
+            
+              activityProgram.push("Autres patterns essentiels");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "ES6";
+            var activityProgram = [];
+            
+              activityProgram.push("Tour d’horizon");
+            
+              activityProgram.push("Les grandes nouveautés");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Industrialisation du JavaScript";
+            var activityProgram = [];
+            
+              activityProgram.push("npm &#58; La boîte à outils");
+            
+              activityProgram.push("Les scripts de build et la gestion de dépendances");
+            
+              activityProgram.push("Les tests");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Avec l’arrivée de HTML 5 et des frameworks MVC clients, le JavaScript a désormais pris une part très importante dans le développement de clients web. A l’occasion de cette formation vous découvrirez les secrets du JavaScript moderne. Les erreurs fréquentes et comment les éviter, les patterns essentiels. Vous apprendrez enfin l’industrialisation du JavaScript qui a été révolutionnée par l’arrivée de Node.js."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Web/TR-WEB",
+        title: "Introduction au développement Web",
+        public: "Tout public",
+        costs: "490 € HT",
+        costsdescription: "par participant",
+        duration: "1 journée",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-WEB",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("HTTP");
+          
+            resultSubject.push("REST");
+          
+            resultSubject.push("MVC");
+          
+            resultSubject.push("HTML5");
+          
+            resultSubject.push("CSS3");
+          
+            resultSubject.push("JavaScript");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "HTTP";
+            var activityProgram = [];
+            
+              activityProgram.push("Un peu d’histoire");
+            
+              activityProgram.push("Le navigateur");
+            
+              activityProgram.push("REST");
+            
+              activityProgram.push("Anatomie d’une requête HTTP");
+            
+              activityProgram.push("MVC");
+            
+              activityProgram.push("Le push");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "HTML & CSS";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Composants HTML");
+            
+              activityProgram.push("Introduction au CSS");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "JavaScript";
+            var activityProgram = [];
+            
+              activityProgram.push("Prise en main");
+            
+              activityProgram.push("Manipulation du DOM");
+            
+              activityProgram.push("Tour d’horizon des frameworks");
+            
+              activityProgram.push("L’avenir");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vous fera découvrir les principes de base du développement web. Vous découvrirez HTTP, l’architecture REST et le pattern MVC. Vous apprendrez les bases du langage HTML et créerez vos premières feuilles de style CSS3. Vous découvrirez le langage JavaScript. Enfin, vous réaliserez votre premier projet web."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Mobilite/TR-WINDPHONE",
+        title: "Développement WindowsPhone",
+        public: "Développeurs C# et Chefs de projets techniques",
+        costs: "2790 € HT",
+        costsdescription: "par participant",
+        duration: "5 jours",
+        durationdescription: "40% théorie, 60% pratique",
+        ref: "TR-WINDPHONE",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Net Compact Framework");
+          
+            resultSubject.push("Silverlight");
+          
+            resultSubject.push("XAML");
+          
+            resultSubject.push("Expression Blend");
+          
+            resultSubject.push("MVVM");
+          
+            resultSubject.push("Windows Phone Store");
+          
+            resultSubject.push("Linq to SQL (SQL Server CE)");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Vue d’ensemble de Windows Phone";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Architecture de développement";
+            var activityProgram = [];
+            
+              activityProgram.push("MVVM");
+            
+              activityProgram.push("Portable Class Library");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Silverlight";
+            var activityProgram = [];
+            
+              activityProgram.push("XAML et Data Binding");
+            
+              activityProgram.push("Composant pour Windows Phone");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Graphisme";
+            var activityProgram = [];
+            
+              activityProgram.push("Effet graphiques");
+            
+              activityProgram.push("Règles d’ergonomie");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Performances des applications";
+            var activityProgram = [];
+            
+              activityProgram.push("Asynchronisme");
+            
+              activityProgram.push("Compositor Thread");
+            
+              activityProgram.push("Gestion de la mémoire");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Accéder à du contenu";
+            var activityProgram = [];
+            
+              activityProgram.push("Local (Base de données...)");
+            
+              activityProgram.push("Distant (SOAP, Windows Phone Store...)");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Utilisation des composants de l’appareil";
+            var activityProgram = [];
+            
+              activityProgram.push("Contacts, GPS, microphone...");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Avec Windows Phone 8 Microsoft propose une plate-forme qui prend en compte l’ensemble des problématiques importantes du développement mobile telles que les règles d’ergonomie, les contraintes matérielles, l’environnement de développement, la solution de déploiement ou l’accès aux fournisseurs de contenus. Cette formation vous permettra de connaître et comprendre des concepts clefs comme la navigation et la liaison de données. Elle vous confrontera à l’ergonomie particulière de ce système et des écrans tactiles en vous donnant des solutions de mise en oeuvre telles que “Expression Blend”. Vous apprendrez comment stocker les données localement, gérer les préférences aussi bien que l’interaction avec les autres applications du mobile."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Mobilite/TR-IOS",
+        title: "Développement iOS",
+        public: "Développeur ayant de l’expérience dans un langage Orienté Objets",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-IOS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Objective-C");
+          
+            resultSubject.push("Le développement iOS et ses spécificités");
+          
+            resultSubject.push("Framework Foundation");
+          
+            resultSubject.push("Design Patterns iOS");
+          
+            resultSubject.push("Concepts Haut-Niveau");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation de l’Objective-C";
+            var activityProgram = [];
+            
+              activityProgram.push("Syntaxe, concepts, propriétés");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation de l’environnement de développement";
+            var activityProgram = [];
+            
+              activityProgram.push("XCode 5, Standard, Assistant et Version");
+            
+              activityProgram.push("Interface Builder");
+            
+              activityProgram.push("Auto Layout");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation d’une application iOS";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spécificité du déploiement iOS";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation du framework Foundation";
+            var activityProgram = [];
+            
+              activityProgram.push("Classes de bases, Collections...");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation des principaux Design Patterns d’iOS";
+            var activityProgram = [];
+            
+              activityProgram.push("MVC, Délégation, KVC, KVO, Class Cluster");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation des concepts de haut niveau";
+            var activityProgram = [];
+            
+              activityProgram.push("Storyboards, Contrôleurs principaux, Segues, IBOutlet et IBAction");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Création d’interface utilisateur";
+            var activityProgram = [];
+            
+              activityProgram.push("Vues, Contrôleurs, Alertes...");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Connectivité";
+            var activityProgram = [];
+            
+              activityProgram.push("Consommation de Web Services REST, JSON");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Persistance des données";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Projet Tutoré";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation a pour objectif de vous initier au développement iOS. Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS. Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Mobilite/TR-ANDROID",
+        title: "Développement Android",
+        public: "Développeur ayant déjà une connaissance de Java.",
+        costs: "1690 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-ANDROID",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Framework et Outils Android");
+          
+            resultSubject.push("Services et Activités Android");
+          
+            resultSubject.push("Persistance des données");
+          
+            resultSubject.push("Géolocalisation");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation de l’environnement de développement sous Eclipse";
+            var activityProgram = [];
+            
+              activityProgram.push("Mise en place");
+            
+              activityProgram.push("Outils proposés (débugueur, émulateur...)");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation et réalisation d’un premier “Hello World”";
+            var activityProgram = [];
+            
+              activityProgram.push("Présentation du découpage d’une application Android");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Réalisation d’une interface basique";
+            var activityProgram = [];
+            
+              activityProgram.push("Ajout de composants");
+            
+              activityProgram.push("Interaction de composants");
+            
+              activityProgram.push("Gestion des menus et des boîtes de dialogues");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Réalisation de la paramétrisation d’une application";
+            var activityProgram = [];
+            
+              activityProgram.push("Internationalisation");
+            
+              activityProgram.push("Adaptation à différents périphériques");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Présentation et réalisation des possibilités de persistance de données";
+            var activityProgram = [];
+            
+              activityProgram.push("Préférences d’une application");
+            
+              activityProgram.push("Accès au système de fichier");
+            
+              activityProgram.push("Base de donnée SQLite");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Utilisation des outils de localisation";
+            var activityProgram = [];
+            
+              activityProgram.push("GPS, GeoCoding");
+            
+              activityProgram.push("API Google Maps v2");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Projet Turoré";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation a pour objectif de vous initier au développement pour Android. Grâce à cette formation et à vos connaissances Java, vous appréhenderez la prise en main de l’environnement de développement, et vous apprendrez les concepts essentiels d’Android. A travers divers exercices, vous découvrirez les possibilités de ce système avant de mettre en oeuvre le développement d’un projet complet."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/MethodesOutils/TR-SELENIUM",
+        title: "Selenium",
+        public: "Testeurs, Développeurs, Chefs de projets",
+        costs: "1140 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "40% théorie, 60% pratique",
+        ref: "TR-SELENIUM",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Selenium");
+          
+            resultSubject.push("Selenium IDE");
+          
+            resultSubject.push("Selenium Webdriver");
+          
+            resultSubject.push("Selenium Grid");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation de Selenium";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les notions de base";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Selenium-IDE";
+            var activityProgram = [];
+            
+              activityProgram.push("Prise en main (construction des cas de test)");
+            
+              activityProgram.push("Debugger");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les commandes Selenium";
+            var activityProgram = [];
+            
+              activityProgram.push("Localisation des éléments");
+            
+              activityProgram.push("AndWait, waitFor, store...");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Selenium Webdriver";
+            var activityProgram = [];
+            
+              activityProgram.push("Programmation des tests");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Selenium-Grid";
+            var activityProgram = [];
+            
+              activityProgram.push("Architecture");
+            
+              activityProgram.push("Configuration");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Selenium Webdriver - Page Object Pattern";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Un peu d’agilité";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation a pour objectif de vous faire découvrir le framework de tests fonctionnels automatisés Selenium. L’objectif de cette formation est d’apprendre à automatiser vos tests d’applications Web avec Selenium. Vous apprendrez en outre à interpréter les résultats de vos tests fonctionnels automatisés. Enfin, vous appréhenderez la conception et la maintenance des tests automatisés basés sur Selenium."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/MethodesOutils/TR-AGILES",
+        title: "Methodes Agiles",
+        public: "Tous types de profils",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-AGILES",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Agilité");
+          
+            resultSubject.push("Scrum");
+          
+            resultSubject.push("Kanban");
+          
+            resultSubject.push("Lean");
+          
+            resultSubject.push("TDD");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction";
+            var activityProgram = [];
+            
+              activityProgram.push("Méthodes classiques");
+            
+              activityProgram.push("Manifeste agile");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Scrum";
+            var activityProgram = [];
+            
+              activityProgram.push("Principe");
+            
+              activityProgram.push("Rôles");
+            
+              activityProgram.push("événements");
+            
+              activityProgram.push("Artefacts");
+            
+              activityProgram.push("Story mapping");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Lean";
+            var activityProgram = [];
+            
+              activityProgram.push("Principe");
+            
+              activityProgram.push("Gaspillage");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Kanban";
+            var activityProgram = [];
+            
+              activityProgram.push("Principe");
+            
+              activityProgram.push("Workflow");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "TDD";
+            var activityProgram = [];
+            
+              activityProgram.push("Principe");
+            
+              activityProgram.push("Kata");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Rétrospective";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Depuis leur apparition dans les années 80, les méthodes agiles n’ont cessé de faire évoluer la gestion de projet traditionnelle. Cette formation vous permettra de découvrir les base fondamentales à l’origine de l’agilité, ainsi qu’un éventail des méthodes les plus répandues. Des ateliers pratiques vous permettront de comprendre en profondeur les bénéfices qu’apporte l’agilité au quotidien dans la gestion de vos projets."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/MethodesOutils/TR-GIT",
+        title: "Débuter avec Git",
+        public: "Développeurs, Opérationnels, Chefs de projet",
+        costs: "490 € HT",
+        costsdescription: "par participant",
+        duration: "1 jour",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-GIT",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Git (commandes de base)");
+          
+            resultSubject.push("Dépôts distants");
+          
+            resultSubject.push("Branches");
+          
+            resultSubject.push("GitHub");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Différents types de gestionnaires de sources";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Principes fondamentaux";
+            var activityProgram = [];
+            
+              activityProgram.push("Workflow local");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Commandes de base";
+            var activityProgram = [];
+            
+              activityProgram.push("add, commit, status, reset, revert");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Dépôts distants";
+            var activityProgram = [];
+            
+              activityProgram.push("Clone, push, pull");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Gestion des branches";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts");
+            
+              activityProgram.push("Fusion de branches");
+            
+              activityProgram.push("Workflow de développement");
+            
+              activityProgram.push("Réécrire l’histoire");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "GitHub";
+            var activityProgram = [];
+            
+              activityProgram.push("Fonctionnalités");
+            
+              activityProgram.push("Fork, Pull Request...");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Git est devenu l’outil de gestion de versions incontournable. Au cours de cette formation vous ferez vos premiers pas avec Git. Vous comprendrez les concepts fondamentaux de Git. Vous assimilerez simplement les commandes fondamentales de Git qui vous permettront d’appréhender cet outil complexe de la manière la plus efficace possible. Vous apprendrez les workflows du développement basé sur Git. En outre, cette formation vous permettra de découvrir le service GitHub, un incontournable."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/LanguagesAlternatifs/TR-SCALA",
+        title: "Scala",
+        public: "Développeurs expérimentés",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-SCALA",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Programmmation fonctionnelle");
+          
+            resultSubject.push("Les bases du langage");
+          
+            resultSubject.push("Programmation orientée objet");
+          
+            resultSubject.push("Les outils du SDK");
+          
+            resultSubject.push("Ecosystème");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Programmation fonctionnelle";
+            var activityProgram = [];
+            
+              activityProgram.push("Functions");
+            
+              activityProgram.push("Currying");
+            
+              activityProgram.push("High order functions");
+            
+              activityProgram.push("Récursivité");
+            
+              activityProgram.push("Lazy evalutation");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les bases du langage";
+            var activityProgram = [];
+            
+              activityProgram.push("Syntaxe du langage");
+            
+              activityProgram.push("Pattern matching");
+            
+              activityProgram.push("Alias de types");
+            
+              activityProgram.push("Comprendre le _");
+            
+              activityProgram.push("Implicits");
+            
+              activityProgram.push("Generics");
+            
+              activityProgram.push("La décomposition");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Programmation orientée objet";
+            var activityProgram = [];
+            
+              activityProgram.push("Pyramide des types");
+            
+              activityProgram.push("Classes");
+            
+              activityProgram.push("Case classes");
+            
+              activityProgram.push("Singleton");
+            
+              activityProgram.push("Compagnion Object");
+            
+              activityProgram.push("Trait");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les outils du SDK";
+            var activityProgram = [];
+            
+              activityProgram.push("API de collection");
+            
+              activityProgram.push("Structures fonctionnelles");
+            
+              activityProgram.push("Option, Try, Either, Tuples, etc ...");
+            
+              activityProgram.push("API concurrent");
+            
+              activityProgram.push("Interactions avec Java");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Ecosystème";
+            var activityProgram = [];
+            
+              activityProgram.push("Playframework");
+            
+              activityProgram.push("Akka");
+            
+              activityProgram.push("Scalaz");
+            
+              activityProgram.push("Shapeless");
+            
+              activityProgram.push("Slick");
+            
+              activityProgram.push("SBT");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Scala est un langage de programmation pour la JVM né en 2003. Une particularité du langage est de proposer un mélange de plusieurs paradigmes de programmation, entre la programmation fonctionnelle et la programmation orientée objet. Durant cette formation vous découvrirez la richesse du langage Scala et apprendrez à maîtriser toute la puissance du langage à travers diverses mises en pratiques soutenues par des passages théoriques."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/LanguagesAlternatifs/TR-NODEJS",
+        title: "Introduction à Node.Js",
+        public: "Développeurs débutants ou expérimentés",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-NODEJS",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Concepts fondamentaux");
+          
+            resultSubject.push("Modularité");
+          
+            resultSubject.push("Serveur web avec Expressjs");
+          
+            resultSubject.push("Stockage NoSQL");
+          
+            resultSubject.push("Tests");
+          
+            resultSubject.push("Evènements et Streams");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction et concepts fondamentaux";
+            var activityProgram = [];
+            
+              activityProgram.push("Javascript côté serveur");
+            
+              activityProgram.push("Event-loop mono-thread");
+            
+              activityProgram.push("Exécution asynchrone");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les modules";
+            var activityProgram = [];
+            
+              activityProgram.push("Le gestionnaire de modules NPM");
+            
+              activityProgram.push("Les modules de base de Node");
+            
+              activityProgram.push("Création de ses propres modules");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Création d’un serveur web avec ExpressJs";
+            var activityProgram = [];
+            
+              activityProgram.push("Routes");
+            
+              activityProgram.push("Middlewares");
+            
+              activityProgram.push("Sécurité avec Passeport");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Persistance de données dans MongoDB";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Les tests";
+            var activityProgram = [];
+            
+              activityProgram.push("Tests unitaires avec Mocha et Chai");
+            
+              activityProgram.push("Tests fonctionnels avec CasperJs");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Concepts avancés";
+            var activityProgram = [];
+            
+              activityProgram.push("Evénements");
+            
+              activityProgram.push("Streams");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Du Javascript côté serveur, qui l’eût cru en 2009 ? Et pourtant ! Basé sur le moteur V8 de Chrome, Node.js est devenu incontournable aujourd’hui. Grâce à son modèle non-bloquant, Node.js permet de développer des applications robustes et performantes. Idéal pour traiter de gros volumes de données, issus par exemple de l’Internet des Objets. Pendant ces trois jours, vous découvrirez la puissance de Node.js, avec 50% du temps consacré à des travaux pratiques."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/LanguagesAlternatifs/TR-AKKA",
+        title: "Akka",
+        public: "Développeurs expérimentés Java ou Scala",
+        costs: "1990 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-AKKA",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Modèles de programmation");
+          
+            resultSubject.push("Patterns de base");
+          
+            resultSubject.push("Outils du framework");
+          
+            resultSubject.push("Modules additionnels");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Le modèle de programmation de Akka";
+            var activityProgram = [];
+            
+              activityProgram.push("Les acteurs");
+            
+              activityProgram.push("Mailboxes");
+            
+              activityProgram.push("Dispatchers");
+            
+              activityProgram.push("Routing");
+            
+              activityProgram.push("Resilience / tolérance aux pannes");
+            
+              activityProgram.push("Monitoring");
+            
+              activityProgram.push("Remoting");
+            
+              activityProgram.push("Tests");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Patterns de base";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Outils du framework";
+            var activityProgram = [];
+            
+              activityProgram.push("Agent");
+            
+              activityProgram.push("FSM");
+            
+              activityProgram.push("Event bus");
+            
+              activityProgram.push("Logging, Scheduler, Circuit Breakers");
+            
+              activityProgram.push("Intégration avec des outils tierces");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modules additionnels";
+            var activityProgram = [];
+            
+              activityProgram.push("Akka cluster");
+            
+              activityProgram.push("Akka streams");
+            
+              activityProgram.push("Akka HTTP");
+            
+              activityProgram.push("Akka persistence");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Akka est un framework écrit en Scala qui implémente le pattern Acteur tel que défini dans Erlang. Au fur et à mesure des années, Akka s’est doté de divers modules basés sur le modèle de programmation acteur, pour devenir une référence en terme d’outillage middleware. Durant cette formation vous découvrirez le framework et tous ses modules ainsi que la manière de le mettre en oeuvre à travers divers cas d’utilisation. Initialement conçu pour Scala, cette formation est disponible à la fois en Scala et en Java."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Java/TR-SPRING4",
+        title: "Spring 4",
+        public: "Développeurs Java",
+        costs: "940 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "40% théorie, 60% pratique",
+        ref: "TR-SPRING4",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Spring Core");
+          
+            resultSubject.push("Spring AOP");
+          
+            resultSubject.push("Accès aux données");
+          
+            resultSubject.push("Spring MVC");
+          
+            resultSubject.push("Spring Boot");
+          
+            resultSubject.push("Spring Batch");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spring Core";
+            var activityProgram = [];
+            
+              activityProgram.push("Principaux concepts");
+            
+              activityProgram.push("Inversion de contrôle et injection de dépendances");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spring AOP";
+            var activityProgram = [];
+            
+              activityProgram.push("Mise en oeuvre");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Accès aux données";
+            var activityProgram = [];
+            
+              activityProgram.push("Spring ORM, Spring DAO");
+            
+              activityProgram.push("Transaction Manager");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spring MVC";
+            var activityProgram = [];
+            
+              activityProgram.push("Configuration");
+            
+              activityProgram.push("Modèle MVC, Templating");
+            
+              activityProgram.push("Websockets");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spring Boot";
+            var activityProgram = [];
+            
+              activityProgram.push("Configuration");
+            
+              activityProgram.push("Démarrage rapide");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spring Batch";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts de base");
+            
+              activityProgram.push("Mise en oeuvre");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation a pour objectif de vous faire découvrir Spring. Spring est une référence en terme de développement d’application Java basées sur des conteneurs légers. Spring 4 ne se contente pas d’être une amélioration du framework Spring. Il apporte son lot de nouveautés, avec notamment Spring Boot, l’outil de développement productif idéal pour créer vos micro-services."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Java/TR-PLAY2",
+        title: "PlayFramework 2",
+        public: "Développeurs Java / Scala",
+        costs: "1690 € HT",
+        costsdescription: "par participant",
+        duration: "3 jours",
+        durationdescription: "70% théorie, 30% pratique",
+        ref: "TR-PLAY2",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Play 2");
+          
+            resultSubject.push("Web Services (REST)");
+          
+            resultSubject.push("Reactive Programming");
+          
+            resultSubject.push("Akka");
+          
+            resultSubject.push("JSON");
+          
+            resultSubject.push("Websockets");
+          
+            resultSubject.push("SSE");
+          
+            resultSubject.push("Plugins");
+          
+            resultSubject.push("Scala / Java");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Un tour de Play 2";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Contrôleurs";
+            var activityProgram = [];
+            
+              activityProgram.push("Services REST");
+            
+              activityProgram.push("Routing");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modèles";
+            var activityProgram = [];
+            
+              activityProgram.push("Accès aux données");
+            
+              activityProgram.push("JPA / Ebean");
+            
+              activityProgram.push("Autres datastores");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "JSON";
+            var activityProgram = [];
+            
+              activityProgram.push("Manipulation");
+            
+              activityProgram.push("Validation");
+            
+              activityProgram.push("Coast-to-coast design");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Akka";
+            var activityProgram = [];
+            
+              activityProgram.push("Utiliser les acteurs");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Temps réel";
+            var activityProgram = [];
+            
+              activityProgram.push("Comet");
+            
+              activityProgram.push("SSE");
+            
+              activityProgram.push("Websockets");
+            
+              activityProgram.push("Iteratees");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Plugins";
+            var activityProgram = [];
+            
+              activityProgram.push("Dependency Injection");
+            
+              activityProgram.push("Extensions du framework");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vous fera découvrir le framework Play 2, le framework web taillé pour le temps réel et les flux de données volumineux. Vous découvrirez les concepts fondamentaux des applications web et comment les transposer dans une application Play 2 en utilisant le langage de votre choix, à savoir Java ou Scala. Vous connaîtrez tous les atouts du framework, en partant de la base jusqu’au traitement en temps réel de flux de données en passant par la manipulation de structures Json, la programmation réactive, les templates typesafe et l’écriture de plugins."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Java/TR-JAVA",
+        title: "Java",
+        public: "Développeurs",
+        costs: "2290 € HT",
+        costsdescription: "par participant",
+        duration: "5 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-JAVA",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Bases du langage");
+          
+            resultSubject.push("Collections");
+          
+            resultSubject.push("Entrées / Sorties");
+          
+            resultSubject.push("Concurrence");
+          
+            resultSubject.push("JDBC");
+          
+            resultSubject.push("Outils");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Bases du langage";
+            var activityProgram = [];
+            
+              activityProgram.push("Syntaxe");
+            
+              activityProgram.push("Vision Objet");
+            
+              activityProgram.push("Exceptions (Multi-catch, Try with resources...)");
+            
+              activityProgram.push("Types génériques");
+            
+              activityProgram.push("Annotations");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Fonctionnalités / API";
+            var activityProgram = [];
+            
+              activityProgram.push("Collections");
+            
+              activityProgram.push("Dates");
+            
+              activityProgram.push("Entrées / Sorties (nio2)");
+            
+              activityProgram.push("Sérialisation");
+            
+              activityProgram.push("Concurrence");
+            
+              activityProgram.push("Base de données (JDBC)");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Outils";
+            var activityProgram = [];
+            
+              activityProgram.push("Java Development Kit");
+            
+              activityProgram.push("Eclipse IDE");
+            
+              activityProgram.push("JavaDoc");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vise à vous faire découvrir l’univers de Java. Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités. Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Data/TR-SPARK",
+        title: "Spark",
+        public: "Développeurs Java expérimentés",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "50% théorie, 50% pratique",
+        ref: "TR-SPARK",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Spark Core");
+          
+            resultSubject.push("RDDs");
+          
+            resultSubject.push("Spark Shell");
+          
+            resultSubject.push("Spark Streaming");
+          
+            resultSubject.push("Spark SQL");
+          
+            resultSubject.push("Spark ML");
+          
+            resultSubject.push("Machine Learning");
+          
+            resultSubject.push("GraphX");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation";
+            var activityProgram = [];
+            
+              activityProgram.push("Le Big Data");
+            
+              activityProgram.push("Les avantages des traitements in-memory");
+            
+              activityProgram.push("Spark dans l’écosystème Hadoop");
+            
+              activityProgram.push("Architecture");
+            
+              activityProgram.push("Installation du cluster Spark");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Spark Core";
+            var activityProgram = [];
+            
+              activityProgram.push("RDDs");
+            
+              activityProgram.push("Spark Shell");
+            
+              activityProgram.push("Entrées / Sorties avec Spark");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Autres modules";
+            var activityProgram = [];
+            
+              activityProgram.push("Traitement Temps Réel avec Spark Streaming");
+            
+              activityProgram.push("Machine Learning avec Spark ML");
+            
+              activityProgram.push("Spark SQL");
+            
+              activityProgram.push("Introduction à Graphx");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Depuis quelques années Spark est devenu le successeur désigné d’Hadoop dans le secteur des traitements Big Data. L’approche In-Memory permet d’obtenir des performances exceptionnelles. Au cours de cette formation vous apprendrez les principes fondamentaux de Spark, vous découvrirez le chargement et la sauvegarde des données dans Spark ainsi que les Resilient Distributed Dataset (RDDs). Vous appréhenderez les différents modules de Spark (Streaming, ML, SQL, Graphx) et apprendrez à tirer le meilleur parti de chacun d’eux."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Data/TR-MONGODB",
+        title: "Mongo DB",
+        public: "Développeurs débutants ou expérimentés, Architectes, DBA",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "40% théorie, 60% pratique",
+        ref: "TR-MONGODB",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Introduction NoSQL");
+          
+            resultSubject.push("Prise en main de MongoDB");
+          
+            resultSubject.push("Index et Performances");
+          
+            resultSubject.push("Conception de documents");
+          
+            resultSubject.push("Aggregation Framework");
+          
+            resultSubject.push("Réplication et Sharding");
+          
+            resultSubject.push("Déploiement");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Introduction NoSQL";
+            var activityProgram = [];
+            
+              activityProgram.push("Le NoSQL, qu’est-ce que c’est ?");
+            
+              activityProgram.push("Les bases orientées documents");
+            
+              activityProgram.push("Théorème de CAP");
+            
+              activityProgram.push("La base MongoDB");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Prise en main de MongoDB";
+            var activityProgram = [];
+            
+              activityProgram.push("Installation");
+            
+              activityProgram.push("Format des documents (BSON)");
+            
+              activityProgram.push("Opérations CRUD");
+            
+              activityProgram.push("Tableaux");
+            
+              activityProgram.push("Requêtes complexes");
+            
+              activityProgram.push("Ecosystème");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Index et performances";
+            var activityProgram = [];
+            
+              activityProgram.push("Index simples et composites");
+            
+              activityProgram.push("Index full-text");
+            
+              activityProgram.push("Index géographique");
+            
+              activityProgram.push("Explain plan");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Conception de documents";
+            var activityProgram = [];
+            
+              activityProgram.push("Les bonnes pratiques");
+            
+              activityProgram.push("Du relationnel au document");
+            
+              activityProgram.push("Cas d’utilisation concrets");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Aggregation Framework";
+            var activityProgram = [];
+            
+              activityProgram.push("Opérations simples");
+            
+              activityProgram.push("Map-Reduce");
+            
+              activityProgram.push("Aggregation Pipeline");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Réplication et Sharding";
+            var activityProgram = [];
+            
+              activityProgram.push("Réplication vs. Répartition");
+            
+              activityProgram.push("Politiques de lecture et d’écriture");
+            
+              activityProgram.push("Mise en oeuvre");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Déploiement";
+            var activityProgram = [];
+            
+              activityProgram.push("Patterns d’architecture");
+            
+              activityProgram.push("Sauvegarde et restauration");
+            
+              activityProgram.push("Supervision");
+            
+              activityProgram.push("Les offres SaaS");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vous permettra de découvrir MongoDB, la base de données NoSQL orientée documents la plus populaire ! Au cours de cette formation, vous apprendrez les concepts de fondamentaux de MongoDB ainsi que des fonctionnalités avancées telles que l’Aggregation Framework et la recherche géographique. Vous découvrirez également les principes du modèle distribué de MongoDB (réplication et sharding) au travers de patterns d’architecture permettant le passage en production."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Data/TR-ELASTIC",
+        title: "Elastic",
+        public: "Développeur, Opérationnel, DBA",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "40% théorie, 60% pratique",
+        ref: "TR-ELASTIC",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Premiers pas");
+          
+            resultSubject.push("Le Moteur de recherches");
+          
+            resultSubject.push("Concepts avancés");
+          
+            resultSubject.push("Modèle distribué d’Elastic");
+          
+            resultSubject.push("Le passage en production");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Premiers pas";
+            var activityProgram = [];
+            
+              activityProgram.push("Concepts de base");
+            
+              activityProgram.push("Opération de base");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Le moteur de recherches";
+            var activityProgram = [];
+            
+              activityProgram.push("Configuration des index et du mapping");
+            
+              activityProgram.push("_search (et _suggest)");
+            
+              activityProgram.push("Agrégations (Faceting)");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Concepts avancés";
+            var activityProgram = [];
+            
+              activityProgram.push("Bulk, Warmers, Percolator, Géolocalisation");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modèle distribué d’Elastic";
+            var activityProgram = [];
+            
+              activityProgram.push("Split Brain");
+            
+              activityProgram.push("Fonctionnement du cluster");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Le passage en production";
+            var activityProgram = [];
+            
+              activityProgram.push("Configuration");
+            
+              activityProgram.push("Sizing");
+            
+              activityProgram.push("API d’administration");
+            
+              activityProgram.push("API de supervision");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Cette formation vous permettra de découvrir Elastic. Elastic est le moteur de recherches distribué de référence, basé sur Lucene et sur une base NoSQL. Au cours de cette formation, vous apprendrez les concepts fondamentaux de l’indexation et d’Elastic. Vous découvrirez la richesse des fonctionnalités proposées par Elastic. Vous comprendrez le modèle distribué d’Elastic ainsi que la mise à l’échelle avant le passage en production."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Data/TR-ELKB",
+        title: "Valorisez vos donnees avec la Stack Elastic - Logstash - Kibana - Beats",
+        public: "Tous types de profils.",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "100% pratique",
+        ref: "TR-ELKB",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("ElasticSearch");
+          
+            resultSubject.push("Logstash");
+          
+            resultSubject.push("Kibana");
+          
+            resultSubject.push("Beats");
+          
+            resultSubject.push("Création de tableaux de bord métier");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Présentation";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Installation de la stack";
+            var activityProgram = [];
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Elastic";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Prise en main");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Kibana";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Exploration des données");
+            
+              activityProgram.push("Création de vues");
+            
+              activityProgram.push("Création de dashboards");
+            
+              activityProgram.push("Découvrir Timelion, l’outil de visualisation des timeseries");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Logstash";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de base");
+            
+              activityProgram.push("Streaming de Twitter");
+            
+              activityProgram.push("Parsing de logs");
+            
+              activityProgram.push("Mise en oeuvre de la stack complète");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Beats";
+            var activityProgram = [];
+            
+              activityProgram.push("Découvrir les différents agents beats");
+            
+              activityProgram.push("Utiliser filebeat, metricbeat et packetbeat");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Stack Elastic en production";
+            var activityProgram = [];
+            
+              activityProgram.push("Architecture & HA");
+            
+              activityProgram.push("Sécurité");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "La stack ElasticSearch (Elastic), Kibana, Logstash ouvre de nouvelles perspectives en terme de valorisation de données. Elasticsearch est un des moteurs de recherches les plus puissants du marché, il vous permettra de stocker des volumétries importantes de données, tout en vous assurant des performances exceptionnelles. Logstash est un outil de gestion et de management des logs qui vous permettra de structurer et d’apporter de la valeur ajoutée à vos logs. Kibana est un outil de visualisation qui vous permettra de visualiser les données qui sont stockées dans ElasticSearch dans une interface totalement paramétrable et conforme à l’état de l’art."
+      },
+    
+      {
+        myClass: "Old",
+        myDate: "2016-04-01",
+        date: "01 April 2016 - ",
+        href: "/Data/TR-CASSANDRA",
+        title: "Cassandra",
+        public: "Développeurs",
+        costs: "1340 € HT",
+        costsdescription: "par participant",
+        duration: "2 jours",
+        durationdescription: "40% théorie, 60% pratique",
+        ref: "TR-CASSANDRA",
+        subject: function () {
+          var resultSubject = [];
+          
+            resultSubject.push("Modèle de données");
+          
+            resultSubject.push("CQL3");
+          
+            resultSubject.push("Thrift");
+          
+            resultSubject.push("Modélisation");
+          
+            resultSubject.push("NodeTool");
+          
+            resultSubject.push("Supervision");
+          
+          return resultSubject;
+        }(),
+        program: function () {
+          var resultProgram  = [];
+          
+            var nameProgram = "Prise en main";
+            var activityProgram = [];
+            
+              activityProgram.push("Cassandra dans le paysage NoSQL");
+            
+              activityProgram.push("Principaux concepts");
+            
+              activityProgram.push("Installation");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Utilisation";
+            var activityProgram = [];
+            
+              activityProgram.push("Stockage de données");
+            
+              activityProgram.push("Les requêtes (CQL3, Thrift)");
+            
+              activityProgram.push("Gestion de la cohérence");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modélisation des données";
+            var activityProgram = [];
+            
+              activityProgram.push("Principes de modélisation");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Modèle distribué";
+            var activityProgram = [];
+            
+              activityProgram.push("Zoom sur l’exécution d’une requête");
+            
+              activityProgram.push("Réplication des données");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+            var nameProgram = "Administration";
+            var activityProgram = [];
+            
+              activityProgram.push("NodeTool");
+            
+              activityProgram.push("Supervision");
+            
+              activityProgram.push("Opérations de maintenance du cluster");
+            
+            resultProgram.push({name:nameProgram, activity:activityProgram});
+          
+          return resultProgram;
+        }(),
+        presentation: "Apache Cassandra est devenue un incontournable dans le paysage NoSQL. Cette base permet de gérer une volumétrie très importante tout en offrant une résistance à la panne exceptionnelle. Au cours de cette formation vous découvrirez cette base de données aussi bien du point de vue développement (insertion, requêtes, conception...) que du point de vue opérationnel (installation, opérations de maintenance...)."
+      },
+    
+  ];
+</script>
+
+<script src="../js/listContenu.js"></script>
+
+
+
+		</article>
+	</main>
+</body>
+
+</html>

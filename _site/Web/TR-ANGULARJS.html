@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>AngularJS</title>
+
+	<link rel="icon" type="image/png" href="/assets/favicon.png" />
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000//Web/TR-ANGULARJS">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+	</script>
+</head>
+
+
+	<body>
+		<div id="container" class=" containerother ">
+			<main>
+
+				<!-- /// TITLE ///////////////////////////////////////////////////////////// -->
+<header class=
+	"colorWeb"
+>
+	<div class="container">
+		
+		
+		<a href="/">
+			<h1 class="smalTitle">AngularJS</h1>
+		</a>
+	</div>
+</header>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+<!-- /// MENU ////////////////////////////////////////////////////////////// -->
+<aside class=
+	"colorWeb"
+>
+	<div class="container">
+		<nav>
+			<ul>
+				<!-- /// home ////////////////////////////////////////////////////// -->
+				<li><a class=
+						"clearfix colorWeb"
+						href="/"
+					>
+						<img src="/assets/TrainingsCategories/WhiteIcon/home.png"/>
+						<span>Home</span>
+				</a></li>
+				<!-- /// training_category ///////////////////////////////////////// -->
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Java">
+							<img src="/assets/TrainingsCategories/WhiteIcon/java.png"/>
+							<span>Java</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Web">
+							<img src="/assets/TrainingsCategories/WhiteIcon/web.png"/>
+							<span>Web</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/LanguagesAlternatifs">
+							<img src="/assets/TrainingsCategories/WhiteIcon/langages-alternatifs.png"/>
+							<span>Languages Alternatifs</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Data">
+							<img src="/assets/TrainingsCategories/WhiteIcon/data.png"/>
+							<span>Data</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Mobilite">
+							<img src="/assets/TrainingsCategories/WhiteIcon/mobilite.png"/>
+							<span>Mobilité</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/MethodesOutils">
+							<img src="/assets/TrainingsCategories/WhiteIcon/methodes-outils.png"/>
+							<span>Méthodes & Outils</span>
+					</a></li>
+				
+					<li><a class=
+						"colorWeb"
+						href="/Summary/Workshops">
+							<img src="/assets/TrainingsCategories/WhiteIcon/workshop.png"/>
+							<span>Workshops</span>
+					</a></li>
+				
+				<!-- /////////////////////////////////////////////////////////////// -->
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+				<article>
+					<div class="container">
+						<div class="page-title">
+							<h2>AngularJS</h2>
+						</div>
+						<!-- /// TRAINING ////////////////////////////////////////////////////////// -->
+<div id="training" ng-app="formation" ng-controller="Training">
+  <!-- /// detail ////////////////////////////////////////////////////////// -->
+
+  <div class="detail clearfix">
+    <div class="detail-block">
+      <div class="detail-duration">
+        <div class="detail-header detail-duration-header">
+          <p> DURÉE</p>
+        </div>
+        <div class="detail-content detail-duration-content">
+          <p>3 jours</p>
+          <p><em>50% théorie, 50% pratique</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-public">
+        <div class="detail-header detail-public-header">
+          <p> PUBLIC</p>
+        </div>
+        <div class="detail-content detail-public-content">
+          <p>Développeurs débutants ou expérimentés</p>
+        </div>
+      </div>
+    </div>
+    <div class="detail-block">
+      <div class="detail-price">
+        <div class="detail-header detail-price-header">
+          <p> TARIF</p>
+        </div>
+        <div class="detail-content detail-price-content">
+          <p>1690 € HT</p>
+          <p><em>par participant</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// reference /////////////////////////////////////////////////////// -->
+  
+    <p id="ref">Réf. TR-ANGULARJS</p>
+  
+
+  <div class="interaction-container clearfix">
+    <input class="colorWeb"
+    type="button" value="Télécharger" ng-click="createPDF()"/>
+    <a href="http://www.serli.com/contact" title="Inscription" target="_blank">Inscription</a>
+  </div>
+
+  <!-- /// presentation //////////////////////////////////////////////////// -->
+  <h3>PRÉSENTATION</h3>
+  <p>Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années.<br />
+Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end !<br />
+Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder AngularJS !</p>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <br/>
+  <!-- /// subjects //////////////////////////////////////////////////////// -->
+  <ul id="subject" >
+    
+      <li class="colorWeb">
+        Découverte d’AngularJS
+      </li>
+    
+      <li class="colorWeb">
+        Injection de dépendances
+      </li>
+    
+      <li class="colorWeb">
+        Directives
+      </li>
+    
+      <li class="colorWeb">
+        Tests unitaires et tests end-to-end
+      </li>
+    
+      <li class="colorWeb">
+        Ecosystème et outillage
+      </li>
+    
+  </ul>
+  <!-- /// program ///////////////////////////////////////////////////////// -->
+  
+    <h3>programme</h3>
+    <ul id="program" >
+      
+        <li> Rappels des principes de base du web
+          <ul>
+            
+          </ul>
+        </li>
+      
+        <li> Découverte d’AngularJS
+          <ul>
+            
+              <li> Binding et templating, filtres </li>
+            
+              <li> Contrôleurs et scope </li>
+            
+              <li> Routage </li>
+            
+          </ul>
+        </li>
+      
+        <li> Injection de dépendances
+          <ul>
+            
+              <li> L’injection de dépendances dans AngularJS </li>
+            
+              <li> Modules et services </li>
+            
+              <li> Bonnes pratiques d’organisation du code </li>
+            
+          </ul>
+        </li>
+      
+        <li> Composants réutilisables avec les directives
+          <ul>
+            
+          </ul>
+        </li>
+      
+        <li> Tests unitaires et tests end-to-end
+          <ul>
+            
+              <li> Les outils de tests unitaires Karma, Jasmine, les Mocks </li>
+            
+              <li> Tests end-to-end avec Protractor </li>
+            
+          </ul>
+        </li>
+      
+        <li> Ecosystème et outillage
+          <ul>
+            
+              <li> Build avec Grunt </li>
+            
+              <li> Outils de debug </li>
+            
+              <li> Librairies tierces </li>
+            
+          </ul>
+        </li>
+      
+    </ul>
+  
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <input class="colorWeb"
+    type="button" value="Télécharger la Fiche Formation" ng-click="createPDF()"/>
+
+  <script src="../js/imageData.js"></script>
+  <script src="../js/createPDF.js"></script>
+  <script>
+    var app = angular.module('formation', [])
+    app .config(['$interpolateProvider', function ($interpolateProvider) {
+      $interpolateProvider.startSymbol('[[');
+      $interpolateProvider.endSymbol(']]');
+    }]);
+    app.controller('Training', function($scope) {
+      // code in that file for Jekyll can fill with data
+      $scope.createPDF = function () {
+        var pdfTitle = "AngularJS";
+        var pdfDuration = "3 jours";
+        var pdfCosts = "1690 € HT";
+        var pdfDurationDescription = "50% théorie, 50% pratique";
+        var pdfCostsDescription = "par participant";
+        var pdfPublic = "Développeurs débutants ou expérimentés";
+        var pdfRef = "TR-ANGULARJS";
+        var pdfSubject = [];
+        
+          pdfSubject.push("Découverte d’AngularJS");
+        
+          pdfSubject.push("Injection de dépendances");
+        
+          pdfSubject.push("Directives");
+        
+          pdfSubject.push("Tests unitaires et tests end-to-end");
+        
+          pdfSubject.push("Ecosystème et outillage");
+        
+        var pdfProgram  = [];
+        
+          var nameProgram = "Rappels des principes de base du web";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Découverte d’AngularJS";
+          var activityProgram = [];
+          
+            activityProgram.push("Binding et templating, filtres");
+          
+            activityProgram.push("Contrôleurs et scope");
+          
+            activityProgram.push("Routage");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Injection de dépendances";
+          var activityProgram = [];
+          
+            activityProgram.push("L’injection de dépendances dans AngularJS");
+          
+            activityProgram.push("Modules et services");
+          
+            activityProgram.push("Bonnes pratiques d’organisation du code");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Composants réutilisables avec les directives";
+          var activityProgram = [];
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Tests unitaires et tests end-to-end";
+          var activityProgram = [];
+          
+            activityProgram.push("Les outils de tests unitaires Karma, Jasmine, les Mocks");
+          
+            activityProgram.push("Tests end-to-end avec Protractor");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+          var nameProgram = "Ecosystème et outillage";
+          var activityProgram = [];
+          
+            activityProgram.push("Build avec Grunt");
+          
+            activityProgram.push("Outils de debug");
+          
+            activityProgram.push("Librairies tierces");
+          
+          pdfProgram.push({name:nameProgram, activity:activityProgram});
+        
+        var pdfContent = '';
+        
+            var pdfContent = "Javascript est aujourd’hui la technologie incontestée pour le développement front-end, et beaucoup de frameworks ont vu le jour ces dernières années. Cette formation a pour objectif de vous apprendre à développer des applications web de qualité avec AngularJS : organisation du code, composants réutilisables et aussi tests unitaires et end-to-end ! Une formation avec 50% de travaux pratiques, la meilleure façon d’aborder AngularJS !";
+        
+
+        createPDF(pdfTitle,
+                  pdfDuration,
+                  pdfCosts,
+                  pdfDurationDescription,
+                  pdfCostsDescription,
+                  pdfPublic,
+                  pdfRef,
+                  pdfSubject,
+                  pdfProgram,
+                  pdfContent); // Data sent to the function that is in a file
+      };
+    });
+  </script>
+  <script src="../js/jspdf.debug.js"></script>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+					</div>
+				</article>
+			</main>
+
+			<!-- /// FOOTER //////////////////////////////////////////////////////////// -->
+<footer class=
+  "colorWeb">
+  <div class="container clearfix">
+
+      <div class="footer-block footer-address-block">
+        <h3>Nous trouver :</h3>
+        <div>
+          <a href="http://www.serli.com" title="SERLI" target="_blank">
+            <img src="/assets/brand.png"/>
+          </a>
+        </div>
+        <span>Avenue Thomas Edison<br>BP 20160 - 86960<br>Futuroscope Cedex</span>
+      </div>
+      <div class="footer-block footer-infos-block">
+        <h3>Nous contacter :</h3>
+        <ul>
+          <li>
+            <img src="/assets/footer/telephone.png" />
+            <span>+33(0)5 49 49 49 30</span>
+          </li>
+          <li>
+            <img src="/assets/footer/mail.png" />
+            <a href="mailto:formation@serli.com" title="Nous envoyer un mail">formation@serli.com</a>
+          </li>
+          <li>
+            <img src="/assets/footer/lien.png" />
+            <a href="http://www.serli.com/contact" title="Nous contacter" target="_blank">www.serli.com</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-block footer-social-block">
+        <h3>Nous suivre :</h3>
+        <ul class="clearfix">
+          <li id="facebook">
+            <a href="https://www.facebook.com/SerliFr/?fref=ts" target="_blank" title="Facebook">
+              <img src="/assets/icon-facebook.png" />
+            </a>
+          </li>
+          <li id="twitter">
+            <a href="https://twitter.com/SerliFr?lang=fr" target="_blank" title="Twitter">
+              <img src="/assets/icon-twitter.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+  </div>
+</footer>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+
+
+		</div>
+	</body>
+
+</html>
