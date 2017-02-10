@@ -16,6 +16,13 @@ subject: [
   'JDBC',
   'Outils'
 ]
+educational-objectives: [
+  "Découvrir l’univers de Java",
+  "Apprendre les bases du langage Java",
+  "Mettre en oeuvre les principales fonctionnalités de l’API Java",
+  "Assimiler les conventions et l’écosystème"
+]
+required-level: 'Débutant'
 program: [
   {
     title: 'Bases du langage',
