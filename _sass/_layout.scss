@@ -488,7 +488,7 @@ html, body {
 							}
 						}
 					}
-					.objectives-and-level{
+					.objectives{
 						@media (min-width:$screen-sm){
 							display:flex;
 						}
@@ -513,14 +513,6 @@ html, body {
 								}
 							}
 							.detail-educational-objectives-header{
-								p{
-									background:url(../assets/detail/public.png) no-repeat left;
-									background-size:auto 30px;
-									padding: 10px 0 10px 35px;
-									font-weight:600;
-								}
-							}
-							.detail-required-level-header{
 								p{
 									background:url(../assets/detail/public.png) no-repeat left;
 									background-size:auto 30px;

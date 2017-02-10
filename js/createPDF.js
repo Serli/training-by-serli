@@ -4,6 +4,8 @@ function createPDF (pdfTitle,
                     pdfDurationDescription,
                     pdfCostsDescription,
                     pdfPublic,
+                    pdfRequiredLevel,
+                    pdfEducationalObjectives,
                     pdfRef,
                     pdfSubject,
                     pdfProgram,
@@ -111,7 +113,7 @@ function createPDF (pdfTitle,
     textLeftInRect(doc, 20, 0, 130, 35, pdfTitle); // margin right = 60
 
     doc.setFontSize(8);
-    textCenterInRect(doc, 150, 0, 20, 35, "REF : "+pdfRef);
+    textCenterInRect(doc, 145, 0, 20, 35, "REF : "+pdfRef);
 
     doc.addImage(imageTraining, 'JPEG', 170, 8, 35, 20);
   }
@@ -179,21 +181,33 @@ function createPDF (pdfTitle,
   doc.setTextColor(0,0,0);
   doc.setFontSize(12);
 
-  doc.addImage(imageDuration, 'JPEG', 33, 37, 8, 8);
-  doc.addImage(imagePublic, 'JPEG', 93, 37, 8, 8);
-  doc.addImage(imageCost, 'JPEG', 153, 37, 8, 8);
-  doc.text(46, 40, "DURÉE");
-  doc.text(106, 40, "PUBLIC");
-  doc.text(166, 40, "TARIF");
+  doc.addImage(imageDuration, 'JPEG', 13, 37, 8, 8);
+  doc.addImage(imagePublic, 'JPEG', 66, 37, 8, 8);
+  doc.addImage(imageCost, 'JPEG', 117, 37, 8, 8);
+  doc.addImage(imagePublic, 'JPEG', 161, 37, 8, 8);
+  doc.text(23, 42.5, "DURÉE");
+  doc.text(76, 42.5, "PUBLIC");
+  doc.text(127, 42.5, "TARIF");
+  doc.text(171, 42.5, "NIVEAU REQUIS");
 
   doc.setFontSize(10);
-  textBottomInRect(doc, 20, 50, 55, 9, pdfDuration, 220,220,220);
-  textTopInRect(doc, 20, 59, 55, 9, pdfDurationDescription, 220,220,220);
-  textCenterInRect(doc, 80, 50, 55, 18, pdfPublic, 220,220,220);
-  textBottomInRect(doc, 140, 50, 55, 9, pdfCosts, 220,220,220);
-  textTopInRect(doc, 140, 59, 55, 9, pdfCostsDescription, 220,220,220);
+  textBottomInRect(doc, 5, 47, 45, 9, pdfDuration, 220,220,220);
+  textTopInRect(doc, 5, 56, 45, 9, " " + pdfDurationDescription, 220,220,220);
+  textCenterInRect(doc, 57, 47, 45, 18, pdfPublic, 220,220,220);
+  textBottomInRect(doc, 108, 47, 45, 9, pdfCosts, 220,220,220);
+  textTopInRect(doc, 108, 56, 45, 9, pdfCostsDescription, 220,220,220);
+  textCenterInRect(doc, 160, 47, 45, 18, pdfRequiredLevel, 220,220,220);
 
-  var height = 75;
+  doc.addImage(imagePublic, 'JPEG', 75, 70, 8, 8);
+  doc.text(85, 75.5, "OBJECTIFS PÉDAGOGIQUES");
+  var printableObjectives = pdfEducationalObjectives
+    .map(function(objective){return "  \u2022 " + objective} )
+    .join("\n");
+
+  var rectangleHeight = pdfEducationalObjectives.length * 5.5;
+  textLeftInRect(doc, 5, 80, 200, rectangleHeight, printableObjectives , 220,220,220);
+
+  var height = 90 + rectangleHeight;
   /////////////////////////////
 
   HeaderPDF(doc);

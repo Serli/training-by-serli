@@ -52,7 +52,7 @@ layout: default
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <br/>
   <!-- /// reference /////////////////////////////////////////////////////// -->
-  <div class="objectives-and-level clearfix">
+  <div class="objectives clearfix">
     <div class="detail-block">
       <div class="detail-duration">
         <div class="detail-header detail-educational-objectives-header">
@@ -133,6 +133,12 @@ layout: default
         var pdfCostsDescription = "{{page.costs-description}}";
         var pdfPublic = "{{page.public}}";
         var pdfRef = "{{page.ref}}";
+        var pdfRequiredLevel = "{{page.required-level}}";
+        // var pdfEducationalObjectives = "{{page.educational-objectives}}";
+        var pdfEducationalObjectives = [];
+        {% for objective in page.educational-objectives %}
+          pdfEducationalObjectives.push("{{objective}}");
+        {% endfor %}
         var pdfSubject = [];
         {% for s in page.subject %}
           pdfSubject.push("{{s}}");
@@ -146,9 +152,10 @@ layout: default
           {% endfor %}
           pdfProgram.push({name:nameProgram, activity:activityProgram});
         {% endfor %}
-        var pdfContent = '';
         {% if page.presentation %}
             var pdfContent = "{{page.presentation}}";
+        {% else %}
+            var pdfContent = '';
         {% endif %}
 
         createPDF(pdfTitle,
@@ -157,6 +164,8 @@ layout: default
                   pdfDurationDescription,
                   pdfCostsDescription,
                   pdfPublic,
+                  pdfRequiredLevel,
+                  pdfEducationalObjectives,
                   pdfRef,
                   pdfSubject,
                   pdfProgram,
