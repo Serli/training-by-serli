@@ -15,6 +15,14 @@ subject: [
   'Design Patterns iOS',
   'Concepts Haut-Niveau'
 ]
+educational-objectives: [
+  'Assimiler la syntaxe et les concepts de Swift',
+  'Prendre en main l’environnement de développement Apple',
+  'Acquérir les concepts de base d’iOS',
+  'Comprendre les règles de développement vers plusieurs appareils',
+  'Mettre en oeuvre le développement d’un projet complet'
+]
+required-level: 'Maîtrise d’un langage de programmation objet'
 program: [
   {
     title: 'Présentation de l’Objective-C',

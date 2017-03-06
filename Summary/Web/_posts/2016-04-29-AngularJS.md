@@ -15,6 +15,14 @@ subject: [
   'Tests unitaires et tests end-to-end',
   'Ecosystème et outillage'
 ]
+educational-objectives: [
+  'Connaître les concepts de base d’Angular JS',
+  'Comprendre l’injection de dépendances dans AngularJS',
+  'Assimiler les composants réutilisables et leurs directives',
+  'Être à même de réaliser des tests unitaires et end-to-end',
+  'Être sensibilisé à l’écosystème et l’outillage d’AngularJS'
+]
+required-level: 'Connaissance de JavaScript ou suivre la formation JavaScript Avancé'
 program: [
   {
     title: 'Rappels des principes de base du web',

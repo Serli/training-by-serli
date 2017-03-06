@@ -17,6 +17,14 @@ subject: [
   'Windows Phone Store',
   'Linq to SQL (SQL Server CE)'
 ]
+educational-objectives: [
+  'Comprendre l’architecture de développement de Windows Phone',
+  'Connaître Silverlight et les composants',
+  'Assimiler les règles d’ergonomie et les e ets graphiques',
+  'Être sensibilisé aux problématiques de performance des applications',
+  'Accéder à du contenu et aux composants de l’appareil'
+]
+required-level: 'Connaissance en développement C#'
 program: [
   {
     title: 'Vue d’ensemble de Windows Phone',

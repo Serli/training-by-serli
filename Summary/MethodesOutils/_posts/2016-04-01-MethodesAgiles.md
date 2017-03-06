@@ -15,6 +15,13 @@ subject: [
   'Lean',
   'TDD'
 ]
+educational-objectives: [
+  'Connaître les bases fondamentales de l’agilité',
+  'Etre sensibilisé aux méthodes les plus répandues (Scrum, Kanban...)',
+  'Acquérir les connaissances pour réaliser un Story Mapping',
+  'Identifier la méthode et les outils pour développer un projet en mode agile'
+]
+required-level: 'Aucun'
 program: [
   {
     title: 'Introduction',

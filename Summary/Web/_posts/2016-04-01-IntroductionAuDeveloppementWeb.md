@@ -16,6 +16,13 @@ subject: [
   'CSS3',
   'JavaScript'
 ]
+educational-objectives: [
+  'Comprendre les principes de base du Web',
+  'Assimiler les bases du langage HTML',
+  'Découvrir le langage JavaScript',
+  'Disposer des connaissances nécessaires pour réaliser son premier projet web'
+]
+required-level: 'Aucun'
 program: [
   {
     title: 'HTTP',

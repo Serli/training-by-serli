@@ -14,6 +14,13 @@ subject: [
   'Branches',
   'GitHub'
 ]
+educational-objectives: [
+  'Assimiler les concepts fondamentaux de Git',
+  'Découvrir les commandes de base de Git',
+  'Comprendre les work ows de développement basés sur Git',
+  'Utiliser le service GitHub'
+]
+required-level: 'Aucun'
 program: [
   {
     title: 'Différents types de gestionnaires de sources',

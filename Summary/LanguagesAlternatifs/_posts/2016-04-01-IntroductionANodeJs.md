@@ -16,6 +16,14 @@ subject: [
   'Tests',
   'Evènements et Streams'
 ]
+educational-objectives: [
+  'Assimiler les concepts fondamentaux de Node.js',
+  'Savoir créer ses propres modules de base de Node.js',
+  'Apprendre à créer un serveur web avec ExpressJs',
+  'Réaliser les tests unitaires et fonctionnels',
+  'Connaître les concepts avancés de Node.js : évènements et streams'
+]
+required-level: 'Expérience en développement JavaScript'
 program: [
   {
     title: 'Introduction et concepts fondamentaux',

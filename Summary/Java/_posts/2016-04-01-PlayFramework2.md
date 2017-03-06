@@ -19,6 +19,12 @@ subject: [
   'Plugins',
   'Scala / Java'
 ]
+educational-objectives: [
+  'Découvrir les concepts fondamentaux des applications web',
+  'Apprendre à mettre en oeuvre une application Play 2, avec Java ou Scala',
+  'Manipuler les structures Json, la programmation réactive, les templates typesafe et l’écriture de plugins.'
+]
+required-level: 'Expérience en développement Java ou Scala'
 program: [
   {
     title: 'Un tour de Play 2',

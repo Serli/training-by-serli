@@ -14,6 +14,13 @@ subject: [
   'Persistance des données',
   'Géolocalisation'
 ]
+educational-objectives: [
+  'Mettre en place un environnement de développement sous Android Studio',
+  'Assimiler les principes de la réalisation d’une application basique',
+  'Comprendre les problématiques de persistance des données',
+  'Mettre en oeuvre le développement d’un projet complet'
+]
+required-level: ''
 program: [
   {
     title: 'Présentation de l’environnement de développement sous Eclipse',

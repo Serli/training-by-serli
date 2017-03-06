@@ -15,6 +15,13 @@ subject: [
   'Fig',
   'Jenkins + plug-ins Docker'
 ]
+educational-objectives: [
+  '',
+  '',
+  '',
+  ''
+]
+required-level: ''
 presentation: 'Docker est aujourd’hui une solution incontournable de virtualisation légère à base de conteneurs.
 Dans ce workshop 100% pratique, vous découvrirez l’ensemble des usages possibles de cet outil, du développement à l’intégration continue autour d’une présentation et d’une mise en œuvre de Docker, mais aussi d’outils incontournables de son écosystème pour cet usage.
 Au cours de ce workshop, vous apprendrez à instrumenter votre environnement de développement avec Docker. Vous créerez ainsi une image Docker ayant vocation à être utilisée par le développeur pour accélérer l’installation et la configuration de son environnement.

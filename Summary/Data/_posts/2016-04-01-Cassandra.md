@@ -16,6 +16,13 @@ subject: [
   'NodeTool',
   'Supervision'
 ]
+educational-objectives: [
+  'Assimiler la prise en main de Cassandra et de ses principaux concepts',
+  'Comprendre les principes de modélisation des données',
+  'Connaître le modèle distribué de Cassandra',
+  'Acquérir les connaissances pour l’administration de la base'
+]
+required-level: 'Aucun'
 program: [
   {
     title: 'Prise en main',

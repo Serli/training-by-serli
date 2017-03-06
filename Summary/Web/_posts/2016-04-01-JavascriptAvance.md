@@ -17,6 +17,14 @@ subject: [
   'Gestion des dépendances',
   'Tests automatisés'
 ]
+educational-objectives: [
+  'Comprendre le JavaScript Moderne et ses enjeux',
+  'Assimiler les bonnes pratiques et pièges du langage',
+  'Savoir définir les patterns essentiels',
+  'Connaître ES6 et ses nouveautés',
+  'Mettre en oeuvre l’industrialisation du JavaScript'
+]
+required-level: 'Expérience en développement JavaScript'
 program: [
   {
     title: 'Le javaScript Moderne',
