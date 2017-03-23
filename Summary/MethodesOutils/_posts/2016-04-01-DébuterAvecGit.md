@@ -17,7 +17,7 @@ subject: [
 educational-objectives: [
   'Assimiler les concepts fondamentaux de Git',
   'Découvrir les commandes de base de Git',
-  'Comprendre les work ows de développement basés sur Git',
+  'Comprendre les workflows de développement basés sur Git',
   'Utiliser le service GitHub'
 ]
 required-level: 'Aucun'
