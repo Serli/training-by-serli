@@ -36,7 +36,7 @@ program: [
     title: 'Les bonnes pratiques',
     activity: [
       'Les pièges du langage',
-      'éléments essentiels'
+      'Éléments essentiels'
     ]
   },{
     title: 'Les patterns essentiels',
