@@ -9,7 +9,7 @@ duration: 5 jours
 duration-description: 40% théorie, 60% pratique
 ref: TR-WINDPHONE
 subject: [
-  'Net Compact Framework',
+  '.Net Compact Framework',
   'Silverlight',
   'XAML',
   'Expression Blend',
@@ -20,7 +20,7 @@ subject: [
 educational-objectives: [
   'Comprendre l’architecture de développement de Windows Phone',
   'Connaître Silverlight et les composants',
-  'Assimiler les règles d’ergonomie et les e ets graphiques',
+  'Assimiler les règles d’ergonomie et les effets graphiques',
   'Être sensibilisé aux problématiques de performance des applications',
   'Accéder à du contenu et aux composants de l’appareil'
 ]
