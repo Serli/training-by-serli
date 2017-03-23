@@ -9,7 +9,7 @@ duration: 3 jours
 duration-description: 50% théorie, 50% pratique
 ref: TR-IOS
 subject: [
-  'Objective-C',
+  'Swift',
   'Le développement iOS et ses spécificités',
   'Framework Foundation',
   'Design Patterns iOS',
@@ -25,7 +25,7 @@ educational-objectives: [
 required-level: 'Maîtrise d’un langage de programmation objet'
 program: [
   {
-    title: 'Présentation de l’Objective-C',
+    title: 'Présentation de Swift',
     activity: [
       'Syntaxe, concepts, propriétés'
     ]
@@ -76,10 +76,10 @@ program: [
   }
 ]
 presentation: 'Cette formation a pour objectif de vous initier au développement iOS.
-Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.
+Grâce à cette formation, vous vous familiariserez avec Swift, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.
 Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.'
 ---
 
 Cette formation a pour objectif de vous initier au développement iOS.  
-Grâce à cette formation, vous vous familiariserez avec Objective-C, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.  
+Grâce à cette formation, vous vous familiariserez avec Swift, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.  
 Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.  
