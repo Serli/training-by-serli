@@ -41,20 +41,23 @@ program: [
       'Entrées / Sorties (nio2)',
       'Sérialisation',
       'Concurrence',
-      'Base de données (JDBC)'
+      'Base de données (JDBC)',
+      'Lambdas',
+      'Streams',
+      'Date and Time'
     ]
   },{
   title: 'Outils',
   activity: [
       'Java Development Kit',
-      'Eclipse IDE',
+      'Eclipse/IntelliJ',
       'JavaDoc'
     ]
   }
 ]
 presentation: 'Cette formation vise à vous faire découvrir l’univers de Java.
-Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage. Vous apprendrez à écrire du code Java ainsi qu’à mettre en oeuvre ses premières fonctionnalités.
-Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres designs patterns plébiscités par la communauté.'
+Vous y découvrirez la richesse de cet écosystème et ferez vos premiers pas avec le langage Java ainsi que les nouveautées introduites par Java 8. Vous apprendrez à écrire du code Java ainsi et y découvrirez le SDK.
+Vous vous essaierez également aux outils les plus répandus et assimilerez les conventions et autres patterns plébiscités par la communauté.'
 ---
 
 Cette formation vise à vous faire découvrir l’univers de Java.
