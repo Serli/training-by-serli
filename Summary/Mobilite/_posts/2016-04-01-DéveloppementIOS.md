@@ -19,7 +19,7 @@ educational-objectives: [
   'Assimiler la syntaxe et les concepts de Swift',
   'Prendre en main l’environnement de développement Apple',
   'Acquérir les concepts de base d’iOS',
-  'Comprendre le développement d'interfaces adaptatives',
+  'Comprendre le développement d’interfaces adaptatives',
   'Mettre en oeuvre le développement d’un projet complet'
 ]
 required-level: 'Maîtrise d’un langage de programmation objet'
@@ -69,10 +69,10 @@ program: [
   }
 ]
 presentation: 'Cette formation a pour objectif de vous initier au développement iOS.
-Grâce à cette formation, vous vous familiariserez avec Swift, vous appréhenderez la prise en main de l’environnement de développement d'Apple et vous apprendrez les concepts de base d’iOS.
-Vous apprendrez les règles de développement d'interfaces adaptatives capables de s'afficher aussi bien sur iPhone et iPad, quelle que soit leur résolution et leur orientation d'écran, puis vous mettrez en oeuvre le développement d’un projet complet.'
+Grâce à cette formation, vous vous familiariserez avec Swift, vous appréhenderez la prise en main de l’environnement de développement d’Apple et vous apprendrez les concepts de base d’iOS.
+Vous apprendrez les règles de développement d’interfaces adaptatives capables de s’afficher aussi bien sur iPhone et iPad, quelle que soit leur résolution et leur orientation d’écran, puis vous mettrez en oeuvre le développement d’un projet complet.'
 ---
 
-Cette formation a pour objectif de vous initier au développement iOS.  
-Grâce à cette formation, vous vous familiariserez avec Swift, vous appréhenderez la prise en main de l’environnement de développement Apple et vous apprendrez les concepts de base d’iOS.  
-Vous apprendrez les règles de développement vers plusieurs types d’appareils (iPhone, iPad et iPodTouch) et vous mettrez en oeuvre le développement d’un projet complet.  
+Cette formation a pour objectif de vous initier au développement iOS.
+Grâce à cette formation, vous vous familiariserez avec Swift, vous appréhenderez la prise en main de l’environnement de développement d’Apple et vous apprendrez les concepts de base d’iOS.
+Vous apprendrez les règles de développement d’interfaces adaptatives capables de s’afficher aussi bien sur iPhone et iPad, quelle que soit leur résolution et leur orientation d’écran, puis vous mettrez en oeuvre le développement d’un projet complet. 
