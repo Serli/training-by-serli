@@ -3,9 +3,9 @@ layout: training
 title: AngularJS
 permalink: /Web/TR-ANGULARJS
 public: Développeurs débutants ou expérimentés
-costs: 1690 € HT
+costs: 1140 € HT
 costs-description: par participant
-duration: 3 jours
+duration: 2 jours
 duration-description: 30% théorie, 70% pratique
 ref: TR-ANGULARJS
 subject: [
